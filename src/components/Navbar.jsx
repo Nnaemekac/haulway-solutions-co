@@ -1,8 +1,22 @@
 /* eslint-disable react/no-unknown-property */
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
+    useEffect(() => {
+        window.xuiScrollOnAnimation();
+    });
+    useEffect(() => {
+        const hagionNav = document.querySelector(".hw-nav");
+        window.addEventListener("scroll", function(){
+            if(window.scrollY >= 200){
+                hagionNav.style.backgroundColor = "#060417";
+            } else {
+                hagionNav.style.backgroundColor = "transparent";
+            }
+        });
+    });
     return (
         <>
         <nav className="xui-navbar xui-container hw-nav xui-text-white" brand="true" layout="2" menu="2">
