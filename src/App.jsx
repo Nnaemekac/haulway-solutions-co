@@ -11,7 +11,7 @@ const Home = lazy(() => import('./pages/Home'));
 function App() {
   return (
     <>
-      <section className='hagion-main-section'>
+      <section className='hw-main-section primary xui-text-white'>
       <Navbar />
         <Suspense fallback={<Loader />}>
             <Routes>

@@ -4,6 +4,7 @@ import animationData from "../assets/solution.json";
 import Lottie from "lottie-react";
 import Companies from "../components/Companies";
 import { HashLink } from "react-router-hash-link";
+import About from "../components/About";
 
 const Home = () => {
   const comp = useRef(null)
@@ -67,6 +68,7 @@ const Home = () => {
         </div>
         
       </div>
+      <About />
       <Companies />
     </div>
   )
