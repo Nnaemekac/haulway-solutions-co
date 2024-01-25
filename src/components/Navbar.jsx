@@ -1,9 +1,24 @@
 /* eslint-disable react/no-unknown-property */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Settings } from 'react-feather';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
+    const [sidebarVisible, setSidebarVisible] = useState(false);
+    const toggleSidebar = () => {
+        setSidebarVisible(!sidebarVisible);
+    };
+    const colorPalettes = [
+        { name: 'Red', color: '#ff0000' },
+        { name: 'Green', color: '#00ff00' },
+        { name: 'Blue', color: '#0000ff' },
+        // Add more color options as needed
+    ];
+
+    const changeBodyColor = (color) => {
+        document.querySelector(".hw-main-section").style.backgroundColor = color;
+    };
     useEffect(() => {
         window.xuiScrollOnAnimation();
     });
@@ -46,7 +61,10 @@ const Navbar = () => {
                 <div className="fixed xui-lg-d-block xui-md-d-block xui-d-none">
                     <ul>
                         <li>
-                            <HashLink to={'#contact'} style={{padding: '.8rem 1.4rem'}} className='white-bdr xui-text-dc-none xui-text-white xui-font-sz-90 xui-font-w-bold xui-mr-1 xui-md-mr-none secondary'>Contact</HashLink>
+                            <HashLink to={'#contact'} style={{padding: '.8rem 1.4rem'}} className='xui-bdr-rad-half white-bdr xui-text-dc-none xui-text-white xui-font-sz-90 xui-font-w-bold xui-mr-1 xui-md-mr-none secondary'>Contact</HashLink>
+                            <div className='xui-ml-1' onClick={toggleSidebar}>
+                                <Settings size={24} strokeWidth={1.6} />
+                            </div>
                             {/* <BtnCustomI onClick={scrollToContainer("contact")} href="./" text="Book free consultation" mobileText="Book Now" layout="iv"></BtnCustomI> */}
                         </li>
                     </ul>
@@ -58,6 +76,18 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
+
+        <div className={`sidebar xui-p-1 ${sidebarVisible ? 'active' : ''}`}>
+                    <h3>Select your favorite color palette</h3>
+                    <div className="color-palettes xui-d-grid xui-grid-col-3 xui-grid-gap-1 xui-mt-2">
+                        {colorPalettes.map((palette) => (
+                            <div className='xui-w-30 xui-h-30 xui-bdr-rad-circle' style={{"backgroundColor": palette.color}} key={palette.name} onClick={() => changeBodyColor(palette.color)}>
+                
+                            </div>
+                        ))}
+                        {/* Add more color options as needed */}
+                    </div>
+                </div>
         </>
     )
 };

@@ -116,7 +116,7 @@ const Companies = () => {
                 <div id="welcome" className="xui-text-white xui-font-w-bold">
                     <h1 className="xui-lg-font-sz-350 xui-font-sz-250 font-spaceGrotesk">What We Offer</h1>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">we pride ourselves on delivering innovative solutions tailored to meet your unique needs. Our comprehensive suite of services spans from cutting-edge software engineering to creative design, providing end-to-end solutions that empower your business. </p>
-                    <HashLink className="xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink>
+                    <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink>
                 </div>
                 <div className="">
                     <Lottie animationData={animationData} className="xui-h-300" />
