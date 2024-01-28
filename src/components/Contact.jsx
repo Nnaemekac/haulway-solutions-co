@@ -40,7 +40,7 @@ const Contact = () => {
                     </div>
                     
                     <div className="xui-my-2">
-                        <button className="xui-bdr-rad-half secondary xui-btn-block xui-px-3 xui-py-1-half  xui-d-flex xui-flex-ai-center xui-flex-jc-center">Send message</button>
+                        <button className="xui-bdr-rad-half secondary xui-btn-block xui-px-3 xui-py-1-half xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">Send message</button>
                     </div>
                 </form>
                     </div>

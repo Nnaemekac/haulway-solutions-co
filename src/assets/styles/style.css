@@ -22,35 +22,16 @@
 .secondary-border{
     border: 1px solid var(--secondary);
 }
-.hw-main-section {
-    background-color: #060417;
+body{
+    transition: .1s ease;
+}
+.dark__mode{
+    background-color: var(--primary) !important;
     color: #fff;
 }
-  
-.hw-main-section.dark-mode  {
-background-color: #fff;
-color: #000;
-}
-.hw-main-section a{
-    color: #fff;
-}
-.sidebar{ 
-    position: fixed;
-    height: 100vh;
-    background: var(--dark);
-    z-index: 2;
-    top: var(--navbarHeight);
-    right: -200%;
-    width: 20%;
-    transition: .4s ease;
-}
-.sidebar.active{
-    right: 0;
-}
-body {
-	background: var(--primary);
-	width: 100%;
-	min-height: 100vh;
+.light__mode{
+    background-color: #fff !important;
+    color: #000;
 }
 .hw-nav{
     background-color: rgba(0,0,0, .1);
@@ -123,6 +104,18 @@ body {
     z-index: -1;
     filter: blur(225px);
 }
+.light__mode .header-section::after,
+.light__mode .header-section::before{
+    content: "";
+    width: 28.125rem;
+    height: 28.125rem;
+    border-radius: 28.125rem;
+    background: var(--primary-light);
+    position: absolute;
+    z-index: -1;
+    filter: blur(225px);
+}
+
 .header-section::after{
     top: -3rem;
     left: -5rem;
@@ -141,6 +134,48 @@ body {
     z-index: -1;
     filter: blur(145px);
 }
+.light__mode .services-section::after{
+    content: "";
+    width: 18.125rem;
+    height: 18.125rem;
+    border-radius: 18.125rem;
+    background: var(--primary-light);
+    position: absolute;
+    z-index: -1;
+    filter: blur(145px);
+}
+.team p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 250px;
+    margin: auto;
+    white-space: nowrap;
+}
+.company-scroller {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--accent-color-100);
+    margin-top: 1rem;
+}
+.company-wrapper {
+    display: -webkit-inline-box;
+    grid-gap: 1rem;
+}
+.company-scroll-section {
+    display: flex;
+    animation: swipe var(--speed) linear infinite backwards;
+    grid-gap: 1rem;
+  }
+  
+  @keyframes swipe {
+    0% {
+      transform: translate(0);
+    }
+  
+    100% {
+      transform: translate(-100%);
+    }
+  }
 .services-section::after{
     top: 5rem;
     left: 5rem;
@@ -180,6 +215,9 @@ body {
 .swiper-pagination-bullet.swiper-pagination-bullet-active{
     width: 30px;
 }
+.light__mode .swiper-button-next, .swiper-button-prev {
+    border: 1px solid #000;
+}
 .swiper-button-next, .swiper-button-prev{
     top: 42px !important;
     right: 0 !important;
@@ -189,18 +227,24 @@ body {
     border: 1px solid lightgray;
     background-color: var(--main-color);
 }
+
 .swiper-button-prev{
     top: 42px !important;
     right: 50px !important;
     left: initial !important;
 }
+.light__mode .swiper-button-next:after, .light__mode .swiper-button-prev::after {
+    color: #000 !important;
+}
 .swiper-button-next:after, .swiper-button-prev::after{
     color: #fff;
     font-size: 12px !important;
 }
-.xui-navbar .menu span{
-    background-color: #fff !important;
+
+.light__mode .xui-navbar .menu span{
+    background-color: #000 !important;
 }
+
 .companies-section-heading{
     width: calc(100% - 500px);
 }
@@ -258,5 +302,8 @@ to { transform: rotate(359deg) }
 @media screen and (max-width: 913px) {
     .companies-section-heading{
         width: 100%;
+    }
+    .team p {
+        width: 100px;
     }
 }

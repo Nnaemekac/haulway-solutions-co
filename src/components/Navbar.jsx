@@ -6,21 +6,43 @@ import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(false);
+    const ActiveMode = async () => {
+        setDarkMode(!darkMode);
+        if(darkMode === true){ 
+        document.body.classList.add('light__mode');
+        document.body.classList.remove('dark__mode');
+        await localStorage.setItem('Theme','light__mode'); 
+        }
+        if(darkMode === false){ 
+        document.body.classList.add('dark__mode');
+        document.body.classList.remove('light__mode');
+        await localStorage.setItem('Theme','dark__mode'); 
+        }
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    // Toggle dark mode-related changes here (e.g., update classes, styles)
-    const mainSection = document.querySelector(".hw-main-section");
-    mainSection.classList.toggle('dark-mode', darkMode);
   };
+
+  useEffect(() => {
+    if (localStorage.getItem('Theme') === 'light__mode') {
+      document.body.classList.add('light__mode');
+
+    } else if (localStorage.getItem('Theme') === 'dark__mode') {
+      document.body.classList.add('dark__mode');
+      setDarkMode(!darkMode);
+    }
+
+  }, []);
+
     useEffect(() => {
         window.xuiScrollOnAnimation();
     });
     useEffect(() => {
         const hagionNav = document.querySelector('.hw-nav');
         window.addEventListener('scroll', function () {
-          if (window.scrollY >= 200) {
+          if (window.scrollY >= 200 && localStorage.getItem('Theme') === 'dark__mode') {
             hagionNav.style.backgroundColor = '#060417';
+          }
+          else if(window.scrollY >= 200 && localStorage.getItem('Theme') === 'light__mode'){
+            hagionNav.style.backgroundColor = '#fff';
           } else {
             hagionNav.style.backgroundColor = 'transparent';
           }
@@ -29,7 +51,7 @@ const Navbar = () => {
     
     return (
         <>
-        <nav className={`xui-navbar xui-container hw-nav ${darkMode ? 'dark-mode' : ''}`} brand="true" layout="2" menu="2">
+        <nav className={`xui-navbar xui-container hw-nav ${localStorage.getItem('Theme') === 'dark__mode' ? 'dark__mode' : 'light__mode'}`} brand="true" layout="2" menu="2">
             <div className="brand">
                 <HashLink className="xui-text-dc-none xui-text-inherit xui-d-inline-flex xui-flex-ai-center" to={'/'}>
                     <h1>GRASCOPE</h1>
@@ -53,15 +75,20 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="fixed xui-lg-d-block xui-md-d-block xui-d-none">
+                <div className="fixed xui-lg-d-block xui-md-d-block xui-d-block">
                     <ul>
                         <li>
-                            <HashLink to={'#contact'} style={{padding: '.8rem 1.4rem'}} className='xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-mr-1 xui-md-mr-none secondary'>Contact</HashLink>
-                            
-                            {/* <div className='xui-ml-1' onClick={toggleDarkMode}>
-                                {darkMode ? <Sun size={24} strokeWidth={1.6} /> : <Moon size={24} strokeWidth={1.6} />}
-                            </div> */}
-                            {/* <BtnCustomI onClick={scrollToContainer("contact")} href="./" text="Book free consultation" mobileText="Book Now" layout="iv"></BtnCustomI> */}
+                            <HashLink to={'#contact'} style={{padding: '.8rem 1.4rem'}} className='xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-mr-1 xui-md-mr-none secondary'>Contact</HashLink>
+                            <div className="switch-checkbox xui-ml-1 xui-cursor-pointer">
+                                {localStorage.getItem('Theme') === 'dark__mode' ?
+                                <Moon size={24} strokeWidth={1.6} onClick={ActiveMode}/>
+                                // <FcNightLandscape onClick={ActiveMode} />
+                                :
+                                <Sun size={24} strokeWidth={1.6} onClick={ActiveMode} />
+                                // <FcLandscape onClick={ActiveMode} />
+                                }
+
+                            </div>
                         </li>
                     </ul>
                 </div>

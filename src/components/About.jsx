@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 export default function About(){
     return(
         <>
-            <section className=" xui-container xui-lg-py-4 xui-py-2">
+            <section className=" xui-container xui-lg-py-7 xui-py-2">
                 <div className='xui-row'>
                     <div className='xui-lg-col-7 xui-col-12'>
                         <p className='xui-font-sz-80'>Who we are</p>
