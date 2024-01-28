@@ -22,6 +22,18 @@
 .secondary-border{
     border: 1px solid var(--secondary);
 }
+.hw-main-section {
+    background-color: #060417;
+    color: #fff;
+}
+  
+.hw-main-section.dark-mode  {
+background-color: #fff;
+color: #000;
+}
+.hw-main-section a{
+    color: #fff;
+}
 .sidebar{ 
     position: fixed;
     height: 100vh;
@@ -93,14 +105,13 @@ body {
 }
 .offer:hover{
     background-color: var(--secondary);
+    border-radius: .5rem;
 }
 .offer:hover svg path,
 .offer:hover svg polygon{
     stroke: #fff;
 }
-.companies-section{
-    /* background-color: var(--primary); */
-}
+
 .header-section::after,
 .header-section::before{
     content: "";
@@ -163,7 +174,7 @@ body {
     width: 15px;
     height: 5px;
     border-radius: 3px;
-    background-color: var(--main-color);
+    background-color: var(--secondary);
     transition: .5s ease
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active{
@@ -193,6 +204,7 @@ body {
 .companies-section-heading{
     width: calc(100% - 500px);
 }
+
 .gg-spinner {
     transform: scale(var(--ggs,1));
     /* position: absolute;

@@ -8,7 +8,7 @@ const Contact = () => {
     }
     return(
         <>
-            <section id="contact" className="xui-container xui-text-white xui-py-3 xui-lg-py-5">
+            <section id="contact" className="xui-container  xui-py-3 xui-lg-py-5">
                 <div className="xui-row">
                     <div className="xui-lg-col-5 xui-col-12">
                         <h1 className="xui-lg-font-sz-350 xui-font-sz-250 font-spaceGrotesk">Let's collaborate ideas</h1>
@@ -40,7 +40,7 @@ const Contact = () => {
                     </div>
                     
                     <div className="xui-my-2">
-                        <button className="xui-bdr-rad-half secondary xui-btn-block xui-px-3 xui-py-1-half xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">Send message</button>
+                        <button className="xui-bdr-rad-half secondary xui-btn-block xui-px-3 xui-py-1-half  xui-d-flex xui-flex-ai-center xui-flex-jc-center">Send message</button>
                     </div>
                 </form>
                     </div>

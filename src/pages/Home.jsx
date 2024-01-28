@@ -5,6 +5,7 @@ import Lottie from "lottie-react";
 import Companies from "../components/Companies";
 import { HashLink } from "react-router-hash-link";
 import About from "../components/About";
+import TrustedCompanies from "../components/TrustedCompanies";
 
 const Home = () => {
   const comp = useRef(null)
@@ -58,18 +59,20 @@ const Home = () => {
         </h1>
       </div>
       <div className="header-section xui-row xui-pt-9 xui-pb-8 xui-container">
-        <div id="welcome" className="hero-content xui-lg-col-6 xui-text-white xui-font-w-bold">
+        <div id="welcome" className="hero-content xui-lg-col-6  xui-font-w-bold">
           <h1 className="xui-lg-font-sz-350 xui-font-sz-250 font-spaceGrotesk">From Ideas to Successful Companies</h1>
           <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">We believe that entrepreneurship can unlock human potential and make the world a better place.</p>
-          <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#companies'>Our companies</HashLink>
+          <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary  xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#companies'>Our companies</HashLink>
         </div>
         <div className="hero_img xui-lg-col-6">
           <Lottie animationData={animationData} className="xui-h-400" />
         </div>
         
       </div>
+      <TrustedCompanies />
       <About />
       <Companies />
+
     </div>
   )
 }
