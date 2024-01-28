@@ -88,6 +88,9 @@ body{
     background-color: var(--secondary);
     border-radius: .5rem;
 }
+.light__mode .offer:hover{
+    color: #fff;
+}
 .offer:hover svg path,
 .offer:hover svg polygon{
     stroke: #fff;
@@ -148,7 +151,6 @@ body{
     text-overflow: ellipsis;
     overflow: hidden;
     width: 250px;
-    margin: auto;
     white-space: nowrap;
 }
 .company-scroller {
@@ -240,7 +242,9 @@ body{
     color: #fff;
     font-size: 12px !important;
 }
-
+.xui-navbar .menu span{
+    background-color: #fff;
+}
 .light__mode .xui-navbar .menu span{
     background-color: #000 !important;
 }

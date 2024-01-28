@@ -64,50 +64,65 @@ const Companies = () => {
                     >
                     <SwiperSlide>
                         <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-350" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-d-flex xui-flex-ai-flex-end xui-flex-jc-center xui-text-center xui-pb-2 ">
-                                <div className="xui-p-1">
-                                    <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1>
-                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-1">Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity</p>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                                <div className='xui-w-60 xui-h-60 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                                </div>
+                                <div>
+                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity</p>
                                 </div>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-350" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-d-flex xui-flex-ai-flex-end xui-flex-jc-center xui-text-center xui-pb-2 ">
-                                <div className="xui-p-1">
-                                    <h1 className="xui-font-sz-150"> Bill Gross speaks at TED 2015</h1>
-                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-1">Bill's talk on the single biggest reason why startups succeed</p>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                                <div className='xui-w-60 xui-h-60 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                                </div>
+                                <div>
+                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity</p>
                                 </div>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-350" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-d-flex xui-flex-ai-flex-end xui-flex-jc-center xui-text-center xui-pb-2 ">
-                                <div className="xui-p-1">
-                                    <h1 className="xui-font-sz-150">2014 World Economic Forum in Davos, Switzerland</h1>
-                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-1">Bill speaks about regulation designed to foster technology-driven growth</p>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                                <div className='xui-w-60 xui-h-60 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                                </div>
+                                <div>
+                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity</p>
                                 </div>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-350" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-d-flex xui-flex-ai-flex-end xui-flex-jc-center xui-text-center xui-pb-2 ">
-                                <div className="xui-p-1">
-                                    <h1 className="xui-font-sz-150">Bill kicks off Entrepreneurship Week at Stanford</h1>
-                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-1">An informative and inspiring talk on innovation and starting companies</p>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                                <div className='xui-w-60 xui-h-60 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                                </div>
+                                <div>
+                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity</p>
                                 </div>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-350" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-d-flex xui-flex-ai-flex-end xui-flex-jc-center xui-text-center xui-pb-2 ">
-                                <div className="xui-p-1">
-                                    <h1 className="xui-font-sz-150">Bill's blog goes behind the scenes at Idealab</h1>
-                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-1">A look at what it takes to bring ground-breaking companies to market</p>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                                <div className='xui-w-60 xui-h-60 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                                </div>
+                                <div>
+                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity</p>
                                 </div>
                             </div>
                         </div>
@@ -122,37 +137,50 @@ const Companies = () => {
                 </div>
                 <div className='xui-d-grid xui-mt-2 xui-grid-col-2 xui-grid-gap-1'>
                     <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                        <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-d-flex xui-flex-ai-flex-end xui-flex-jc-center xui-pb-2 ">
+                        <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                            <div className='xui-w-50 xui-h-50 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                            </div>
                             <div className="xui-p-1">
-                                <h1 className="xui-font-sz-100">Bill's blog goes behind the scenes at Idealab</h1>
-                                <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-1">A look at what it takes to bring ground-breaking companies to market</p>
+                                {/* <h1 className="xui-font-sz-100">Bill's blog goes behind the scenes at Idealab</h1> */}
+                                <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">A look at what it takes to bring ground-breaking companies to market</p>
                             </div>
                         </div>
                     </div>
                     <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                        <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-d-flex xui-flex-ai-flex-end xui-flex-jc-center xui-pb-2 ">
+                        <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                            <div className='xui-w-50 xui-h-50 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                            </div>
                             <div className="xui-p-1">
-                                <h1 className="xui-font-sz-100">Bill's blog goes behind the scenes at Idealab</h1>
-                                <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-1">A look at what it takes to bring ground-breaking companies to market</p>
+                                {/* <h1 className="xui-font-sz-100">Bill's blog goes behind the scenes at Idealab</h1> */}
+                                <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">A look at what it takes to bring ground-breaking companies to market</p>
                             </div>
                         </div>
                     </div>
                     <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                        <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-d-flex xui-flex-ai-flex-end xui-flex-jc-center xui-pb-2 ">
+                        <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                            <div className='xui-w-50 xui-h-50 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                            </div>
                             <div className="xui-p-1">
-                                <h1 className="xui-font-sz-100">Bill's blog goes behind the scenes at Idealab</h1>
-                                <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-1">A look at what it takes to bring ground-breaking companies to market</p>
+                                {/* <h1 className="xui-font-sz-100">Bill's blog goes behind the scenes at Idealab</h1> */}
+                                <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">A look at what it takes to bring ground-breaking companies to market</p>
                             </div>
                         </div>
                     </div>
                     <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                        <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-d-flex xui-flex-ai-flex-end xui-flex-jc-center xui-pb-2 ">
+                        <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                            <div className='xui-w-50 xui-h-50 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                            </div>
                             <div className="xui-p-1">
-                                <h1 className="xui-font-sz-100">Bill's blog goes behind the scenes at Idealab</h1>
-                                <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-1">A look at what it takes to bring ground-breaking companies to market</p>
+                                {/* <h1 className="xui-font-sz-100">Bill's blog goes behind the scenes at Idealab</h1> */}
+                                <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">A look at what it takes to bring ground-breaking companies to market</p>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                 <div className='xui-d-flex xui-flex-ai-center xui-flex-jc-flex-end xui-mt-2'>
                     <Link className='xui-font-sz-80 xui-text-dc-none ' to="/">See all</Link>
