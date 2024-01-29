@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Moon, Settings, Sun } from 'react-feather';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import Colorpalette from './Colorpalette';
 
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -76,9 +77,9 @@ const Navbar = () => {
                         <li>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Our management</span></HashLink>
                         </li>
-                        <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit xui-lg-d-none xui-d-block" smooth to={"#contact"}><span className="xui-opacity-9">Contact</span></HashLink>
-                        </li>
+                        {/* <li>
+                            
+                        </li> */}
                     </ul>
                 </div>
                 <div className="fixed xui-lg-d-block xui-md-d-block xui-d-block">
@@ -87,10 +88,10 @@ const Navbar = () => {
                             <HashLink to={'#contact'} style={{padding: '.8rem 1.4rem'}} className='xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-md-mr-none secondary'>Contact</HashLink>
                             <div className="switch-checkbox xui-ml-1 xui-ml-none xui-cursor-pointer">
                                 {localStorage.getItem('Theme') === 'dark__mode' ?
-                                <Moon size={24} strokeWidth={1.2} onClick={ActiveMode}/>
+                                <Sun size={24} strokeWidth={1.2} onClick={ActiveMode} />
                                 // <FcNightLandscape onClick={ActiveMode} />
                                 :
-                                <Sun size={24} strokeWidth={1.2} onClick={ActiveMode} />
+                                <Moon size={24} strokeWidth={1.2} onClick={ActiveMode}/>
                                 // <FcLandscape onClick={ActiveMode} />
                                 }
 

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import animationData from "../assets/solution.json";
 import Lottie from "lottie-react";
@@ -6,8 +6,15 @@ import Companies from "../components/Companies";
 import { HashLink } from "react-router-hash-link";
 import About from "../components/About";
 import TrustedCompanies from "../components/TrustedCompanies";
+import Colorpalette from "../components/Colorpalette";
+import { X } from "react-feather";
 
 const Home = () => {
+  const [isPaletteOpen, setPaletteOpen] = useState(false);
+
+  const togglePalette = () => {
+    setPaletteOpen(!isPaletteOpen);
+  };
   const comp = useRef(null)
 
   useEffect(() => {
@@ -58,9 +65,18 @@ const Home = () => {
             Collaborative Partnership
         </h1>
       </div>
-      <div className="header-section xui-row xui-pt-9 xui-pb-8 xui-container">
-        <div id="welcome" className="hero-content xui-lg-col-6  xui-font-w-bold">
-          <h1 className="xui-lg-font-sz-350 xui-font-sz-250 font-spaceGrotesk">From Ideas to Successful Companies</h1>
+      <div className={`palette-sidebar xui-p-1 xui-overflow-y-auto ${isPaletteOpen ? 'open-palette': ''}`}>
+          <div onClick={togglePalette} className="xui-mb-2 xui-d-flex xui-flex-ai-center xui-flex-jc-flex-end">
+            <X size={24} strokeWidth={1.6} />
+          </div>
+          <h3 className="xui-font-sz-120">Select your favorite palette</h3>
+          <Colorpalette />
+      </div>
+      
+      <div className="header-section xui-row xui-pt-9 xui-lg-pb-8 xui-pb-5 xui-container">
+        <div id="welcome" className="hero-content xui-lg-col-6  xui-font-w-bold"> 
+          <p className="xui-font-w-normal xui-text-dc-underline" onClick={togglePalette}>Click to customize your palette</p>       
+          <h1 className="xui-lg-font-sz-350 xui-font-sz-250 font-spaceGrotesk xui-mt-half">From Ideas to Successful Companies</h1>
           <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">We believe that entrepreneurship can unlock human potential and make the world a better place.</p>
           <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#companies'>Our companies</HashLink>
         </div>
