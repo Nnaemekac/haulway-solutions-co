@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const Blogs = () => {
   return (
@@ -39,6 +40,9 @@ const Blogs = () => {
                     <p className='xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-mt-half'>Converting them into elegant designs, greate experiences and catchy brands.</p>
                     <img className='xui-w-fluid-100 xui-h-250 xui-mt-3 xui-bdr-rad-half' src="https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980" alt="" />
                 </div>
+            </div>
+            <div className='xui-d-flex xui-flex-ai-center xui-flex-jc-flex-end xui-mt-2'>
+                <Link className='xui-font-sz-80 xui-text-dc-none ' to="/">See all</Link>
             </div>
         </div>
     </>

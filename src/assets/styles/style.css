@@ -153,6 +153,9 @@ body{
     width: 250px;
     white-space: nowrap;
 }
+.xui-navbar[layout="2"] .links{
+    justify-content: inherit !important;
+}
 .company-scroller {
     width: 100%;
     overflow: hidden;
@@ -242,6 +245,7 @@ body{
     color: #fff;
     font-size: 12px !important;
 }
+
 .xui-navbar .menu span{
     background-color: #fff;
 }
@@ -310,4 +314,13 @@ to { transform: rotate(359deg) }
     .team p {
         width: 100px;
     }
+    .light__mode .xui-navbar .links .main ul li a{
+        color: #fff;
+    }
+    .xui-navbar .menu.animate span{
+        background-color: #fff !important;
+    }
+    /* .xui-navbar .links ul li a{
+        display: none;
+    } */
 }

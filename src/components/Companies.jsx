@@ -28,7 +28,7 @@ const Companies = () => {
             spaceBetween: 30,
         },
         1280: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 30,
         },
     };
@@ -55,13 +55,52 @@ const Companies = () => {
                 <Swiper
                     modules={[Navigation, Pagination, A11y]}
                     spaceBetween={50}
-                    slidesPerView={3}
+                    slidesPerView={4}
                     navigation
                     pagination={{ clickable: true }}
                     onSwiper={(swiper) => console.log(swiper)}
                     breakpoints={breakpoints}
                     className="xui-pt-2"
                     >
+                    <SwiperSlide>
+                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-350" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                                <div className='xui-w-60 xui-h-60 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                                </div>
+                                <div>
+                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-350" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                                <div className='xui-w-60 xui-h-60 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                                </div>
+                                <div>
+                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-350" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
+                                <div className='xui-w-60 xui-h-60 xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
+                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                                </div>
+                                <div>
+                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                    <p className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none">Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
                     <SwiperSlide>
                         <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-h-350" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 ">
