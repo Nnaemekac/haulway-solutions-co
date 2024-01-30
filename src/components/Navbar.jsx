@@ -77,6 +77,9 @@ const Navbar = () => {
                         <li>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Our management</span></HashLink>
                         </li>
+                        {/* <li className='xui-lg-d-none xui-d-block'>
+                            <Colorpalette />
+                        </li> */}
                         {/* <li>
                             
                         </li> */}
