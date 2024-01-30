@@ -13,8 +13,8 @@ export default function Footer(){
                         <p className="xui-font-sz-100 xui-font-w-600">Main pages</p>
                         <div>
                             <HashLink className="" smooth to='#services'>What we offer</HashLink>
-                            <HashLink className="" smooth to='#services'>Our companies</HashLink>
-                            <HashLink className="" smooth to='#services'>Our management</HashLink>
+                            <HashLink className="" smooth to='#companies'>Our companies</HashLink>
+                            <HashLink className="" smooth to='#management'>Our management</HashLink>
                         </div>
                     </div>
                     <div className="footer-links-holder">
