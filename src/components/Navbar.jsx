@@ -115,7 +115,7 @@ const Navbar = () => {
             </div>
         </nav>
         <div className={`palette-sidebar xui-p-1 xui-overflow-y-auto ${isPaletteOpen ? 'open-palette': ''}`}>
-          <div onClick={togglePalette} className="xui-mb-2 xui-d-flex xui-flex-ai-center xui-flex-jc-flex-end">
+          <div onClick={togglePalette} className="xui-mb-2 xui-cursor-pointer xui-d-flex xui-flex-ai-center xui-flex-jc-flex-end">
             <X size={24} strokeWidth={1.6} />
           </div>
           <h3 className="xui-font-sz-120">Select your favorite palette</h3>
