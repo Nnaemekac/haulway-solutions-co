@@ -1,12 +1,17 @@
 /* eslint-disable react/no-unknown-property */
 import { useEffect, useState } from 'react';
-import { Moon, Settings, Sun } from 'react-feather';
+import { Moon, Settings, Sun, X } from 'react-feather';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Colorpalette from './Colorpalette';
 
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(false);
+    const [isPaletteOpen, setPaletteOpen] = useState(false);
+
+  const togglePalette = () => {
+    setPaletteOpen(!isPaletteOpen);
+  };
     const ActiveMode = async () => {
         setDarkMode(!darkMode);
         if(darkMode === true){ 
@@ -78,7 +83,7 @@ const Navbar = () => {
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Our management</span></HashLink>
                         </li>
                         {/* <li className='xui-lg-d-none xui-d-block'>
-                            <Colorpalette />
+                            <p className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit xui-opacity-9" onClick={togglePalette}>Customize your palette</p>       
                         </li> */}
                         {/* <li>
                             
@@ -88,7 +93,7 @@ const Navbar = () => {
                 <div className="fixed xui-lg-d-block xui-md-d-block xui-d-block">
                     <ul>
                         <li>
-                            <HashLink to={'#contact'} style={{padding: '.8rem 1.4rem'}} className='xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-md-mr-none secondary'>Contact</HashLink>
+                            <div style={{padding: '.8rem 1.4rem'}} className='xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-md-mr-none secondary' onClick={togglePalette}>Palette</div>
                             <div className="switch-checkbox xui-ml-1 xui-ml-none xui-cursor-pointer">
                                 {localStorage.getItem('Theme') === 'dark__mode' ?
                                 <Sun size={24} strokeWidth={1.2} onClick={ActiveMode} />
@@ -109,7 +114,13 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
-
+        <div className={`palette-sidebar xui-p-1 xui-overflow-y-auto ${isPaletteOpen ? 'open-palette': ''}`}>
+          <div onClick={togglePalette} className="xui-mb-2 xui-d-flex xui-flex-ai-center xui-flex-jc-flex-end">
+            <X size={24} strokeWidth={1.6} />
+          </div>
+          <h3 className="xui-font-sz-120">Select your favorite palette</h3>
+          <Colorpalette />
+      </div>
         </>
     )
 };
