@@ -93,7 +93,7 @@ const Navbar = () => {
                 <div className="fixed xui-lg-d-block xui-md-d-block xui-d-block">
                     <ul>
                         <li>
-                            <div style={{padding: '.8rem 1.4rem'}} className='xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-md-mr-none secondary' onClick={togglePalette}>Palette</div>
+                            <div style={{padding: '.8rem 1.4rem'}} className='xui-cursor-pointer xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-md-mr-none secondary' onClick={togglePalette}>Palette</div>
                             <div className="switch-checkbox xui-ml-1 xui-ml-none xui-cursor-pointer">
                                 {localStorage.getItem('Theme') === 'dark__mode' ?
                                 <Sun size={24} strokeWidth={1.2} onClick={ActiveMode} />
@@ -115,7 +115,7 @@ const Navbar = () => {
             </div>
         </nav>
         <div className={`palette-sidebar xui-p-1 xui-overflow-y-auto ${isPaletteOpen ? 'open-palette': ''}`}>
-          <div onClick={togglePalette} className="xui-mb-2 xui-cursor-pointer xui-d-flex xui-flex-ai-center xui-flex-jc-flex-end">
+          <div onClick={togglePalette} className="xui-mb-2 xui-d-flex xui-flex-ai-center xui-flex-jc-flex-end">
             <X size={24} strokeWidth={1.6} />
           </div>
           <h3 className="xui-font-sz-120">Select your favorite palette</h3>
