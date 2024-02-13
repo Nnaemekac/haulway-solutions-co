@@ -15,19 +15,19 @@ export default function About(){
                         <div className="xui-d-grid xui-lg-grid-col-2 xui-grid-col-1 xui-lg-grid-gap-1 xui-grid-gap-3">
                             <div className="xui-text-center">
                                 <h3 className="xui-lg-font-sz-300 xui-font-sz-200"><CountUp start={0} end={50} duration={9} delay={1}/>+</h3>
-                                <p className="xui-mt-1 xui-lg-font-sz-100 xui-lg-font-sz-180 xui-font-sz-120 xui-opacity-6">Member(s)</p>
+                                <p className="xui-mt-1  xui-lg-font-sz-150 xui-font-sz-120 xui-opacity-6">Member(s)</p>
                             </div>
                             <div className="xui-text-center">
                                 <h3 className="xui-lg-font-sz-300 xui-font-sz-200"><CountUp start={0} end={400} duration={9} delay={1}/>+</h3>
-                                <p className="xui-mt-1 xui-lg-font-sz-100 xui-lg-font-sz-180 xui-font-sz-120 xui-opacity-6">Projects completed</p>
+                                <p className="xui-mt-1  xui-lg-font-sz-150 xui-font-sz-120 xui-opacity-6">Projects completed</p>
                             </div>
                             <div className="xui-text-center">
                                 <h3 className="xui-lg-font-sz-300 xui-font-sz-200"><CountUp start={0} end={12} duration={9} delay={1}/></h3>
-                                <p className="xui-mt-1 xui-lg-font-sz-100 xui-lg-font-sz-180 xui-font-sz-120 xui-opacity-6">Total companies</p>
+                                <p className="xui-mt-1  xui-lg-font-sz-150 xui-font-sz-120 xui-opacity-6">Total companies</p>
                             </div>
                             <div className="xui-text-center">
                                 <h3 className="xui-lg-font-sz-300 xui-font-sz-200"><CountUp start={0} end={7} duration={9} delay={1}/> Years</h3>
-                                <p className="xui-mt-1 xui-lg-font-sz-100 xui-lg-font-sz-180 xui-font-sz-120 xui-opacity-6">Experience</p>
+                                <p className="xui-mt-1  xui-lg-font-sz-150 xui-font-sz-120 xui-opacity-6">Experience</p>
                             </div>
                         </div>
                     </div>
