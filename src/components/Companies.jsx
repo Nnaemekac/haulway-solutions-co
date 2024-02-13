@@ -463,7 +463,7 @@ const Companies = () => {
             </section>
             
             <div id='management' className="management-section xui-container  xui-lg-py-4 xui-py-2">
-                <h1 className="xui-lg-font-sz-350 xui-font-sz-250 font-spaceGrotesk">Our Management</h1>
+                <h1 className="xui-lg-font-sz-300 xui-font-sz-250 font-spaceGrotesk">Our Management</h1>
                 <div className='xui-d-grid xui-lg-grid-col-4 xui-grid-col-1 xui-grid-gap-1 xui-mt-1'>
                     <div className='secondary-border xui-p-1 xui-bdr-rad-half'>
                         <div className='management-img'>

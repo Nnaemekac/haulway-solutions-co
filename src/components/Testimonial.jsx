@@ -11,7 +11,7 @@ export default function Testimonial(){
         <>
             <section className=" xui-container xui-lg-py-4 xui-py-2 xui-max-w-800 xui-mx-auto">
                 <p className='xui-font-sz-80 xui-text-center'>Testimonial</p>
-                <h1 className="xui-lg-font-sz-350 xui-text-center xui-font-sz-250 font-spaceGrotesk">Customers say</h1>
+                <h1 className="xui-lg-font-sz-300 xui-text-center xui-font-sz-250 font-spaceGrotesk">Customers say</h1>
                 <p className='xui-font-sz-80 xui-text-center'>Don't just trust our word! See what partners are saying about us</p>
                 <Swiper
                     modules={[Pagination, A11y]}

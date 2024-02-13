@@ -8,7 +8,7 @@ export default function About(){
                 <div className='xui-row'>
                     <div className='xui-lg-col-7 xui-col-12'>
                         <p className='xui-font-sz-80'>Who we are</p>
-                        <h1 className="xui-lg-font-sz-350 xui-font-sz-250 font-spaceGrotesk">We always prioritize quality and collaboration</h1>
+                        <h1 className="xui-lg-font-sz-300 xui-font-sz-250 font-spaceGrotesk">We always prioritize quality and collaboration</h1>
                         <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Founded in 1996, We are the longest running technology incubator. We have created over 150 companies with more than 45 IPOs and acquisitions.</p>
                     </div>
                     <div className='xui-lg-col-5 xui-col-12 xui-lg-mt-none xui-mt-1'>
