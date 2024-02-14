@@ -14,6 +14,11 @@ import Blogs from './Blogs';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import LinesEllipsis from 'react-lines-ellipsis';
+import Company1 from "../assets/images/company1.jpeg";
+import Company2 from "../assets/images/company2.jpeg";
+import Company3 from "../assets/images/company3.jpg";
+import Company4 from "../assets/images/company4.jpg";
+import Company5 from "../assets/images/company5.jpeg";
 
 const Companies = () => {
 
@@ -66,15 +71,15 @@ const Companies = () => {
                     className="xui-pt-2"
                     >
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company5}')`}}>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                    <h3 className='xui-font-sz-100'>Haulway</h3>
                                 </div>
                                 <div className="team-text-container">
                                     {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                     <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
+                                            text='Haulway is an international social commerce platform with a focus on a novel combination of social media and e-commerce.'
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
@@ -86,15 +91,15 @@ const Companies = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company1}')`}}>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                    <h3 className='xui-font-sz-100'>Sunflower pantry</h3>
                                 </div>
                                 <div className="team-text-container">
                                     {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                     <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
+                                            text='a dynamic platform offering a diverse range of food items, groceries, and farm produce, delivering convenience and freshness to your doorstep.'
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
@@ -106,15 +111,15 @@ const Companies = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company2}')`}}>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                    <h3 className='xui-font-sz-100'>Merkado Hub</h3>
                                 </div>
                                 <div className="team-text-container">
                                     {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                     <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
+                                            text='A comprehensive marketplace, supporting multiple vendors to fulfill all your online shopping desires.                                            '
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
@@ -126,15 +131,15 @@ const Companies = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company3}')`}}>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                    <h3 className='xui-font-sz-100'>Itsyourday</h3>
                                 </div>
                                 <div className="team-text-container">
                                     {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                     <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
+                                            text='A top-tier marketplace and vibrant social community tailored for seamless event management and planning, ensuring every occasion is unforgettable.'
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
@@ -146,75 +151,15 @@ const Companies = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company4}')`}}>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                    <h3 className='xui-font-sz-100'>Amanda farms</h3>
                                 </div>
                                 <div className="team-text-container">
                                     {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                     <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
-                                </div>
-                                <div className="team-text-container">
-                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                    <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
-                                </div>
-                                <div className="team-text-container">
-                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                    <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                    <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
-                                </div>
-                                <div className="team-text-container">
-                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                    <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
+                                            text='Transforming agriculture with cutting-edge Agrotech innovation, Amanda Farms leads the way in revolutionizing farming practices for enhanced efficiency and productivity.'
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
@@ -246,164 +191,80 @@ const Companies = () => {
                     >
                     <SwiperSlide>
                         <div className='xui-d-grid xui-grid-col-2 xui-grid-gap-1'>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                    <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                        <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
-                                    </div>
-                                    <div className="team-text-container">
-                                        {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                        {/* <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        /> */}
-                                        <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
+                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company5}')`}}>
+                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                    <h3 className='xui-font-sz-100'>Haulway</h3>
+                                </div>
+                                <div className="team-text-container">
+                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                    <LinesEllipsis
+                                            text='Haulway is an international social commerce platform with a focus on a novel combination of social media and e-commerce.'
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
                                             basedOn='letters'
                                             className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
                                         />
+                                </div>
+                            </div>
+                            </div>
+                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company1}')`}}>
+                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                    <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                        <h3 className='xui-font-sz-100'>Sunflower pantry</h3>
+                                    </div>
+                                    <div className="team-text-container">
+                                        {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                        <LinesEllipsis
+                                                text='a dynamic platform offering a diverse range of food items, groceries, and farm produce, delivering convenience and freshness to your doorstep.'
+                                                maxLine='3'
+                                                ellipsis='...'
+                                                trimRight
+                                                basedOn='letters'
+                                                className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
+                                            />
                                     </div>
                                 </div>
                             </div>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                    <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                        <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company2}')`}}>
+                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                    <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                        <h3 className='xui-font-sz-100'>Merkado Hub</h3>
                                     </div>
                                     <div className="team-text-container">
                                         {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                         <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
+                                                text='A comprehensive marketplace, supporting multiple vendors to fulfill all your online shopping desires.'
+                                                maxLine='3'
+                                                ellipsis='...'
+                                                trimRight
+                                                basedOn='letters'
+                                                className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
+                                            />
                                     </div>
                                 </div>
                             </div>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                    <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                        <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
+                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company3}')`}}>
+                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                    <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                        <h3 className='xui-font-sz-100'>Itsyourday</h3>
                                     </div>
                                     <div className="team-text-container">
                                         {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                         <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                    <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                        <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
-                                    </div>
-                                    <div className="team-text-container">
-                                        {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                        <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
+                                                text='A top-tier marketplace and vibrant social community tailored for seamless event management and planning, ensuring every occasion is unforgettable.'
+                                                maxLine='3'
+                                                ellipsis='...'
+                                                trimRight
+                                                basedOn='letters'
+                                                className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
+                                            />
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                    </SwiperSlide>
-                    <SwiperSlide>
-                    <div className='xui-d-grid xui-grid-col-2 xui-grid-gap-1'>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                    <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                        <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
-                                    </div>
-                                    <div className="team-text-container">
-                                        {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                        <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                    <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                        <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
-                                    </div>
-                                    <div className="team-text-container">
-                                        {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                        <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                    <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                        <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
-                                    </div>
-                                    <div className="team-text-container">
-                                        {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                        <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url(https://img.freepik.com/free-photo/people-office-during-work-day_23-2150690154.jpg?w=996&t=st=1705926610~exp=1705927210~hmac=b1e4bf8ffe6458ad3cb2926a77df22341079d62af9afc63fdef10647fcffe980)`}}>
-                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-pos-relative">
-                                    <div className='xui-w-60 xui-h-60 company-logo xu-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center xui-bdr-rad-circle'>
-                                        <img className='xui-img-100' src="https://www.idealab.com/images/companies/branch.png" alt="" />
-                                    </div>
-                                    <div className="team-text-container">
-                                        {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                        <LinesEllipsis
-                                            text='Ground-breaking solar technologies and why clean technology is a trillion dollar opportunity'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </SwiperSlide>
                     
                 </Swiper>
@@ -461,8 +322,61 @@ const Companies = () => {
                     </div>
                 </div>
             </section>
+            <section className='solutions-section xui-container xui-lg-py-4 xui-py-2 '>
+                <div id="welcome" className=" xui-font-w-bold">
+                    <h1 className="xui-lg-font-sz-300 xui-text-center xui-font-sz-250 font-spaceGrotesk">Our Solutions</h1>
+                    <p className='xui-opacity-6 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-text-center'>In addition to our portfolio companies, we offer a range of solutions and services to support businesses of all sizes:</p>
+                    {/* <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink> */}
+                </div>
+                <div className="xui-d-grid xui-lg-grid-col-3 xui-mt-3 xui-grid-col-1 xui-grid-gap-1">
+                    <div>
+                        <div className='xui-d-flex xui-p-1 xui-flex-ai-center offer'>
+                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                <Star size={24} strokeWidth={1.6} />
+                            </div>
+                            <div style={{"width": "calc(100% - 50px)"}}>
+                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Custom Software Solutions</h3>
+                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Harness the power of tailored technology with our custom software solutions, designed to streamline your operations and drive efficiency.</p>
+                            </div>
+                        </div>
+                        <div className='xui-d-flex xui-mt-1 xui-p-1 xui-flex-ai-center offer'>
+                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                <Shield size={24} strokeWidth={1.6} />
+                            </div>
+                            <div style={{"width": "calc(100% - 50px)"}}>
+                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Ideation and Application Building</h3>
+                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">From concept to execution, we specialize in bringing ideas to life through innovative ideation and application building services.</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div className="">
+                        <Lottie animationData={animationData} className="xui-h-300" />
+                    </div>
+                    <div>
+                        <div className='xui-d-flex xui-flex-ai-center xui-p-1 offer'>
+                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                <Send size={24} strokeWidth={1.6} />
+                            </div>
+                            <div style={{"width": "calc(100% - 50px)"}}>
+                                <h3 className="xui-font-sz-150 font-spaceGrotesk">E-commerce Solutions</h3>
+                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half"> Seamlessly transition into the digital marketplace with our custom e-commerce solutions, tailored to your unique business needs.</p>
+                            </div>
+                        </div>
+                        <div className='xui-d-flex xui-flex-ai-center xui-mt-1 xui-p-1 offer'>
+                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                <Send size={24} strokeWidth={1.6} />
+                            </div>
+                            <div style={{"width": "calc(100% - 50px)"}}>
+                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Agrotech Solutions</h3>
+                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Revolutionize your agricultural operations with our advanced Agrotech solutions, designed to enhance efficiency, productivity, and sustainability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             
-            <div id='management' className="management-section xui-container  xui-lg-py-4 xui-py-2">
+            {/* <div id='management' className="management-section xui-container  xui-lg-py-4 xui-py-2">
                 <h1 className="xui-lg-font-sz-300 xui-font-sz-250 font-spaceGrotesk">Our Management</h1>
                 <div className='xui-d-grid xui-lg-grid-col-4 xui-grid-col-1 xui-grid-gap-1 xui-mt-1'>
                     <div className='secondary-border xui-p-1 xui-bdr-rad-half'>
@@ -497,7 +411,7 @@ const Companies = () => {
                 </div>
             </div>
             <Testimonial />
-            <Blogs />
+            <Blogs /> */}
            <Contact />
         </div>
     </>

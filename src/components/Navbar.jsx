@@ -71,19 +71,28 @@ const Navbar = () => {
                 <div className="main primary">
                     <ul>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit" smooth to={"/"}><span className="xui-opacity-9">Home</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"/"}><span className="xui-opacity-9">Home</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit" smooth to={"#offer"}><span className="xui-opacity-9">What we offer</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#offer"}><span className="xui-opacity-9">About</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit" smooth to={"#companies"}><span className="xui-opacity-9">Our companies</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#companies"}><span className="xui-opacity-9">Our Vision</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Our management</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Our Companies</span></HashLink>
+                        </li>
+                        <li>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Why choose us</span></HashLink>
+                        </li>
+                        <li>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Our solutions</span></HashLink>
+                        </li>
+                        <li>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Get in touch</span></HashLink>
                         </li>
                         {/* <li className='xui-lg-d-none xui-d-block'>
-                            <p className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-90 xui-text-inherit xui-opacity-9" onClick={togglePalette}>Customize your palette</p>       
+                            <p className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit xui-opacity-9" onClick={togglePalette}>Customize your palette</p>       
                         </li> */}
                         {/* <li>
                             
@@ -93,7 +102,7 @@ const Navbar = () => {
                 <div className="fixed xui-lg-d-block xui-md-d-block xui-d-block">
                     <ul>
                         <li>
-                            <div style={{padding: '.8rem 1.4rem'}} className='xui-cursor-pointer xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-md-mr-none secondary' onClick={togglePalette}>Palette</div>
+                            {/* <div style={{padding: '.8rem 1.4rem'}} className='xui-cursor-pointer xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-md-mr-none secondary' onClick={togglePalette}>Palette</div> */}
                             <div className="switch-checkbox xui-ml-1 xui-ml-none xui-cursor-pointer">
                                 {localStorage.getItem('Theme') === 'dark__mode' ?
                                 <Sun size={24} strokeWidth={1.2} onClick={ActiveMode} />

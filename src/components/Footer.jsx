@@ -20,7 +20,7 @@ export default function Footer(){
                     <div className="footer-links-holder">
                         <p className="xui-font-sz-100 xui-font-w-600">Inquires</p>
                         <div>
-                            <HashLink className="" smooth to='#services'>lorem@yahoo.com</HashLink>
+                            <HashLink className="" smooth to='#services'>contact@grascope.com</HashLink>
                         </div>
                     </div>
                 </div>
