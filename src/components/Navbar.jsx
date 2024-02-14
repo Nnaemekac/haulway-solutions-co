@@ -74,22 +74,22 @@ const Navbar = () => {
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"/"}><span className="xui-opacity-9">Home</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#offer"}><span className="xui-opacity-9">About</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#about"}><span className="xui-opacity-9">About</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#companies"}><span className="xui-opacity-9">Our Vision</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#vision"}><span className="xui-opacity-9">Our Vision</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Our Companies</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#companies"}><span className="xui-opacity-9">Our Companies</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Why choose us</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#whychooseus"}><span className="xui-opacity-9">Why choose us</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Our solutions</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#solutions"}><span className="xui-opacity-9">Our solutions</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#management"}><span className="xui-opacity-9">Get in touch</span></HashLink>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#contact"}><span className="xui-opacity-9">Get in touch</span></HashLink>
                         </li>
                         {/* <li className='xui-lg-d-none xui-d-block'>
                             <p className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit xui-opacity-9" onClick={togglePalette}>Customize your palette</p>       

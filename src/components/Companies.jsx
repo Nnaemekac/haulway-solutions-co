@@ -55,7 +55,7 @@ const Companies = () => {
   return (
     <>
         <div className="companies-section xui-w-fluid-100 xui-z-index--1">
-        <section className='solutions-section xui-container xui-lg-py-4 xui-py-2 '>
+        <section id='solutions' className='solutions-section xui-container xui-lg-py-4 xui-py-2 '>
                 <div id="welcome" className=" xui-font-w-bold">
                     <h1 className="xui-lg-font-sz-300 xui-text-center xui-font-sz-250 font-spaceGrotesk">Our Solutions</h1>
                     <p className='xui-opacity-6 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-text-center'>In addition to our portfolio companies, we offer a range of solutions and services to support businesses of all sizes:</p>
@@ -323,7 +323,7 @@ const Companies = () => {
                 </Swiper>
             </section>
      
-            <section id='offer' className='services-section xui-container xui-lg-py-4 xui-py-2 '>
+            <section id='whychooseus' className='services-section xui-container xui-lg-py-4 xui-py-2 '>
                 <div id="welcome" className=" xui-font-w-bold">
                     <h1 className="xui-lg-font-sz-300 xui-text-center xui-font-sz-250 font-spaceGrotesk">Why Choose Grascope Industries Ltd?</h1>
                     {/* <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink> */}

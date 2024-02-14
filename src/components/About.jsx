@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 export default function About(){
     return(
         <>
-            <section className=" xui-container xui-lg-py-7 xui-py-2">
+            <section id='about' className=" xui-container xui-lg-py-7 xui-py-2">
                 <div className='xui-row xui-flex-ai-center'>
                     <div className='xui-lg-col-7 xui-col-12'>
                         <p className='xui-font-sz-80'>Who we are</p>
@@ -35,7 +35,7 @@ export default function About(){
                 </div>
                 
             </section>
-            <section className=" xui-container xui-lg-py-7 xui-py-2">
+            <section id='vision' className=" xui-container xui-lg-py-7 xui-py-2">
                 <div className='xui-row xui-flex-ai-center'>
                     <div className='xui-lg-col-5 xui-col-12'>
                         <img className='xui-img-500 xui-h-400 xui-bdr-rad-1' src="https://img.freepik.com/free-photo/industrial-designers-working-3d-model_23-2149370157.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
