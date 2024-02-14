@@ -1,6 +1,7 @@
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import animationData from "../assets/offer.json";
+import animationSolution from "../assets/solutions.json";
 import Lottie from "lottie-react";
 
 import 'swiper/css';
@@ -84,7 +85,7 @@ const Companies = () => {
                     
                     </div>
                     <div className="">
-                        <Lottie animationData={animationData} className="xui-h-300" />
+                        <Lottie animationData={animationSolution} className="xui-h-300" />
                     </div>
                     <div>
                         <div className='xui-d-flex xui-flex-ai-center xui-p-1 offer'>
@@ -124,7 +125,7 @@ const Companies = () => {
                     className="xui-pt-2"
                     >
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company5}')`}}>
+                        <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company5}')`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                 <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                     <h3 className='xui-font-sz-100'>Haulway</h3>
@@ -141,10 +142,10 @@ const Companies = () => {
                                         />
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company1}')`}}>
+                        <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company1}')`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                 <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                     <h3 className='xui-font-sz-100'>Sunflower pantry</h3>
@@ -161,10 +162,10 @@ const Companies = () => {
                                         />
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company2}')`}}>
+                        <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company2}')`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                 <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                     <h3 className='xui-font-sz-100'>Merkado Hub</h3>
@@ -181,10 +182,10 @@ const Companies = () => {
                                         />
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company3}')`}}>
+                        <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company3}')`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                 <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                     <h3 className='xui-font-sz-100'>Itsyourday</h3>
@@ -201,18 +202,18 @@ const Companies = () => {
                                         />
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company4}')`}}>
+                        <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company4}')`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                 <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                    <h3 className='xui-font-sz-100'>Amanda farms</h3>
+                                    <h3 className='xui-font-sz-100'>Amandu farms</h3>
                                 </div>
                                 <div className="team-text-container">
                                     {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                     <LinesEllipsis
-                                            text='Transforming agriculture with cutting-edge Agrotech innovation, Amanda Farms leads the way in revolutionizing farming practices for enhanced efficiency and productivity.'
+                                            text='Transforming agriculture with cutting-edge Agrotech innovation, Amandu Farms leads the way in revolutionizing farming practices for enhanced efficiency and productivity.'
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
@@ -221,7 +222,7 @@ const Companies = () => {
                                         />
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </SwiperSlide>
                     
                 </Swiper>
@@ -244,25 +245,25 @@ const Companies = () => {
                     >
                     <SwiperSlide>
                         <div className='xui-d-grid xui-grid-col-2 xui-grid-gap-1'>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company5}')`}}>
-                            <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
-                                <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                    <h3 className='xui-font-sz-100'>Haulway</h3>
+                            <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company5}')`}}>
+                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                    <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                        <h3 className='xui-font-sz-100'>Haulway</h3>
+                                    </div>
+                                    <div className="team-text-container">
+                                        {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                        <LinesEllipsis
+                                                text='Haulway is an international social commerce platform with a focus on a novel combination of social media and e-commerce.'
+                                                maxLine='3'
+                                                ellipsis='...'
+                                                trimRight
+                                                basedOn='letters'
+                                                className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
+                                            />
+                                    </div>
                                 </div>
-                                <div className="team-text-container">
-                                    {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
-                                    <LinesEllipsis
-                                            text='Haulway is an international social commerce platform with a focus on a novel combination of social media and e-commerce.'
-                                            maxLine='3'
-                                            ellipsis='...'
-                                            trimRight
-                                            basedOn='letters'
-                                            className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
-                                        />
-                                </div>
-                            </div>
-                            </div>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company1}')`}}>
+                            </Link>
+                            <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company1}')`}}>
                                 <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                     <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                         <h3 className='xui-font-sz-100'>Sunflower pantry</h3>
@@ -279,8 +280,8 @@ const Companies = () => {
                                             />
                                     </div>
                                 </div>
-                            </div>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company2}')`}}>
+                            </Link>
+                            <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company2}')`}}>
                                 <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                     <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                         <h3 className='xui-font-sz-100'>Merkado Hub</h3>
@@ -297,8 +298,8 @@ const Companies = () => {
                                             />
                                     </div>
                                 </div>
-                            </div>
-                            <div className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company3}')`}}>
+                            </Link>
+                            <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company3}')`}}>
                                 <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                     <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                         <h3 className='xui-font-sz-100'>Itsyourday</h3>
@@ -315,7 +316,25 @@ const Companies = () => {
                                             />
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
+                            <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company3}')`}}>
+                                <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
+                                    <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                        <h3 className='xui-font-sz-100'>Amandu Farms</h3>
+                                    </div>
+                                    <div className="team-text-container">
+                                        {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
+                                        <LinesEllipsis
+                                                text='Transforming agriculture with cutting-edge Agrotech innovation, Amandu Farms leads the way in revolutionizing farming practices for enhanced efficiency and productivity.'
+                                                maxLine='3'
+                                                ellipsis='...'
+                                                trimRight
+                                                basedOn='letters'
+                                                className="xui-font-sz-80 xui-line-height-1-half xui-opacity-8 xui-lg-mt-1 xui-mt-none"
+                                            />
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
                         
                     </SwiperSlide>
