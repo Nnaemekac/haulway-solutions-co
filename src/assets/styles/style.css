@@ -166,6 +166,7 @@ body{
 }
 .team{
     display: block;
+    text-decoration: none;
 }
 .services-section::after{
     content: "";
