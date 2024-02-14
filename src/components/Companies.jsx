@@ -55,6 +55,59 @@ const Companies = () => {
   return (
     <>
         <div className="companies-section xui-w-fluid-100 xui-z-index--1">
+        <section className='solutions-section xui-container xui-lg-py-4 xui-py-2 '>
+                <div id="welcome" className=" xui-font-w-bold">
+                    <h1 className="xui-lg-font-sz-300 xui-text-center xui-font-sz-250 font-spaceGrotesk">Our Solutions</h1>
+                    <p className='xui-opacity-6 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-text-center'>In addition to our portfolio companies, we offer a range of solutions and services to support businesses of all sizes:</p>
+                    {/* <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink> */}
+                </div>
+                <div className="xui-d-grid xui-lg-grid-col-3 xui-mt-3 xui-grid-col-1 xui-grid-gap-1">
+                    <div>
+                        <div className='xui-d-flex xui-p-1 xui-flex-ai-center offer'>
+                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                <Star size={24} strokeWidth={1.6} />
+                            </div>
+                            <div style={{"width": "calc(100% - 50px)"}}>
+                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Custom Software Solutions</h3>
+                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Harness the power of tailored technology with our custom software solutions, designed to streamline your operations and drive efficiency.</p>
+                            </div>
+                        </div>
+                        <div className='xui-d-flex xui-mt-1 xui-p-1 xui-flex-ai-center offer'>
+                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                <Shield size={24} strokeWidth={1.6} />
+                            </div>
+                            <div style={{"width": "calc(100% - 50px)"}}>
+                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Ideation and Application Building</h3>
+                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">From concept to execution, we specialize in bringing ideas to life through innovative ideation and application building services.</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div className="">
+                        <Lottie animationData={animationData} className="xui-h-300" />
+                    </div>
+                    <div>
+                        <div className='xui-d-flex xui-flex-ai-center xui-p-1 offer'>
+                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                <Send size={24} strokeWidth={1.6} />
+                            </div>
+                            <div style={{"width": "calc(100% - 50px)"}}>
+                                <h3 className="xui-font-sz-150 font-spaceGrotesk">E-commerce Solutions</h3>
+                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half"> Seamlessly transition into the digital marketplace with our custom e-commerce solutions, tailored to your unique business needs.</p>
+                            </div>
+                        </div>
+                        <div className='xui-d-flex xui-flex-ai-center xui-mt-1 xui-p-1 offer'>
+                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                <Send size={24} strokeWidth={1.6} />
+                            </div>
+                            <div style={{"width": "calc(100% - 50px)"}}>
+                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Agrotech Solutions</h3>
+                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Revolutionize your agricultural operations with our advanced Agrotech solutions, designed to enhance efficiency, productivity, and sustainability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id='companies' className="xui-container xui-lg-d-block xui-d-none  xui-lg-py-4 xui-py-2">
                 <div className='xui-d-flex xui-flex-ai-center xui-flex-jc-space-between'>
                     <h1 className="xui-lg-font-sz-200 xui-font-sz-150 companies-section-heading">Our Companies</h1>
@@ -317,59 +370,6 @@ const Companies = () => {
                             <div style={{"width": "calc(100% - 50px)"}}>
                                 <h3 className="xui-font-sz-150 font-spaceGrotesk">Innovation Leadership</h3>
                                 <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Innovation is at the core of everything we do. By staying ahead of the curve and embracing emerging trends, we're able to create value and drive impact in a rapidly evolving world.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className='solutions-section xui-container xui-lg-py-4 xui-py-2 '>
-                <div id="welcome" className=" xui-font-w-bold">
-                    <h1 className="xui-lg-font-sz-300 xui-text-center xui-font-sz-250 font-spaceGrotesk">Our Solutions</h1>
-                    <p className='xui-opacity-6 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-text-center'>In addition to our portfolio companies, we offer a range of solutions and services to support businesses of all sizes:</p>
-                    {/* <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink> */}
-                </div>
-                <div className="xui-d-grid xui-lg-grid-col-3 xui-mt-3 xui-grid-col-1 xui-grid-gap-1">
-                    <div>
-                        <div className='xui-d-flex xui-p-1 xui-flex-ai-center offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Star size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Custom Software Solutions</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Harness the power of tailored technology with our custom software solutions, designed to streamline your operations and drive efficiency.</p>
-                            </div>
-                        </div>
-                        <div className='xui-d-flex xui-mt-1 xui-p-1 xui-flex-ai-center offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Shield size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Ideation and Application Building</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">From concept to execution, we specialize in bringing ideas to life through innovative ideation and application building services.</p>
-                            </div>
-                        </div>
-                    
-                    </div>
-                    <div className="">
-                        <Lottie animationData={animationData} className="xui-h-300" />
-                    </div>
-                    <div>
-                        <div className='xui-d-flex xui-flex-ai-center xui-p-1 offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Send size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">E-commerce Solutions</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half"> Seamlessly transition into the digital marketplace with our custom e-commerce solutions, tailored to your unique business needs.</p>
-                            </div>
-                        </div>
-                        <div className='xui-d-flex xui-flex-ai-center xui-mt-1 xui-p-1 offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Send size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Agrotech Solutions</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Revolutionize your agricultural operations with our advanced Agrotech solutions, designed to enhance efficiency, productivity, and sustainability.</p>
                             </div>
                         </div>
                     </div>
