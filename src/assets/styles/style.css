@@ -153,8 +153,8 @@ body{
 .light__mode .palette-sidebar{
     background-color: #fff;
 }
-.header-section::after{
-    top: -3rem;
+.header-section::after {
+    top: 35rem;
     left: -5rem;
 }
 .header-section::before{
