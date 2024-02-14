@@ -78,7 +78,8 @@ const Home = () => {
           {/* <p className="xui-font-w-normal xui-text-dc-underline xui-cursor-pointer" onClick={togglePalette}>Click to customize your palette</p>        */}
           <h1 className="xui-lg-font-sz-350 xui-font-sz-250 font-spaceGrotesk xui-mt-half">Welcome to Grascope Industries Ltd</h1>
           <p className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Grascope Industries Ltd is not just a leader in innovation; we're also pioneers in entrepreneurship, owning and operating a diverse portfolio of companies across various industries. With our commitment to excellence and forward-thinking approach, we're not just shaping the future – we're leading it.</p>
-          <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#companies'>Our companies</HashLink>
+          <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-lg-d-inline-block xui-d-none xui-mt-1 xui-px-2" smooth to='#companies'>Our companies</HashLink>
+          <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-lg-d-none xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#companies-mobile'>Our companies</HashLink>
         </div>
         <div className="hero_img xui-lg-col-6">
           <Lottie animationData={animationData} className="xui-h-400" />

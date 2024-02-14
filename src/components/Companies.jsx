@@ -228,7 +228,7 @@ const Companies = () => {
                 </Swiper>
             </section>
 
-            <section id='companies' className="xui-container xui-lg-d-none xui-d-block  xui-lg-py-4 xui-py-2">
+            <section id='companies-mobile' className="xui-container xui-lg-d-none xui-d-block  xui-lg-py-4 xui-py-2">
                 <div className='xui-d-flex xui-flex-ai-center xui-flex-jc-space-between'>
                     <h1 className="xui-lg-font-sz-200 xui-font-sz-150 companies-section-heading">Our Companies</h1>
                     <p className='xui-font-sz-80 xui-line-height-1-half xui-lg-text-right xui-text-left xui-w-500 xui-opacity-8'>Explore our portfolio of companies, each a rising star in its respective industry:</p>
