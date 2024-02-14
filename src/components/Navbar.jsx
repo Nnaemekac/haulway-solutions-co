@@ -101,6 +101,7 @@ const Navbar = () => {
                 <div className="fixed xui-lg-d-block xui-md-d-block xui-d-block">
                     <ul>
                         <li>
+                        <HashLink to='#contact' style={{padding: '.8rem 1.2rem'}} className='xui-cursor-pointer xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-lg-d-none xui-md-mr-none secondary contact-btn'>Contact</HashLink>
                             {/* <div style={{padding: '.8rem 1.4rem'}} className='xui-cursor-pointer xui-text-white xui-bdr-rad-half white-bdr xui-text-dc-none  xui-font-sz-90 xui-font-w-bold xui-md-mr-none secondary' onClick={togglePalette}>Palette</div> */}
                             <div className="switch-checkbox xui-ml-1 xui-ml-none xui-cursor-pointer">
                                 {localStorage.getItem('Theme') === 'dark__mode' ?
@@ -115,6 +116,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
+
                 <div className="menu">
                     <span></span>
                     <span></span>
