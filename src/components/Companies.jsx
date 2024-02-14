@@ -82,6 +82,15 @@ const Companies = () => {
                                 <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">From concept to execution, we specialize in bringing ideas to life through innovative ideation and application building services.</p>
                             </div>
                         </div>
+                        <div className='xui-d-flex xui-mt-1 xui-p-1 xui-flex-ai-center offer'>
+                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                                <Shield size={24} strokeWidth={1.6} />
+                            </div>
+                            <div style={{"width": "calc(100% - 50px)"}}>
+                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Business Processing Outsourcing</h3>
+                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Streamline your operations and focus on your core competencies by outsourcing non-core business functions to our experienced team, allowing you to reduce costs and increase productivity.</p>
+                            </div>
+                        </div>
                     
                     </div>
                     <div className="">
