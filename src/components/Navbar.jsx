@@ -78,8 +78,11 @@ const Navbar = () => {
                         <li>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#vision"}><span className="xui-opacity-9">Our Vision</span></HashLink>
                         </li>
-                        <li>
+                        <li className='companies-desktop'>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#companies"}><span className="xui-opacity-9">Our Companies</span></HashLink>
+                        </li>
+                        <li className='companies-mobile'>
+                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#companies-mobile"}><span className="xui-opacity-9">Our Companies</span></HashLink>
                         </li>
                         <li>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#whychooseus"}><span className="xui-opacity-9">Why choose us</span></HashLink>

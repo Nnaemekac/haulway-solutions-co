@@ -343,12 +343,24 @@ body{
 .contact-btn{
     display: none !important;
 }
+.companies-mobile{
+    display: none !important;
+}
+.companies-desktop{
+    display: inline-flex !important;
+}
 
 @keyframes spinner {
 0% { transform: rotate(0deg) }
 to { transform: rotate(359deg) }
 } 
 @media screen and (max-width: 913px) {
+    .companies-mobile{
+        display: inline-flex !important;
+    }
+    .companies-desktop{
+        display: none !important;
+    }
     .contact-btn{
         display: block !important;
     }
