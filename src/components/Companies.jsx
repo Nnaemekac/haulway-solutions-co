@@ -18,7 +18,7 @@ import LinesEllipsis from 'react-lines-ellipsis';
 import Company1 from "../assets/images/company1.jpeg";
 import Company2 from "../assets/images/company2.jpeg";
 import Company3 from "../assets/images/company3.jpg";
-import Company4 from "../assets/images/company4.jpg";
+import Company4 from "../assets/images/company4.jpeg";
 import Company5 from "../assets/images/company5.jpeg";
 
 const Companies = () => {
