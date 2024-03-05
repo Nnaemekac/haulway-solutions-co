@@ -254,7 +254,7 @@ h1,h2,h3{
     display: block;
     text-decoration: none;
 }
-.services-section::after{
+/* .services-section::after{
     content: "";
     width: 8.125rem;
     height: 10.125rem;
@@ -273,7 +273,7 @@ h1,h2,h3{
     position: absolute;
     z-index: -1;
     filter: blur(145px);
-}
+} */
 .xui-navbar[layout="2"] .links{
     justify-content: inherit !important;
 }

@@ -15,35 +15,36 @@
 // };
 
 // export default App;
-import Faqitem from '../components/Faqitem';
+import Faqitem3 from '../components/Faqitem3';
 
-const Faq = () => {
-  const faqData = [
+const Faq3 = () => {
+
+  const faqData3 = [
     {
-      question: 'Data Entry and Management',
-      answer: 'Accurate and timely data entry services to maintain data integrity and support informed decision-making.'
+      question: 'Information Technology Support',
+      answer: 'Reliable IT support and troubleshooting assistance to ensure optimal performance and security.'
     },
     {
-      question: 'Customer Support and Service',
-      answer: 'Professional customer support solutions to enhance customer satisfaction and loyalty.'
+      question: 'Custom Software Development',
+      answer: 'Bespoke software solutions tailored to meet specific business requirements and drive digital transformation.'
     },
     {
-      question: 'Finance and Accounting',
-      answer: 'Expert financial services including invoicing, expense management, and financial reporting.'
+      question: 'Mobile App Development',
+      answer: 'Innovative mobile app development services to help businesses reach their target audience and enhance user engagement.'
     },
     {
-      question: 'Human Resources Management',
-      answer: 'Comprehensive HR services including recruitment, onboarding, and performance management.'
+      question: 'Website Development',
+      answer: 'Professional website development services to create impactful online presences and drive business growth.'
     },
+    
   ];
- 
 
   return (
-    <Faqitem data={faqData}/>
+    <Faqitem3 data3={faqData3} />
   );
 };
 
-export default Faq;
+export default Faq3;
 
 
 {/* <section className='xui-container xui-lg-pt-4 xui-pt-3 xui-lg-pb-6 xui-pb-4 xui-text-white' style={{"backgroundColor": "var(--yellow)"}}>

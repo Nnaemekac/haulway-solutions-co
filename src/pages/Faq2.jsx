@@ -22,22 +22,14 @@ const Faq2 = () => {
 
   const faqData2 = [
     {
-      question: 'Staff Leasing',
-      answer: 'This is our most common form of offshore resource building. Under this structure, we discuss your business goals and together come up with a specific recruiting profile for the staff you want to hire.'
+      question: 'E-commerce Solutions',
+      answer: 'Tailored solutions to support e-commerce operations including order processing and inventory management.'
     },
     {
-      question: 'Project-Based & Output-Based',
-      answer: 'This model employs a pricing structure based on a flat project fee to produce something like a website or animation, normally based on detailed specifications communicated and agreed before the project starts; or pricing based on an hourly fee that can be estimated and fixed up front or billed on a rolling basis for services such as online marketing or data entry; or rolling pricing based on a fixed fee for output such as data entry units or processed images.'
+      question: 'Agrotech Solutions',
+      answer: 'Innovative solutions to optimize agricultural processes and drive growth in the agribusiness sector.'
     },
-    {
-      question: 'Outsourcing in Armenia',
-      answer: 'Uncover the potential of Armenia’s technology sector, a premier destination for outsourcing, particularly in advanced IT and diverse fields.'
-    },
-    {
-      question: 'Outsourcing in South Africa',
-      answer: 'Streamline your operations and focus on your core competencies by outsourcing non-core business functions to our experienced team, allowing you to reduce costs and increase productivity.'
-    },
-    // Add more FAQ items as needed
+    
   ];
 
   return (

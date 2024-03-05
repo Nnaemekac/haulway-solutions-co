@@ -1,6 +1,5 @@
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import animationData from "../assets/offer.json";
 import animationSolution from "../assets/solutions.json";
 import Lottie from "lottie-react";
 
@@ -351,58 +350,6 @@ const Companies = () => {
                 </Swiper>
             </section>
      
-            <section id='whychooseus' className='services-section xui-container xui-lg-py-4 xui-py-2 '>
-                <div id="welcome" className=" xui-font-w-bold">
-                    <h1 className="xui-lg-font-sz-300 xui-text-center xui-font-sz-250 font-spaceGrotesk">Why Choose Grascope Industries Ltd?</h1>
-                    {/* <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink> */}
-                </div>
-                <div className="xui-d-grid xui-lg-grid-col-3 xui-mt-3 xui-grid-col-1 xui-grid-gap-1">
-                    <div>
-                        <div className='xui-d-flex xui-p-1 xui-flex-ai-center offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Star size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Diverse Portfolio</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">With ownership of several companies spanning various industries, we offer unparalleled expertise and insights to drive success.</p>
-                            </div>
-                        </div>
-                        <div className='xui-d-flex xui-mt-1 xui-p-1 xui-flex-ai-center offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Shield size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Entrepreneurial Spirit</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">As entrepreneurs ourselves, we understand the challenges and opportunities of business ownership, and we're here to support you every step of the way.</p>
-                            </div>
-                        </div>
-                    
-                    </div>
-                    <div className="">
-                        <Lottie animationData={animationData} className="xui-h-300" />
-                    </div>
-                    <div>
-                        <div className='xui-d-flex xui-flex-ai-center xui-p-1 offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Send size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Strategic Investments</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Our strategic investments are driven by a commitment to long-term growth and sustainability, ensuring the success of our ventures and partners.</p>
-                            </div>
-                        </div>
-                        <div className='xui-d-flex xui-flex-ai-center xui-mt-1 xui-p-1 offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Send size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Innovation Leadership</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Innovation is at the core of everything we do. By staying ahead of the curve and embracing emerging trends, we're able to create value and drive impact in a rapidly evolving world.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
             
             {/* <div id='management' className="management-section xui-container  xui-lg-py-4 xui-py-2">
                 <h1 className="xui-lg-font-sz-300 xui-font-sz-250 font-spaceGrotesk">Our Management</h1>
