@@ -6,11 +6,12 @@ import Companies from "../components/Companies";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import animationOffer from "../assets/offer.json";
+import Contact from "../components/Contact";
 import { HashLink } from "react-router-hash-link";
 import About from "../components/About";
 import TrustedCompanies from "../components/TrustedCompanies";
 // import Colorpalette from "../components/Colorpalette";
-import { ArrowUpRight, Send, Shield, Star, X } from "react-feather";
+import { ArrowUpRight, Check, Send, Shield, Star, X } from "react-feather";
 import Faq from "./Faq";
 import Faq2 from "./Faq2";
 import Faq3 from "./Faq3";
@@ -174,6 +175,7 @@ const Home = () => {
               </div>
           </div>
       </div>
+      <Companies />
       <section id='whychooseus' className='services-section xui-container xui-lg-py-4 xui-py-2 '>
                 <div id="welcome">
                 <h3 class="xui-font-sz-250 break xui-font-w-500 xui-text-center xui-line-height-2-half">Why Us?</h3>
@@ -226,9 +228,95 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <section className="xui-container xui-lg-py-4 xui-py-2">
+                <h3 class="xui-font-sz-250 break xui-font-w-500 xui-text-center xui-line-height-2-half">Indicative Pricing</h3>
+                <p className="xui-font-sz-80 xui-opacity-8 xui-mt-1 xui-text-center">Customize your subscription for a seamless fit</p>
+                  <div className="xui-d-grid xui-lg-grid-col-3 xui-mt-2 xui-grid-gap-2 xui-grid-col-1">
+                      <div className="pricing xui-box-shadow-2 xui-py-2 xui-px-1 xui-bdr-rad-1">
+                        <span className="xui-badge secondary xui-text-white xui-bdr-rad-half">Basic Plan - Seedling</span>
+                        <p className="xui-font-sz-80 xui-mt-1"><span className="xui-font-sz-300 xui-font-w-bold">$19.99</span>/month</p>
+                        <div className="xui-mt-4">
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Ideal for Startups</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Access to a range of innovative tools</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Limited support</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Regular updates on industry trends</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Monthly newsletter</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pricing xui-box-shadow-2 xui-py-2 xui-px-1 xui-bdr-rad-1">
+                        <span className="xui-badge secondary xui-text-white xui-bdr-rad-half">Standard Plan - Growth</span>
+                        <p className="xui-font-sz-80 xui-mt-1"><span className="xui-font-sz-300 xui-font-w-bold">$49.99</span>/month</p>
+                        <div className="xui-mt-4">
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Perfect for Growing Businesses</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Enhanced toolset for increased productivity</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Priority email support</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Exclusive webinars and workshops</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Quarterly industry reports</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pricing xui-box-shadow-2 xui-py-2 xui-px-1 xui-bdr-rad-1">
+                        <span className="xui-badge secondary xui-text-white xui-bdr-rad-half">Advanced Plan - Blossom</span>
+                        <p className="xui-font-sz-80 xui-mt-1"><span className="xui-font-sz-300 xui-font-w-bold">$99.99</span>/month</p>
+                        <div className="xui-mt-4">
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">For Established Enterprises</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Full access to cutting-edge technologies</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">24/7 premium support</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">VIP invitations to industry events</p>
+                          </div>
+                          <div className="xui-d-flex xui-flex-ai-center xui-mt-1">
+                            <Check size='18px' color="#000" />
+                            <p className="xui-font-sz-80 xui-ml-half">Customized consultancy sessions</p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+            </section>
+            <Contact />
+            
       <TrustedCompanies />
       <About />
-      <Companies />
+      
 
     </div>
   )

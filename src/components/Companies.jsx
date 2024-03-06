@@ -8,7 +8,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { HashLink } from 'react-router-hash-link';
 import { Send, Shield, Star } from 'react-feather';
-import Contact from './Contact';
 import Testimonial from './Testimonial';
 import Blogs from './Blogs';
 import { Link } from 'react-router-dom';
@@ -55,11 +54,10 @@ const Companies = () => {
   return (
     <>
         <div className="companies-section xui-w-fluid-100 xui-z-index--1">
-        <section id='solutions' className='solutions-section xui-container xui-lg-py-4 xui-py-2 '>
+            {/* <section id='solutions' className='solutions-section xui-container xui-lg-py-4 xui-py-2 '>
                 <div id="welcome" className=" xui-font-w-bold">
                     <h1 className="xui-lg-font-sz-300 xui-text-center xui-font-sz-250 font-spaceGrotesk">Our Solutions</h1>
                     <p className='xui-opacity-6 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-text-center'>In addition to our portfolio companies, we offer a range of solutions and services to support businesses of all sizes:</p>
-                    {/* <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink> */}
                 </div>
                 <div className="xui-d-grid xui-lg-grid-col-3 xui-mt-3 xui-grid-col-1 xui-grid-gap-1">
                     <div>
@@ -116,7 +114,7 @@ const Companies = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section id='companies' className="xui-container xui-lg-d-block xui-d-none  xui-lg-py-4 xui-py-2">
                 <div className='xui-d-flex xui-flex-ai-center xui-flex-jc-space-between'>
                     <h1 className="xui-lg-font-sz-200 xui-font-sz-150 companies-section-heading">Our Companies</h1>
@@ -387,7 +385,6 @@ const Companies = () => {
             </div>
             <Testimonial />
             <Blogs /> */}
-           <Contact />
         </div>
     </>
     
