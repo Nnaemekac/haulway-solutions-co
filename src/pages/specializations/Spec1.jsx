@@ -25,11 +25,11 @@ const Spec1 = () => {
     },
     {
       question: 'ICT & CREATIVE SERVICES',
-      answer: 'Professional customer support solutions to enhance customer satisfaction and loyalty.'
+      answer: ['IT Support: System/Network Admin', 'Web Design', 'Web Development', 'Software Development', 'Graphic Design', 'Animation', 'Storyboards', 'Quality Assurance/Testing']
     },
     {
       question: 'BACK OFFICE SUPPORT',
-      answer: 'Expert financial services including invoicing, expense management, and financial reporting.'
+      answer: ['Data Processing', 'Accounting', 'HR Support', 'Virtual Assistant', 'Medical Billing', 'Insurance Support', 'Lawyers and Paralegals', 'Real Estate', 'Management & Administration']
     },
    
   ];
