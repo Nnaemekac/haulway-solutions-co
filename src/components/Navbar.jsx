@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { useEffect, useState } from 'react';
 import { Moon, Settings, Sun, X } from 'react-feather';
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Colorpalette from './Colorpalette';
@@ -73,7 +74,7 @@ const Navbar = () => {
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"/"}><span className="xui-opacity-9">Home</span></HashLink>
                         </li>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#about"}><span className="xui-opacity-9">About</span></HashLink>
+                            <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black border-secondary' : 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black'} smooth to={"bpo-services"}><span className="xui-opacity-9">Our BPO Services</span></NavLink>
                         </li>
                         <li>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#vision"}><span className="xui-opacity-9">Our Vision</span></HashLink>
@@ -87,9 +88,7 @@ const Navbar = () => {
                         <li>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#whychooseus"}><span className="xui-opacity-9">Why choose us</span></HashLink>
                         </li>
-                        <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#solutions"}><span className="xui-opacity-9">Our solutions</span></HashLink>
-                        </li>
+                    
                         <li>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#contact"}><span className="xui-opacity-9">Get in touch</span></HashLink>
                         </li>

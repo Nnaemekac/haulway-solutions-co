@@ -30,6 +30,9 @@
 .light-grey{
     background-color: var(--light-grey);
 }
+.border-secondary{
+    border-bottom: 3px solid var(--secondary);
+}
 .secondary{
     background-color: var(--secondary);
 }
@@ -163,6 +166,24 @@ h1,h2,h3{
 .header-left-contents{
     margin-top: 16rem;
 }
+.bpo{
+    border: 1px solid #d3d3d3;
+    padding: 1rem;
+    margin-top: 1rem;
+    transition: .6s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.bpo:hover{
+    background-color: var(--secondary);
+    color: #fff;
+}
+.bpo:hover svg, .bpo:hover svg path{
+    fill: #fff;
+    stroke: #fff;
+}
+
 .mini-companies-holder{
     /* width: 100%; */
     bottom: 30px;
@@ -171,8 +192,41 @@ h1,h2,h3{
 .mini-companies{
     border: 3px solid #FFF;
 }
-.mini-companies:nth-child(2), .mini-companies:nth-child(3){
+.mini-companies:nth-child(2), .mini-companies:nth-child(3), .mini-companies:nth-child(4){
     margin-left: -1rem;
+}
+.portfolio-circle {
+    top: 10px;
+    position: relative;
+    -webkit-animation-name: rotate;
+    animation-name: rotate;
+    animation-duration: 3s;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: .4s ease;
+    border: 9px solid #fff;
+    background-color: var(--primary);
+}  
+.portfolio-circle-holder{
+    position: absolute;
+    top: 0;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+@keyframes rotate {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0);
+    }
+}
+.arrow-down{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .btn{
     display: inline-flex;

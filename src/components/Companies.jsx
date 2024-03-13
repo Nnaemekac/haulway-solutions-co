@@ -117,7 +117,7 @@ const Companies = () => {
             </section> */}
             <section id='companies' className="xui-container xui-lg-d-block xui-d-none  xui-lg-py-4 xui-py-2">
                 <div className='xui-d-flex xui-flex-ai-center xui-flex-jc-space-between'>
-                    <h1 className="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half companies-section-heading">Our Companies</h1>
+                    <h1 className="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half companies-section-heading xui-font-9">Our Companies</h1>
                     <p className='xui-font-sz-80 xui-line-height-1-half xui-lg-text-right xui-text-left xui-w-300 xui-opacity-8'>Explore our portfolio of companies, each a rising star in its respective industry:</p>
                 </div>
                 <Swiper
@@ -236,7 +236,7 @@ const Companies = () => {
 
             <section id='companies-mobile' className="xui-container xui-lg-d-none xui-d-block  xui-lg-py-4 xui-py-2">
                 <div className='xui-d-flex xui-flex-ai-center xui-flex-jc-space-between'>
-                    <h1 className="xui-lg-font-sz-200 xui-font-sz-150 companies-section-heading">Our Companies</h1>
+                    <h1 className="xui-lg-font-sz-200 xui-font-sz-150 companies-section-heading xui-font-9">Our Companies</h1>
                     <p className='xui-font-sz-80 xui-line-height-1-half xui-lg-text-right xui-text-left xui-w-500 xui-opacity-8'>Explore our portfolio of companies, each a rising star in its respective industry:</p>
                 </div>
                 <Swiper

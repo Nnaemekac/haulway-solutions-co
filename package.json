@@ -13,6 +13,7 @@
     "aos": "^2.3.4",
     "framer-motion": "^10.18.0",
     "gsap": "^3.12.5",
+    "iconsax-react": "^0.0.8",
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-color": "^2.19.3",

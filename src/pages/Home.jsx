@@ -148,7 +148,7 @@ const Home = () => {
                     <ArrowUpRight size="39" strokeWidth={1.2} color="#000"/>
                   </span>
                   <div className="xui-col-6">
-                    <h3 class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half">Our Services</h3>
+                    <h3 class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">Our Services</h3>
                     <p className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-1">With our commitment to excellence and forward-thinking approach, we're not just shaping the future – we're leading it.</p>
                   </div>
                   <div className="xui-col-6 xui-pl-1">
@@ -157,9 +157,9 @@ const Home = () => {
               </div>
               <div className="xui-col-7 xui-pl-2">
                   <div className="xui-d-flex xui-grid-gap-2 tabs xui-flex-ai-center">
-                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half light-grey xui-bdr-rad-5 ' + (activeTab === 0 ? 'secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90 xui-text-white' : 'xui-bg-none')} onClick={() => handleTabClick(0)}>Our BPO Services</span>
-                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half light-grey xui-bdr-rad-5 ' + (activeTab === 1 ? 'secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90 xui-text-white' : 'xui-bg-none')} onClick={() => handleTabClick(1)}>Our Solutions</span>
-                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half light-grey xui-bdr-rad-5 ' + (activeTab === 2 ? 'secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90 xui-text-white' : 'xui-bg-none')} onClick={() => handleTabClick(2)}>Our IT Services</span>     
+                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 0 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(0)}>Our BPO Services</span>
+                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 1 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(1)}>Our Solutions</span>
+                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 2 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(2)}>Our IT Services</span>     
                 
                   </div>
                   <div>
@@ -179,7 +179,7 @@ const Home = () => {
       <div className="xui-pt-5 xui-lg-pb-5 xui-pb-5 xui-container">
           <div className="xui-pos-relative">
             <div >
-              <h3 class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half">Specializations</h3>
+              <h3 class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">Specializations</h3>
               <p className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-1">With our commitment to excellence and forward-thinking approach, we're not just shaping the future – we're leading it.</p>
             </div>
             <div className="xui-mt-2">
@@ -191,7 +191,7 @@ const Home = () => {
       <Companies />
       <section id='whychooseus' className='services-section xui-container xui-lg-py-4 xui-py-2 '>
                 <div id="welcome">
-                <h3 class="xui-font-sz-250 break xui-font-w-500 xui-text-center xui-line-height-2-half">Why Us?</h3>
+                <h3 class="xui-font-sz-250 break xui-font-w-500 xui-text-center xui-line-height-2-half xui-font-9">Why Us?</h3>
                     {/* <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink> */}
                 </div>
                 <div className="xui-d-grid xui-lg-grid-col-3 xui-mt-3 xui-grid-col-1 xui-grid-gap-1">

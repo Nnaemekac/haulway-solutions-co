@@ -11,7 +11,7 @@ const Contact = () => {
             <section id="contact" className="xui-container  xui-py-3 xui-lg-py-5">
                 <div className="xui-row">
                     <div className="xui-lg-col-5 xui-col-12">
-                        <h1 className="xui-lg-font-sz-350 xui-font-sz-250 font-spaceGrotesk">Get in touch</h1>
+                        <h1 className="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">Get in touch</h1>
                         <p className="xui-opacity-6 xui-font-sz-80 xui-mt-1 xui-line-height-1-half">Ready to partner with a leader in innovation and entrepreneurship? Contact us today to learn more about how Grascope Industries Ltd can help you achieve your goals. Let's build a brighter future together.</p>
                         <div className="secondary xui-w-80 xui-h-5 xui-my-3"></div>
                     </div>
