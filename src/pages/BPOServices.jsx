@@ -2,8 +2,8 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CircleSpinner from "../components/CircleSpinner";
-import { Mail, Phone, Search } from "react-feather";
-import { KyberNetwork, Message, Warning2, Whatsapp, Wifi } from "iconsax-react";
+import { Mail, Phone, Search, ThumbsUp, User, UserPlus, Users } from "react-feather";
+import { Book, Building, Calculator, Code, Designtools, Edit, Hospital, House, Judge, Keyboard, KyberNetwork, Magicpen, Message, Paintbucket, Warning2, Whatsapp, Wifi, Windows } from "iconsax-react";
 import { Link } from "react-router-dom";
 
 const BPOServices = () => {
@@ -89,49 +89,49 @@ const BPOServices = () => {
                 <h3 className='xui-font-sz-120 xui-font-9'>ICT & CREATIVE SERVICES</h3>
                 <Link to='/bpo-services/IT-Support' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Phone size="19" color="#000" />
+                        <Book size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">IT Support: System/Network Admin</p>
                 </Link>
                 <Link to='/bpo-services/web-design' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Whatsapp size="19px" color="#000" />
+                        <Designtools size="19px" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Web Design</p>
                 </Link>
                 <Link to='/bpo-services/web-development' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Message size="19" color="#000" />
+                        <Code size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Web Development</p>
                 </Link>
                 <Link to='/bpo-services/software-development' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Warning2 size="19" color="#000" />
+                        <Windows size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Software Development</p>
                 </Link>
                 <Link to='/bpo-services/graphic-design' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Search size="19" color="#000" />
+                        <Paintbucket size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Graphic Design</p>
                 </Link>
                 <Link to='/bpo-services/animation' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Wifi size="19px" color="#000" />
+                        <Magicpen size="19px" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Animation</p>
                 </Link>
                 <Link to='/bpo-services/story-boards' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Mail size="19" color="#000" />
+                        <Edit size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Storyboards</p>
                 </Link>
                 <Link to='/bpo-services/quality-assurance' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <KyberNetwork size="19" color="#000" />
+                        <ThumbsUp size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Quality Assurance/Testing</p>
                 </Link>
@@ -140,55 +140,55 @@ const BPOServices = () => {
                 <h3 className='xui-font-sz-120 xui-font-9 xui-text-center'>BACK OFFICE SUPPORT</h3>
                 <Link to='/bpo-services/data-processing' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Phone size="19" color="#000" />
+                        <Keyboard size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Data Processing</p>
                 </Link>
                 <Link to='/bpo-services/accounting' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Whatsapp size="19px" color="#000" />
+                        <Calculator size="19px" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Accounting</p>
                 </Link>
                 <Link to='/bpo-services/hr-support' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Message size="19" color="#000" />
+                        <Users size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">HR Support</p>
                 </Link>
                 <Link to='/bpo-services/virtual-assistant' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Warning2 size="19" color="#000" />
+                        <User size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Virtual Assistant</p>
                 </Link>
                 <Link to='/bpo-services/medical-billing' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Search size="19" color="#000" />
+                        <Hospital size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Medical Billing</p>
                 </Link>
                 <Link to='/bpo-services/insurance-support' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Wifi size="19px" color="#000" />
+                        <Building size="19px" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Insurance Support</p>
                 </Link>
                 <Link to='/bpo-services/lawyers-and-paralegals' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <Mail size="19" color="#000" />
+                        <Judge size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Lawyers and Paralegals</p>
                 </Link>
                 <Link to='/bpo-services/real-estate' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <KyberNetwork size="19" color="#000" />
+                        <House size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Real Estate</p>
                 </Link>
                 <Link to='/bpo-services/management-and-administration' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
-                        <KyberNetwork size="19" color="#000" />
+                        <UserPlus size="19" color="#000" />
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Management & Administration</p>
                 </Link>
