@@ -2,7 +2,7 @@ import { ArrowDown } from "iconsax-react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-export default function CircleSpinner(){
+export default function CircleSpinner(props){
     return(
         <>
         <HashLink smooth to="/" className="xui-pos-relative xui-d-inline-block portfolio-circle-holder">
@@ -20,7 +20,7 @@ export default function CircleSpinner(){
             </defs>
             <text>
                 <textPath style={{"fill": "#FFF"}} className="xui-opacity-6 xui-font-w-normal" href="#circle">
-                BPO Services &nbsp; &nbsp; &nbsp; BPO Services
+                {props.service} &nbsp; &nbsp; &nbsp; {props.service}
                 </textPath>
             </text>
             </svg>

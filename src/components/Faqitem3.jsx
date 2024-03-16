@@ -32,7 +32,7 @@ const Faqitem3 = ({ data3 }) => {
     <div className=''>
       {data3.map((item, index) => (
         <div className='xui-my-2 xui-cursor-pointer' key={index} onClick={() => toggleItem(index)}>
-          <div className='xui-d-flex xui-flex-ai-center xui-bdr-rad-1 xui-py-1 xui-pr-1 xui-pl-2 faq-section xui-pos-relative'>
+          <div className='xui-d-flex xui-flex-ai-center xui-bdr-rad-1 xui-py-1 xui-pr-1 xui-lg-pl-2 xui-pl-1 faq-section xui-pos-relative'>
             <h3 className='xui-font-sz-120 xui-font-9' style={{"width": "calc(100% - 20px)"}}>{item.question}</h3>
             {activeIndex !== index &&
             <ArrowDownRight size="20" color="#000"/>
@@ -44,7 +44,7 @@ const Faqitem3 = ({ data3 }) => {
         
           </div>
           {activeIndex === index &&
-           <div className='xui-p-2'>
+           <div className='xui-lg-p-2 xui-p-1'>
               <p className='xui-opacity-6 xui-font-sz-100 xui-w-fluid-100 xui-lg-w-fluid-90 xui-line-height-2'>{item.answer}</p>
            </div>
            }

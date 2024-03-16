@@ -71,15 +71,21 @@ const Navbar = () => {
                 <div className="main primary">
                     <ul>
                         <li>
-                            <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"/"}><span className="xui-opacity-9">Home</span></HashLink>
+                            <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black border-secondary' : 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black'} smooth to={"/"}><span className="xui-opacity-9">Home</span></NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black border-secondary' : 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black'} smooth to={"solutions"}><span className="xui-opacity-9">Our Solutions</span></NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black border-secondary' : 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black'} smooth to={"IT-services"}><span className="xui-opacity-9">Our IT Services</span></NavLink>
                         </li>
                         <li>
                             <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black border-secondary' : 'xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-black'} smooth to={"bpo-services"}><span className="xui-opacity-9">Our BPO Services</span></NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#vision"}><span className="xui-opacity-9">Our Vision</span></HashLink>
-                        </li>
-                        <li className='companies-desktop'>
+                        </li> */}
+                        {/* <li className='companies-desktop'>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#companies"}><span className="xui-opacity-9">Our Companies</span></HashLink>
                         </li>
                         <li className='companies-mobile'>
@@ -91,7 +97,7 @@ const Navbar = () => {
                     
                         <li>
                             <HashLink className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit" smooth to={"#contact"}><span className="xui-opacity-9">Get in touch</span></HashLink>
-                        </li>
+                        </li> */}
                         {/* <li className='xui-lg-d-none xui-d-block'>
                             <p className="xui-font-sz-180 xui-md-font-sz-200 xui-lg-font-sz-80 xui-text-inherit xui-opacity-9" onClick={togglePalette}>Customize your palette</p>       
                         </li> */}

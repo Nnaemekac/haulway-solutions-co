@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BPOService from "./pages/BPOService";
 import { useLocation } from "react-router-dom";
+import ITServices from "./pages/ITServices";
+import OurSolutions from "./pages/OurSolutions";
 
 const Home = lazy(() => import('./pages/Home'));
 const BPOServices = lazy(() => import('./pages/BPOServices'));
@@ -33,6 +35,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/bpo-services" element={<BPOServices />} />
               <Route path="/bpo-services/:id" element={<BPOService />} />
+              <Route path="/IT-services" element={<ITServices />} />
+              <Route path="/solutions" element={<OurSolutions />} />
               <Route path="*" element={<h1>No Match</h1>} />
             </Routes>
         </Suspense>

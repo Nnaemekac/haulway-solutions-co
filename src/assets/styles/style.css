@@ -159,12 +159,25 @@ h1,h2,h3{
     left: 100px;
     border: 1px solid #FFF;
 }
+
 .solution2{
     top: 300px;
     left: 300px;
 }
 .header-left-contents{
-    margin-top: 16rem;
+    margin-top: 14rem;
+}
+.telesales-pricing{
+    box-shadow: var(0 0 #0000, 0 0 #0000),var(0 #0000,0 0 #0000),var(0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1));
+    border-color: rgb(229 231 235/1);
+    border-width: 1px;
+    border-radius: .5rem;
+    border-style: solid;
+}
+.pricing-circle{
+    border: 2px solid var(--secondary);
+    border-left-color: var(--dark);
+    border-bottom-color: var(--dark);
 }
 .bpo{
     border: 1px solid #d3d3d3;
@@ -173,8 +186,14 @@ h1,h2,h3{
     transition: .6s ease;
     cursor: pointer;
     text-decoration: none;
-    color: black;
+    color: #FFF;
     border-radius: .5rem;
+}
+.bpo svg {
+    fill: #fff;
+}
+.light__mode .bpo{
+    color: #000;
 }
 .bpo:hover{
     background-color: var(--secondary);
@@ -493,6 +512,20 @@ h1,h2,h3{
 .companies-desktop{
     display: inline-flex !important;
 }
+.tabs{
+    display: flex;
+    grid-gap: .5rem;
+    /* max-width: 600px; */
+    width: 70%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-bottom: 12px;
+    margin-top: .24rem;
+}
+.spec-item{
+    flex-wrap: nowrap;
+}
 
 @keyframes spinner {
 0% { transform: rotate(0deg) }
@@ -515,10 +548,36 @@ to { transform: rotate(359deg) }
         width: 100px;
     }
     .light__mode .xui-navbar .links .main ul li a{
-        color: #fff;
+        color: #FFF;
     }
     .xui-navbar .menu.animate span{
         background-color: #fff !important;
+    }
+    .header-left-contents{
+        margin-top: 2rem;
+    }
+    .header-middle, .header-left, .header-right{
+        width: 100%;
+    }
+    .header-right{
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    .spec-item{
+        flex-wrap: wrap;
+    }
+    .solution2{
+        left: 100px;
+    }
+    .word-background{
+        color: black;
+    }
+    .xui-navbar .links ul li a{
+        color: #FFF;
+    }
+    .tabs{
+        max-width: 300px;
+        width: 100%;
     }
     /* .xui-navbar .links ul li a{
         display: none;

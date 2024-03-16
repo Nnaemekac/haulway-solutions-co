@@ -15,8 +15,8 @@ const BPOServices = () => {
   return (
     <div className="xui-pos-relative">
       <div className="header-section xui-pt-9 xui-text-center xui-lg-pb-7 xui-pb-5 xui-container">
-            <h3 data-aos="fade-in" data-aos-duration="800" class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">Our BPO Services</h3>
-            <h3 data-aos="fade-in" data-aos-delay="400" data-aos-duration="800" class="xui-font-sz-200 xui-font-9 xui-d-inline-flex xui-flex-ai-center xui-mt-half xui-font-w-500 xui-text-left">Grascope
+            <h3 data-aos="fade-in" data-aos-duration="800" class="xui-font-sz-300 xui-font-w-500 xui-line-height-2-half xui-font-9">Our BPO Services</h3>
+            <h3 data-aos="fade-in" data-aos-delay="400" data-aos-duration="800" class="xui-font-sz-200 xui-font-9 xui-lg-d-inline-flex xui-d-none xui-flex-ai-center xui-mt-half xui-font-w-500 xui-text-left">Grascope
             <span className="xui-d-inline-flex xui-flex-ai-center xui-mx-half">
                 <img className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
                 <img className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
@@ -28,9 +28,9 @@ const BPOServices = () => {
             
       </div>
     <section className="xui-h-300 xui-pos-relative xui-bg-sz-cover xui-bg-pos-top" style={{"backgroundImage" : `url('https://img.freepik.com/free-photo/person-office-work-day_23-2150690165.jpg?t=st=1710333996~exp=1710337596~hmac=bbe0389dc9433355577e93d344682c05b8ffa222af737c0b10563090031c016e&w=740')`, 'backgroundAttachment': 'fixed'}}>
-        <CircleSpinner />
+        <CircleSpinner service="BPO Services" />
     </section>
-    <div className="xui-pt-9 xui-lg-pb-5 xui-pb-5 xui-container">
+    <div className="xui-lg-pt-9 xui-pt-3 xui-lg-pb-5 xui-pb-5 xui-container">
         <h3 data-aos="fade-in" data-aos-duration="800" class="xui-font-sz-200 break xui-font-w-500 xui-line-height-2-half xui-font-9">Build Your Own Offshore Team</h3>
         <p className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-1">Below is a list of some of our specializations. If you dont’t see what you need, we can also recruit for other resources upon request. If you don’t require a full time worker, there are also part-time options available for most categories.</p>
         <div className="xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-grid-gap-1 xui-mt-3">
@@ -66,7 +66,7 @@ const BPOServices = () => {
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">SEO & PPC</p>
                 </Link>
-                <Link to='/bpo-services/live-chat/social-media-marketing' className="bpo xui-d-flex xui-flex-ai-center">
+                <Link to='/bpo-services/social-media-marketing' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
                         <Wifi size="19px" color="#000" />
                     </span>
