@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function Footer(){
@@ -12,9 +13,9 @@ export default function Footer(){
                     <div className="footer-links-holder">
                         <p className="xui-font-sz-100 xui-font-w-600">Main pages</p>
                         <div>
-                            <HashLink className="" smooth to='#services'>What we offer</HashLink>
-                            <HashLink className="" smooth to='#companies'>Our companies</HashLink>
-                            <HashLink className="" smooth to='#management'>Our management</HashLink>
+                            <Link className="" to='solutions'>Our Solutions</Link>
+                            <Link className="" to='IT-services'>Our IT Services</Link>
+                            <Link className="" to='bpo-services'>Our BPO Services</Link>
                         </div>
                     </div>
                     <div className="footer-links-holder">

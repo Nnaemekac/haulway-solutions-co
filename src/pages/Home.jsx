@@ -125,7 +125,7 @@ const Home = () => {
               
             </div>
             <div data-aos="fade-down" data-aos-delay="400" data-aos-duration="800" className="header-right xui-pl-1">
-              <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/part-modern-kitchen-place-cooking-extractor-stove_169016-19751.jpg?size=626&ext=jpg&ga=GA1.1.3493108.1707066373&semt=ais" alt="" />
+              <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/focused-call-center-operator-typing-laptop_74855-4213.jpg?t=st=1710770736~exp=1710774336~hmac=f6dc562d54e5ee791ae472dda0b7033342102e55e50b8dbbe7489a199fa6734e&w=740" alt="" />
               <div>
                 <div className="xui-d-flex xui-mt-1">
                   <span className="xui-w-60 xui-h-60 xui-bdr-rad-circle secondary xui-d-flex xui-flex-jc-center xui-flex-ai-center">
@@ -221,17 +221,18 @@ const Home = () => {
               </div>
               <div className="xui-lg-col-7 xui-col-12 xui-lg-pl-2 xui-pl-none">
                   <div className="xui-grid-gap-2 tabs xui-flex-ai-center">
-                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 1 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(1)}>Our Solutions</span>
+                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 0 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(0)}>Our Solutions</span>
                       <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 2 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(2)}>Our IT Services</span>     
-                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 0 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(0)}>Our BPO Services</span>
+                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 1 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(1)}>Our BPO Services</span>
                 
                   </div>
                   <div>
                     {activeTab === 0 && 
-                      <Faq />
+                      <Faq2 />
+                      
                     }
                     {activeTab === 1 && 
-                      <Faq2 />
+                      <Faq />
                     }
                     {activeTab === 2 && 
                       <Faq3 />
@@ -244,7 +245,7 @@ const Home = () => {
       <div className="xui-pt-2 xui-lg-pb-5 xui-pb-2 xui-container">
           <div className="xui-pos-relative">
             <div >
-              <h3 class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">Specializations</h3>
+              <h3 class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">Our BPO Services</h3>
               <p className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-1">With our commitment to excellence and forward-thinking approach, we're not just shaping the future – we're leading it.</p>
             </div>
             <div className="xui-mt-2">
@@ -259,53 +260,46 @@ const Home = () => {
                 <h3 class="xui-font-sz-250 break xui-font-w-500 xui-text-center xui-line-height-2-half xui-font-9">Why Us?</h3>
                     {/* <HashLink className="xui-bdr-rad-half xui-text-dc-none xui-font-sz-80 secondary xui-text-white xui-py-1 xui-d-inline-block xui-mt-1 xui-px-2" smooth to='#contact'>Contact us</HashLink> */}
                 </div>
-                <div className="xui-d-grid xui-lg-grid-col-3 xui-mt-3 xui-grid-col-1 xui-grid-gap-1">
-                    <div>
-                        <div className='xui-d-flex xui-p-1 xui-flex-ai-center offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Star size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Diverse Portfolio</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">With ownership of several companies spanning various industries, we offer unparalleled expertise and insights to drive success.</p>
-                            </div>
-                        </div>
-                        <div className='xui-d-flex xui-mt-1 xui-p-1 xui-flex-ai-center offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Shield size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Entrepreneurial Spirit</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">As entrepreneurs ourselves, we understand the challenges and opportunities of business ownership, and we're here to support you every step of the way.</p>
-                            </div>
-                        </div>
-                    
+                <div className="xui-d-grid xui-lg-grid-col-2 xui-mt-3 xui-grid-col-1 xui-grid-gap-3">
+                  <div className='xui-p-2 offer'>
+                    <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                        <Star size={24} strokeWidth={1.6} />
                     </div>
-                    <div className="">
-                        <Lottie animationData={animationOffer} className="xui-h-300" />
+                    <div >
+                        <h3 className="xui-font-sz-150 font-spaceGrotesk">Diverse Portfolio</h3>
+                        <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">With ownership of several companies spanning various industries, we offer unparalleled expertise and insights to drive success.</p>
                     </div>
-                    <div>
-                        <div className='xui-d-flex xui-flex-ai-center xui-p-1 offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Send size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Strategic Investments</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Our strategic investments are driven by a commitment to long-term growth and sustainability, ensuring the success of our ventures and partners.</p>
-                            </div>
-                        </div>
-                        <div className='xui-d-flex xui-flex-ai-center xui-mt-1 xui-p-1 offer'>
-                            <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                <Send size={24} strokeWidth={1.6} />
-                            </div>
-                            <div style={{"width": "calc(100% - 50px)"}}>
-                                <h3 className="xui-font-sz-150 font-spaceGrotesk">Innovation Leadership</h3>
-                                <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Innovation is at the core of everything we do. By staying ahead of the curve and embracing emerging trends, we're able to create value and drive impact in a rapidly evolving world.</p>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
+                  <div className='xui-mt-1 xui-p-2 offer'>
+                      <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                          <Shield size={24} strokeWidth={1.6} />
+                      </div>
+                      <div >
+                          <h3 className="xui-font-sz-150 font-spaceGrotesk">Entrepreneurial Spirit</h3>
+                          <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">As entrepreneurs ourselves, we understand the challenges and opportunities of business ownership, and we're here to support you every step of the way.</p>
+                      </div>
+                  </div>
+
+                  <div className='xui-p-2 offer'>
+                      <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                          <Send size={24} strokeWidth={1.6} />
+                      </div>
+                      <div >
+                          <h3 className="xui-font-sz-150 font-spaceGrotesk">Strategic Investments</h3>
+                          <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Our strategic investments are driven by a commitment to long-term growth and sustainability, ensuring the success of our ventures and partners.</p>
+                      </div>
+                  </div>
+                  <div className='xui-mt-1 xui-p-2 offer'>
+                      <div className='xui-w-50 xui-h-50 xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
+                          <Send size={24} strokeWidth={1.6} />
+                      </div>
+                      <div >
+                          <h3 className="xui-font-sz-150 font-spaceGrotesk">Innovation Leadership</h3>
+                          <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Innovation is at the core of everything we do. By staying ahead of the curve and embracing emerging trends, we're able to create value and drive impact in a rapidly evolving world.</p>
+                      </div>
+                  </div>
                 </div>
-            </section>
+      </section>
            
             <Contact />
             

@@ -10,6 +10,10 @@
     --glass-bg:rgba( 255, 255, 255, 0.25 );
     --secondary: var(--secondary);
 }
+/* @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap'); */
+/* body{
+    font-family: "Readex Pro", sans-serif;
+} */
 .primary{
     background-color: var(--primary);
 }
@@ -55,6 +59,13 @@ body{
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.light__mode .services-section{
+    background-color: var(--light-blue);
+}
+.dark__mode .services-section{
+    color: #000;
 }
 
 .font-spaceGrotesk {
@@ -103,6 +114,15 @@ body{
 }
 .offer{
     transition: .4s ease;
+    background-color: #FFF;
+    /* max-width: 400px; */
+    margin: auto;
+    border-radius: 1rem;
+}
+.offer > div:first-child{
+    background-color: var(--dark);
+    margin-bottom: 1rem;
+    border-radius: 50%;
 }
 .offer svg{
     fill: var(--secondary);
@@ -117,6 +137,9 @@ body{
 }
 .light__mode .offer:hover{
     color: #fff;
+}
+.dark__mode .xui-navbar .links ul li a{
+    color: #FFF;
 }
 .offer:hover svg path,
 .offer:hover svg polygon{

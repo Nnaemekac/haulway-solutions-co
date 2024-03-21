@@ -32,7 +32,7 @@ const BPOServices = () => {
     </section>
     <div className="xui-lg-pt-9 xui-pt-3 xui-lg-pb-5 xui-pb-5 xui-container">
         <h3 data-aos="fade-in" data-aos-duration="800" class="xui-font-sz-200 break xui-font-w-500 xui-line-height-2-half xui-font-9">Build Your Own Offshore Team</h3>
-        <p className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-1">Below is a list of some of our specializations. If you dont’t see what you need, we can also recruit for other resources upon request. If you don’t require a full time worker, there are also part-time options available for most categories.</p>
+        <p className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-1">Below is a list of some of our bpo services. If you dont’t see what you need, we can also recruit for other resources upon request. If you don’t require a full time worker, there are also part-time options available for most categories.</p>
         <div className="xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-grid-gap-1 xui-mt-3">
             <div className="xui-text-center">
                 <h3 className='xui-font-sz-120 xui-font-9'>MARKETING & CUSTOMER SUPPORT</h3>
