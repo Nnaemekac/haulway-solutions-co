@@ -393,7 +393,7 @@ export const contentMap = {
       At the heart of our operations lie comprehensive metrics of excellence that guide our employees and organization towards achieving unparalleled customer satisfaction. Through remote staff customer service outsourcing with Grascope, businesses can rest assured that their customer service needs are met with professionalism, efficiency, and dedication, helping them stay ahead in today's competitive marketplace.
       </p>
       <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-line-height-1-half xui-mt-1'>
-      Grascope people can fill the following online marketing roles and more:
+      Some of the roles include:
       </p>
       <div className='xui-mt-2'>
           <p className='xui-my-1'>SEO/PPC Specialist</p>
@@ -506,7 +506,7 @@ export const contentMap = {
       Social media marketing professionals grow and engage communities around products or services. They manage social programs, plan for custom content generation and create digital assets, increase brand awareness, attract potential customers, and increase profitability. It is a specialized skill and a labor-intensive process that requires significant resources to launch and maintain.
       </p>
       <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-line-height-1-half xui-mt-1'>
-      Some of the roles that Grascope people can fill include:
+      Some of the roles include:
       </p>
       <div className='xui-mt-2'>
           <p className='xui-my-1'>Social Media Specialist</p>
@@ -612,7 +612,7 @@ export const contentMap = {
       Creating and managing successful email marketing campaigns requires experienced, talented professionals, but the cost of hiring full-time email marketing professionals can be very high, especially for startups and small businesses. Even if you can afford to build a team of in-house email marketing experts, it is often ideal to work with an experienced third party.
       </p>
       <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-line-height-1-half xui-mt-1'>
-      Some of the roles that Grascope people can fill include:
+      Some of the roles include:
       </p>
       <div className='xui-mt-2'>
           <p className='xui-my-1'>Email Marketing Specialist</p>
@@ -715,7 +715,7 @@ export const contentMap = {
       Partner with Grascope Industries Ltd for unparalleled BPO services in content marketing, and unlock the full potential of your brand's digital presence. Let us collaborate to craft compelling narratives that captivate audiences, drive conversions, and propel your business towards sustained growth and success.
       </p>
       <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-line-height-1-half xui-mt-1'>
-      Some of the roles that Grascope people can fill include:
+      Some of the roles include:
       </p>
       <div className='xui-mt-2'>
           <p className='xui-my-1'>Content Marketing Specialist</p>
@@ -1243,7 +1243,7 @@ export const contentMap = {
       The creation of high-quality animated presentations requires the talent of experienced animators, illustrators, designers, web developers, and other highly skilled creative professionals. The right people can be hard to find, and if you do find a local animator or animation company that perfectly matches your project goals, the cost may be prohibitive.
       </p>
       <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-line-height-1-half xui-mt-1'>
-      Grascope people can fill the following roles and more:
+      Some of the roles include:
       </p>
       <div className='xui-mt-2'>
           <p className='xui-my-1'>Cartoonist</p>
@@ -1817,7 +1817,7 @@ export const contentMap = {
       </p>
   
       <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-line-height-1-half xui-mt-1'>
-      Grascope people can fill the following online marketing roles and more:
+      Some of the roles include:
       </p>
       <div className='xui-mt-2'>
           <p className='xui-my-1'>Entry-Level Patient Biller/Coder</p>

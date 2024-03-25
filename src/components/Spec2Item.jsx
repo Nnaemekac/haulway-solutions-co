@@ -3,6 +3,7 @@ import { User } from 'iconsax-react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { ArrowDownRight, ArrowUpRight } from 'react-feather';
+import { Link } from 'react-router-dom';
 import { useLocation, useParams } from 'react-router-dom';
 import { contentMap } from '../assets/contentData';
 
@@ -181,13 +182,14 @@ const Spec2item = ({ data }) => {
             {activeIndex === arrayIndex && (
             <div className='xui-p-half'>
                 {item.answer.map((ans, subTabIndex) => (
-                <p
+                <Link
+                    to={`/bpo-services/${ans.link}`}
                     key={arrayIndex + '-' + subTabIndex}
                     onClick={() => handleTabClick(arrayIndex + '-' + subTabIndex)} // Concatenate arrayIndex and subTabIndex for the correct key
-                    className={'xui-opacity-8 xui-font-sz-90 xui-my-1 xui-w-fluid-100 xui-lg-w-fluid-90 xui-line-height-2 ' + (activeTab === arrayIndex + '-' + subTabIndex ? 'primary-color xui-font-w-bold' : '')}
+                    className={'xui-opacity-8 xui-font-sz-90 bpo-link xui-my-1 xui-w-fluid-100 xui-lg-w-fluid-90 ' + (activeTab === arrayIndex + '-' + subTabIndex ? 'primary-color xui-font-w-bold' : '')}
                 >
-                    {ans}
-                </p>
+                    {ans.name}
+                </Link>
                 ))}
             </div>
             )}
