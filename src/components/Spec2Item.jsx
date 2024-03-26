@@ -4,20 +4,27 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { ArrowDownRight, ArrowUpRight } from 'react-feather';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useLocation, useParams } from 'react-router-dom';
 import { contentMap } from '../assets/contentData';
+import { useForm } from "react-hook-form";
 
 const Spec2item = ({ data }) => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const { id } = useParams();
-    const location = useLocation();
-  
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [activeIndex, setActiveIndex] = useState(null);
   const [activeTab, setActiveTab] = useState(null);
+  const { register, reset, handleSubmit, formState: { errors } } = useForm();
+    const sendRequest = (data) => {
+        console.log(data);
+    }
 
   const toggleItem = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-
   };
+
   useEffect(() => {
     // Set the default active tab when the component mounts
     if (data && data[activeIndex] && data[activeIndex].answer.length > 0) {
@@ -26,137 +33,46 @@ const Spec2item = ({ data }) => {
   }, [data, activeIndex]);
 
   const handleTabClick = (index) => {
-    setActiveTab(index);
+    setActiveTab(index); // Set activeTab to the clicked tab index
+    
+    // You may also want to update activeIndex based on your implementation logic
+    // setActiveIndex(index); // Uncomment this line if you need to update activeIndex
+    
+    // Update the URL to reflect the selected tab
+    // This part is commented out because you're already handling URL updates in useEffect
+    // history.push(`/bpo-services/${data[index].answer[0].link}?tab=${index}`);
   };
   
-    useEffect(() => {
-        // Extract the 'tab' parameter from the URL
-        const urlParams = new URLSearchParams(location.search);
-        const tabParam = urlParams.get('tab');
-      
-        // Check if the URL contains 'customer-service' and set activeTab accordingly
-        if(location.pathname.includes('telesales-outsourcing')){
-            setActiveTab(`0-0`);
-            console.log(activeIndex);
-        } 
-        else if (location.pathname.includes('customer-service')) {
-            setActiveTab(`0-1`);
-            console.log(activeIndex);
-        }
-        else if(location.pathname.includes('live-chat')){
-            setActiveTab(`0-2`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('content-moderation')){
-            setActiveTab(`${activeIndex}-3`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('seo-and-ppc')){
-            setActiveTab(`${activeIndex}-4`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('social-media-marketing')){
-            setActiveTab(`${activeIndex}-5`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('email-marketing')){
-            setActiveTab(`${activeIndex}-6`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('content-marketing')){
-            setActiveTab(`${activeIndex}-7`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('IT-Support')){
-            setActiveIndex(1);
-            setActiveTab(`${1}-0`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('web-design')){
-            setActiveIndex(1);
-            setActiveTab(`${1}-1`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('web-development')){
-            setActiveIndex(1);
-            setActiveTab(`1-2`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('software-development')){
-            setActiveIndex(1);
-            setActiveTab(`1-3`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('graphic-design')){
-            setActiveIndex(1);
-            setActiveTab(`1-4`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('animation')){
-            setActiveIndex(1);
-            setActiveTab(`1-5`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('story-boards')){
-            setActiveIndex(1);
-            setActiveTab(`1-6`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('quality-assurance')){
-            setActiveIndex(1);
-            setActiveTab(`1-7`);
-            console.log(activeIndex);
-        } 
-
-        else if(location.pathname.includes('data-processing')){
-            setActiveIndex(2);
-            setActiveTab(`2-0`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('accounting')){
-            setActiveIndex(2);
-            setActiveTab(`2-1`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('hr-support')){
-            setActiveIndex(2);
-            setActiveTab(`2-2`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('virtual-assistant')){
-            setActiveIndex(2);
-            setActiveTab(`2-3`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('medical-billing')){
-            setActiveIndex(2);
-            setActiveTab(`2-4`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('insurance-support')){
-            setActiveIndex(2);
-            setActiveTab(`2-5`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('lawyers-and-paralegals')){
-            setActiveIndex(2);
-            setActiveTab(`2-6`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('real-estate')){
-            setActiveIndex(2);
-            setActiveTab(`2-7`);
-            console.log(activeIndex);
-        } 
-        else if(location.pathname.includes('management-and-administration')){
-            setActiveIndex(2);
-            setActiveTab(`2-8`);
-            console.log(activeIndex);
-        } 
-        else if (tabParam !== null) {
-          setActiveTab(parseInt(tabParam, 10));
-        }
-      }, [location.pathname, location.search, activeIndex, activeTab]);
+  
+  
+  useEffect(() => {
+    // Find the active tab based on the current location pathname
+    const findActiveTab = () => {
+      const pathname = location.pathname;
+      let activeTabIndex = null;
+      let activeSubTabIndex = null;
+  
+      // Loop through each section to check if the pathname matches any link
+      data.forEach((section, sectionIndex) => {
+        section.answer.forEach((answer, subTabIndex) => {
+          if (pathname.includes(answer.link)) {
+            activeTabIndex = sectionIndex;
+            activeSubTabIndex = subTabIndex;
+          }
+        });
+      });
+  
+      // Set the active tab based on the found index
+      if (activeTabIndex !== null && activeSubTabIndex !== null) {
+        setActiveIndex(activeTabIndex);
+        setActiveTab(`${activeTabIndex}-${activeSubTabIndex}`);
+      }
+    };
+  
+    // Call the function to find the active tab when the component mounts or when the location changes
+    findActiveTab();
+  }, [location.pathname, data]);
+  
       
     
 
@@ -183,13 +99,13 @@ const Spec2item = ({ data }) => {
             <div className='xui-p-half'>
                 {item.answer.map((ans, subTabIndex) => (
                 <Link
-                    to={`/bpo-services/${ans.link}`}
-                    key={arrayIndex + '-' + subTabIndex}
-                    onClick={() => handleTabClick(arrayIndex + '-' + subTabIndex)} // Concatenate arrayIndex and subTabIndex for the correct key
-                    className={'xui-opacity-8 xui-font-sz-90 bpo-link xui-my-1 xui-w-fluid-100 xui-lg-w-fluid-90 ' + (activeTab === arrayIndex + '-' + subTabIndex ? 'primary-color xui-font-w-bold' : '')}
-                >
-                    {ans.name}
-                </Link>
+                to={`/bpo-services/${ans.link}?tab=${arrayIndex}-${subTabIndex}`}
+                key={arrayIndex + '-' + subTabIndex}
+                onClick={() => handleTabClick(`${arrayIndex}-${subTabIndex}`)}
+                className={'xui-opacity-8 xui-font-sz-90 bpo-link xui-my-1 xui-w-fluid-100 xui-lg-w-fluid-90 ' + (activeTab === `${arrayIndex}-${subTabIndex}` ? 'primary-color xui-font-w-bold' : '')}
+              >
+                {ans.name}
+              </Link>
                 ))}
             </div>
             )}
@@ -201,6 +117,35 @@ const Spec2item = ({ data }) => {
         {activeIndex !== null && activeTab !== null && (
           <p className='xui-font-sz-80 xui-opacity-6 xui-line-height-1-half'>
             {contentMap[activeTab]}
+            <form className="xui-mt-2" noValidate onSubmit={handleSubmit(sendRequest)} autoComplete="off">
+              <h3 className='xui-font-9 xui-font-sz-200 xui-text-center'>Send us a message</h3>
+            <div className="xui-d-grid xui-lg-grid-col-2 xui-grid-col-1 xui-grid-gap-1 xui-mt-2">
+                <div>
+                    <label className="xui-form-label xui-font-sz-90 xui-mb-1">Name</label>
+                    <input {...register('fullName', {required: true, minLength: 2})} type="text" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.fullName ? 'famebuy-input-error' : ''}`} placeholder="Enter your full name" />
+                    {errors.fullName && errors.fullName.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your name</span> : null}
+                    {errors.fullName && errors.fullName.type == "minLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too short</span> : null}
+                </div>
+
+                <div>
+                    <label className="xui-form-label xui-font-sz-90 xui-mb-1">Email</label>
+                    <input {...register('emailAddress', {required: true, pattern: /^(?!.*@gigi\.codes$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/})} type="email" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.emailAddress ? 'famebuy-input-error' : ''}`} placeholder="Enter your email address" />
+                    {errors.emailAddress && errors.emailAddress.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your email addres</span> : null}
+                    {errors.emailAddress && errors.emailAddress.type == "pattern" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Incorrect email address</span> : null}
+                </div>
+            </div>
+            <div className="xui-my-2">
+                <label className="xui-form-label xui-font-sz-90 xui-mb-1">Message</label>
+                <textarea {...register('message', {required: true, minLength: 10, maxLength: 200})} className={`famebuy-contact-textarea xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.message ? 'famebuy-input-error' : ''}`} cols="30" rows="10" placeholder="Enter your message"></textarea>
+                {errors.message && errors.message.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Enter your message</span> : null}
+                {errors.message && errors.message.type == "minLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too short</span> : null}
+                {errors.message && errors.message.type == "maxLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too long</span> : null}
+            </div>
+            
+            <div className="xui-my-2">
+                <button className="xui-bdr-rad-half secondary xui-btn-block xui-px-3 xui-py-1-half xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">Send message</button>
+            </div>
+        </form>
           </p>
         )}
       </div>

@@ -33,6 +33,7 @@ export default function Footer(){
                         </div>
                     </div>
                 </div>
+                <p className="xui-font-sz-80 xui-opacity-6 xui-mt-3 xui-text-center">© 2023 Grascope, A registered trademark of Grascope Industries UK Ltd (RC:15589820). All rights reserved.</p>
             </footer>
         </>
     )

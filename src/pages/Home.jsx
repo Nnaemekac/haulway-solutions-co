@@ -16,6 +16,12 @@ import Faq from "./Faq";
 import Faq2 from "./Faq2";
 import Faq3 from "./Faq3";
 import Spec1 from "./specializations/Spec1";
+import { Autoplay, EffectFade } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -87,19 +93,19 @@ const Home = () => {
       <div className="header-section xui-lg-d-block xui-d-none xui-pt-9 xui-lg-pb-5 xui-pb-2 xui-container">
         <div className="xui-d-flex">
             <div className="header-left xui-pos-relative">
-              <h3 class="xui-font-sz-350 break xui-font-w-500 xui-line-height-2-half">
+              <h3 class="xui-font-sz-400 xui-font-9 break xui-font-w-500 xui-line-height-2-half">
                 <span data-aos="fade-right" data-aos-duration="800" class="word-background xui-w-500">Welcome to</span>
                 <span data-aos="fade-right" data-aos-delay="400" data-aos-duration="800" class="word-background xui-w-400">Grascope</span>
                 
               </h3>
               <div className="header-left-contents xui-pr-1">
                 <p data-aos="fade-down" data-aos-delay="800" data-aos-duration="800" className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-half">Grascope Industries Ltd is not just a leader in innovation; we're also pioneers in entrepreneurship, owning and operating a diverse portfolio of companies across various industries.</p>
-                <div data-aos="fade-down" data-aos-delay="900" data-aos-duration="800" className="btn xui-mt-1">
+                <HashLink smooth to='#services' data-aos="fade-down" data-aos-delay="900" data-aos-duration="800" className="btn xui-mt-1 xui-text-dc-none xui-text-black">
                   <span className="xui-w-40 xui-h-40 xui-bdr-rad-circle secondary xui-d-flex xui-flex-jc-center xui-flex-ai-center">
                     <ArrowUpRight size="19" color="#FFF"/>
                   </span>
                   <p className="xui-font-w-bold xui-font-sz-90">Get started</p>
-                </div>
+                </HashLink>
               </div>
             </div>
             <div className="header-middle xui-z-index--1 xui-h-550" style={{backgroundImage: `url(https://img.freepik.com/free-photo/multicultural-businesswomen-group-meeting_1157-47735.jpg?t=st=1709381715~exp=1709385315~hmac=7292fab0cad514a184adc3b28336b9dde6731be3d127550f2ecc2a5beea8bed2&w=740)`}}>
@@ -116,16 +122,35 @@ const Home = () => {
                       </div>
                       <h3 className="xui-font-sz-70 font-spaceGrotesk xui-ml-half">Agrotech Solutions</h3>
                   </div>
-                  <div className="xui-d-flex xui-flex-ai-center xui-pos-absolute mini-companies-holder">
+                  {/* <div className="xui-d-flex xui-flex-ai-center xui-pos-absolute mini-companies-holder">
                       <img data-aos="fade-in" data-aos-delay="600" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
                       <img data-aos="fade-in" data-aos-delay="800" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
                       <img data-aos="fade-in" data-aos-delay="900" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
-                  </div>
+                  </div> */}
                 </div>
               
             </div>
             <div data-aos="fade-down" data-aos-delay="400" data-aos-duration="800" className="header-right xui-pl-1">
-              <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/focused-call-center-operator-typing-laptop_74855-4213.jpg?t=st=1710770736~exp=1710774336~hmac=f6dc562d54e5ee791ae472dda0b7033342102e55e50b8dbbe7489a199fa6734e&w=740" alt="" />
+              {/* <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/focused-call-center-operator-typing-laptop_74855-4213.jpg?t=st=1710770736~exp=1710774336~hmac=f6dc562d54e5ee791ae472dda0b7033342102e55e50b8dbbe7489a199fa6734e&w=740" alt="" /> */}
+              <Swiper
+              autoplay={true}
+              effect='fade'
+              modules={[Autoplay, EffectFade]}
+              slidesPerView={1}
+              onSwiper={(swiper) => console.log(swiper)}
+              className="header-swiper"
+              
+              >
+                  <SwiperSlide>
+                    <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/focused-call-center-operator-typing-laptop_74855-4213.jpg?t=st=1710770736~exp=1710774336~hmac=f6dc562d54e5ee791ae472dda0b7033342102e55e50b8dbbe7489a199fa6734e&w=740" alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/woman-having-online-meeting-work_23-2148940760.jpg?t=st=1711391963~exp=1711395563~hmac=60cd78578dcdc0d78d713d0bcc6ceeb74ae27fa7ee346eb6913237d659647712&w=740" alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/medium-shot-bored-people-working_23-2150697629.jpg?t=st=1711392003~exp=1711395603~hmac=40a93e5161140824147aee6afff3ef99fd14980fd6acde93d031f3af0feef439&w=740" alt="" />
+                  </SwiperSlide>
+              </Swiper>
               <div>
                 <div className="xui-d-flex xui-mt-1">
                   <span className="xui-w-60 xui-h-60 xui-bdr-rad-circle secondary xui-d-flex xui-flex-jc-center xui-flex-ai-center">
@@ -145,9 +170,9 @@ const Home = () => {
         <div className="xui-d-flex">
           <div className="header-middle xui-z-index--1 xui-h-500" style={{backgroundImage: `url(https://img.freepik.com/free-photo/multicultural-businesswomen-group-meeting_1157-47735.jpg?t=st=1709381715~exp=1709385315~hmac=7292fab0cad514a184adc3b28336b9dde6731be3d127550f2ecc2a5beea8bed2&w=740)`}}>
               <div className="xui-overlay-1 xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
-                <h3 class="xui-font-sz-250 mobile-break break xui-font-w-500 xui-line-height-2-half">
+                <h3 class="xui-font-sz-300 xui-font-9 mobile-break break xui-font-w-500 xui-line-height-2-half">
                   <span data-aos="fade-right" data-aos-duration="800" class="word-background xui-w-300">Welcome to</span>
-                  <span data-aos="fade-right" data-aos-delay="400" data-aos-duration="800" class="word-background xui-w-200">Grascope</span>
+                  <span data-aos="fade-right" data-aos-delay="400" data-aos-duration="800" class="word-background xui-w-250">Grascope</span>
                   
                 </h3>
                 <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
@@ -162,11 +187,11 @@ const Home = () => {
                     </div>
                     <h3 className="xui-font-sz-70 font-spaceGrotesk xui-ml-half">Agrotech Solutions</h3>
                 </div>
-                <div className="xui-d-flex xui-flex-ai-center xui-pos-absolute mini-companies-holder">
+                {/* <div className="xui-d-flex xui-flex-ai-center xui-pos-absolute mini-companies-holder">
                     <img data-aos="fade-in" data-aos-delay="600" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
                     <img data-aos="fade-in" data-aos-delay="800" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
                     <img data-aos="fade-in" data-aos-delay="900" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
-                </div>
+                </div> */}
               </div>
             
           </div>
@@ -189,7 +214,27 @@ const Home = () => {
             </div>
             
             <div data-aos="fade-down" data-aos-delay="400" data-aos-duration="800" className="header-right">
-              <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/part-modern-kitchen-place-cooking-extractor-stove_169016-19751.jpg?size=626&ext=jpg&ga=GA1.1.3493108.1707066373&semt=ais" alt="" />
+            <div data-aos="fade-down" data-aos-delay="400" data-aos-duration="800" className="header-right xui-pl-1">
+              {/* <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/focused-call-center-operator-typing-laptop_74855-4213.jpg?t=st=1710770736~exp=1710774336~hmac=f6dc562d54e5ee791ae472dda0b7033342102e55e50b8dbbe7489a199fa6734e&w=740" alt="" /> */}
+              <Swiper
+              autoplay={true}
+              effect='fade'
+              modules={[Autoplay, EffectFade]}
+              slidesPerView={1}
+              onSwiper={(swiper) => console.log(swiper)}
+              className="header-swiper"
+              
+              >
+                  <SwiperSlide>
+                    <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/focused-call-center-operator-typing-laptop_74855-4213.jpg?t=st=1710770736~exp=1710774336~hmac=f6dc562d54e5ee791ae472dda0b7033342102e55e50b8dbbe7489a199fa6734e&w=740" alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/woman-having-online-meeting-work_23-2148940760.jpg?t=st=1711391963~exp=1711395563~hmac=60cd78578dcdc0d78d713d0bcc6ceeb74ae27fa7ee346eb6913237d659647712&w=740" alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/medium-shot-bored-people-working_23-2150697629.jpg?t=st=1711392003~exp=1711395603~hmac=40a93e5161140824147aee6afff3ef99fd14980fd6acde93d031f3af0feef439&w=740" alt="" />
+                  </SwiperSlide>
+              </Swiper>
               <div>
                 <div className="xui-d-flex xui-mt-1">
                   <span className="xui-w-60 xui-h-60 xui-bdr-rad-circle secondary xui-d-flex xui-flex-jc-center xui-flex-ai-center">
@@ -202,12 +247,14 @@ const Home = () => {
                 </div>
               </div>
             </div>
+
+            </div>
         </div>
         
       </div>
-      <div className="xui-lg-pt-5 xui-pt-2 xui-lg-pb-3 xui-pb-2 xui-container">
+      <div id="services" className="xui-lg-pt-5 xui-pt-2 xui-lg-pb-3 xui-pb-2 xui-container">
           <div className="xui-row">
-              <div className="xui-lg-col-5 xui-col-12 xui-pos-relative">
+              <div className="xui-lg-w-fluid-40 xui-w-fluid-100 xui-pos-relative">
                   <span style={{"top": "0", "right": "12px"}} className="xui-d-none xui-w-60 xui-h-60 xui-bdr-rad-circle xui-pos-absolute xui-bg-white xui-lg-d-flex xui-flex-jc-center xui-flex-ai-center">
                     <ArrowUpRight size="39" strokeWidth={1.2} color="#000"/>
                   </span>
@@ -219,11 +266,11 @@ const Home = () => {
                     <img className="xui-w-fluid-100 xui-h-250 xui-bdr-rad-1 xui-lg-mt-5 xui-mt-1" src="https://img.freepik.com/free-photo/african-woman-sitting-computer-science-class-lady-with-glasses-female-student-sitting-computer_1157-42317.jpg?t=st=1710540191~exp=1710543791~hmac=9066fc516526257b9a8e50ebe5a28a0c0ba383042ace42ec9b5247d769e04052&w=740" alt="" />
                   </div>
               </div>
-              <div className="xui-lg-col-7 xui-col-12 xui-lg-pl-2 xui-pl-none">
+              <div className="xui-lg-w-fluid-60 xui-w-fluid-100 xui-lg-pl-2 xui-pl-none">
                   <div className="xui-grid-gap-2 tabs xui-flex-ai-center">
-                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 0 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(0)}>Our Solutions</span>
-                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 2 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(2)}>Our IT Services</span>     
-                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 1 ? 'border-secondary xui-font-w-bold xui-py-1 xui-px-2 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(1)}>Our BPO Services</span>
+                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 0 ? 'border-secondary xui-font-w-bold xui-py-1 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(0)}>Our Solutions</span>
+                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 2 ? 'border-secondary xui-font-w-bold xui-py-1 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(2)}>Our IT Services</span>     
+                      <span className={'xui-font-sz-80 xui-cursor-pointer xui-px-1 xui-py-half ' + (activeTab === 1 ? 'border-secondary xui-font-w-bold xui-py-1 xui-font-sz-90' : 'xui-bg-none')} onClick={() => handleTabClick(1)}>Our BPO Services</span>
                 
                   </div>
                   <div>

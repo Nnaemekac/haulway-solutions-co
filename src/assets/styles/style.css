@@ -431,7 +431,9 @@ h1,h2,h3{
 .management-img:hover img{
     transform: scale(1.2);
 }
-
+.header-swiper .swiper-wrapper{
+    padding: 0 !important;
+}
 .swiper{
     overflow: hidden !important;
 }
@@ -550,6 +552,9 @@ h1,h2,h3{
     white-space: nowrap;
     padding-bottom: 12px;
     margin-top: .24rem;
+}
+.tabs::-webkit-scrollbar {
+    display: none;
 }
 .spec-item{
     flex-wrap: nowrap;
