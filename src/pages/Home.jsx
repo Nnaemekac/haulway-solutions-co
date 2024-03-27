@@ -17,11 +17,11 @@ import Faq2 from "./Faq2";
 import Faq3 from "./Faq3";
 import Spec1 from "./specializations/Spec1";
 import { Autoplay, EffectFade } from 'swiper/modules';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
+import ShuffleImage from "../components/ShuffleImage";
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -91,7 +91,7 @@ const Home = () => {
 
       
       <div className="header-section xui-lg-d-block xui-d-none xui-pt-9 xui-lg-pb-5 xui-pb-2 xui-container">
-        <div className="xui-d-flex">
+        <div className="xui-d-flex xui-pos-relative xui-z-index-1">
             <div className="header-left xui-pos-relative">
               <h3 class="xui-font-sz-400 xui-font-9 break xui-font-w-500 xui-line-height-2-half">
                 <span data-aos="fade-right" data-aos-duration="800" class="word-background xui-w-500">Welcome to</span>
@@ -109,8 +109,9 @@ const Home = () => {
               </div>
             </div>
             <div className="header-middle xui-z-index--1 xui-h-550" style={{backgroundImage: `url(https://img.freepik.com/free-photo/multicultural-businesswomen-group-meeting_1157-47735.jpg?t=st=1709381715~exp=1709385315~hmac=7292fab0cad514a184adc3b28336b9dde6731be3d127550f2ecc2a5beea8bed2&w=740)`}}>
-                <div className="xui-overlay-1 xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
-                  <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
+                <div className="xui-bg-black xui-overflow-hidden xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
+                  <ShuffleImage />
+                  {/* <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
                       <div className="xui-w-40 xui-h-40 xui-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">
                         <Send size={15} color={"#000"} strokeWidth={1.6} />
                       </div>
@@ -121,7 +122,7 @@ const Home = () => {
                         <Send size={15} color={"#000"} strokeWidth={1.6} />
                       </div>
                       <h3 className="xui-font-sz-70 font-spaceGrotesk xui-ml-half">Agrotech Solutions</h3>
-                  </div>
+                  </div> */}
                   {/* <div className="xui-d-flex xui-flex-ai-center xui-pos-absolute mini-companies-holder">
                       <img data-aos="fade-in" data-aos-delay="600" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
                       <img data-aos="fade-in" data-aos-delay="800" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
@@ -167,15 +168,16 @@ const Home = () => {
         
       </div>
       <div className="header-section xui-d-block xui-lg-d-none mobile-header-section xui-pt-9 xui-lg-pb-5 xui-pb-3 xui-container">
-        <div className="xui-d-flex">
-          <div className="header-middle xui-z-index--1 xui-h-500" style={{backgroundImage: `url(https://img.freepik.com/free-photo/multicultural-businesswomen-group-meeting_1157-47735.jpg?t=st=1709381715~exp=1709385315~hmac=7292fab0cad514a184adc3b28336b9dde6731be3d127550f2ecc2a5beea8bed2&w=740)`}}>
-              <div className="xui-overlay-1 xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
+        <div className="xui-d-flex xui-pos-relative xui-z-index-1">
+          <div className="header-middle xui-z-index--1 xui-h-650" style={{backgroundImage: `url(https://img.freepik.com/free-photo/multicultural-businesswomen-group-meeting_1157-47735.jpg?t=st=1709381715~exp=1709385315~hmac=7292fab0cad514a184adc3b28336b9dde6731be3d127550f2ecc2a5beea8bed2&w=740)`}}>
+              <div className="xui-bg-black xui-overflow-hidden xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
                 <h3 class="xui-font-sz-300 xui-font-9 mobile-break break xui-font-w-500 xui-line-height-2-half">
                   <span data-aos="fade-right" data-aos-duration="800" class="word-background xui-w-300">Welcome to</span>
                   <span data-aos="fade-right" data-aos-delay="400" data-aos-duration="800" class="word-background xui-w-250">Grascope</span>
                   
                 </h3>
-                <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
+                <ShuffleImage />
+                {/* <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
                     <div className="xui-w-40 xui-h-40 xui-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">
                       <Send size={15} color={"#000"} strokeWidth={1.6} />
                     </div>
@@ -186,7 +188,7 @@ const Home = () => {
                       <Send size={15} color={"#000"} strokeWidth={1.6} />
                     </div>
                     <h3 className="xui-font-sz-70 font-spaceGrotesk xui-ml-half">Agrotech Solutions</h3>
-                </div>
+                </div> */}
                 {/* <div className="xui-d-flex xui-flex-ai-center xui-pos-absolute mini-companies-holder">
                     <img data-aos="fade-in" data-aos-delay="600" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
                     <img data-aos="fade-in" data-aos-delay="800" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
@@ -204,12 +206,12 @@ const Home = () => {
             
               <div className="header-left-contents xui-pr-1">
                 <p data-aos="fade-down" data-aos-delay="800" data-aos-duration="800" className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-half">Grascope Industries Ltd is not just a leader in innovation; we're also pioneers in entrepreneurship, owning and operating a diverse portfolio of companies across various industries.</p>
-                <div data-aos="fade-down" data-aos-delay="900" data-aos-duration="800" className="btn xui-mt-1">
+                <HashLink smooth to='#services' data-aos="fade-down" data-aos-delay="900" data-aos-duration="800" className="btn xui-mt-1 xui-text-dc-none xui-text-black">
                   <span className="xui-w-40 xui-h-40 xui-bdr-rad-circle secondary xui-d-flex xui-flex-jc-center xui-flex-ai-center">
                     <ArrowUpRight size="19" color="#FFF"/>
                   </span>
                   <p className="xui-font-w-bold xui-font-sz-90">Get started</p>
-                </div>
+                </HashLink>
               </div>
             </div>
             
@@ -314,7 +316,7 @@ const Home = () => {
                     </div>
                     <div >
                         <h3 className="xui-font-sz-150 font-spaceGrotesk">Diverse Portfolio</h3>
-                        <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">With ownership of several companies spanning various industries, we offer unparalleled expertise and insights to drive success.</p>
+                        <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-lg-w-fluid-80 xui-w-fluid-100 xui-mt-half">With ownership of several companies spanning various industries, we offer unparalleled expertise and insights to drive success.</p>
                     </div>
                   </div>
                   <div className='xui-mt-1 xui-p-2 offer'>
@@ -323,7 +325,7 @@ const Home = () => {
                       </div>
                       <div >
                           <h3 className="xui-font-sz-150 font-spaceGrotesk">Entrepreneurial Spirit</h3>
-                          <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">As entrepreneurs ourselves, we understand the challenges and opportunities of business ownership, and we're here to support you every step of the way.</p>
+                          <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-lg-w-fluid-80 xui-w-fluid-100 xui-mt-half">As entrepreneurs ourselves, we understand the challenges and opportunities of business ownership, and we're here to support you every step of the way.</p>
                       </div>
                   </div>
 
@@ -333,7 +335,7 @@ const Home = () => {
                       </div>
                       <div >
                           <h3 className="xui-font-sz-150 font-spaceGrotesk">Strategic Investments</h3>
-                          <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Our strategic investments are driven by a commitment to long-term growth and sustainability, ensuring the success of our ventures and partners.</p>
+                          <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-lg-w-fluid-80 xui-w-fluid-100 xui-mt-half">Our strategic investments are driven by a commitment to long-term growth and sustainability, ensuring the success of our ventures and partners.</p>
                       </div>
                   </div>
                   <div className='xui-mt-1 xui-p-2 offer'>
@@ -342,7 +344,7 @@ const Home = () => {
                       </div>
                       <div >
                           <h3 className="xui-font-sz-150 font-spaceGrotesk">Innovation Leadership</h3>
-                          <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-w-fluid-80 xui-mt-half">Innovation is at the core of everything we do. By staying ahead of the curve and embracing emerging trends, we're able to create value and drive impact in a rapidly evolving world.</p>
+                          <p className="xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-lg-w-fluid-80 xui-w-fluid-100 xui-mt-half">Innovation is at the core of everything we do. By staying ahead of the curve and embracing emerging trends, we're able to create value and drive impact in a rapidly evolving world.</p>
                       </div>
                   </div>
                 </div>
@@ -352,7 +354,6 @@ const Home = () => {
             
       <TrustedCompanies />
       <About />
-      
 
     </div>
   )

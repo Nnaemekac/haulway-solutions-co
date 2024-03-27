@@ -36,56 +36,6 @@ export const contentMap = {
                     </div>
                 
                 </ul>
-                <div className='telesales-pricing-holder xui-mt-1'>
-                    <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-                    <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                        <div className='xui-p-1 telesales-pricing xui-text-center'>
-                            <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                                <User size="28px" color="#37d67a" variant='Bold' />
-                            </div>
-                            <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                            <div className='xui-mt-1'>
-                                <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                                <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                            </div>
-                            <div className='xui-mt-2'>
-                                <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                                <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                            </div>
-                            
-                        </div>
-                        <div className='xui-p-1 telesales-pricing xui-text-center'>
-                            <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                                <User size="28px" color="#37d67a" variant='Bold' />
-                            </div>
-                            <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                            <div className='xui-mt-1'>
-                                <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,200.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                                <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                            </div>
-                            <div className='xui-mt-2'>
-                                <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$9.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                                <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                            </div>
-                            
-                        </div>
-                        <div className='xui-p-1 telesales-pricing xui-text-center'>
-                            <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                                <User size="28px" color="#37d67a" variant='Bold' />
-                            </div>
-                            <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                            <div className='xui-mt-1'>
-                                <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,500.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                                <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                            </div>
-                            <div className='xui-mt-2'>
-                                <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                                <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
             </div>
         </>
   
@@ -121,56 +71,6 @@ export const contentMap = {
             </div>
         
         </ul>
-        <div className='telesales-pricing-holder xui-mt-1'>
-            <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-            <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,100.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$9.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,300.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
     </div>
     </>
 ),
@@ -216,56 +116,6 @@ export const contentMap = {
             </div>
         
         </ul>
-        <div className='telesales-pricing-holder xui-mt-1'>
-            <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-            <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,100.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$9.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,300.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
     </div>
     </>
 ),
@@ -326,56 +176,6 @@ export const contentMap = {
         </div>
     
     </div>
-    <div className='telesales-pricing-holder xui-mt-1'>
-            <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-            <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$7.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,050.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,200.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$9.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
   </div>
 ),
 '0-4': (
@@ -439,56 +239,6 @@ export const contentMap = {
       
       </ul>
       
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$7.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,646.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,033.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$15.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
     </div>
   ),
 '0-5': (
@@ -548,56 +298,6 @@ export const contentMap = {
       
       </ul>
       
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,250.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2000.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,700.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$17.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
     </div>
   ),
 '0-6': (
@@ -647,57 +347,7 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,130.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,388.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,775.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$17.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
+    
     </div>
   ),
 '0-7': (
@@ -756,56 +406,6 @@ export const contentMap = {
       
       </ul>
       
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,250.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2000.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,700.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$17.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
     </div>
   ),
 // ... Add content for other tabs in the first array
@@ -839,57 +439,7 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,130.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,033.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,808.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$17.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
+    
     </div>
   ),
 '1-1': (
@@ -923,56 +473,6 @@ export const contentMap = {
       
       </ul>
       
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,000.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$9.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,600.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,100.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$14.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
     </div>
   ),
 '1-2': (
@@ -1007,56 +507,6 @@ export const contentMap = {
       
       </ul>
       
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,250.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2000.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,700.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$17.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
     </div>
   ),
 '1-3': (
@@ -1094,57 +544,7 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,130.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,033.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$14.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$3,840.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$20.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
+
     </div>
   ),
 '1-4': (
@@ -1175,56 +575,6 @@ export const contentMap = {
             </div>
         
         </ul>
-        <div className='telesales-pricing-holder xui-mt-1'>
-            <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-            <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,050.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,517.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,033.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$15.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
     </div>
     </>
 ),
@@ -1281,57 +631,6 @@ export const contentMap = {
             </div>
         
         </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,250.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,000.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,700.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$17.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
     </div>
   ),
 '1-6': (
@@ -1340,27 +639,6 @@ export const contentMap = {
       Grascope Industries Ltd, a dynamic conglomerate committed to fostering innovation and entrepreneurship across various sectors, introduces Outboardz, an agency dedicated to serving storyboard clients. Outboardz connects clients with top international storyboard artists, offering high-quality, cost-effective solutions for advertising and entertainment projects. By leveraging Outboardz, clients can access premium storyboard talent at a competitive price point, ensuring exceptional results while optimizing their budget allocation.
       </p>
       
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 xui-text-center'>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$285.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/day</span></p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 xui-text-center'>
-                      
-                  </div>
-              </div>
-          </div>
     </div>
   ),
 '1-7': (
@@ -1400,56 +678,6 @@ export const contentMap = {
           </div>
       
       </ul>
-        <div className='telesales-pricing-holder xui-mt-1'>
-            <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-            <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,033.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$9.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-                <div className='xui-p-1 telesales-pricing xui-text-center'>
-                    <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                        <User size="28px" color="#37d67a" variant='Bold' />
-                    </div>
-                    <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                    <div className='xui-mt-1'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,808.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                    </div>
-                    <div className='xui-mt-2'>
-                        <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                        <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
     </div>
     </>
 ),
@@ -1489,57 +717,7 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$7.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,200.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,500.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$9.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
+
     </div>
   ),
 '2-1': (
@@ -1570,57 +748,7 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,130.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$7.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,775.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$9.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,291.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
+
     </div>
   ),
 '2-2': (
@@ -1662,56 +790,6 @@ export const contentMap = {
       
       </ul>
       
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$7.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,200.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,500.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
     </div>
   ),
 '2-3': (
@@ -1754,57 +832,7 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$7.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,200.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$8.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,500.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$9.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-    </div>
+ 
     </div>
   ),
 '2-4': (
@@ -1847,45 +875,6 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,200.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,500.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
     </div>
   ),
 '2-5': (
@@ -1941,57 +930,7 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$980.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,200.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,500.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$17.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-    </div>
+
     </div>
   ),
 '2-6': (
@@ -2055,57 +994,7 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>1,250.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,000.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,700.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$17.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-    </div>
+
     </div>
   ),
 '2-7': (
@@ -2168,57 +1057,6 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>980.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$10.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,200.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$12.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,500.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$17.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                      </div>
-                      
-                  </div>
-              </div>
-    </div>
     </div>
   ),
 '2-8': (
@@ -2286,44 +1124,6 @@ export const contentMap = {
           </div>
       
       </ul>
-      
-      <div className='telesales-pricing-holder xui-mt-1'>
-              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>980.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                      
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Mid Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$1,517.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-                  </div>
-                  <div className='xui-p-1 telesales-pricing xui-text-center'>
-                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                          <User size="28px" color="#37d67a" variant='Bold' />
-                      </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Expert Level</h3>
-                      <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>$2,033.00</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                      </div>
-
-                  </div>
-              </div>
-    </div>
     </div>
   ),
 // ... Add content for other tabs in the third array

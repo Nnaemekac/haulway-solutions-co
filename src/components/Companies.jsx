@@ -159,7 +159,7 @@ const Companies = () => {
                                 <div className="team-text-container">
                                     {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                     <LinesEllipsis
-                                            text='a dynamic platform offering a diverse range of food items, groceries, and farm produce, delivering convenience and freshness to your doorstep.'
+                                            text='A dynamic platform offering a diverse range of food items, groceries, and farm produce, delivering convenience and freshness to your doorstep.'
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
@@ -277,7 +277,7 @@ const Companies = () => {
                                     <div className="team-text-container">
                                         {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                         <LinesEllipsis
-                                                text='a dynamic platform offering a diverse range of food items, groceries, and farm produce, delivering convenience and freshness to your doorstep.'
+                                                text='A dynamic platform offering a diverse range of food items, groceries, and farm produce, delivering convenience and freshness to your doorstep.'
                                                 maxLine='3'
                                                 ellipsis='...'
                                                 trimRight
