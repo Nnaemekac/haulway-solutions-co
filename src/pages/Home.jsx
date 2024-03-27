@@ -109,20 +109,19 @@ const Home = () => {
               </div>
             </div>
             <div className="header-middle xui-z-index--1 xui-h-550" style={{backgroundImage: `url(https://img.freepik.com/free-photo/multicultural-businesswomen-group-meeting_1157-47735.jpg?t=st=1709381715~exp=1709385315~hmac=7292fab0cad514a184adc3b28336b9dde6731be3d127550f2ecc2a5beea8bed2&w=740)`}}>
-                <div className="xui-bg-black xui-overflow-hidden xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
-                  <ShuffleImage />
-                  {/* <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
+                <div className="xui-overlay-1 xui-z-index-1 xui-pos-relative xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
+                  <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex header-component xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
                       <div className="xui-w-40 xui-h-40 xui-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">
                         <Send size={15} color={"#000"} strokeWidth={1.6} />
                       </div>
                       <h3 className="xui-font-sz-70 font-spaceGrotesk xui-ml-half">E-commerce Solutions</h3>
                   </div>
-                  <div data-aos="fade-in" data-aos-delay="400" data-aos-duration="800" className='xui-d-inline-flex xui-flex-ai-center solution solution2 xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
+                  <div data-aos="fade-in" data-aos-delay="400" data-aos-duration="800" className='header-component xui-d-inline-flex xui-flex-ai-center solution solution2 xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
                       <div className="xui-w-40 xui-h-40 xui-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">
                         <Send size={15} color={"#000"} strokeWidth={1.6} />
                       </div>
                       <h3 className="xui-font-sz-70 font-spaceGrotesk xui-ml-half">Agrotech Solutions</h3>
-                  </div> */}
+                  </div>
                   {/* <div className="xui-d-flex xui-flex-ai-center xui-pos-absolute mini-companies-holder">
                       <img data-aos="fade-in" data-aos-delay="600" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
                       <img data-aos="fade-in" data-aos-delay="800" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
@@ -169,26 +168,25 @@ const Home = () => {
       </div>
       <div className="header-section xui-d-block xui-lg-d-none mobile-header-section xui-pt-9 xui-lg-pb-5 xui-pb-3 xui-container">
         <div className="xui-d-flex xui-pos-relative xui-z-index-1">
-          <div className="header-middle xui-z-index--1 xui-h-650" style={{backgroundImage: `url(https://img.freepik.com/free-photo/multicultural-businesswomen-group-meeting_1157-47735.jpg?t=st=1709381715~exp=1709385315~hmac=7292fab0cad514a184adc3b28336b9dde6731be3d127550f2ecc2a5beea8bed2&w=740)`}}>
-              <div className="xui-bg-black xui-overflow-hidden xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
+        <div className="header-middle xui-z-index--1 xui-h-500" style={{backgroundImage: `url(https://img.freepik.com/free-photo/multicultural-businesswomen-group-meeting_1157-47735.jpg?t=st=1709381715~exp=1709385315~hmac=7292fab0cad514a184adc3b28336b9dde6731be3d127550f2ecc2a5beea8bed2&w=740)`}}>
+              <div className="xui-overlay-1 xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
                 <h3 class="xui-font-sz-300 xui-font-9 mobile-break break xui-font-w-500 xui-line-height-2-half">
                   <span data-aos="fade-right" data-aos-duration="800" class="word-background xui-w-300">Welcome to</span>
                   <span data-aos="fade-right" data-aos-delay="400" data-aos-duration="800" class="word-background xui-w-250">Grascope</span>
                   
                 </h3>
-                <ShuffleImage />
-                {/* <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
+                <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex header-component xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
                     <div className="xui-w-40 xui-h-40 xui-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">
                       <Send size={15} color={"#000"} strokeWidth={1.6} />
                     </div>
                     <h3 className="xui-font-sz-70 font-spaceGrotesk xui-ml-half">E-commerce Solutions</h3>
                 </div>
-                <div data-aos="fade-in" data-aos-delay="400" data-aos-duration="800" className='xui-d-inline-flex xui-flex-ai-center solution solution2 xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
+                <div data-aos="fade-in" data-aos-delay="400" data-aos-duration="800" className='header-component xui-d-inline-flex xui-flex-ai-center solution solution2 xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
                     <div className="xui-w-40 xui-h-40 xui-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">
                       <Send size={15} color={"#000"} strokeWidth={1.6} />
                     </div>
                     <h3 className="xui-font-sz-70 font-spaceGrotesk xui-ml-half">Agrotech Solutions</h3>
-                </div> */}
+                </div>
                 {/* <div className="xui-d-flex xui-flex-ai-center xui-pos-absolute mini-companies-holder">
                     <img data-aos="fade-in" data-aos-delay="600" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
                     <img data-aos="fade-in" data-aos-delay="800" data-aos-duration="800" className="mini-companies xui-w-50 xui-h-50 xui-bdr-rad-circle" src="https://img.freepik.com/free-photo/ecofriendly-fresh-market-produce_482257-76147.jpg?size=626&ext=jpg&ga=GA1.2.3493108.1707066373&semt=ais" alt="" />
