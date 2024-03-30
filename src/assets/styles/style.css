@@ -605,8 +605,13 @@ to { transform: rotate(359deg) }
     .spec-item{
         flex-wrap: wrap;
     }
+    .solution{
+        left: 200px;
+        top: 400px;
+    }
     .solution2{
-        left: 100px;
+        left: 200px;
+        top: 400px;
     }
     .word-background{
         color: black;
