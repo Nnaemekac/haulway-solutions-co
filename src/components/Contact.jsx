@@ -2,46 +2,52 @@ import axios from "axios";
 import { CloseCircle } from "iconsax-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { VITE_BASE_URL, VITE_ANON_KEY } from "../assets/globals.json";
+import { createClient } from "@supabase/supabase-js";
 
 const Contact = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const [ isDisabled, setIsDisabled ] = useState(false);
     const [ validationErrMsg, setValidationErrMsg ] = useState('');
     const [ successErrMsg, setSuccessErrMsg ] = useState('');
+
+    const supabaseUrl = "https://oecowxxcyzcaeaztfmqd.supabase.co";
+    const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9lY293eHhjeXpjYWVhenRmbXFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE3MzEyODQsImV4cCI6MjAyNzMwNzI4NH0.gRx3hDGsbSn1BzdTPcbS8sjzyrxjujjDxfKyTh_NPzo"; // Your Supabase anonymous key
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+    
     useEffect(() => {
         window.xuiAlerts();
     });
-    const sendRequest = (fields) => {
-        const newData = {...fields};
-        console.log(newData);
+    const sendRequest = async (fields) => {
         setIsDisabled(true);
-        axios({
-            method: "POST",
-            url: `${VITE_BASE_URL}/interested_emails`,
-            headers: {
-                "apikey": VITE_ANON_KEY
-            },
-            upsert: newData
-        })
-        .then((res) => {
-            console.log(res);
+        try {
+          const { data, error } = await supabase
+            .from("interested_emails")
+            .update({ 
+              name: fields.name, 
+              email: fields.email, 
+              message: fields.message 
+            })
+            .eq('id', fields.id);
+            
+          if (error) {
+            throw new Error("Error saving email: " + error.message);
+          } else {
             setSuccessErrMsg("Email sent successfully");
             window.xuiAnime('successAlert');
-            setIsDisabled(false);
-            setTimeout(() => {
-                getApplicant();
-            }, 2800);
-        }, (err) => {
-          console.log(err);
-            setIsDisabled(false);
-            setValidationErrMsg("Error sending request");
-            window.xuiAnime('validationAlert');
-            setTimeout(() => {
-                window.xuiAnimeEnd('validationAlert');
-            }, 2800);
-        });
-    }
+            console.log("Email sent successfully:", data);
+          }
+        } catch (error) {
+          setValidationErrMsg("Error sending request: " + error.message);
+          window.xuiAnime('validationAlert');
+          console.error("Error saving email:", error);
+        } finally {
+          setIsDisabled(false);
+        }
+      }
+      
+      
     return(
         <>
             <section id="contact" className="xui-container  xui-py-3 xui-lg-py-5">
