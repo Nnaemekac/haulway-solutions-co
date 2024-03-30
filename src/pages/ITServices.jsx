@@ -15,16 +15,13 @@ const ITServices = () => {
 
   return (
     <div className="xui-pos-relative">
-      <div className="header-section xui-pt-9 xui-text-center xui-lg-pb-7 xui-pb-5 xui-container">
+      <div className="header-section xui-pt-9 xui-text-center xui-pb-4 xui-container">
             <h3 data-aos="fade-in" data-aos-duration="800" class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">Our IT Services</h3>
             <p className="xui-font-sz-90 xui-opacity-8 xui-mt-1">Grascope provides seamless remote IT Services</p>
             
       </div>
-    <section className="xui-h-300 xui-pos-relative xui-bg-sz-cover xui-bg-pos-top" style={{"backgroundImage" : `url('https://img.freepik.com/free-photo/person-office-work-day_23-2150690165.jpg?t=st=1710333996~exp=1710337596~hmac=bbe0389dc9433355577e93d344682c05b8ffa222af737c0b10563090031c016e&w=740')`, 'backgroundAttachment': 'fixed'}}>
-        <CircleSpinner service="IT Services" />
-    </section>
-    <div className="xui-pt-3 xui-lg-pb-5 xui-pb-5 xui-container">
-        <h3 data-aos="fade-in" data-aos-duration="800" class="xui-font-sz-200 break xui-font-w-500 xui-line-height-2-half xui-font-9">Our IT Services include:</h3>
+    <div className="xui-pt-1 xui-lg-pb-5 xui-pb-5 xui-container">
+        <h3 data-aos="fade-in" data-aos-duration="800" class="xui-font-sz-200 break xui-text-center xui-font-w-500 xui-line-height-2-half xui-font-9">Our IT Services include:</h3>
         <div className="xui-d-grid xui-lg-grid-col-4 xui-grid-col-1 xui-grid-gap-1 xui-mt-3">
             <Link to='/IT-services/information-technology-support' className="bpo xui-d-flex xui-flex-ai-center">
                 <span className="xui-w-40 xui-h-40 xui-d-flex xui-flex-ai-center xui-flex-jc-center">
