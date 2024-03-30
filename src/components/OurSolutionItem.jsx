@@ -18,7 +18,7 @@
 
 // export default FAQItem;
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowDownRight, ArrowUpRight } from 'react-feather';
 
 const OurSolutionItem = ({ data }) => {
@@ -27,6 +27,36 @@ const OurSolutionItem = ({ data }) => {
   const toggleItem = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
+
+  useEffect(() => {
+    // Set the default active tab when the component mounts
+    if (data && data[activeIndex] && data[activeIndex].answer.length > 0) {
+      setActiveIndex(0);
+    }
+  }, [data, activeIndex]);
+
+  useEffect(() => {
+    // Find the active tab based on the current location pathname
+    const findActiveIndex = () => {
+      const pathname = location.pathname;
+      let activeTabIndex = null;
+  
+      // Loop through each section to check if the pathname matches any link
+      data.forEach((section, sectionIndex) => {
+        if (pathname.includes(section.link)) {
+          activeTabIndex = sectionIndex;
+        }
+      });
+  
+      // Set the active tab based on the found index
+      if (activeTabIndex !== null) {
+        setActiveIndex(activeTabIndex);
+      }
+    };
+  
+    // Call the function to find the active tab when the component mounts or when the location changes
+    findActiveIndex();
+  }, [location.pathname, data]);
 
   return (
     <div className='xui-d-grid xui-lg-grid-col-1 xui-grid-col-1'>

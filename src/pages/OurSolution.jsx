@@ -1,75 +1,67 @@
 
-// import { useEffect } from 'react';
-// import OurSolutionsdata from '../OurSolutionsdata';
-// import OurSolutionItem from '../OurSolutionitem';
-
-// const App = () => {
-//   return (
-//     <div>
-//       <h1>OurSolutions</h1>
-//       {OurSolutionsdata.map((OurSolution) => (
-//         <OurSolutionItem key={OurSolution.id} question={OurSolution.question} answer={OurSolution.answer} />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default App;
-import OurSolutionItem from '../components/OurSolutionItem';
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Spec2 from "./specializations/Spec2";
+import { useLocation } from "react-router-dom";
+import OurSolutions from "./OurSolutions";
+import Solution1 from "./specializations/Solution1";
 
 const OurSolution = () => {
-  const OurSolutionData = [
-    {
-      question: 'E-commerce Solutions',
-      answer: (
-        <div>
-          <p className='xui-font-sz-80 xui-opacity-8 xui-line-height-1-half'>
-          E-commerce solutions offered by Grascope Industries Ltd are meticulously crafted to cater to the intricate needs of online businesses. These solutions are designed to streamline and enhance various aspects of e-commerce operations, providing a comprehensive suite of tools and functionalities. One of the key features of these solutions is their ability to facilitate seamless order processing, ensuring that orders are efficiently managed from placement to fulfillment. Additionally, our e-commerce solutions include robust inventory management capabilities, allowing businesses to effectively track and manage their inventory levels in real-time. By leveraging these tailored solutions, businesses can optimize their e-commerce operations, improve customer satisfaction, and drive growth in the digital marketplace.
-          </p>
-        </div>
-      )
-    },
-    {
-      question: 'Agrotech Solutions',
-      answer: (
-        <div>
-          <p className='xui-font-sz-80 xui-opacity-8 xui-line-height-1-half'>
-          Agrotech Solutions focuses on providing innovative solutions aimed at optimizing various agricultural processes, thereby driving growth within the agribusiness sector. Through the integration of cutting-edge technologies and advanced methodologies, Agrotech Solutions endeavors to address key challenges faced by farmers, producers, and stakeholders in the agricultural value chain.
-          </p>
-          <p className='xui-font-sz-80 xui-opacity-8 xui-mt-1 xui-line-height-1-half'>
-          By leveraging the power of technology, Agrotech Solutions aims to enhance productivity, efficiency, and sustainability across different facets of agriculture, including crop cultivation, livestock management, irrigation systems, and supply chain logistics. Through the development and deployment of specialized tools, software platforms, and data-driven insights, the company empowers agricultural professionals to make informed decisions, streamline operations, and maximize yields.
-          </p>
-          <p className='xui-font-sz-80 xui-opacity-8 xui-mt-1 xui-line-height-1-half'>
-          Furthermore, Agrotech Solutions remains committed to fostering collaboration and knowledge-sharing within the agricultural community. By facilitating partnerships between industry players, research institutions, and government agencies, the company aims to create synergies that drive innovation and propel the agribusiness sector forward.
-          </p>
+    const location = useLocation();
+    const [headerText, setHeaderText] = useState(null);
+    const [paragraphText, setParagraphText] = useState(null);
 
-        </div>
-      )
-    },
-    {
-      question: 'Custom Software Solutions',
-      answer: (
-        <div>
-          <p className='xui-font-sz-80 xui-opacity-8 xui-line-height-1-half'>
-          Harnessing the power of custom software solutions enables businesses to leverage technology tailored specifically to their unique needs and requirements. Instead of relying on off-the-shelf solutions that may not fully address their challenges, organizations can collaborate with experienced developers to create bespoke software that aligns perfectly with their objectives.
-          </p>
-          <p className='xui-font-sz-80 xui-opacity-8 xui-mt-1 xui-line-height-1-half'>
-          One of the key advantages of custom software is its ability to streamline processes and improve efficiency. By automating repetitive tasks and integrating disparate systems, businesses can reduce manual effort, minimize errors, and optimize workflows, leading to increased productivity and cost savings.
-          </p>
-          <p className='xui-font-sz-80 xui-opacity-8 xui-mt-1 xui-line-height-1-half'>
-          In addition to enhancing internal operations, custom software solutions can also enable businesses to better serve their customers. Whether through personalized user interfaces, seamless integrations, or advanced functionality, bespoke software can help organizations deliver exceptional experiences that foster loyalty and drive growth.
-          </p>
 
-        </div>
-      )
-    },
+    useEffect(() => {
+        // Extract the 'tab' parameter from the URL
+        const urlParams = new URLSearchParams(location.search);
+        const tabParam = urlParams.get('tab');
+      
+        // Check if the URL contains 'customer-service' and set activeTab accordingly
+        if (location.pathname.includes('ecommerce-solutions')) {
+            setHeaderText("Ecommerce Solutions");
+        }
+        else if(location.pathname.includes('agrotech-solutions')){
+            setHeaderText("Agrotech Solutions");
+        } 
+        else if(location.pathname.includes('custom-software-solutions')){
+            setHeaderText("Custom Software Solutions");
+        } 
+        
+      }, [location.pathname, location.search]);
 
-  ];
- 
+  useEffect(() => {
+    AOS.init();
+}, [])
 
   return (
-    <OurSolutionItem data={OurSolutionData}/>
-  );
-};
+    <div className="xui-pos-relative">
+      
+      <section className="xui-h-500 xui-pos-relative xui-bg-sz-cover xui-bg-pos-top" style={{"backgroundImage" : `url('https://img.freepik.com/free-photo/person-office-work-day_23-2150690165.jpg?t=st=1710333996~exp=1710337596~hmac=bbe0389dc9433355577e93d344682c05b8ffa222af737c0b10563090031c016e&w=740')`, 'backgroundAttachment': 'fixed'}}>
+        <div className="xui-overlay-2 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-h-fluid-100 xui-pt-9 xui-text-center xui-lg-pb-7 xui-pb-5 xui-container">
+            <div className="">
+                <h3 data-aos="fade-in" data-aos-duration="800" class="xui-text-uppercase xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">{headerText}</h3>
+                <p className="xui-font-sz-100 xui-opacity-8 xui-mt-2">{paragraphText}</p>
+                
+        </div>
+        </div>
+    </section>
 
-export default OurSolution;
+      <div className="xui-pt-5 xui-lg-pb-5 xui-pb-5 xui-container">
+          <div className="xui-pos-relative">
+            <div >
+              <h3 class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">Our Solutions</h3>
+            </div>
+            <div className="xui-mt-2">
+              <Solution1 />
+            
+            </div>
+        </div>
+      </div>  
+
+    </div>
+  )
+}
+
+export default OurSolution

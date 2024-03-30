@@ -1,10 +1,46 @@
-import { useState } from "react";
+import axios from "axios";
+import { CloseCircle } from "iconsax-react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { VITE_BASE_URL, VITE_ANON_KEY } from "../assets/globals.json";
 
 const Contact = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
-    const sendRequest = (data) => {
-        console.log(data);
+    const [ isDisabled, setIsDisabled ] = useState(false);
+    const [ validationErrMsg, setValidationErrMsg ] = useState('');
+    const [ successErrMsg, setSuccessErrMsg ] = useState('');
+    useEffect(() => {
+        window.xuiAlerts();
+    });
+    const sendRequest = (fields) => {
+        const newData = {...fields};
+        console.log(newData);
+        setIsDisabled(true);
+        axios({
+            method: "POST",
+            url: `${VITE_BASE_URL}/interested_emails`,
+            headers: {
+                "apikey": VITE_ANON_KEY
+            },
+            upsert: newData
+        })
+        .then((res) => {
+            console.log(res);
+            setSuccessErrMsg("Email sent successfully");
+            window.xuiAnime('successAlert');
+            setIsDisabled(false);
+            setTimeout(() => {
+                getApplicant();
+            }, 2800);
+        }, (err) => {
+          console.log(err);
+            setIsDisabled(false);
+            setValidationErrMsg("Error sending request");
+            window.xuiAnime('validationAlert');
+            setTimeout(() => {
+                window.xuiAnimeEnd('validationAlert');
+            }, 2800);
+        });
     }
     return(
         <>
@@ -20,16 +56,16 @@ const Contact = () => {
                     <div className="xui-d-grid xui-grid-col-1 xui-grid-gap-1">
                         <div>
                             <label className="xui-form-label xui-font-sz-90 xui-mb-1">Name</label>
-                            <input {...register('fullName', {required: true, minLength: 2})} type="text" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.fullName ? 'famebuy-input-error' : ''}`} placeholder="Enter your full name" />
-                            {errors.fullName && errors.fullName.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your name</span> : null}
-                            {errors.fullName && errors.fullName.type == "minLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too short</span> : null}
+                            <input {...register('name', {required: true, minLength: 2})} type="text" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.name ? 'famebuy-input-error' : ''}`} placeholder="Enter your full name" />
+                            {errors.name && errors.name.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your name</span> : null}
+                            {errors.name && errors.name.type == "minLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too short</span> : null}
                         </div>
 
                         <div>
                             <label className="xui-form-label xui-font-sz-90 xui-mb-1">Email</label>
-                            <input {...register('emailAddress', {required: true, pattern: /^(?!.*@gigi\.codes$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/})} type="email" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.emailAddress ? 'famebuy-input-error' : ''}`} placeholder="Enter your email address" />
-                            {errors.emailAddress && errors.emailAddress.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your email addres</span> : null}
-                            {errors.emailAddress && errors.emailAddress.type == "pattern" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Incorrect email address</span> : null}
+                            <input {...register('email', {required: true, pattern: /^(?!.*@gigi\.codes$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/})} type="email" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.email ? 'famebuy-input-error' : ''}`} placeholder="Enter your email address" />
+                            {errors.email && errors.email.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your email addres</span> : null}
+                            {errors.email && errors.email.type == "pattern" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Incorrect email address</span> : null}
                         </div>
                     </div>
                     <div className="xui-my-2">
@@ -41,12 +77,28 @@ const Contact = () => {
                     </div>
                     
                     <div className="xui-my-2">
-                        <button className="xui-bdr-rad-half secondary xui-btn-block xui-px-3 xui-py-1-half xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">Send message</button>
+                        <button className="secondary xui-text-white xui-btn xui-font-w-700 xui-px-3 xui-py-1-half xui-bdr-rad-half" disabled={isDisabled ? true : false}>{isDisabled ? 'Sending...' : 'Send message'}</button>
                     </div>
                 </form>
                     </div>
                 </div>
             </section>
+            <div className="xui-alert xui-alert-danger" xui-custom="validationAlert" xui-placed="top-center">
+                <div className="xui-alert-close">
+                    <CloseCircle size={20} />
+                </div>
+                <div className="xui-alert-content">
+                    <span>{validationErrMsg}</span>
+                </div>
+            </div>
+            <div className="xui-alert xui-alert-success" xui-custom="successAlert" xui-placed="top-center" no-icon="true">
+            <div className="xui-alert-close">
+                {/* <CloseCircle size={20} /> */}
+            </div>
+            <div className="xui-alert-content">
+                <span>{successErrMsg}</span>
+            </div>
+            </div>
 
         </>
     )

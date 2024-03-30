@@ -3,6 +3,7 @@ import gsap from "gsap"
 import animationData from "../assets/solution.json";
 import Lottie from "lottie-react";
 import Companies from "../components/Companies";
+import Grascope from "../assets/images/grascope.jpeg";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import animationOffer from "../assets/offer.json";
@@ -108,7 +109,7 @@ const Home = () => {
                 </HashLink>
               </div>
             </div>
-            <div className="header-middle xui-z-index--1 xui-h-550" style={{backgroundImage: `url(https://img.freepik.com/free-photo/multicultural-businesswomen-group-meeting_1157-47735.jpg?t=st=1709381715~exp=1709385315~hmac=7292fab0cad514a184adc3b28336b9dde6731be3d127550f2ecc2a5beea8bed2&w=740)`}}>
+            <div className="header-middle xui-z-index--1 xui-h-550 xui-bg-sz-cover xui-bg-pos-center" style={{backgroundImage: `url('${Grascope}')`}}>
                 <div className="xui-overlay-1 xui-z-index-1 xui-pos-relative xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
                   <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex header-component xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
                       <div className="xui-w-40 xui-h-40 xui-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">
