@@ -194,7 +194,7 @@ const Home = () => {
                     <ArrowUpRight size="39" strokeWidth={1.2} color="#000"/>
                   </span>
                   <div className="">
-                    <h3 class="xui-font-sz-300 break xui-font-w-500 xui-line-height-2-half xui-font-9">Our Services</h3>
+                    <h3 class="xui-lg-font-sz-300 xui-font-sz-250 break xui-font-w-500 xui-line-height-2-half xui-font-9">Our Services</h3>
                     <p className="xui-font-sz-80 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-1">With our commitment to excellence and forward-thinking approach, we're not just shaping the future – we're leading it.</p>
                   </div>
                   <div className="">
