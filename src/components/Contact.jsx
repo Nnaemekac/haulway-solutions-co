@@ -37,6 +37,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
             setSuccessErrMsg("Email sent successfully");
             window.xuiAnime('successAlert');
             console.log("Email sent successfully:", data);
+            reset();
           }
         } catch (error) {
           setValidationErrMsg("Error sending request: " + error.message);
