@@ -27,7 +27,8 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
             .update({ 
               name: fields.name, 
               email: fields.email, 
-              message: fields.message 
+              message: fields.message,
+              metadata: { service: "telesales" }
             })
             .eq('id', fields.id);
             
@@ -86,7 +87,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
                     <div className="xui-my-2">
                         <button className="secondary xui-text-white xui-btn xui-font-w-700 xui-px-3 xui-py-1-half xui-bdr-rad-half" disabled={isDisabled ? true : false}>{isDisabled ? 'Sending...' : 'Send message'}</button>
                     </div>
-                </form>
+                    </form>
                     </div>
                 </div>
             </section>
