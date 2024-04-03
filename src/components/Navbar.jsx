@@ -22,7 +22,7 @@ const Navbar = () => {
         <nav className="xui-navbar xui-container hw-nav xui-text-white" brand="true" layout="2" menu="2">
             <div className="brand">
                 <HashLink className="xui-text-dc-none xui-text-inherit xui-d-inline-flex xui-flex-ai-center" to={'/'}>
-                    <h1>HaulwaySolutionsCO</h1>
+                    <h1>GRASCOPE SOLUTIONS</h1>
                     {/* <span className="xui-ml-half xui-d-inline-block xui-font-1 xui-font-w-bold">Kathy</span> */}
                 </HashLink>
             </div>
