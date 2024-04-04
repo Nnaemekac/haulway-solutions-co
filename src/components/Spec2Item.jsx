@@ -8,11 +8,11 @@ import { useNavigate } from 'react-router-dom';
 import { useLocation, useParams } from 'react-router-dom';
 import { contentMap } from '../assets/contentData';
 import { useForm } from "react-hook-form";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from '../assets/supabase'; // Adjust the path as needed
 
 const Spec2item = ({ data }) => {
   const { id } = useParams();
-  const navigate = useNavigate();
+  const [selectedRole, setSelectedRole] = useState('');
   const location = useLocation();
   const [pricings, setPricing] = useState([{}]);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -22,15 +22,13 @@ const Spec2item = ({ data }) => {
     const [ validationErrMsg, setValidationErrMsg ] = useState('');
     const [ successErrMsg, setSuccessErrMsg ] = useState('');
 
-    const supabaseUrl = "https://oecowxxcyzcaeaztfmqd.supabase.co";
-    const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9lY293eHhjeXpjYWVhenRmbXFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE3MzEyODQsImV4cCI6MjAyNzMwNzI4NH0.gRx3hDGsbSn1BzdTPcbS8sjzyrxjujjDxfKyTh_NPzo"; // Your Supabase anonymous key
-
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
     
     useEffect(() => {
         window.xuiAlerts();
     });
+    const handleRoleChange = (event) => {
+      setSelectedRole(event.target.value);
+    };
     const sendRequest = async (fields) => {
         setIsDisabled(true);
         try {
@@ -40,7 +38,10 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
               name: fields.name, 
               email: fields.email, 
               message: fields.message,
-              metadata: { service: "telesales" }
+              metadata: { 
+                roles: selectedRole,
+                staff: fields.staff,
+              } 
             })
             .eq('id', fields.id);
             
@@ -59,7 +60,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
         } finally {
           setIsDisabled(false);
         }
-      }
+    }
     
 
   const toggleItem = (index) => {
@@ -69,9 +70,10 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
   useEffect(() => {
     // Set the default active tab when the component mounts
     if (data && data[activeIndex] && data[activeIndex].answer.length > 0) {
-      setActiveTab(`${activeIndex}-0`);
+      setActiveTab(`0-0`);
     }
   }, [data, activeIndex]);
+  
 
   const handleTabClick = (index) => {
     setActiveTab(index); // Set activeTab to the clicked tab index
@@ -480,11 +482,395 @@ else if(index === "2-8"){
         });
       });
   
-      // Set the active tab based on the found index
       if (activeTabIndex !== null && activeSubTabIndex !== null) {
         setActiveIndex(activeTabIndex);
         setActiveTab(`${activeTabIndex}-${activeSubTabIndex}`);
+  
+        // Extract service name from the link and set pricing accordingly
+        const serviceName = data[activeTabIndex].answer[activeSubTabIndex].name;
+        console.log(serviceName, activeTab);
+        if (activeTab === "0-0") {
+          // Set pricing for Telesales Outsourcing
+          setPricing([{
+            bigProject: "$980",
+            smallProject: "$8.00"
+          },
+          {
+            bigProject: "$1,200.00",
+            smallProject: "$9.00"
+          },
+          {
+            bigProject: "$1,500.00",
+            smallProject: "$12.00"
+          },
+        ])
+        } else if (activeTab === "0-1") {
+          // Set pricing for Other Service
+          setPricing([{
+            bigProject: "$980",
+            smallProject: "$8.00"
+          },
+          {
+            bigProject: "$1,100.00",
+            smallProject: "$9.00"
+          },
+          {
+            bigProject: "$1,300.00",
+            smallProject: "$12.00"
+          },
+        ])
+        }
+         else if (activeTab === "0-2") {
+          // Set pricing for Other Service
+          setPricing([{
+            bigProject: "$980",
+            smallProject: "$8.00"
+          },
+          {
+            bigProject: "$1,100.00",
+            smallProject: "$9.00"
+          },
+          {
+            bigProject: "$1,300.00",
+            smallProject: "$12.00"
+          },
+        ])
+        }
+         else if (activeTab === "0-3") {
+          // Set pricing for Other Service
+          setPricing([{
+            bigProject: "$980",
+            smallProject: "$7.00"
+          },
+          {
+            bigProject: "$1,050.00",
+            smallProject: "$8.00"
+          },
+          {
+            bigProject: "$1,200.00",
+            smallProject: "$9.00"
+          },
+        ])
+        }
+        else if(activeTab === "0-4"){
+          setPricing([{
+            bigProject: "$980",
+            smallProject: "$7.00"
+          },
+          {
+            bigProject: "$1,646.00",
+            smallProject: "$8.00"
+          },
+          {
+            bigProject: "$2,033.00",
+            smallProject: "$15.00"
+          },
+        ])
       }
+      else if(activeTab === "0-5"){
+          setPricing([{
+            bigProject: "$1,250.00",
+            smallProject: "$10.00"
+          },
+          {
+            bigProject: "$2,000.00",
+            smallProject: "$12.00"
+          },
+          {
+            bigProject: "$2,700.00",
+            smallProject: "$17.00"
+          },
+        ])
+      }
+      else if(activeTab === "0-6"){
+          setPricing([{
+            bigProject: "$1,130.00",
+            smallProject: "$10.00"
+          },
+          {
+            bigProject: "$1,388.00",
+            smallProject: "$12.00"
+          },
+          {
+            bigProject: "$1,775.00",
+            smallProject: "$17.00"
+          },
+        ])
+      }
+      else if(activeTab === "0-7"){
+          setPricing([{
+            bigProject: "$1,250.00",
+            smallProject: "$10.00"
+          },
+          {
+            bigProject: "$2,000.00",
+            smallProject: "$12.00"
+          },
+          {
+            bigProject: "$2,700.00",
+            smallProject: "$17.00"
+          },
+        ])
+      }
+  
+  
+    else if(activeTab === "1-0"){
+        setPricing([{
+          bigProject: "$1,130.00",
+          smallProject: "$10.00"
+        },
+        {
+          bigProject: "$2,033.00",
+          smallProject: "$12.00"
+        },
+        {
+          bigProject: "$2,808.00",
+          smallProject: "$17.00"
+        },
+      ])
+    }
+    else if(activeTab === "1-1"){
+        setPricing([{
+          bigProject: "$1,000.00",
+          smallProject: "$9.00"
+        },
+        {
+          bigProject: "$1,600.00",
+          smallProject: "$10.00"
+        },
+        {
+          bigProject: "$2,100.00",
+          smallProject: "$14.00"
+        },
+      ])
+    }
+    else if(activeTab === "1-2"){
+        setPricing([{
+          bigProject: "$1,250.00",
+          smallProject: "$10.00"
+        },
+        {
+          bigProject: "$2,000.00",
+          smallProject: "$12.00"
+        },
+        {
+          bigProject: "$2,700.00",
+          smallProject: "$12.00"
+        },
+      ])
+    }
+    else if(activeTab === "1-3"){
+        setPricing([{
+          bigProject: "$980",
+          smallProject: "$7.00"
+        },
+        {
+          bigProject: "$1,050.00",
+          smallProject: "$8.00"
+        },
+        {
+          bigProject: "$1,200.00",
+          smallProject: "$9.00"
+        },
+      ])
+    }
+    else if(activeTab === "1-4"){
+        setPricing([{
+          bigProject: "$1,050.00",
+          smallProject: "$8.00"
+        },
+        {
+          bigProject: "$1,517.00",
+          smallProject: "$10.00"
+        },
+        {
+          bigProject: "$2,033.00",
+          smallProject: "$15.00"
+        },
+      ])
+    }
+    else if(activeTab === "1-5"){
+        setPricing([{
+          bigProject: "$1,250.00",
+          smallProject: "$10.00"
+        },
+        {
+          bigProject: "$2,000.00",
+          smallProject: "$12.00"
+        },
+        {
+          bigProject: "$2,700.00",
+          smallProject: "$17.00"
+        },
+      ])
+    }
+    else if(activeTab === "1-6"){
+        setPricing([{
+          bigProject: "$1,130.00",
+          smallProject: "$10.00"
+        },
+        {
+          bigProject: "$285.00",
+          smallProject: "$12.00"
+        },
+        {
+          bigProject: "$1,775.00",
+          smallProject: "$17.00"
+        },
+      ])
+    }
+    else if(activeTab === "1-7"){
+        setPricing([{
+          bigProject: "$980.00",
+          smallProject: "$8.00"
+        },
+        {
+          bigProject: "$2,033.00",
+          smallProject: "$9.00"
+        },
+        {
+          bigProject: "$2,808.00",
+          smallProject: "$12.00"
+        },
+      ])
+    }
+    else if(activeTab === "2-0"){
+      setPricing([{
+        bigProject: "$980.00",
+        smallProject: "$7.00"
+      },
+      {
+        bigProject: "$1,200.00",
+        smallProject: "$8.00"
+      },
+      {
+        bigProject: "$1,500.00",
+        smallProject: "$9.00"
+      },
+    ])
+    }
+    else if(activeTab === "2-1"){
+      setPricing([{
+        bigProject: "$1,130.00",
+        smallProject: "$7.00"
+      },
+      {
+        bigProject: "$1,775.00",
+        smallProject: "$9.00"
+      },
+      {
+        bigProject: "$2,291.00",
+        smallProject: "$10.00"
+      },
+    ])
+    }
+    else if(activeTab === "2-2"){
+      setPricing([{
+        bigProject: "$980.00",
+        smallProject: "$7.00"
+      },
+      {
+        bigProject: "$1,200.00",
+        smallProject: "$8.00"
+      },
+      {
+        bigProject: "$1,500.00",
+        smallProject: "$12.00"
+      },
+    ])
+    }
+    else if(activeTab === "2-3"){
+      setPricing([{
+        bigProject: "$980.00",
+        smallProject: "$7.00"
+      },
+      {
+        bigProject: "$1,200.00",
+        smallProject: "$8.00"
+      },
+      {
+        bigProject: "$1,500.00",
+        smallProject: "$9.00"
+      },
+    ])
+    }
+    else if(activeTab === "2-4"){
+      setPricing([{
+        bigProject: "$980.00",
+        smallProject: "$7.00"
+      },
+      {
+        bigProject: "$1,200.00",
+        smallProject: "$8.00"
+      },
+      {
+        bigProject: "$1,500.00",
+        smallProject: "$9.00"
+      },
+    ])
+    }
+    else if(activeTab === "2-5"){
+      setPricing([{
+        bigProject: "$980.00",
+        smallProject: "$10.00"
+      },
+      {
+        bigProject: "$1,200.00",
+        smallProject: "$12.00"
+      },
+      {
+        bigProject: "$1,500.00",
+        smallProject: "$17.00"
+      },
+    ])
+    }
+    else if(activeTab === "2-6"){
+      setPricing([{
+        bigProject: "$1,250.00",
+        smallProject: "$10.00"
+      },
+      {
+        bigProject: "$2,000.00",
+        smallProject: "$12.00"
+      },
+      {
+        bigProject: "$2,700.00",
+        smallProject: "$17.00"
+      },
+    ])
+    }
+    else if(activeTab === "2-7"){
+      setPricing([{
+        bigProject: "$980.00",
+        smallProject: "$10.00"
+      },
+      {
+        bigProject: "$1,200.00",
+        smallProject: "$12.00"
+      },
+      {
+        bigProject: "$1,500.00",
+        smallProject: "$17.00"
+      },
+    ])
+    }
+    else if(activeTab === "2-8"){
+      setPricing([{
+        bigProject: "$980.00",
+        smallProject: "$10.00"
+      },
+      {
+        bigProject: "$1,517.00",
+        smallProject: "$12.00"
+      },
+      {
+        bigProject: "$2,033.00",
+        smallProject: "$17.00"
+      },
+    ])
+    }
+
+      };
     };
   
     // Call the function to find the active tab when the component mounts or when the location changes
@@ -530,58 +916,126 @@ else if(index === "2-8"){
 
       <div className='xui-lg-col-9 xui-p-1'>
         {activeIndex !== null && activeTab !== null && (
-          <p className='xui-font-sz-80 xui-opacity-6 xui-line-height-1-half'>
-          {contentMap[activeTab]}
-          <div className='telesales-pricing-holder xui-mt-1'>
-                  <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
-                    <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                    {pricings.map((pricing, index) => (
-                        <div key={index} className='xui-p-1 telesales-pricing xui-text-center'>
-                          <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
-                              <User size="28px" color="#37d67a" variant='Bold' />
-                          </div>
-                          <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
-                          <div className='xui-mt-1'>
-                              <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>{pricing.bigProject}</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
-                              <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
-                          </div>
-                          <div className='xui-mt-2'>
-                              <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>{pricing.smallProject}</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
-                              <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
-                          </div>
+          <>
+            <p className='xui-font-sz-80 xui-opacity-6 xui-line-height-1-half'>
+            {contentMap[activeTab]}
+            </p>
+            <div className='telesales-pricing-holder xui-mt-1'>
+              <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
+              <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
+                {pricings.map((pricing, index) => (
+                    <div key={index} className='xui-p-1 telesales-pricing xui-text-center'>
+                      <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
+                          <User size="28px" color="#37d67a" variant='Bold' />
                       </div>
-                    ))}
+                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
+                      <div className='xui-mt-1'>
+                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>{pricing.bigProject}</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
+                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
+                      </div>
+                      <div className='xui-mt-2'>
+                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>{pricing.smallProject}</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
+                          <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
+                      </div>
                   </div>
-          </div>
-          <form className="xui-mt-2" noValidate onSubmit={handleSubmit(sendRequest)} autoComplete="off">
-          <div className="xui-d-grid xui-grid-col-1 xui-grid-gap-1">
-              <div>
-                  <label className="xui-form-label xui-font-sz-90 xui-mb-1">Name</label>
-                  <input {...register('name', {required: true, minLength: 2})} type="text" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.name ? 'famebuy-input-error' : ''}`} placeholder="Enter your full name" />
-                  {errors.name && errors.name.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your name</span> : null}
-                  {errors.name && errors.name.type == "minLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too short</span> : null}
+                ))}
               </div>
+            </div>
+            <form className="xui-mt-2" noValidate onSubmit={handleSubmit(sendRequest)} autoComplete="off">
+            <div className="xui-d-grid xui-grid-col-1 xui-grid-gap-1">
+              <div>
+                <label htmlFor="rolesInterestedIn" className='xui-form-label xui-font-sz-90 xui-mb-1'>Select roles</label>
+                <select
+                  className="xui-form-select"
+                  id="rolesInterestedIn"
+                  name="your-roles"
+                  value={selectedRole}
+                  onChange={handleRoleChange}
+                >
+                  <option value="">Select roles</option>
+                  <option value="Other">Other</option>
+                  <option value="Sales">Sales</option>
+                  <option value="Lead Generation">Lead Generation</option>
+                  <option value="Appointment Setting">Appointment Setting</option>
+                  <option value="Customer Support">Customer Support</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="IT Support Staff">IT Support Staff</option>
+                  <option value="Business Development (BDMs)">Business Development (BDMs)</option>
+                  <option value="HR and Back Office Support">HR and Back Office Support</option>
+                  <option value="Accountant">Accountant</option>
+                  <option value="Legal">Legal</option>
+                  <option value="Compliance">Compliance</option>
+                  <option value="Virtual Assistant (VAs)">Virtual Assistant (VAs)</option>
+                  <option value="Sales Assistant">Sales Assistant</option>
+                  <option value="Operations">Operations</option>
+                  <option value="Real-Estate">Real-Estate</option>
+                  <option value="Animation">Animation</option>
+                  <option value="Architect">Architect</option>
+                  <option value="Big Data Scientists">Big Data Scientists</option>
+                  <option value="Cad Creation & Conversion - Specialist">Cad Creation & Conversion - Specialist</option>
+                  <option value="Cad Creation & Conversion - Support">Cad Creation & Conversion - Support</option>
+                  <option value="Community Moderation">Community Moderation</option>
+                  <option value="Content Marketing">Content Marketing</option>
+                  <option value="Content Moderation">Content Moderation</option>
+                  <option value="Customer Service">Customer Service</option>
+                  <option value="Data Processing">Data Processing</option>
+                  <option value="Email Marketing">Email Marketing</option>
+                  <option value="Engineer">Engineer</option>
+                  <option value="Geologist">Geologist</option>
+                  <option value="Graphic Design">Graphic Design</option>
+                  <option value="HR and Back Office Support">HR and Back Office Support</option>
+                  <option value="Insurance Support">Insurance Support</option>
+                  <option value="Live Chat Support Staff">Live Chat Support Staff</option>
+                  <option value="Logistics and Transport Support">Logistics and Transport Support</option>
+                  <option value="LPO">LPO</option>
+                  <option value="Medical Billing">Medical Billing</option>
+                  <option value="Developers">Developers</option>
+                  <option value="Estimators">Estimators</option>
+                  <option value="Management and Admin Staff">Management and Admin Staff</option>
+                  <option value="QA Staff">QA Staff</option>
+                  <option value="Recruitment Support">Recruitment Support</option>
+                  <option value="Personal Assistants">Personal Assistants</option>
+                  <option value="SEO and PPC Services">SEO and PPC Services</option>
+                  <option value="Social Media Marketing">Social Media Marketing</option>
+                  <option value="Telesales">Telesales</option>
+                  <option value="Web Design Staff">Web Design Staff</option>
+                  <option value="Web Developers">Web Developers</option>
+                </select>
+              </div>
+                <div>
+                    <label className="xui-form-label xui-font-sz-90 xui-mb-1">Number of staffs</label>
+                    <input {...register('staff', {required: true})} type="text" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.staff ? 'famebuy-input-error' : ''}`} placeholder="Enter your full staff" />
+                    {errors.staff && errors.staff.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your number of staff</span> : null}
+                </div>
+                <div>
+                    <label className="xui-form-label xui-font-sz-90 xui-mb-1">Name</label>
+                    <input {...register('name', {required: true, minLength: 2})} type="text" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.name ? 'famebuy-input-error' : ''}`} placeholder="Enter your full name" />
+                    {errors.name && errors.name.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your name</span> : null}
+                    {errors.name && errors.name.type == "minLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too short</span> : null}
+                </div>
 
-              <div>
-                  <label className="xui-form-label xui-font-sz-90 xui-mb-1">Email</label>
-                  <input {...register('email', {required: true, pattern: /^(?!.*@gigi\.codes$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/})} type="email" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.email ? 'famebuy-input-error' : ''}`} placeholder="Enter your email address" />
-                  {errors.email && errors.email.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your email addres</span> : null}
-                  {errors.email && errors.email.type == "pattern" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Incorrect email address</span> : null}
-              </div>
-          </div>
-          <div className="xui-my-2">
-              <label className="xui-form-label xui-font-sz-90 xui-mb-1">Message</label>
-              <textarea {...register('message', {required: true, minLength: 10, maxLength: 200})} className={`famebuy-contact-textarea xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.message ? 'famebuy-input-error' : ''}`} cols="30" rows="10" placeholder="Enter your message"></textarea>
-              {errors.message && errors.message.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Enter your message</span> : null}
-              {errors.message && errors.message.type == "minLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too short</span> : null}
-              {errors.message && errors.message.type == "maxLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too long</span> : null}
-          </div>
+                <div>
+                    <label className="xui-form-label xui-font-sz-90 xui-mb-1">Email</label>
+                    <input {...register('email', {required: true, pattern: /^(?!.*@gigi\.codes$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/})} type="email" className={`famebuy-contact-input xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.email ? 'famebuy-input-error' : ''}`} placeholder="Enter your email address" />
+                    {errors.email && errors.email.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Please enter your email addres</span> : null}
+                    {errors.email && errors.email.type == "pattern" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Incorrect email address</span> : null}
+                </div>
+            </div>
+            <div className="xui-my-2">
+                <label className="xui-form-label xui-font-sz-90 xui-mb-1">Message</label>
+                <textarea {...register('message', {required: true, minLength: 10, maxLength: 200})} className={`famebuy-contact-textarea xui-bdr-rad-half xui-form-input xui-font-sz-90 ${errors.message ? 'famebuy-input-error' : ''}`} cols="30" rows="10" placeholder="Enter your message"></textarea>
+                {errors.message && errors.message.type == "required" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">Enter your message</span> : null}
+                {errors.message && errors.message.type == "minLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too short</span> : null}
+                {errors.message && errors.message.type == "maxLength" ? <span className="xui-d-inline-block xui-mt-half xui-font-sz-90 xui-text-red">This field is too long</span> : null}
+            </div>
+            
+            <div className="xui-my-2">
+                <button className="secondary xui-text-white xui-btn xui-font-w-700 xui-px-3 xui-py-1-half xui-bdr-rad-half" disabled={isDisabled ? true : false}>{isDisabled ? 'Sending...' : 'Send message'}</button>
+            </div>
+            </form>
+          </>
           
-          <div className="xui-my-2">
-              <button className="secondary xui-text-white xui-btn xui-font-w-700 xui-px-3 xui-py-1-half xui-bdr-rad-half" disabled={isDisabled ? true : false}>{isDisabled ? 'Sending...' : 'Send message'}</button>
-          </div>
-          </form>
-        </p>
+       
         )}
       </div>
       <div className="xui-alert xui-alert-danger" xui-custom="validationAlert" xui-placed="top-center">

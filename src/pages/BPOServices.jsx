@@ -37,7 +37,7 @@ const BPOServices = () => {
                     </span>
                     <p className="xui-font-sz-80 xui-opacity-8 xui-ml-1">Customer Service</p>
                 </Link>
-                <Link to='/bpo-services/live-chat' className="bpo xui-d-flex xui-flex-ai-center">
+                <Link to='/bpo-services/live-chat-support' className="bpo xui-d-flex xui-flex-ai-center">
                     <span>
                         <Message size="19" color="#000" />
                     </span>

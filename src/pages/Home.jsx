@@ -3,7 +3,6 @@ import gsap from "gsap"
 import animationData from "../assets/solution.json";
 import Lottie from "lottie-react";
 import Companies from "../components/Companies";
-import Grascope from "../assets/images/grascope.jpeg";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import animationOffer from "../assets/offer.json";
@@ -109,7 +108,7 @@ const Home = () => {
                 </HashLink>
               </div>
             </div>
-            <div className="header-middle xui-z-index--1 xui-h-550 xui-bg-sz-cover xui-bg-pos-center" style={{backgroundImage: `url('${Grascope}')`}}>
+            <div className="header-middle xui-z-index--1 xui-h-550 xui-bg-sz-cover xui-bg-pos-center" style={{backgroundImage: `url('https://img.freepik.com/free-photo/focused-call-center-operator-typing-laptop_74855-4213.jpg?t=st=1710770736~exp=1710774336~hmac=f6dc562d54e5ee791ae472dda0b7033342102e55e50b8dbbe7489a199fa6734e&w=740')`}}>
                 <div className="xui-overlay-1 xui-z-index-1 xui-pos-relative xui-h-fluid-100 xui-pos-relative xui-bdr-rad-1">
                   <div data-aos="fade-in" data-aos-duration="800" className='xui-d-inline-flex header-component xui-flex-ai-center solution xui-pos-absolute xui-text-white glass-bg xui-py-half xui-bdr-rad-1 xui-px-half'>
                       <div className="xui-w-40 xui-h-40 xui-bdr-rad-circle xui-bg-white xui-d-flex xui-flex-ai-center xui-flex-jc-center">
@@ -143,9 +142,6 @@ const Home = () => {
               
               >
                   <SwiperSlide>
-                    <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/focused-call-center-operator-typing-laptop_74855-4213.jpg?t=st=1710770736~exp=1710774336~hmac=f6dc562d54e5ee791ae472dda0b7033342102e55e50b8dbbe7489a199fa6734e&w=740" alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
                     <img className="xui-h-300 xui-w-fluid-100 xui-bdr-rad-1" src="https://img.freepik.com/free-photo/woman-having-online-meeting-work_23-2148940760.jpg?t=st=1711391963~exp=1711395563~hmac=60cd78578dcdc0d78d713d0bcc6ceeb74ae27fa7ee346eb6913237d659647712&w=740" alt="" />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -169,7 +165,7 @@ const Home = () => {
       </div>
       <div style={{backgroundImage: `url(https://img.freepik.com/free-photo/focused-call-center-operator-typing-laptop_74855-4213.jpg?t=st=1710770736~exp=1710774336~hmac=f6dc562d54e5ee791ae472dda0b7033342102e55e50b8dbbe7489a199fa6734e&w=740)`}} className="header-section xui-bg-sz-cover xui-bg-pos-center xui-d-block xui-lg-d-none mobile-header-section">
         <div className="xui-overlay-1 xui-container xui-h-fluid-100 xui-pos-relative xui-pt-9 xui-pb-7">
-            <img src={Grascope} className="xui-img-150 xui-bdr-rad-1" alt="" />
+            
             <h1 class="xui-font-sz-300 xui-font-9 xui-font-w-500 xui-line-height-2-half xui-mt-2">Welcome to Grascope</h1>
             <p data-aos="fade-down" data-aos-delay="800" data-aos-duration="800" className="xui-font-sz-80 xui-mt-1 xui-opacity-6 xui-line-height-1-half xui-w-fluid-100 xui-mt-half">Grascope Industries Ltd is not just a leader in innovation; we're also pioneers in entrepreneurship, owning and operating a diverse portfolio of companies across various industries.</p>
             <HashLink smooth to='#services' data-aos="fade-down" data-aos-delay="900" data-aos-duration="800" className="btn xui-mt-1 xui-text-dc-none xui-text-black">
