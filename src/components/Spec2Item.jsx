@@ -86,29 +86,36 @@ const Spec2item = ({ data }) => {
     // history.push(`/bpo-services/${data[index].answer[0].link}?tab=${index}`);
     if(index === "0-0"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980",
         smallProject: "$8.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,200.00",
         smallProject: "$9.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,500.00",
         smallProject: "$12.00"
       },
     ])
+    console.log(pricings);
   }
   else if(index === "0-1"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980",
         smallProject: "$8.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,100.00",
         smallProject: "$9.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,300.00",
         smallProject: "$12.00"
       },
@@ -116,14 +123,17 @@ const Spec2item = ({ data }) => {
   }
   else if(index === "0-2"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980",
         smallProject: "$8.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,100.00",
         smallProject: "$9.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,300.00",
         smallProject: "$12.00"
       },
@@ -131,14 +141,17 @@ const Spec2item = ({ data }) => {
   }
   else if(index === "0-3"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980",
         smallProject: "$7.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,050.00",
         smallProject: "$8.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,200.00",
         smallProject: "$9.00"
       },
@@ -146,14 +159,17 @@ const Spec2item = ({ data }) => {
   }
   else if(index === "0-4"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980",
         smallProject: "$7.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,646.00",
         smallProject: "$8.00"
       },
       {
+        level: "Expert",
         bigProject: "$2,033.00",
         smallProject: "$15.00"
       },
@@ -161,14 +177,17 @@ const Spec2item = ({ data }) => {
   }
   else if(index === "0-5"){
       setPricing([{
+        level: "Entry",
         bigProject: "$1,250.00",
         smallProject: "$10.00"
       },
       {
+        level: "Mid",
         bigProject: "$2,000.00",
         smallProject: "$12.00"
       },
       {
+        level: "Expert",
         bigProject: "$2,700.00",
         smallProject: "$17.00"
       },
@@ -176,14 +195,17 @@ const Spec2item = ({ data }) => {
   }
   else if(index === "0-6"){
       setPricing([{
+        level: "Entry",
         bigProject: "$1,130.00",
         smallProject: "$10.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,388.00",
         smallProject: "$12.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,775.00",
         smallProject: "$17.00"
       },
@@ -191,14 +213,17 @@ const Spec2item = ({ data }) => {
   }
   else if(index === "0-7"){
       setPricing([{
+        level: "Entry",
         bigProject: "$1,250.00",
         smallProject: "$10.00"
       },
       {
+        level: "Mid",
         bigProject: "$2,000.00",
         smallProject: "$12.00"
       },
       {
+        level: "Expert",
         bigProject: "$2,700.00",
         smallProject: "$17.00"
       },
@@ -208,14 +233,17 @@ const Spec2item = ({ data }) => {
 
 else if(index === "1-0"){
     setPricing([{
+      level: "Entry",
       bigProject: "$1,130.00",
       smallProject: "$10.00"
     },
     {
+      level: "Mid",
       bigProject: "$2,033.00",
       smallProject: "$12.00"
     },
     {
+      level: "Expert",
       bigProject: "$2,808.00",
       smallProject: "$17.00"
     },
@@ -223,14 +251,17 @@ else if(index === "1-0"){
 }
 else if(index === "1-1"){
     setPricing([{
+      level: "Entry",
       bigProject: "$1,000.00",
       smallProject: "$9.00"
     },
     {
+      level: "Mid",
       bigProject: "$1,600.00",
       smallProject: "$10.00"
     },
     {
+      level: "Expert",
       bigProject: "$2,100.00",
       smallProject: "$14.00"
     },
@@ -238,14 +269,17 @@ else if(index === "1-1"){
 }
 else if(index === "1-2"){
     setPricing([{
+      level: "Entry",
       bigProject: "$1,250.00",
       smallProject: "$10.00"
     },
     {
+      level: "Mid",
       bigProject: "$2,000.00",
       smallProject: "$12.00"
     },
     {
+      level: "Expert",
       bigProject: "$2,700.00",
       smallProject: "$12.00"
     },
@@ -253,14 +287,17 @@ else if(index === "1-2"){
 }
 else if(index === "1-3"){
     setPricing([{
+      level: "Entry",
       bigProject: "$980",
       smallProject: "$7.00"
     },
     {
+      level: "Mid",
       bigProject: "$1,050.00",
       smallProject: "$8.00"
     },
     {
+      level: "Expert",
       bigProject: "$1,200.00",
       smallProject: "$9.00"
     },
@@ -268,14 +305,17 @@ else if(index === "1-3"){
 }
 else if(index === "1-4"){
     setPricing([{
+      level: "Entry",
       bigProject: "$1,050.00",
       smallProject: "$8.00"
     },
     {
+      level: "Mid",
       bigProject: "$1,517.00",
       smallProject: "$10.00"
     },
     {
+      level: "Expert",
       bigProject: "$2,033.00",
       smallProject: "$15.00"
     },
@@ -283,14 +323,17 @@ else if(index === "1-4"){
 }
 else if(index === "1-5"){
     setPricing([{
+      level: "Entry",
       bigProject: "$1,250.00",
       smallProject: "$10.00"
     },
     {
+      level: "Mid",
       bigProject: "$2,000.00",
       smallProject: "$12.00"
     },
     {
+      level: "Expert",
       bigProject: "$2,700.00",
       smallProject: "$17.00"
     },
@@ -298,14 +341,17 @@ else if(index === "1-5"){
 }
 else if(index === "1-6"){
     setPricing([{
+      level: "Entry",
       bigProject: "$1,130.00",
       smallProject: "$10.00"
     },
     {
+      level: "Mid",
       bigProject: "$285.00",
       smallProject: "$12.00"
     },
     {
+      level: "Expert",
       bigProject: "$1,775.00",
       smallProject: "$17.00"
     },
@@ -313,14 +359,17 @@ else if(index === "1-6"){
 }
 else if(index === "1-7"){
     setPricing([{
+      level: "Entry",
       bigProject: "$980.00",
       smallProject: "$8.00"
     },
     {
+      level: "Mid",
       bigProject: "$2,033.00",
       smallProject: "$9.00"
     },
     {
+      level: "Expert",
       bigProject: "$2,808.00",
       smallProject: "$12.00"
     },
@@ -328,14 +377,17 @@ else if(index === "1-7"){
 }
 else if(index === "2-0"){
   setPricing([{
+    level: "Entry",
     bigProject: "$980.00",
     smallProject: "$7.00"
   },
   {
+    level: "Mid",
     bigProject: "$1,200.00",
     smallProject: "$8.00"
   },
   {
+    level: "Expert",
     bigProject: "$1,500.00",
     smallProject: "$9.00"
   },
@@ -343,14 +395,17 @@ else if(index === "2-0"){
 }
 else if(index === "2-1"){
   setPricing([{
+    level: "Entry",
     bigProject: "$1,130.00",
     smallProject: "$7.00"
   },
   {
+    level: "Mid",
     bigProject: "$1,775.00",
     smallProject: "$9.00"
   },
   {
+    level: "Expert",
     bigProject: "$2,291.00",
     smallProject: "$10.00"
   },
@@ -358,14 +413,17 @@ else if(index === "2-1"){
 }
 else if(index === "2-2"){
   setPricing([{
+    level: "Entry",
     bigProject: "$980.00",
     smallProject: "$7.00"
   },
   {
+    level: "Mid",
     bigProject: "$1,200.00",
     smallProject: "$8.00"
   },
   {
+    level: "Expert",
     bigProject: "$1,500.00",
     smallProject: "$12.00"
   },
@@ -373,14 +431,17 @@ else if(index === "2-2"){
 }
 else if(index === "2-3"){
   setPricing([{
+    level: "Entry",
     bigProject: "$980.00",
     smallProject: "$7.00"
   },
   {
+    level: "Mid",
     bigProject: "$1,200.00",
     smallProject: "$8.00"
   },
   {
+    level: "Expert",
     bigProject: "$1,500.00",
     smallProject: "$9.00"
   },
@@ -388,14 +449,17 @@ else if(index === "2-3"){
 }
 else if(index === "2-4"){
   setPricing([{
+    level: "Entry",
     bigProject: "$980.00",
     smallProject: "$7.00"
   },
   {
+    level: "Mid",
     bigProject: "$1,200.00",
     smallProject: "$8.00"
   },
   {
+    level: "Expert",
     bigProject: "$1,500.00",
     smallProject: "$9.00"
   },
@@ -403,14 +467,17 @@ else if(index === "2-4"){
 }
 else if(index === "2-5"){
   setPricing([{
+    level: "Entry",
     bigProject: "$980.00",
     smallProject: "$10.00"
   },
   {
+    level: "Mid",
     bigProject: "$1,200.00",
     smallProject: "$12.00"
   },
   {
+    level: "Expert",
     bigProject: "$1,500.00",
     smallProject: "$17.00"
   },
@@ -418,14 +485,17 @@ else if(index === "2-5"){
 }
 else if(index === "2-6"){
   setPricing([{
+    level: "Entry",
     bigProject: "$1,250.00",
     smallProject: "$10.00"
   },
   {
+    level: "Mid",
     bigProject: "$2,000.00",
     smallProject: "$12.00"
   },
   {
+    level: "Expert",
     bigProject: "$2,700.00",
     smallProject: "$17.00"
   },
@@ -433,14 +503,17 @@ else if(index === "2-6"){
 }
 else if(index === "2-7"){
   setPricing([{
+    level: "Entry",
     bigProject: "$980.00",
     smallProject: "$10.00"
   },
   {
+    level: "Mid",
     bigProject: "$1,200.00",
     smallProject: "$12.00"
   },
   {
+    level: "Expert",
     bigProject: "$1,500.00",
     smallProject: "$17.00"
   },
@@ -448,14 +521,17 @@ else if(index === "2-7"){
 }
 else if(index === "2-8"){
   setPricing([{
+    level: "Entry",
     bigProject: "$980.00",
     smallProject: "$10.00"
   },
   {
+    level: "Mid",
     bigProject: "$1,517.00",
     smallProject: "$12.00"
   },
   {
+    level: "Expert",
     bigProject: "$2,033.00",
     smallProject: "$17.00"
   },
@@ -489,79 +565,92 @@ else if(index === "2-8"){
         // Extract service name from the link and set pricing accordingly
         const serviceName = data[activeTabIndex].answer[activeSubTabIndex].name;
         console.log(serviceName, activeTab);
-        if (activeTab === "0-0") {
-          // Set pricing for Telesales Outsourcing
+        if(activeTab === "0-0"){
           setPricing([{
+            level: "Entry",
             bigProject: "$980",
             smallProject: "$8.00"
           },
           {
+            level: "Mid",
             bigProject: "$1,200.00",
             smallProject: "$9.00"
           },
           {
+            level: "Expert",
             bigProject: "$1,500.00",
             smallProject: "$12.00"
           },
         ])
-        } else if (activeTab === "0-1") {
-          // Set pricing for Other Service
+        console.log(pricings);
+      }
+      else if(activeTab === "0-1"){
           setPricing([{
+            level: "Entry",
             bigProject: "$980",
             smallProject: "$8.00"
           },
           {
+            level: "Mid",
             bigProject: "$1,100.00",
             smallProject: "$9.00"
           },
           {
+            level: "Expert",
             bigProject: "$1,300.00",
             smallProject: "$12.00"
           },
         ])
-        }
-         else if (activeTab === "0-2") {
-          // Set pricing for Other Service
+      }
+      else if(activeTab === "0-2"){
           setPricing([{
+            level: "Entry",
             bigProject: "$980",
             smallProject: "$8.00"
           },
           {
+            level: "Mid",
             bigProject: "$1,100.00",
             smallProject: "$9.00"
           },
           {
+            level: "Expert",
             bigProject: "$1,300.00",
             smallProject: "$12.00"
           },
         ])
-        }
-         else if (activeTab === "0-3") {
-          // Set pricing for Other Service
+      }
+      else if(activeTab === "0-3"){
           setPricing([{
+            level: "Entry",
             bigProject: "$980",
             smallProject: "$7.00"
           },
           {
+            level: "Mid",
             bigProject: "$1,050.00",
             smallProject: "$8.00"
           },
           {
+            level: "Expert",
             bigProject: "$1,200.00",
             smallProject: "$9.00"
           },
         ])
-        }
-        else if(activeTab === "0-4"){
+      }
+      else if(activeTab === "0-4"){
           setPricing([{
+            level: "Entry",
             bigProject: "$980",
             smallProject: "$7.00"
           },
           {
+            level: "Mid",
             bigProject: "$1,646.00",
             smallProject: "$8.00"
           },
           {
+            level: "Expert",
             bigProject: "$2,033.00",
             smallProject: "$15.00"
           },
@@ -569,14 +658,17 @@ else if(index === "2-8"){
       }
       else if(activeTab === "0-5"){
           setPricing([{
+            level: "Entry",
             bigProject: "$1,250.00",
             smallProject: "$10.00"
           },
           {
+            level: "Mid",
             bigProject: "$2,000.00",
             smallProject: "$12.00"
           },
           {
+            level: "Expert",
             bigProject: "$2,700.00",
             smallProject: "$17.00"
           },
@@ -584,14 +676,17 @@ else if(index === "2-8"){
       }
       else if(activeTab === "0-6"){
           setPricing([{
+            level: "Entry",
             bigProject: "$1,130.00",
             smallProject: "$10.00"
           },
           {
+            level: "Mid",
             bigProject: "$1,388.00",
             smallProject: "$12.00"
           },
           {
+            level: "Expert",
             bigProject: "$1,775.00",
             smallProject: "$17.00"
           },
@@ -599,31 +694,37 @@ else if(index === "2-8"){
       }
       else if(activeTab === "0-7"){
           setPricing([{
+            level: "Entry",
             bigProject: "$1,250.00",
             smallProject: "$10.00"
           },
           {
+            level: "Mid",
             bigProject: "$2,000.00",
             smallProject: "$12.00"
           },
           {
+            level: "Expert",
             bigProject: "$2,700.00",
             smallProject: "$17.00"
           },
         ])
       }
-  
-  
+    
+    
     else if(activeTab === "1-0"){
         setPricing([{
+          level: "Entry",
           bigProject: "$1,130.00",
           smallProject: "$10.00"
         },
         {
+          level: "Mid",
           bigProject: "$2,033.00",
           smallProject: "$12.00"
         },
         {
+          level: "Expert",
           bigProject: "$2,808.00",
           smallProject: "$17.00"
         },
@@ -631,14 +732,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "1-1"){
         setPricing([{
+          level: "Entry",
           bigProject: "$1,000.00",
           smallProject: "$9.00"
         },
         {
+          level: "Mid",
           bigProject: "$1,600.00",
           smallProject: "$10.00"
         },
         {
+          level: "Expert",
           bigProject: "$2,100.00",
           smallProject: "$14.00"
         },
@@ -646,14 +750,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "1-2"){
         setPricing([{
+          level: "Entry",
           bigProject: "$1,250.00",
           smallProject: "$10.00"
         },
         {
+          level: "Mid",
           bigProject: "$2,000.00",
           smallProject: "$12.00"
         },
         {
+          level: "Expert",
           bigProject: "$2,700.00",
           smallProject: "$12.00"
         },
@@ -661,14 +768,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "1-3"){
         setPricing([{
+          level: "Entry",
           bigProject: "$980",
           smallProject: "$7.00"
         },
         {
+          level: "Mid",
           bigProject: "$1,050.00",
           smallProject: "$8.00"
         },
         {
+          level: "Expert",
           bigProject: "$1,200.00",
           smallProject: "$9.00"
         },
@@ -676,14 +786,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "1-4"){
         setPricing([{
+          level: "Entry",
           bigProject: "$1,050.00",
           smallProject: "$8.00"
         },
         {
+          level: "Mid",
           bigProject: "$1,517.00",
           smallProject: "$10.00"
         },
         {
+          level: "Expert",
           bigProject: "$2,033.00",
           smallProject: "$15.00"
         },
@@ -691,14 +804,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "1-5"){
         setPricing([{
+          level: "Entry",
           bigProject: "$1,250.00",
           smallProject: "$10.00"
         },
         {
+          level: "Mid",
           bigProject: "$2,000.00",
           smallProject: "$12.00"
         },
         {
+          level: "Expert",
           bigProject: "$2,700.00",
           smallProject: "$17.00"
         },
@@ -706,14 +822,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "1-6"){
         setPricing([{
+          level: "Entry",
           bigProject: "$1,130.00",
           smallProject: "$10.00"
         },
         {
+          level: "Mid",
           bigProject: "$285.00",
           smallProject: "$12.00"
         },
         {
+          level: "Expert",
           bigProject: "$1,775.00",
           smallProject: "$17.00"
         },
@@ -721,14 +840,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "1-7"){
         setPricing([{
+          level: "Entry",
           bigProject: "$980.00",
           smallProject: "$8.00"
         },
         {
+          level: "Mid",
           bigProject: "$2,033.00",
           smallProject: "$9.00"
         },
         {
+          level: "Expert",
           bigProject: "$2,808.00",
           smallProject: "$12.00"
         },
@@ -736,14 +858,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "2-0"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980.00",
         smallProject: "$7.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,200.00",
         smallProject: "$8.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,500.00",
         smallProject: "$9.00"
       },
@@ -751,14 +876,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "2-1"){
       setPricing([{
+        level: "Entry",
         bigProject: "$1,130.00",
         smallProject: "$7.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,775.00",
         smallProject: "$9.00"
       },
       {
+        level: "Expert",
         bigProject: "$2,291.00",
         smallProject: "$10.00"
       },
@@ -766,14 +894,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "2-2"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980.00",
         smallProject: "$7.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,200.00",
         smallProject: "$8.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,500.00",
         smallProject: "$12.00"
       },
@@ -781,14 +912,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "2-3"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980.00",
         smallProject: "$7.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,200.00",
         smallProject: "$8.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,500.00",
         smallProject: "$9.00"
       },
@@ -796,14 +930,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "2-4"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980.00",
         smallProject: "$7.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,200.00",
         smallProject: "$8.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,500.00",
         smallProject: "$9.00"
       },
@@ -811,14 +948,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "2-5"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980.00",
         smallProject: "$10.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,200.00",
         smallProject: "$12.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,500.00",
         smallProject: "$17.00"
       },
@@ -826,14 +966,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "2-6"){
       setPricing([{
+        level: "Entry",
         bigProject: "$1,250.00",
         smallProject: "$10.00"
       },
       {
+        level: "Mid",
         bigProject: "$2,000.00",
         smallProject: "$12.00"
       },
       {
+        level: "Expert",
         bigProject: "$2,700.00",
         smallProject: "$17.00"
       },
@@ -841,14 +984,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "2-7"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980.00",
         smallProject: "$10.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,200.00",
         smallProject: "$12.00"
       },
       {
+        level: "Expert",
         bigProject: "$1,500.00",
         smallProject: "$17.00"
       },
@@ -856,14 +1002,17 @@ else if(index === "2-8"){
     }
     else if(activeTab === "2-8"){
       setPricing([{
+        level: "Entry",
         bigProject: "$980.00",
         smallProject: "$10.00"
       },
       {
+        level: "Mid",
         bigProject: "$1,517.00",
         smallProject: "$12.00"
       },
       {
+        level: "Expert",
         bigProject: "$2,033.00",
         smallProject: "$17.00"
       },
@@ -923,18 +1072,18 @@ else if(index === "2-8"){
             <div className='telesales-pricing-holder xui-mt-1'>
               <h3 className='xui-font-sz-200 xui-font-9 xui-text-center'>Pricing</h3>
               <div className='xui-d-grid xui-lg-grid-col-3 xui-grid-col-1 xui-mt-2 xui-grid-gap-1'>
-                {pricings.map((pricing, index) => (
+                {pricings.map((pricingItem, index) => (
                     <div key={index} className='xui-p-1 telesales-pricing xui-text-center'>
                       <div className='pricing-circle xui-mx-auto xui-w-80 xui-h-80 xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bdr-rad-circle'>
                           <User size="28px" color="#37d67a" variant='Bold' />
                       </div>
-                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>Entry Level</h3>
+                      <h3 className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8 xui-font-w-medium xui-mt-1'>{pricingItem.level} Level</h3>
                       <div className='xui-mt-1'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>{pricing.bigProject}</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
+                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>{pricingItem.bigProject}</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/month</span></p>
                           <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Staff Leasing</p>
                       </div>
                       <div className='xui-mt-2'>
-                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>{pricing.smallProject}</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
+                          <p className=''><span className='xui-font-sz-250 xui-font-w-bold'>{pricingItem.smallProject}</span><span className='xui-lg-font-sz-120 xui-font-sz-90 xui-opacity-8'>/hour</span></p>
                           <p className='xui-opacity-6 xui-lg-font-sz-120 xui-font-sz-90 xui-mt-half'>Small projects</p>
                       </div>
                   </div>
