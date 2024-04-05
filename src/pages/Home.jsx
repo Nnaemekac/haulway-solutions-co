@@ -21,7 +21,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
-import ShuffleImage from "../components/ShuffleImage";
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState(0);
