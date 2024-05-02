@@ -171,15 +171,15 @@ const Companies = () => {
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company2}')`}}>
+                        <Link to=" https://www.amandufarms.com/" target='_blank' className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company4}')`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                 <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                    <h3 className='xui-font-sz-100'>Merkado Hub</h3>
+                                    <h3 className='xui-font-sz-100'>Amandu farms</h3>
                                 </div>
                                 <div className="team-text-container">
                                     {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                     <LinesEllipsis
-                                            text='A comprehensive marketplace, supporting multiple vendors to fulfill all your online shopping desires.                                            '
+                                            text='Transforming agriculture with cutting-edge Agrotech innovation, Amandu Farms leads the way in revolutionizing farming practices for enhanced efficiency and productivity.'
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
@@ -190,8 +190,9 @@ const Companies = () => {
                             </div>
                         </Link>
                     </SwiperSlide>
+                    
                     <SwiperSlide>
-                        <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company3}')`}}>
+                        <Link to="https://www.itsyourday.ng/" target='_blank' className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company3}')`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                 <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                     <h3 className='xui-font-sz-100'>Itsyourday</h3>
@@ -211,15 +212,15 @@ const Companies = () => {
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company4}')`}}>
+                        <Link to="/" className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company2}')`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                 <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                                    <h3 className='xui-font-sz-100'>Amandu farms</h3>
+                                    <h3 className='xui-font-sz-100'>Merkado Hub</h3>
                                 </div>
                                 <div className="team-text-container">
                                     {/* <h1 className="xui-font-sz-150">Innovator Bill Gross presents at VERGE 16</h1> */}
                                     <LinesEllipsis
-                                            text='Transforming agriculture with cutting-edge Agrotech innovation, Amandu Farms leads the way in revolutionizing farming practices for enhanced efficiency and productivity.'
+                                            text='A comprehensive marketplace, supporting multiple vendors to fulfill all your online shopping desires.                                            '
                                             maxLine='3'
                                             ellipsis='...'
                                             trimRight
