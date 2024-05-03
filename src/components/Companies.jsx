@@ -171,7 +171,7 @@ const Companies = () => {
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to=" https://www.amandufarms.com/" target='_blank' className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company4}')`}}>
+                        <Link to="https://www.amandufarms.com/" target='_blank' className="team xui-bdr-rad-1 xui-bg-sz-cover xui-bg-pos-center xui-lg-h-250 xui-h-200" style={{backgroundImage: `url('${Company4}')`}}>
                             <div className="xui-overlay-1 xui-bdr-rad-1 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-flex-end xui-flex-jc-space-between xui-pos-relative">
                                 <div className='xui-py-half xui-bdr-rad-5 xui-px-1 company-logo xui-text-white xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                     <h3 className='xui-font-sz-100'>Amandu farms</h3>
