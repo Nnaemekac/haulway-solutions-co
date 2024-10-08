@@ -5,16 +5,11 @@ import { lazy, Suspense, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import BPOService from "./pages/BPOService";
 import { useLocation } from "react-router-dom";
+import About from "./pages/About";
 import ITServices from "./pages/ITServices";
-import OurSolutions from "./pages/OurSolutions";
-import OurSolution from "./pages/OurSolution";
-import ITService from "./pages/ITService";
 
 const Home = lazy(() => import('./pages/Home'));
-const BPOServices = lazy(() => import('./pages/BPOServices'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,22 +24,18 @@ function ScrollToTop() {
 function App() {
   return (
     <>
-      <section className='hw-main-section xui-overflow-x-hidden'>
+      <section className='hw-main-section'>
       <Navbar />
         <Suspense fallback={<Loader />}>
           <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/bpo-services" element={<BPOServices />} />
-              <Route path="/bpo-services/:id" element={<BPOService />} />
-              <Route path="/IT-services" element={<ITServices />} />
-              <Route path="/IT-services/:id" element={<ITService />} />
-              <Route path="/solutions" element={<OurSolutions />} />
-              <Route path="/solutions/:id" element={<OurSolution />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/it/services" element={<ITServices />} />
               <Route path="*" element={<h1>No Match</h1>} />
             </Routes>
         </Suspense>
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   )
