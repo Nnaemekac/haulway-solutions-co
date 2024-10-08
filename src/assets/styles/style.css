@@ -16,7 +16,7 @@
 
 :root {
     --primary: #060417;
-    --green: #159B48;
+    --green: #159b48;
     --primary-light: #caf8ca;
     --light-blue: #F6F7F8;
     --dark:#000000;
@@ -42,21 +42,52 @@ body{
 .primary-color{
     color: var(--secondary) !important;
 }
+.hw-main-section{
+    min-height: 100vh;
+    height: 100%;
+    background: var(--Primary-Black, #000);
+    color: #FFF;
+}
+.xui-line-height-3 {
+    line-height: 3rem;
+}
 .xui-navbar{
     position: fixed;
     z-index: 20;
     top: 0;
     left: 0;
     width: 100%;
+    height: auto;
     backdrop-filter: blur( 24px );
+    background: transparent;
 }
 .xui-navbar .links{
-    width: 100%;
-    
+    /* width: 100%;
     border-radius: 6rem;
-
     background: linear-gradient(111.85deg, rgba(253, 253, 253, 0.3) 5.74%, rgba(253, 253, 253, 0.2) 68.32%);
-    box-shadow: 0px 4px 24px -3px #00000033;
+    box-shadow: 0px 4px 24px -3px #00000033; */
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(253, 253, 253, 0.3) 0%, rgba(253, 253, 253, 0.2) 100%);
+    border-radius: 2rem;
+    /* filter: blur(3px); */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+
+}
+.xui-navbar .links .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #D9D9D9;
+    border-radius: 2rem;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+}
+.xui-navbar .links .overlay.other-color{
+    background-color: #159B48;
 
 }
 .xui-navbar .main ul li a{
@@ -115,6 +146,111 @@ body{
 }
 .xui-navbar[layout="2"] .links{
     justify-content: space-between !important;
+}
+.anonymous-img > div{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background: linear-gradient(135deg, rgba(253, 253, 253, 0.3), rgba(253, 253, 253, 0.2));
+    border-radius: 20px;
+    box-shadow: 0px 3.2px 9.6px rgba(0, 0, 0, 0.2), inset 0px -2.4px 2.4px rgba(0, 0, 0, 0.2);
+}
+.anonymous-img > div .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #159B48;
+    opacity: 0.2;
+    border-radius: 20px;
+    mix-blend-mode: overlay;
+}
+.anonymous-img::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 50%;
+    border: 1px dashed #737373;
+    height: 55%;
+    transform: translate(-50%, -12%);
+}
+.no-before::before {
+    display: none;
+}
+.row{
+    display: flex;
+}
+.cards{
+    gap: 2em;
+    flex-wrap: wrap;
+    padding: 2em 0;
+}
+.card{
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    width: 130px;
+    min-height: 500px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1rem;
+    
+}
+/* .card:hover{
+    max-width: 500px;
+} */
+.card.expanded {
+    width: 600px;
+    transition: width 0.5s ease-in;
+}
+.card-body{
+    /* background: linear-gradient(180deg, rgba(45, 45, 45, 0) 0%, #000 100%); */
+    background: rgba(0,0,0,.6);
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.title{
+    /* background: rgba(0,0,0,.2); */
+    /* background: linear-gradient(180deg, rgba(45, 45, 45, 0) 0%, #000 100%); */
+    position: absolute;
+    inset: 0;
+}
+.card.expanded .title{
+    all: unset;
+}
+.title h2{
+    white-space: nowrap;
+    transform: rotate(-90deg) translateX(-350px);
+}
+.card.expanded .title h2 {
+    padding-bottom: 0.2em;
+    transform: unset;
+}
+.card p, .card a{
+    position: absolute;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out;
+}
+.card.expanded p {
+    position: relative;
+    opacity: .8;
+    max-height: 100%;
+    transition-delay: 0.3s;
+}
+.card.expanded a {
+    width: 350px;
+    margin-top: 1rem;
+    position: relative;
+    opacity: 1;
+    max-height: 100%;
+    transition-delay: 0.3s;
 }
 .header-swiper{
     position: fixed !important;
@@ -187,6 +323,29 @@ body{
 .header-swiper2{
     margin: 0 !important;
 }
+.custom-svg-box {
+    position: relative;
+    width: 160px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(253, 253, 253, 0.3) 0%, rgba(253, 253, 253, 0.2) 100%);
+    /* border-radius: .5rem; */
+    /* filter: blur(3px); */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 1rem .5rem 1rem 1rem;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #159B48;
+    border-radius: 1.5rem;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+  }
+  
 @keyframes fadeUp {
     from {
       opacity: 0;
@@ -250,5 +409,7 @@ body{
     }
 }
 @media screen and (max-width: 768px) {
-
+    .xui-navbar .menu span{
+        background-color: #FFF;
+    }
 }

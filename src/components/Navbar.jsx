@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import Logo from "../assets/images/logo.png";
 import { ArrowRight } from '@carbon/icons-react';
 
@@ -20,12 +20,17 @@ const Navbar = () => {
     //     window.addEventListener("scroll", handleScroll);
     //     return () => window.removeEventListener("scroll", handleScroll);
     // });
+    const { pathname } = useLocation();
+    console.log(pathname);
     
     return (
         <>
         <nav className={`xui-navbar iyd-nav xui-container pd-nav xui-text-black xui-py-1`} brand="true" layout="2" menu="2">
             
-            <div className="links" placed="left">
+            <div className={`links`} placed="left">
+                <div class={`overlay ${pathname !== '/' ? 'other-color' : ''} xui-bdr-rad-2`}>
+                
+                </div>
                 <div className="brand xui-h-fluid-100">
                     <NavLink className="xui-text-dc-none xui-h-fluid-100 xui-text-inherit xui-d-inline-flex xui-p-1 xui-flex-ai-center" to={'/'}>
                         <img className='xui-img-100' src={Logo} alt="" />
@@ -42,10 +47,10 @@ const Navbar = () => {
                             <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-bold bold-font' : 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"about"}>About us</NavLink>
                         </li>
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-bold bold-font' : 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"about"}>IT Services</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-bold bold-font' : 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"it/services"}>IT Services</NavLink>
                         </li>
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-bold bold-font' : 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"about"}>BPO Solutions</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-bold bold-font' : 'xui-font-sz-150 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"bpo/solutions"}>BPO Solutions</NavLink>
                         </li>
                      
                     </ul>
