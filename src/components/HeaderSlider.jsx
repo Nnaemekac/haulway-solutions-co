@@ -51,9 +51,11 @@ function HeaderSlider({ onSlideChange }, ref) {
       direction="horizontal"
       speed={500}
       spaceBetween={20}
-      slidesPerView={1}
+      slidesPerView={1.5} // This allows the next slide to be visible slightly
+      slidesOffsetBefore={0} // Ensures no offset before the first slide
+      slidesOffsetAfter={0} // Ensures no offset after the last slide
       autoplay={true}
-      className="header-swiper2 xui-w-400 xui-pr-8 xui-mt-1-half"
+      className="header-swiper2 xui-w-fluid-100 xui-pr-8 xui-mt-1-half"
       onSlideChange={(swiper) => onSlideChange(swiper.activeIndex, slidesData)}  // Pass slidesData to Home
     >
       {slidesData.map((slide, index) => (

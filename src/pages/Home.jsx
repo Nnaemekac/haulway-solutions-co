@@ -15,6 +15,7 @@ import Circle from '../assets/images/circle.png';
 import Pattern from '../assets/images/pattern.png';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, ArrowRight } from '@carbon/icons-react';
+import Button from '../components/Button';
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -66,10 +67,6 @@ export default function Home() {
     },
   };
 
-  useEffect(() => {
-    AOS.init();
-  }, [activeIndex]);
-
   const handleHeaderSliderChange = (index) => {
     setActiveIndex(index);
     if (headerSwiperInstance.current) {
@@ -79,6 +76,55 @@ export default function Home() {
       headerSliderInstance.current.slideTo(index); // Sync HeaderSlider
     }
   };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const homeHeading = document.querySelector('.home-heading');
+      if (homeHeading) {
+        if (activeIndex === 0) {
+          homeHeading.classList.add('scroll-up');
+        } else {
+          homeHeading.classList.remove('scroll-up');
+        }
+      }
+    }, 4); // Delay the query to ensure DOM is rendered
+  
+    return () => clearTimeout(timer); // Clean up timer on unmount
+  }, [activeIndex]);
+  
+  const handleSlideChange = (swiper) => {
+    const Heading = document.querySelector('.home-heading');
+    const Heading2 = document.querySelector('.home-heading2');
+    const Heading3 = document.querySelector('.home-heading3');
+    const Heading4 = document.querySelector('.home-heading4');
+    
+    setActiveIndex(swiper.activeIndex); // Update active index
+  
+    // Check each element before accessing its classList
+    if (swiper.activeIndex === 0 && Heading) {
+      Heading.classList.add('scroll-up');
+      if (Heading2) Heading2.classList.remove('scroll-up');
+      if (Heading3) Heading3.classList.remove('scroll-up');
+      if (Heading4) Heading4.classList.remove('scroll-up');
+    } else if (swiper.activeIndex === 1 && Heading2) {
+      Heading2.classList.add('scroll-up');
+      if (Heading) Heading.classList.remove('scroll-up');
+      if (Heading3) Heading3.classList.remove('scroll-up');
+      if (Heading4) Heading4.classList.remove('scroll-up');
+    } else if (swiper.activeIndex === 2 && Heading3) {
+      Heading3.classList.add('scroll-up');
+      if (Heading) Heading.classList.remove('scroll-up');
+      if (Heading2) Heading2.classList.remove('scroll-up');
+      if (Heading4) Heading4.classList.remove('scroll-up');
+    } else if (swiper.activeIndex === 3 && Heading4) {
+      Heading4.classList.add('scroll-up');
+      if (Heading) Heading.classList.remove('scroll-up');
+      if (Heading2) Heading2.classList.remove('scroll-up');
+      if (Heading3) Heading3.classList.remove('scroll-up');
+    } else {
+      if (Heading) Heading.classList.remove('scroll-up'); // Remove the animation class for other slides
+    }
+  };
+  
 
   // Handle arrow clicks for navigation
   const handlePrevSlide = () => {
@@ -97,97 +143,69 @@ export default function Home() {
       {
         image: HeaderImage1,
         heading: 
-        <div className='home-heading'>
-          <h1  className='xui-lg-font-sz-400 xui-font-sz-250 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 xui-d-flex xui-flex-ai-center'>Welcome To
-          <p>Grascope <img className='xui-img-250 xui-d-inline-block' src={Pattern} alt="" /> Industries</p></h1>
-          <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7'>At Grascope Industries, we drive innovation and excellence across various sectors. Focused on growth, sustainability, and client success, we deliver lasting solutions that meet the evolving needs of companies across various industries.</p>
-          <div className='xui-d-flex xui-flex-ai-center xui-mt-1'>
-            <Link class="custom-svg-box xui-text-dc-none xui-text-white xui-d-inline-flex xui-flex-ai-center xui-flex-jc-space-between xui-bdr-rad-1-half xui-grid-gap-1-half">
-              <p className='xui-font-sz-90'>Get started</p>
-              <span className='xui-w-35 xui-h-35 xui-bg-white xui-bdr-rad-circle xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                <ArrowRight size={19.5} color='#159B48'/>
-              </span>
-              <div class="overlay xui-bdr-rad-2">
-              
-              </div>
-            </Link>
-            <Link className='xui-d-inline-flex get-started learn-more xui-ml-1 xui-flex-ai-center xui-grid-gap-1-half xui-bdr-rad-2 xui-text-dc-none xui-text-white'>
-              <p className='xui-font-sz-90'>Learn more</p>
-              <span className='xui-w-35 xui-h-35 xui-bg-white xui-bdr-rad-circle xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-                <ArrowRight size={19.5} color='#159B48'/>
-              </span>
-            </Link>
+        <div className='home-heading xui-h-fluid-100 xui-pos-relative'>
+          <div className='xui-lg-d-block xui-d-none'>
+            <h1 className="xui-lg-font-sz-400 xui-font-sz-250 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 xui-d-flex xui-flex-ai-center header-heading">
+              <p>Welcome To</p>
+              <p>Grascope <img className="xui-img-250 xui-d-inline-block" src={Pattern} alt="" /> Industries </p>
+            </h1>
           </div>
-          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-3 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-40 xui-w-fluid-100 xui-opacity-7'>Empowering businesses with innovative customer service, cutting-edge Agrotech, and streamlined e-commerce solutions, tailored to enhance growth and efficiency.</p>
+          <div className='xui-lg-d-none xui-d-block'>
+            <h1 className="xui-lg-font-sz-400 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 xui-d-flex xui-flex-ai-center header-heading">
+              <p>Welcome To Grascope</p>
+              <p><img className="xui-lg-img-250 xui-img-100 xui-d-inline-block" src={Pattern} alt="" /> Industries</p>
+            </h1>
+          </div>
+          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header-paragraph'>At Grascope Industries, we drive innovation and excellence across various sectors. Focused on growth, sustainability, and client success, we deliver lasting solutions that meet the evolving needs of companies across various industries.</p>
+          <div className='xui-d-flex xui-flex-ai-center xui-mt-1'>
+            <Button url="about" customClass="header-btn1" text="Get started" svgColor="#159B48" />
+            <Button url="about" customClass="header-btn2 xui-bdr-white xui-bdr-w-1 xui-bdr-s-solid" isButton2={true} text="Learn more" />
+          </div>
+          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-40 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>Empowering businesses with innovative customer service, cutting-edge Agrotech, and streamlined e-commerce solutions, tailored to enhance growth and efficiency.</p>
         </div>,
       },
       {
         image: HeaderImage2,
         heading: 
-        <>
-          <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-opacity-9'>Our Solutions</p>
-          <h1  className='xui-lg-font-sz-400 xui-font-sz-250 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500'>AgroTech Solutions</h1>
-          <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7'>Our AgroTech solutions harness the power of technology to revolutionize agriculture, enhancing productivity, sustainability, and resource management. We provide innovative tools and strategies that empower farmers and agribusinesses to achieve greater efficiency and long-term success.</p>
-          <Link class="custom-svg-box xui-mt-1 xui-text-dc-none xui-text-white xui-d-inline-flex xui-flex-ai-center xui-flex-jc-space-between xui-bdr-rad-1-half xui-grid-gap-1-half">
-            <p className='xui-font-sz-90'>Learn more</p>
-            <span className='xui-w-35 xui-h-35 green xui-bdr-rad-circle xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-              <ArrowRight size={19.5} color='#FFF'/>
-            </span>
-            <div class="overlay xui-bdr-rad-2">
-            
-            </div>
-          </Link>
+        <div className='home-heading2 xui-h-fluid-100 xui-pos-relative'>
+          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-opacity-9 header2-sub-heading'>Our Solutions</p>
+          <h1 className='xui-lg-font-sz-400 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header2-heading'>AgroTech Solutions</h1>
+          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header2-paragraph'>Our AgroTech solutions harness the power of technology to revolutionize agriculture, enhancing productivity, sustainability, and resource management. We provide innovative tools and strategies that empower farmers and agribusinesses to achieve greater efficiency and long-term success.</p>
+          <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header2-btn xui-mt-1" text="Learn more" />
 
-          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-3 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7'>From advanced data analytics to precision farming tools, we provide innovative strategies that empower farmers and agribusinesses to achieve greater efficiency, optimize resources, and drive long-term success.</p>
-        </>,
+          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>From advanced data analytics to precision farming tools, we provide innovative strategies that empower farmers and agribusinesses to achieve greater efficiency, optimize resources, and drive long-term success.</p>
+        </div>,
       },
       {
         image: HeaderImage3,
         heading: 
-        <>
-          <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-opacity-9'>Our Solutions</p>
-          <h1  className='xui-lg-font-sz-400 xui-font-sz-250 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500'>Custom Software Solutions</h1>
-          <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7'>Our custom software solutions are designed to meet your unique business needs, offering scalable, efficient, and innovative systems that streamline operations and drive growth. We partner with you to create tailored solutions that enhance performance and deliver measurable results.</p>
-          <Link class="custom-svg-box xui-mt-1 xui-text-dc-none xui-text-white xui-d-inline-flex xui-flex-ai-center xui-flex-jc-space-between xui-bdr-rad-1-half xui-grid-gap-1-half">
-            <p className='xui-font-sz-90'>Learn more</p>
-            <span className='xui-w-35 xui-h-35 green xui-bdr-rad-circle xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-              <ArrowRight size={19.5} color='#FFF'/>
-            </span>
-            <div class="overlay xui-bdr-rad-2">
-            
-            </div>
-          </Link>
-          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-3 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7'>By partnering closely with you, we develop tailored solutions that not only enhance performance but also deliver measurable, long-term results.</p>
-        </>,
+        <div className='home-heading3 xui-h-fluid-100 xui-pos-relative'>
+          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-opacity-9 header3-sub-heading'>Our Solutions</p>
+          <h1 className='xui-lg-font-sz-400 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header3-heading'>Custom Software Solutions</h1>
+          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header3-paragraph'>Our custom software solutions are designed to meet your unique business needs, offering scalable, efficient, and innovative systems that streamline operations and drive growth. We partner with you to create tailored solutions that enhance performance and deliver measurable results.</p>
+          <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header3-btn xui-mt-1" text="Learn more" />
+          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>By partnering closely with you, we develop tailored solutions that not only enhance performance but also deliver measurable, long-term results.</p>
+        </div>,
       },
       {
         image: HeaderImage4,
         heading: 
-        <>
-          <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-opacity-9'>Our Solutions</p>
-          <h1  className='xui-lg-font-sz-400 xui-font-sz-250 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500'>E-commerce Solution</h1>
-          <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7'>Enhance your online business with our state-of-the-art e-commerce solutions. We deliver tailored strategies and technologies that refine user experience, streamline operations, and drive growth.</p>
-          <Link class="custom-svg-box xui-mt-1 xui-text-dc-none xui-text-white xui-d-inline-flex xui-flex-ai-center xui-flex-jc-space-between xui-bdr-rad-1-half xui-grid-gap-1-half">
-            <p className='xui-font-sz-90'>Learn more</p>
-            <span className='xui-w-35 xui-h-35 green xui-bdr-rad-circle xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
-              <ArrowRight size={19.5} color='#FFF'/>
-            </span>
-            <div class="overlay xui-bdr-rad-2">
-            
-            </div>
-          </Link>
-          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-3 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7'>From sophisticated platform design to seamless integration, our solutions ensure a powerful and effective online presence.</p>
-        </>,
+        <div className='home-heading4 xui-h-fluid-100 xui-pos-relative'>
+          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-opacity-9 header4-sub-heading'>Our Solutions</p>
+          <h1  className='xui-lg-font-sz-400 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header4-heading'>E-commerce Solution</h1>
+          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header4-paragraph'>Enhance your online business with our state-of-the-art e-commerce solutions. We deliver tailored strategies and technologies that refine user experience, streamline operations, and drive growth.</p>
+          <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header4-btn xui-mt-1" text="Learn more" />
+          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>From sophisticated platform design to seamless integration, our solutions ensure a powerful and effective online presence.</p>
+        </div>,
       },
     ];
     setSlidesData(initialSlidesData); // Initialize slidesData
   }, []);
 
   return (
-    <div id='home' className='relative xui-h-fluid-100'>
-      <div className="swiper-container-wrapper">
-        {/* Swiper */}
-        <Swiper
+    <div >
+      {/* Swiper */}
+      <Swiper
           onSwiper={(swiper) => {
             headerSwiperInstance.current = swiper;
           }}
@@ -197,8 +215,11 @@ export default function Home() {
           spaceBetween={10}
           slidesPerView={1}
           autoplay={true}
-          effect='fade'
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          // effect='fade'
+          onSlideChange={(swiper) => { 
+            handleSlideChange(swiper);
+            setActiveIndex(swiper.activeIndex);
+          }}
           breakpoints={breakpoints}
           className="header-swiper"
           simulateTouch={false}
@@ -207,8 +228,8 @@ export default function Home() {
           {slidesData.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="xui-bg-sz-cover xui-bg-pos-center xui-h-fluid-100" style={{ backgroundImage: `url('${slide.image}')` }}>
-                <div className="xui-overlay-1 xui-overflow-y-auto xui-lg-pt-8 xui-pb-3 xui-pt-7 xui-w-fluid-100 xui-h-fluid-100">
-                  <div className='xui-lg-px-4 xui-px-1-half fade-up'>
+                <div className="xui-overlay-1 xui-overflow-hidden xui-lg-pt-8 xui-pb-3 xui-pt-7 xui-w-fluid-100 xui-h-fluid-100">
+                  <div className='xui-lg-px-4 xui-px-1-half xui-h-fluid-100'>
                     {slide.heading}
                   </div>
                 </div>
@@ -223,11 +244,7 @@ export default function Home() {
             <div className='xui-mt-1'>
               <HeaderSlider ref={headerSliderInstance} onSlideChange={handleHeaderSliderChange} />
             </div>
-            <div className='xui-py-1 xui-d-flex xui-flex-jc-flex-end xui-pr-4'>
-              <img className='xui-img-60' src={Circle} alt="" />
-            </div>
-          </div>
-      </div>
+        </div>
     </div>
 
   );
