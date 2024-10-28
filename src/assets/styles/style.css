@@ -52,7 +52,7 @@ body{
     color: #FFF;
 }
 .xui-line-height-3 {
-    line-height: 3rem;
+  line-height: 3rem;
 }
 .xui-navbar{
     position: fixed;
@@ -109,12 +109,7 @@ body{
     background: linear-gradient(111.85deg, rgba(253, 253, 253, 0.3) 5.74%, rgba(253, 253, 253, 0.2) 68.32%);
     box-shadow: 0px 4px 24px -3px #00000033;
 }
-/* .cta-learn-more span{
-    background-color: var(--green);
-}
-.cta-learn-more span svg{
-    color: #FFF;
-} */
+
 .active-link{
     font-weight: 600;
 }
@@ -123,29 +118,7 @@ body{
     padding: .5rem .5rem .5rem 1rem;
     border: 1px solid #FFF;
 }
-.rsecng-circular-text text {
-    font-size: 15px;
-    font-weight: bold;
-}
-.rsecng-circular-text {
-    top: 10px;
-    left: 20rem;
-    position: relative;
-    -webkit-animation-name: rotate;
-    animation-name: rotate;
-    animation-duration: 3s;
-    -o-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}  
-@keyframes rotate {
-    from {
-      transform: rotate(360deg);
-    }
-    to {
-      transform: rotate(0);
-    }
-}
+
 .contact-input::placeholder{
     color: #FFF;
 }
@@ -280,7 +253,15 @@ body{
 .header-swiper2{
     overflow: visible !important;
 }
-
+.font-sz-18{
+  font-size: 18px;
+}
+.font-sz-19{
+  font-size: 19px;
+}
+.xui-opacity-7{
+  opacity: .7 !important;
+}
   /* Default state before animation */
 .home-heading .header-heading,
 .home-heading .header-paragraph,
@@ -457,7 +438,11 @@ body{
         filter: blur(0);
     }
 }
+.it-heading::before{
+  position: absolute;
+  content: "";
 
+}
 .xui-w-120{
     width: 120px;
 }
@@ -619,7 +604,35 @@ body{
   .image-container .image:not(.active) span:nth-child(1) {
     transform: rotate(-90deg) translateX(-150px);
     white-space: nowrap;
+    position: relative;
   }
+  /* Target the first span within each image that is not active */
+.image-container .image:not(.active) span:first-of-type::before {
+  position: absolute;
+  content: "";
+  background: grey; /* default color */
+  width: 100px;
+  height: 100px;
+  top: -20px;
+  z-index: -1;
+  left: 0;
+}
+
+/* Example: Color variations based on specific index selectors */
+.image-container .image:nth-child(1):not(.active) span:nth-child(1)::before {
+  background-color: #221E1A;
+}
+
+.image-container .image:nth-child(2):not(.active) span:nth-child(1)::before {
+  background-color: #555557;
+}
+.image-container .image:nth-child(3):not(.active) span:nth-child(1)::before {
+  background-color: #001831;
+}
+.image-container .image:nth-child(4):not(.active) span:nth-child(1)::before {
+  background-color: #371F1A;
+}
+
   .image-container .image:not(.active) .content-container span:not(:nth-child(1)) {
     display: none;
   }
@@ -631,10 +644,6 @@ body{
     width: 100%;
   }
   
-  .image-container .active span {
-    transform: scale(1);
-  }
-
   .content-container{
     backdrop-filter: blur(3px);
     bottom: 0px;
@@ -649,7 +658,7 @@ body{
 .slider-container {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 150px;
     margin-top: 2rem;
 }
   
@@ -676,39 +685,7 @@ body{
     transform: translateY(20px); /* Slide inactive slides slightly down */
     visibility: hidden;
   }
-  /* Navigation Arrows */
-.navigation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    z-index: 1;
-  }
-  
-  .arrow {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #FFF;
-    font-size: 1.5rem;
-  }
-  .arrow.next {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .arrow.prev {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .arrow:hover {
-    color: var(--green);
-  }
+
   .bpo-package-holder .xui-overlay-2{
     background-color: rgba(0,0,0,.25);
     color: #fff;
@@ -728,11 +705,11 @@ body{
   .extra-link{
     display: none !important;
   }
+  .xui-navbar .menu span{
+    background-color: #FFF;
+}
 
 @media screen and (max-width: 768px) {
-    .xui-navbar .menu span{
-        background-color: #FFF;
-    }
     .header-btn1, .header-btn2{
         width: 130px;
     }
@@ -810,8 +787,18 @@ body{
     .extra-link{
         display: inline-block !important;
     }
-      /* .content-container{
-        display: block;
-      } */
+    .image-container .image:not(.active) span:first-of-type::before {
+      width: 80px;
+      height: 70px;
+      top: -10px;
+      left: 10px;
+  }
     
+}
+@media (min-width: 1024px) and (max-width: 1024px) {
+  /* Styles here will apply only at exactly 768px */
+  .header-slider {
+    /* Add your custom styles */
+    width: 65%;
+  }
 }

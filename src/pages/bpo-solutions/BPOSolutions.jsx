@@ -158,21 +158,12 @@ const BPOSolutions = () => {
         <div className='xui-pt-3 xui-text-center'>
             <span className='xui-d-inline-block xui-py-1 xui-px-1-half xui-bdr-white xui-bdr-s-solid xui-bdr-w-1 xui-bdr-rad-2'>Our BPO Solutions</span>
             <div className="slider-container">
-                {/* Navigation Arrows */}
-                <div className="navigation">
-                    <button onClick={handleNext} disabled={currentIndex === sliderText.length - 1} className={`arrow next ${currentIndex === sliderText.length - 1 ? "xui-opacity-6" : ""}`}>
-                        <ChevronUp size={32} />
-                    </button>
-                    <button onClick={handlePrev} disabled={currentIndex === 0} className={`arrow prev ${currentIndex === 0 ? "xui-opacity-6" : ""}`}>
-                        <ChevronDown size={32} />
-                    </button>
-                </div>
                 {sliderText.map((slide, index) => (
                     <div key={index} className={`slide ${index === currentIndex ? "active" : "inactive" }`}>
                         <h1 className="xui-lg-font-sz-250 xui-font-sz-160 xui-font-w-normal xui-mt-1">
                             {slide.heading}
                         </h1>
-                        <p className="xui-lg-font-sz-90 xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-mt-1 xui-mx-auto xui-lg-w-fluid-75 xui-w-fluid-100">
+                        <p className="xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-8 xui-line-height-1-half xui-mt-1 xui-mx-auto xui-lg-w-fluid-75 xui-w-fluid-100">
                             {slide.paragraph}
                         </p>
                     </div>
@@ -189,10 +180,10 @@ const BPOSolutions = () => {
                 {bpoSolutions.map((bpo, index) => (
                     <div key={index} className="xui-bg-sz-cover bpo-package-holder xui-bg-pos-center xui-bdr-rad-half" style={{"backgroundImage": `url('${bpo.image}')`}}>
                         <div className="xui-overlay-2 xui-h-fluid-100 xui-p-1 xui-d-flex xui-flex-dir-column xui-flex-jc-space-between">
-                            <h3 className="xui-lg=font-sz-130 xui-font-sz-110 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-normal xui-m-none">
+                            <h3 className="xui-lg-font-sz-130 xui-font-sz-110 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-normal xui-m-none">
                                 {bpo.heading}
                             </h3>
-                            <p className="xui-lg-font-sz-90 xui-font-sz-85 xui-opacity-8 xui-line-height-1-half xui-mt-1 xui-lg-w-fluid-90 xui-w-fluid-100">
+                            <p className="xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-8 xui-line-height-1-half xui-mt-1 xui-lg-w-fluid-90 xui-w-fluid-100">
                                 {bpo.paragraph}
                             </p>
                             <div className="xui-mt-7">

@@ -92,7 +92,7 @@ const MainFooter = () => {
                         <p>PARTNER <span className='green-text'>WITH</span></p> <p><span className='green-text'>GRASCOPE</span> TODAY</p>
                     </h1>
                 </div>
-                <form onSubmit={handleSubmit(sendEmail)} autoComplete="off" noValidate>
+                {/* <form onSubmit={handleSubmit(sendEmail)} autoComplete="off" noValidate>
                     <div>
                         <p className='xui-mt-1 xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-500'>Subscribe To Our Newsletter</p>
                         <div className="footer-input-email-holder main-footer-input xui-mt-1">
@@ -100,7 +100,7 @@ const MainFooter = () => {
                             <button type="submit" disabled={isDisabled} className="footer-input-email-btn xui-text-dc-none xui-font-sz-85 xui-mobile-font-sz-65 xui-m-half">{isDisabled ? 'Granting access...' : 'Subscribe'}</button>
                         </div>
                     </div>
-                </form>
+                </form> */}
             </div>
             <div className='xui-row xui-mt-4'>
                 <div className='xui-lg-col-6 xui-col-12'>

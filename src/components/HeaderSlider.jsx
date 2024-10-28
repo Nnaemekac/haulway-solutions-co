@@ -63,7 +63,7 @@ function HeaderSlider({ onSlideChange }, ref) {
           <div className="xui-p-1 glass-bg xui-bdr-rad-1 xui-text-white xui-d-flex xui-flex-ai-center">
             <img className="xui-w-150 xui-h-100 xui-bdr-rad-1" src={slide.image} alt={`Slide ${index}`} />
             <div className="xui-p-1" style={{ width: 'calc(100% - 150px)' }}>
-              <p className="xui-w-fluid-100 xui-opacity-7 xui-font-sz-90 xui-line-height-1-half">{slide.heading}</p>
+              <p className="xui-w-fluid-100 xui-opacity-7 xui-font-sz-100 xui-line-height-1-half">{slide.heading}</p>
               <h3 className='xui-font-sz-100 xui-font-w-normal'>{slide.paragraph}</h3>
             </div>
           </div>

@@ -12,7 +12,7 @@ const ITServices = () => {
   const images = [
     {
         image: ITImage1,
-        heading: "Information Technology Support",
+        heading: "INFORMATION Technology Support",
         paragraph: "Offering comprehensive IT support to ensure your systems run smoothly, minimize downtime, and optimize performance, allowing your business to focus on growth and innovation."
       },
       {
@@ -41,7 +41,7 @@ const ITServices = () => {
         <div className='xui-py-3 xui-text-center'>
             <span className='xui-d-inline-block xui-py-1 xui-px-1-half xui-bdr-white xui-bdr-s-solid xui-bdr-w-1 xui-bdr-rad-2'>IT Services</span>
             <h1 className='xui-lg-font-sz-250 xui-font-sz-180 xui-font-w-normal xui-mt-1'>Our IT Services</h1>
-            <p className='xui-lg-font-sz-90 xui-font-sz-80 xui-opacity-8 xui-line-height-1-half xui-mt-1 xui-mx-auto xui-lg-w-fluid-75 xui-w-fluid-100'>Providing businesses with reliable, scalable, and secure IT services designed to enhance operational efficiency, drive innovation, and ensure seamless performance.</p>
+            <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-8 xui-line-height-1-half xui-mt-1 xui-mx-auto xui-lg-w-fluid-75 xui-w-fluid-100'>Providing businesses with reliable, scalable, and secure IT services designed to enhance operational efficiency, drive innovation, and ensure seamless performance.</p>
         </div>
         <div className="image-container">
             {images.map((image, index) => (
@@ -52,11 +52,11 @@ const ITServices = () => {
                 >
                 <img src={image.image} alt={image.alt} title={image.alt} />
                 <div className="content-container xui-w-fluid-100 xui-pos-absolute">
-                    <span className="xui-lg-font-sz-160 xui-font-sz-105">{image.heading}</span>
-                    <span className="xui-lg-font-sz-90 xui-font-sz-60 xui-line-height-1-half xui-lg-w-fluid-70 xui-w-fluid-100">{image.paragraph}</span>
+                    <span className="xui-lg-font-sz-160 xui-font-sz-100 it-heading xui-pos-relative">{image.heading}</span>
+                    <span className="xui-lg-font-sz-110 xui-font-sz-90 xui-line-height-1-half xui-lg-w-fluid-70 xui-w-fluid-100 xui-opacity-7">{image.paragraph}</span>
                     <span>
                         <Link to='/contact' class="custom-svg-box xui-text-dc-none xui-text-white xui-d-inline-flex xui-flex-ai-center xui-flex-jc-space-between xui-bdr-rad-1-half xui-grid-gap-1-half">
-                            <p className='xui-lg-font-sz-90 xui-font-sz-80'>CONTACT US</p>
+                            <p className='xui-lg-font-sz-110 xui-font-sz-100'>CONTACT US</p>
                             <div className='xui-w-35 xui-h-35 xui-bdr-rad-circle xui-d-flex xui-flex-ai-center xui-flex-jc-center'>
                                 <ChevronRight size={19.5} color='#FFF'/>
                             </div>

@@ -144,19 +144,16 @@ export default function Home() {
         image: HeaderImage1,
         heading: 
         <div className='home-heading xui-h-fluid-100 xui-pos-relative'>
-          <div className='xui-lg-d-block xui-d-none'>
-            <h1 className="xui-lg-font-sz-400 xui-font-sz-250 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 xui-d-flex xui-flex-ai-center header-heading">
-              <p>Welcome To</p>
-              <p>Grascope <img className="xui-img-250 xui-d-inline-block" src={Pattern} alt="" /> Industries </p>
+          <div className=''>
+            <h1 className="xui-font-sz-500 xui-lg-d-inline xui-d-none xui-font-w-500 xui-flex-ai-center header-heading">
+              Welcome To <br /> Grascope <img className="xui-img-250 xui-d-inline-block" src={Pattern} alt="" /> Industries
+            </h1>
+            <h1 className="xui-font-sz-180 xui-lg-d-none xui-d-inline xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 xui-flex-ai-center header-heading">
+              Welcome To Grascope <br /> <img className="xui-lg-img-250 xui-img-100 xui-d-inline-block" src={Pattern} alt="" /> Industries
             </h1>
           </div>
-          <div className='xui-lg-d-none xui-d-block'>
-            <h1 className="xui-lg-font-sz-400 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 xui-d-flex xui-flex-ai-center header-heading">
-              <p>Welcome To Grascope</p>
-              <p><img className="xui-lg-img-250 xui-img-100 xui-d-inline-block" src={Pattern} alt="" /> Industries</p>
-            </h1>
-          </div>
-          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header-paragraph'>At Grascope Industries, we drive innovation and excellence across various sectors. Focused on growth, sustainability, and client success, we deliver lasting solutions that meet the evolving needs of companies across various industries.</p>
+          
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header-paragraph'>At Grascope Industries, we drive innovation and excellence across various sectors. Focused on growth, sustainability, and client success, we deliver lasting solutions that meet the evolving needs of companies across various industries.</p>
           <div className='xui-d-flex xui-flex-ai-center xui-mt-1'>
             <Button url="about" customClass="header-btn1" text="Get started" svgColor="#159B48" />
             <Button url="about" customClass="header-btn2 xui-bdr-white xui-bdr-w-1 xui-bdr-s-solid" isButton2={true} text="Learn more" />
@@ -168,9 +165,9 @@ export default function Home() {
         image: HeaderImage2,
         heading: 
         <div className='home-heading2 xui-h-fluid-100 xui-pos-relative'>
-          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-opacity-9 header2-sub-heading'>Our Solutions</p>
-          <h1 className='xui-lg-font-sz-400 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header2-heading'>AgroTech Solutions</h1>
-          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header2-paragraph'>Our AgroTech solutions harness the power of technology to revolutionize agriculture, enhancing productivity, sustainability, and resource management. We provide innovative tools and strategies that empower farmers and agribusinesses to achieve greater efficiency and long-term success.</p>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-9 header2-sub-heading'>Our Solutions</p>
+          <h1 className='xui-lg-font-sz-500 xui-font-sz-180 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header2-heading'>AgroTech Solutions</h1>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header2-paragraph'>Our AgroTech solutions harness the power of technology to revolutionize agriculture, enhancing productivity, sustainability, and resource management. We provide innovative tools and strategies that empower farmers and agribusinesses to achieve greater efficiency and long-term success.</p>
           <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header2-btn xui-mt-1" text="Learn more" />
 
           <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>From advanced data analytics to precision farming tools, we provide innovative strategies that empower farmers and agribusinesses to achieve greater efficiency, optimize resources, and drive long-term success.</p>
@@ -180,9 +177,9 @@ export default function Home() {
         image: HeaderImage3,
         heading: 
         <div className='home-heading3 xui-h-fluid-100 xui-pos-relative'>
-          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-opacity-9 header3-sub-heading'>Our Solutions</p>
-          <h1 className='xui-lg-font-sz-400 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header3-heading'>Custom Software Solutions</h1>
-          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header3-paragraph'>Our custom software solutions are designed to meet your unique business needs, offering scalable, efficient, and innovative systems that streamline operations and drive growth. We partner with you to create tailored solutions that enhance performance and deliver measurable results.</p>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-9 header3-sub-heading'>Our Solutions</p>
+          <h1 className='xui-lg-font-sz-500 xui-font-sz-180 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header3-heading'>Custom Software Solutions</h1>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header3-paragraph'>Our custom software solutions are designed to meet your unique business needs, offering scalable, efficient, and innovative systems that streamline operations and drive growth. We partner with you to create tailored solutions that enhance performance and deliver measurable results.</p>
           <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header3-btn xui-mt-1" text="Learn more" />
           <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>By partnering closely with you, we develop tailored solutions that not only enhance performance but also deliver measurable, long-term results.</p>
         </div>,
@@ -191,9 +188,9 @@ export default function Home() {
         image: HeaderImage4,
         heading: 
         <div className='home-heading4 xui-h-fluid-100 xui-pos-relative'>
-          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-opacity-9 header4-sub-heading'>Our Solutions</p>
-          <h1  className='xui-lg-font-sz-400 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header4-heading'>E-commerce Solution</h1>
-          <p className='xui-lg-font-sz-100 xui-font-sz-80 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header4-paragraph'>Enhance your online business with our state-of-the-art e-commerce solutions. We deliver tailored strategies and technologies that refine user experience, streamline operations, and drive growth.</p>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-9 header4-sub-heading'>Our Solutions</p>
+          <h1  className='xui-lg-font-sz-500 xui-font-sz-180 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header4-heading'>E-commerce Solution</h1>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header4-paragraph'>Enhance your online business with our state-of-the-art e-commerce solutions. We deliver tailored strategies and technologies that refine user experience, streamline operations, and drive growth.</p>
           <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header4-btn xui-mt-1" text="Learn more" />
           <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>From sophisticated platform design to seamless integration, our solutions ensure a powerful and effective online presence.</p>
         </div>,

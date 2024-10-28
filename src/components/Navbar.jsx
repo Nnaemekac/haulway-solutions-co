@@ -28,7 +28,7 @@ const Navbar = () => {
         <>
         <nav className={`xui-navbar iyd-nav xui-container pd-nav xui-text-black xui-py-1`} brand="true" layout="2" menu="2">
             
-            <div className={`links xui-lg-px-none xui-px-1`} placed="left">
+            <div className={`links xui-px-1`} placed="left">
                 <div class={`overlay ${pathname !== '/' ? 'other-color' : ''} xui-bdr-rad-2`}>
                 
                 </div>

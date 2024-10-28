@@ -11,7 +11,7 @@ const Dropdown = () => {
                 <ul className="xui-my-1 xui-p-none">
                     <li style={{"listStyle": "circle"}}><p className="xui-font-sz-90 xui-grid-gap-half xui-opacity-7 xui-font-w-500">Minimum Number of Staff: 3 dedicated staff members</p></li>
                 </ul>
-                <p className='xui-lg-font-sz-110 xui-font-sz-90 xui-font-w-500'>Roles</p>
+                <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-font-w-500'>Roles</p>
                 <ul className="xui-my-1 xui-p-none">
                     <li style={{"listStyle": "circle"}}><p className="xui-font-sz-90 xui-grid-gap-half xui-opacity-7 xui-font-w-500">2 Customer Support Agents (8 hours/day, email and chat support)</p></li>
                     <li style={{"listStyle": "circle"}}><p className="xui-font-sz-90 xui-mt-half xui-grid-gap-half xui-opacity-7 xui-font-w-500 xui-line-height-1-half">1 Data Entry Specialist</p></li>
