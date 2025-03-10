@@ -1,19 +1,3 @@
-
-@font-face {
-    font-display: swap;
-    font-family: "outfit-bold";
-    font-style: normal;
-    font-weight: bold;
-    src: url("../assets/fonts/Outfit/Outfit-Medium.ttf") format("woff");
-}
-@font-face {
-    font-display: swap;
-    font-family: "outfit";
-    font-style: normal;
-    font-weight: 500;
-    src: url("../assets/fonts/Outfit/Outfit-Regular.ttf") format("woff");
-}
-
 :root {
     --primary: #060417;
     --green: #159b48;
@@ -25,25 +9,8 @@
     --light-grey:#d3d3d3;
     --glass-bg:rgba( 255, 255, 255, 0.25 );
     --secondary: var(--secondary);
+    --linear-gradient: linear-gradient(86.86deg, #249D49 0%, #00742F 53%, #13893C 106.85%);
     --navbarHeight: 70px;
-}
-body{
-    font-family: 'outfit', sans-serif;
-}
-.green{
-    background-color: var(--green);
-}
-.green-text{
-    color: var(--green);
-}
-.bold-font{
-    font-weight: "bold";
-}
-.primary{
-    background-color: var(--primary);
-}
-.primary-color{
-    color: var(--secondary) !important;
 }
 .hw-main-section{
     min-height: 100vh;
@@ -54,60 +21,31 @@ body{
 .xui-line-height-3 {
   line-height: 3rem;
 }
-.xui-navbar{
-    position: fixed;
-    z-index: 20;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    background: transparent;
+.grascope-navbar{
+  background: linear-gradient(111.85deg,#fdfdfd4d 5.74%,#fdfdfd33 68.32%);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  box-shadow: 0 4px 24px -3px #0003;
+  position: fixed;
+  width: 90%;
+  top: 40px;
+  margin: auto;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 50px;
 }
 .xui-navbar[menu="2"] .links .main{
     left: 150%;
 }
-.xui-navbar .links{
-    /* width: 100%;
-    border-radius: 6rem;
-    background: linear-gradient(111.85deg, rgba(253, 253, 253, 0.3) 5.74%, rgba(253, 253, 253, 0.2) 68.32%);
-    box-shadow: 0px 4px 24px -3px #00000033; */
-    position: relative;
-    /* overflow: hidden; */
-    width: 100%;
-    height: 70px;
-    background: linear-gradient(135deg, rgba(253, 253, 253, 0.3) 0%, rgba(253, 253, 253, 0.2) 100%);
-    border-radius: 2rem;
-    /* backdrop-filter: blur(10px); */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 
-}
-
-.xui-navbar .links .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #D9D9D9;
-    border-radius: 2rem;
-    opacity: 0.2;
-    mix-blend-mode: overlay;
-}
-.xui-navbar .links .overlay.other-color{
-    background-color: #159B48;
-
-}
 .xui-navbar .main ul li a{
     color: #FFF;
 }
 .xui-navbar .links ul li a.contact{
     padding: .5rem 1rem !important;
 }
-.glass-bg{
-    backdrop-filter: blur( 24px );
-    border-radius: 1rem;
-    background: linear-gradient(111.85deg, rgba(253, 253, 253, 0.3) 5.74%, rgba(253, 253, 253, 0.2) 68.32%);
-    box-shadow: 0px 4px 24px -3px #00000033;
+.xui-btn, .xui-btn-block {
+  padding: 1.2em 1.5em!important;
 }
 
 .active-link{
@@ -124,6 +62,29 @@ body{
 }
 .xui-navbar[layout="2"] .links{
     justify-content: space-between !important;
+}
+.gradient-btn {
+  position: relative;
+  /* padding: 0.6rem 0.6rem 0.6rem 1.2rem; */
+  border: none;
+  background: linear-gradient(111.85deg,#fdfdfd4d 5.74%,#fdfdfd33 68.32%);
+  box-shadow: 0 4px 24px -3px #0003;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  color: #fff;
+}
+.gradient-btn:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #159b48;
+  mix-blend-mode: overlay;
+  opacity: .2;
+  border-radius: 2rem;
 }
 .anonymous-img > div{
     width: 40px;

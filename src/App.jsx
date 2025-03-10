@@ -15,6 +15,7 @@ import BPOPackage2 from "./pages/bpo-solutions/bpo-packages/BPOPackage2";
 import BPOPackage3 from "./pages/bpo-solutions/bpo-packages/BPOPackage3";
 import BPOPackage4 from "./pages/bpo-solutions/bpo-packages/BPOPackage4";
 import Contact from "./pages/contact/Contact";
+import useDynamicStyles from "./hooks/useDynamicStyles";
 const Home = lazy(() => import('./pages/Home'));
 
 function ScrollToTop() {
@@ -27,11 +28,17 @@ function ScrollToTop() {
   return null;
 }
 
+function DynamicStylesWrapper() {
+  useDynamicStyles();
+  return null; // Prevents rendering issues
+}
+
 function App() {
   return (
     <>
-      <section className='xui-bg-black xui-text-white xui-h-fluid-100'>
+      <section className='bg-[#141416] xui-text-white xui-h-fluid-100'>
       <Navbar />
+      <DynamicStylesWrapper />
         <Suspense fallback={<Loader />}>
           <ScrollToTop />
             <Routes>
