@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import Logo from "../assets/images/logo.png";
+import LogoV1 from "../assets/images/brand/logo-v-1.png";
 import { ArrowRight } from '@carbon/icons-react';
 import { useEffect } from 'react';
 
@@ -26,35 +26,31 @@ const Navbar = () => {
     
     return (
         <>
-        <nav className={`xui-navbar iyd-nav xui-container pd-nav xui-text-black xui-py-1`} brand="true" layout="2" menu="2">
-            
-            <div className={`links xui-px-1`} placed="left">
-                <div class={`overlay ${pathname !== '/' ? 'other-color' : ''} xui-bdr-rad-2`}>
-                
-                </div>
-                <div className="brand xui-h-fluid-100" style={{"zIndex": "11"}}>
-                    <NavLink className="xui-text-dc-none xui-h-fluid-100 xui-text-inherit xui-d-inline-flex xui-p-1 xui-flex-ai-center" to={'/'}>
-                        <img className='xui-img-100' src={Logo} alt="" />
-                        {/* <span className="xui-ml-half xui-d-inline-block xui-font-1 xui-font-w-bold">Kathy</span> */}
-                    </NavLink>
-                </div>
+        <nav className={`xui-navbar grascope-navbar xui-pl-1-half xui-pr-half `} brand="true" layout="2" menu="2">
+            <div className="brand xui-h-fluid-100" style={{"zIndex": "11"}}>
+                <NavLink className="xui-text-dc-none xui-h-fluid-100 xui-text-inherit xui-d-inline-flex xui-p-1 xui-flex-ai-center" to={'/'}>
+                    <img className='xui-img-150' src={LogoV1} alt="" />
+                    {/* <span className="xui-ml-half xui-d-inline-block xui-font-1 xui-font-w-bold">Kathy</span> */}
+                </NavLink>
+            </div>
+            <div className={`links`} placed="left">
 
                 <div className="main dark-color xui-bg-black xui-bg-white">
                     <ul>
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? 'active-link bold-font' : 'xui-font-sz-90 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"/"}>Home</NavLink>
+                            <NavLink className={`xui-font-2 xui-font-sz-100 nav-links xui-md-font-sz-120 xui-lg-font-sz-95 ${({ isActive }) => isActive ? 'active-link xui-font-w-600' : ''}`} to={"/"}>Home</NavLink>
                         </li>
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? 'active-link bold-font' : 'xui-font-sz-90 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"about"}>About us</NavLink>
+                            <NavLink className={`xui-font-2 xui-font-sz-100 nav-links xui-md-font-sz-120 xui-lg-font-sz-95 ${({ isActive }) => isActive ? 'active-link xui-font-w-600' : ''}`} to={"about"}>About us</NavLink>
                         </li>
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? 'active-link bold-font' : 'xui-font-sz-90 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"it/services"}>IT Services</NavLink>
+                            <NavLink className={`xui-font-2 xui-font-sz-100 nav-links xui-md-font-sz-120 xui-lg-font-sz-95 ${({ isActive }) => isActive ? 'active-link xui-font-w-600' : ''}`} to={"it/services"}>IT Services</NavLink>
                         </li>
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? 'active-link bold-font' : 'xui-font-sz-90 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"bpo/solutions"}>BPO Solutions</NavLink>
+                            <NavLink className={`xui-font-2 xui-font-sz-100 nav-links xui-md-font-sz-120 xui-lg-font-sz-95 ${({ isActive }) => isActive ? 'active-link xui-font-w-600' : ''}`} to={"bpo/solutions"}>BPO Solutions</NavLink>
                         </li>
                         <li className='extra-link'>
-                            <NavLink className={({ isActive }) => isActive ? 'active-link bold-font' : 'xui-font-sz-90 nav-links xui-md-font-sz-200 xui-lg-font-sz-100 xui-font-w-normal xui-text-black'} to={"contact"}>Contact us</NavLink>
+                            <NavLink className={`xui-font-2 xui-font-sz-100 nav-links xui-md-font-sz-120 xui-lg-font-sz-95 ${({ isActive }) => isActive ? 'active-link xui-font-w-600' : ''}`} to={"contact"}>Contact us</NavLink>
                         </li>
                      
                     </ul>
@@ -62,7 +58,8 @@ const Navbar = () => {
                 <div className="fixed xui-lg-d-block xui-d-none">
                     <ul>
                         <li>
-                            <Link className='contact green xui-text-white xui-bdr-rad-1-half' to="contact">Contact us</Link>
+                            <Link className='padding-[.8rem_1.2rem] xui-bdr-rad-2 xui-bg-white xui-text-black xui-font-sz-85 xui-font-w-600' to="signin">Sign in</Link>
+                            <Link className='padding-[.8rem_1.2rem] xui-bdr-white xui-bdr-w-1 xui-bdr-s-solid xui-bdr-rad-2 xui-text-white xui-font-sz-85 xui-ml-1' to="contact">Contact us</Link>
                             {/* <LinkButton text="Contact Us" route="tel:+234 567 896 8000" customClass="xui-bdr-rad-3" /> */}
                             {/* <BtnCustomI onClick={scrollToContainer("contact")} href="./" text="Book free consultation" mobileText="Book Now" layout="iv"></BtnCustomI> */}
                         </li>

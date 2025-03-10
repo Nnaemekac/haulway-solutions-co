@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import XIcon from './icons/XIcon';
 // import FacebookIcon from './icons/FacebookIcon';
-import GrascopeLogo from "../assets/images/logo.png";
+// import GrascopeLogo from "../assets/images/logo.png";
 // import InstagramIcon from './icons/InstagramIcon';
 // import LinkedInIcon from './icons/LinkedInIcon';
 import { API_URL } from "../../globals.json";
@@ -144,7 +144,7 @@ const MainFooter = () => {
                      
                      </p>
                 </div>
-                <p className='xui-lg-mt-none xui-mt-2 xui-lg-col-4 xui-col-12 xui-lg-font-sz-100 xui-font-sz-60 xui-font-w-500 xui-d-inline-flex xui-flex-ai-center xui-lg-flex-jcflex-start xui-flex-jc-center xui-grid-gap-half'>&copy; 2024 Powered by <Link className='xui-d-inline-block' to='https://www.grascope.com/' target='_blank'><img className='xui-img-80' src={GrascopeLogo} alt="" /></Link>- All right reserved</p>
+                {/* <p className='xui-lg-mt-none xui-mt-2 xui-lg-col-4 xui-col-12 xui-lg-font-sz-100 xui-font-sz-60 xui-font-w-500 xui-d-inline-flex xui-flex-ai-center xui-lg-flex-jcflex-start xui-flex-jc-center xui-grid-gap-half'>&copy; 2024 Powered by <Link className='xui-d-inline-block' to='https://www.grascope.com/' target='_blank'><img className='xui-img-80' src={GrascopeLogo} alt="" /></Link>- All right reserved</p> */}
             </div>
 
         </section>
