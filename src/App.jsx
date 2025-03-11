@@ -9,13 +9,10 @@ import { useLocation } from "react-router-dom";
 import About from "./pages/About";
 import ITServices from "./pages/ITServices";
 import MainFooter from "./components/MainFooter";
-import BPOSolutions from "./pages/bpo-solutions/BPOSolutions";
-import BPOPackage1 from "./pages/bpo-solutions/bpo-packages/BPOPackage1";
-import BPOPackage2 from "./pages/bpo-solutions/bpo-packages/BPOPackage2";
-import BPOPackage3 from "./pages/bpo-solutions/bpo-packages/BPOPackage3";
-import BPOPackage4 from "./pages/bpo-solutions/bpo-packages/BPOPackage4";
+import BPOSolutions from "./pages/BPOSolutions";
 import Contact from "./pages/contact/Contact";
 import useDynamicStyles from "./hooks/useDynamicStyles";
+
 const Home = lazy(() => import('./pages/Home'));
 
 function ScrollToTop() {
@@ -36,7 +33,7 @@ function DynamicStylesWrapper() {
 function App() {
   return (
     <>
-      <section className='bg-[#141416] xui-text-white xui-h-fluid-100'>
+      <section className='bg-[#141416] xui-text-white xui-h-fluid-100 xui-overflow-x-hidden'>
       <Navbar />
       <DynamicStylesWrapper />
         <Suspense fallback={<Loader />}>
@@ -46,10 +43,6 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/it/services" element={<ITServices />} />
               <Route path="/bpo/solutions" element={<BPOSolutions />} />
-              <Route path="/bpo/solutions/package/1" element={<BPOPackage1 />} />
-              <Route path="/bpo/solutions/package/2" element={<BPOPackage2 />} />
-              <Route path="/bpo/solutions/package/3" element={<BPOPackage3 />} />
-              <Route path="/bpo/solutions/package/4" element={<BPOPackage4 />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<h1>No Match</h1>} />
             </Routes>

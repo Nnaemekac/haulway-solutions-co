@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import Button from '../../../components/Button';
+import { Link } from 'react-router-dom';
+import ArrowRight from '../../../components/custom-svg-icons/ArrowRight';
 
 const ContactCard = (props) => {
     const { heading, paragraph, isWhatsapp, isPhone, isEmail, image } = props;
@@ -18,13 +20,25 @@ const ContactCard = (props) => {
                 </p>
                 <div className="xui-mt-7">
                     <hr style={{"backgroundColor": "#FFF"}}/>
-                    {isWhatsapp ? (
-                        <Button url='https://wa.me/447441395374' customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="xui-mt-1" text="Contact us" />
-                    ) : isPhone ? (
-                        <Button url='tel:+447441395374' customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="xui-mt-1" text="Contact us" />
-                    ) : isEmail ? (
-                        <Button url='mailto:contact@grascope.com' customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="xui-mt-1" text="Contact us" />
-                    ) : ''}
+                    <div className='xui-mt-1'>
+                        {isWhatsapp ? (
+                            <Link to='https://wa.me/447441395374' target='_blank' className='padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half'>
+                                <p className='xui-lg-font-sz-95 xui-font-sz-70'>Contact us</p>
+                                <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#159B48"} /></span>
+                            </Link>
+                        ) : isPhone ? (
+                            <Link to='tel:+447441395374' target='_blank' className='padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half'>
+                                <p className='xui-lg-font-sz-95 xui-font-sz-70'>Contact us</p>
+                                <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#159B48"} /></span>
+                            </Link>
+                        ) : isEmail ? (
+                            <Link to='mailto:contact@grascope.com' target='_blank' className='padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half'>
+                                <p className='xui-lg-font-sz-95 xui-font-sz-70'>Contact us</p>
+                                <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#159B48"} /></span>
+                            </Link>
+                            
+                        ) : ''}
+                    </div>
                 </div>
             </div>
         </div>
