@@ -6,13 +6,13 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import { useEffect, useState, useRef } from 'react';
-import HeaderSlider from '../../components/HeaderSlider';
-import HeaderImage1 from '../../assets/images/header-image1.jpg';
-import HeaderImage2 from '../../assets/images/header-image2.jpg';
-import HeaderImage3 from '../../assets/images/header-image3.jpg';
-import HeaderImage4 from '../../assets/images/header-image4.jpg';
-import Circle from '../../assets/images/circle.png';
-import Pattern from '../../assets/images/pattern.png';
+import HeaderSlider from './components/HeaderSlider';
+import HeaderImage1 from '../../assets/images/home/header-image1.jpg';
+import HeaderImage2 from '../../assets/images/home/header-image2.jpg';
+import HeaderImage3 from '../../assets/images/home/header-image3.jpg';
+import HeaderImage4 from '../../assets/images/home/header-image4.jpg';
+// import Circle from '../../assets/images/home/circle.png';
+import Pattern from '../../assets/images/home/pattern.png';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, ArrowRight } from '@carbon/icons-react';
 import Button from '../../components/Button';
@@ -95,7 +95,6 @@ export default function Header() {
     const Heading = document.querySelector('.home-heading');
     const Heading2 = document.querySelector('.home-heading2');
     const Heading3 = document.querySelector('.home-heading3');
-    const Heading4 = document.querySelector('.home-heading4');
     
     setActiveIndex(swiper.activeIndex); // Update active index
   
@@ -104,19 +103,15 @@ export default function Header() {
       Heading.classList.add('scroll-up');
       if (Heading2) Heading2.classList.remove('scroll-up');
       if (Heading3) Heading3.classList.remove('scroll-up');
-      if (Heading4) Heading4.classList.remove('scroll-up');
     } else if (swiper.activeIndex === 1 && Heading2) {
       Heading2.classList.add('scroll-up');
       if (Heading) Heading.classList.remove('scroll-up');
       if (Heading3) Heading3.classList.remove('scroll-up');
-      if (Heading4) Heading4.classList.remove('scroll-up');
     } else if (swiper.activeIndex === 2 && Heading3) {
       Heading3.classList.add('scroll-up');
       if (Heading) Heading.classList.remove('scroll-up');
       if (Heading2) Heading2.classList.remove('scroll-up');
-      if (Heading4) Heading4.classList.remove('scroll-up');
-    } else if (swiper.activeIndex === 3 && Heading4) {
-      Heading4.classList.add('scroll-up');
+    } else if (swiper.activeIndex === 3) {
       if (Heading) Heading.classList.remove('scroll-up');
       if (Heading2) Heading2.classList.remove('scroll-up');
       if (Heading3) Heading3.classList.remove('scroll-up');
@@ -145,7 +140,7 @@ export default function Header() {
         heading: 
         <div className='home-heading xui-h-fluid-100 xui-pos-relative'>
           <div className=''>
-            <h1 className="xui-font-sz-500 xui-lg-d-inline xui-d-none xui-font-w-500 xui-flex-ai-center header-heading">
+            <h1 className="xui-font-sz-400 xui-lg-d-inline xui-d-none xui-font-w-400 xui-flex-ai-center header-heading">
               Welcome To <br /> Grascope <img className="xui-img-250 xui-d-inline-block" src={Pattern} alt="" /> Industries
             </h1>
             <h1 className="xui-font-sz-180 xui-lg-d-none xui-d-inline xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 xui-flex-ai-center header-heading">
@@ -153,46 +148,50 @@ export default function Header() {
             </h1>
           </div>
           
-          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header-paragraph'>At Grascope Industries, we drive innovation and excellence across various sectors. Focused on growth, sustainability, and client success, we deliver lasting solutions that meet the evolving needs of companies across various industries.</p>
-          <div className='xui-d-flex xui-flex-ai-center xui-mt-1'>
-            <Button url="about" customClass="header-btn1" text="Get started" svgColor="#159B48" />
-            <Button url="about" customClass="header-btn2 xui-bdr-white xui-bdr-w-1 xui-bdr-s-solid" isButton2={true} text="Learn more" />
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header-paragraph'>Grascope is a UK-registered outsourcing company that delivers fully managed Nigerian teams, combining UK excellence with cost-effective, reliable staffing solutions to drive operational success and significant savings.</p>
+          <div className='xui-d-flex xui-flex-ai-center xui-grid-gap-1 xui-mt-1'>
+            <Link to='about' className='header-btn1 padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half'>
+                <p className='xui-lg-font-sz-95 xui-font-sz-70'>Get Started</p>
+                <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#159B48"} /></span>
+            </Link>
+            <Link to='about' className='header-btn2 padding-[0.6rem_0.6rem_0.6rem_1.2rem] xui-text-white xui-bdr-white xui-bdr-w-1 xui-bdr-s-solid xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half'>
+                <p className='xui-lg-font-sz-95 xui-font-sz-70'>Learn More</p>
+                <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#159B48"} /></span>
+            </Link>
+            {/* <Button url="about" customClass="header-btn1" text="Get started" svgColor="#159B48" />
+            <Button url="about" customClass="header-btn2 xui-bdr-white xui-bdr-w-1 xui-bdr-s-solid" isButton2={true} text="Learn more" /> */}
           </div>
-          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-40 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>Empowering businesses with innovative customer service, cutting-edge Agrotech, and streamlined e-commerce solutions, tailored to enhance growth and efficiency.</p>
+          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-40 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>Built on trust and excellence, we fuse UK standards with dynamic Nigerian talent to deliver game-changing outsourcing solutions that drive growth and reduce costs.</p>
         </div>,
       },
       {
         image: HeaderImage2,
         heading: 
         <div className='home-heading2 xui-h-fluid-100 xui-pos-relative'>
-          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-9 header2-sub-heading'>Our Solutions</p>
-          <h1 className='xui-lg-font-sz-500 xui-font-sz-180 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header2-heading'>AgroTech Solutions</h1>
-          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header2-paragraph'>Our AgroTech solutions harness the power of technology to revolutionize agriculture, enhancing productivity, sustainability, and resource management. We provide innovative tools and strategies that empower farmers and agribusinesses to achieve greater efficiency and long-term success.</p>
-          <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header2-btn xui-mt-1" text="Learn more" />
-
-          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>From advanced data analytics to precision farming tools, we provide innovative strategies that empower farmers and agribusinesses to achieve greater efficiency, optimize resources, and drive long-term success.</p>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-9 header2-sub-heading'>BPO Services</p>
+          <h1 className='xui-lg-font-sz-400 xui-font-sz-180 xui-font-sz-180 xui-lg-w-fluid-60 xui-w-fluid-100 xui-font-w-500 header2-heading'>Elevate Efficiency with Premier BPO Services.</h1>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header2-paragraph'>Transform your operations, reduce costs, and drive growth with our comprehensive outsourcing solutions designed for modern businesses.</p>
+          {/* <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header2-btn xui-mt-1" text="Learn more" /> */}
+          <Link to='about' className='header2-btn padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2'>
+              <p className='xui-lg-font-sz-95 xui-font-sz-70'>Learn More</p>
+              <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center bg-[#159B48] xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#FFF"} /></span>
+          </Link>
+          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-30 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>Experience enhanced efficiency, scalability, and agile support that positions your business for lasting competitive advantage.</p>
         </div>,
       },
       {
         image: HeaderImage3,
         heading: 
         <div className='home-heading3 xui-h-fluid-100 xui-pos-relative'>
-          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-9 header3-sub-heading'>Our Solutions</p>
-          <h1 className='xui-lg-font-sz-500 xui-font-sz-180 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header3-heading'>Custom Software Solutions</h1>
-          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header3-paragraph'>Our custom software solutions are designed to meet your unique business needs, offering scalable, efficient, and innovative systems that streamline operations and drive growth. We partner with you to create tailored solutions that enhance performance and deliver measurable results.</p>
-          <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header3-btn xui-mt-1" text="Learn more" />
-          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>By partnering closely with you, we develop tailored solutions that not only enhance performance but also deliver measurable, long-term results.</p>
-        </div>,
-      },
-      {
-        image: HeaderImage4,
-        heading: 
-        <div className='home-heading4 xui-h-fluid-100 xui-pos-relative'>
-          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-9 header4-sub-heading'>Our Solutions</p>
-          <h1  className='xui-lg-font-sz-500 xui-font-sz-180 xui-font-sz-180 xui-lg-w-fluid-90 xui-w-fluid-100 xui-font-w-500 header4-heading'>E-commerce Solution</h1>
-          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header4-paragraph'>Enhance your online business with our state-of-the-art e-commerce solutions. We deliver tailored strategies and technologies that refine user experience, streamline operations, and drive growth.</p>
-          <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header4-btn xui-mt-1" text="Learn more" />
-          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>From sophisticated platform design to seamless integration, our solutions ensure a powerful and effective online presence.</p>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-9 header3-sub-heading'>IT Services</p>
+          <h1 className='xui-lg-font-sz-400 xui-font-sz-180 xui-font-sz-180 xui-lg-w-fluid-70 xui-w-fluid-100 xui-font-w-500 header3-heading'>Innovative IT Services for Modern Enterprises</h1>
+          <p className='xui-lg-font-sz-110 xui-font-sz-100 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 xui-opacity-7 header3-paragraph'>Empower your organization with integrated, future-ready IT solutions that deliver excellence.</p>
+          {/* <Button url="bpo/solutions" customStyle={{"backgroundColor": "#159b48"}} svgColor="#FFF" customClass="header3-btn xui-mt-1" text="Learn more" /> */}
+          <Link to='about' className='header3-btn padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2'>
+              <p className='xui-lg-font-sz-95 xui-font-sz-70'>Learn More</p>
+              <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center bg-[#159B48] xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#FFF"} /></span>
+          </Link>
+          <p className='xui-lg-font-sz-100 xui-lg-mt-6 xui-mt-8 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-35 xui-w-fluid-100 xui-opacity-7 xui-pos-absolute' style={{"bottom": "0", "left": "0"}}>Experience seamless integration, proactive support, and advanced technology that boost productivity, secure operations, and sustain competitive growth.</p>
         </div>,
       },
     ];
@@ -208,7 +207,7 @@ export default function Header() {
           }}
           modules={[Autoplay, EffectFade]}
           direction="horizontal"
-          speed={500}
+          speed={400}
           spaceBetween={10}
           slidesPerView={1}
           autoplay={true}

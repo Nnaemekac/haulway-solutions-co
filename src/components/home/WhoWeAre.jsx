@@ -1,7 +1,6 @@
 import React from 'react';
 import SectionComponent from './components/SectionComponent';
 import { Link } from 'react-router-dom';
-import RightArrowIcon from '../custom-svg-icons/RightArrowIcon';
 import ArrowRight from '../custom-svg-icons/ArrowRight';
 import Harness from '../custom-svg-icons/Harness';
 import LocationStar from '../custom-svg-icons/LocationStar';
@@ -15,12 +14,12 @@ const WhoWeAre = () => {
             <div className='xui-mt-3 xui-row'>
                 <div className='xui-lg-col-5 xui-col-12'>
                     <p className='xui-font-sz-95 xui-line-height-1-half xui-lg-w-fluid-80 xui-w-fluid-100'>Grascope is a UK-registered outsourcing firm offering fully managed Nigerian teams with structured staffing, in-person management, UK contract protection, and dedicated account managers.</p>
-                    <Link to='/' className='padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2'>
+                    <Link to='/' className='padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2'>
                         <p className='xui-font-sz-95'>Schedule a Free Consultation</p>
-                        <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight /></span>
+                        <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#141416"} /></span>
                     </Link>
                 </div>
-                <div className='xui-lg-col-7 xui-col-12'>
+                <div className='xui-lg-col-7 xui-col-12 xui-lg-mt-none xui-mt-2'>
                     <div className='xui-d-grid xui-lg-grid-col-2 xui-grid-col-1 xui-grid-gap-1'>
                         <div className='xui-pt-1 xui-px-1 xui-pb-2 xui-bdr-rad-1 bg-[#1E1E1E]'>
                             <div className='xui-d-flex xui-flex-ai-center xui-grid-gap-1'>

@@ -14,6 +14,7 @@ import ThankYouModal from "./ThankYouModal";
 import confetti from "canvas-confetti";
 import InstagramIcon from './custom-svg-icons/InstagramIcon';
 import LinkedInIcon from './custom-svg-icons/LinkedInIcon';
+import LogoV2 from "../assets/images/brand/logo-v-2.png";
 
 const MainFooter = () => {
     const { handleSubmit, register, formState: { errors, isValid }, reset } = useForm();
@@ -89,7 +90,7 @@ const MainFooter = () => {
             <div className='xui-d-grid xui-lg-grid-col-2 xui-grid-col-1 xui-grid-gap-1 xui-flex-ai-flex-end'>
                 <div>
                     <h1 className='haulway-heading-text xui-line-height-2-half xui-lg-font-sz-300 xui-font-sz-180 xui-font-w-500'>
-                        <p>PARTNER <span className='green-text'>WITH</span></p> <p><span className='green-text'>GRASCOPE</span> TODAY</p>
+                        <p>PARTNER <span className='text-[#737373]'>WITH GRASCOPE</span> TODAY</p>
                     </h1>
                 </div>
                 {/* <form onSubmit={handleSubmit(sendEmail)} autoComplete="off" noValidate>
@@ -102,18 +103,18 @@ const MainFooter = () => {
                     </div>
                 </form> */}
             </div>
-            <div className='xui-row xui-mt-4'>
-                <div className='xui-lg-col-6 xui-col-12'>
+            <div className='xui-d-flex xui-mt-4 xui-flex-ai-center xui-flex-jc-space-between'>
+                <div className=''>
                     <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>CONTACT US</p>
                     <p className='xui-lg-font-sz-90 xui-font-sz-65 xui-font-w-500 xui-mt-1'><span className='xui-mr-half'>contact@grascope.com</span> <span className='green-text'>/</span> <span className='xui-mx-half'>+234 818 293 1756 </span> <span className='green-text'>/</span> <span className='xui-ml-half'>+44 7441359374</span></p>
                 </div>
-                <div className='xui-lg-col-6 xui-col-12 xui-lg-mt-none xui-mt-4'>
+                <div className='xui-lg-mt-none xui-mt-4'>
                     <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>ADDRESS</p>
                     <p className='xui-lg-font-sz-90 xui-font-sz-65 xui-font-w-500 xui-mt-1 xui-line-height-1-half'>4, Iwowari Avenue, George Sekibo Road, Sasun Roundabout, Off Peter Odili Road, PortHarcourt, Nigeria.</p>
                 </div>
             </div>
-            <div className='xui-row xui-mt-4'>
-                <div className='xui-lg-col-9 xui-col-12'>
+            <div className='xui-d-flex xui-mt-4 xui-flex-ai-center xui-flex-jc-space-between'>
+                <div className=''>
                     <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>QUICK LINKS</p>
                     <p className='xui-lg-font-sz-90 xui-font-sz-65 xui-font-w-500 xui-mt-1'>
                     <Link to='/' className='xui-mr-half xui-text-dc-none xui-text-white'>Home</Link> 
@@ -126,7 +127,7 @@ const MainFooter = () => {
                      </p>
                 </div>
 
-                <div className='xui-lg-col-3 xui-col-12 xui-lg-mt-none xui-mt-4'>
+                <div className='xui-lg-mt-none xui-mt-4'>
                     <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>FOLLOW US</p>
                     <div className='xui-d-flex xui-flex-ai-center xui-grid-gap-1 xui-mt-1'>
                         <Link to='https://www.instagram.com/grascopeindustries?igsh=YjVtcHg4czRmOHFu'><InstagramIcon /></Link>
@@ -134,8 +135,8 @@ const MainFooter = () => {
                     </div>
                 </div>
             </div>
-            <div className='xui-row xui-mt-4 xui-flex-ai-center'>
-                <div className='xui-lg-col-8 xui-col-12'>
+            <div className='xui-d-flex xui-mt-4 xui-flex-ai-center xui-flex-jc-space-between'>
+                <div className=''>
                     <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>RC NUMBERS</p>
                     <p className='xui-lg-font-sz-90 xui-font-sz-60 xui-font-w-500 xui-mt-1'>
                         <span className='xui-mr-half xui-text-white'>Grascope Industries UK LTD - 15589820  </span> 
@@ -144,7 +145,7 @@ const MainFooter = () => {
                      
                      </p>
                 </div>
-                {/* <p className='xui-lg-mt-none xui-mt-2 xui-lg-col-4 xui-col-12 xui-lg-font-sz-100 xui-font-sz-60 xui-font-w-500 xui-d-inline-flex xui-flex-ai-center xui-lg-flex-jcflex-start xui-flex-jc-center xui-grid-gap-half'>&copy; 2024 Powered by <Link className='xui-d-inline-block' to='https://www.grascope.com/' target='_blank'><img className='xui-img-80' src={GrascopeLogo} alt="" /></Link>- All right reserved</p> */}
+                <p className='xui-lg-mt-none xui-mt-2 xui-lg-font-sz-90 xui-font-sz-60 xui-font-w-500 xui-d-flex xui-flex-ai-center xui-grid-gap-half xui-flex-dir-column xui-flex-jc-center '>FROM <br /> <Link className='xui-d-inline-block' to='https://www.grascope.com/' target='_blank'><img className='xui-img-70' src={LogoV2} alt="" /></Link></p>
             </div>
 
         </section>

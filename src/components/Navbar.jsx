@@ -26,10 +26,10 @@ const Navbar = () => {
     
     return (
         <>
-        <nav className={`xui-navbar grascope-navbar xui-pl-1-half xui-pr-half `} brand="true" layout="2" menu="2">
+        <nav className={`xui-navbar grascope-navbar xui-px-half `} brand="true" layout="2" menu="2">
             <div className="brand xui-h-fluid-100" style={{"zIndex": "11"}}>
                 <NavLink className="xui-text-dc-none xui-h-fluid-100 xui-text-inherit xui-d-inline-flex xui-p-1 xui-flex-ai-center" to={'/'}>
-                    <img className='xui-img-150' src={LogoV1} alt="" />
+                    <img className='xui-lg-img-150 xui-img-200' src={LogoV1} alt="" />
                     {/* <span className="xui-ml-half xui-d-inline-block xui-font-1 xui-font-w-bold">Kathy</span> */}
                 </NavLink>
             </div>
