@@ -10,7 +10,7 @@ const Packages = () => {
                     </div>
                     <div className='xui-lg-col-9 xui-col-12'>
                         <div className='xui-row'>
-                            <div className='xui-col-6 xui-font-sz-90 xui-line-height-1-half'>
+                            <div className='xui-lg-col-6 xui-col-12 xui-font-sz-90 xui-line-height-1-half'>
                                 <h3 className='xui-lg-font-sz-160 xui-font-sz-110 xui-font-w-500'>Starter Package – £2,500/month</h3>
                                 <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-mt-1 xui-line-height-1-half'>Best for: Startups & small businesses needing essential support with light IT needs.</p>
                             </div>
@@ -113,7 +113,7 @@ const Packages = () => {
                     </div>
                     <div className='xui-lg-col-9 xui-col-12'>
                         <div className='xui-row'>
-                            <div className='xui-col-6 xui-font-sz-90 xui-line-height-1-half'>
+                            <div className='xui-lg-col-6 xui-col-12 xui-font-sz-90 xui-line-height-1-half'>
                                 <h3 className='xui-lg-font-sz-160 xui-font-sz-110 xui-font-w-500'>Growth Package – £4,500/month</h3>
                                 <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-mt-1 xui-line-height-1-half'>Best for: Growing businesses that need a balanced mix of IT and operational roles.</p>
                             </div>
@@ -201,7 +201,7 @@ const Packages = () => {
                     </div>
                     <div className='xui-lg-col-9 xui-col-12'>
                         <div className='xui-row'>
-                            <div className='xui-col-6 xui-font-sz-90 xui-line-height-1-half'>
+                            <div className='xui-lg-col-6 xui-col-12 xui-font-sz-90 xui-line-height-1-half'>
                                 <h3 className='xui-lg-font-sz-160 xui-font-sz-110 xui-font-w-500'>Professional Package – £7,500/month</h3>
                                 <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-mt-1 xui-line-height-1-half'>Best for: Established businesses requiring dedicated teams for operations & technology.</p>
                             </div>
@@ -291,7 +291,7 @@ const Packages = () => {
                     </div>
                     <div className='xui-lg-col-9 xui-col-12'>
                         <div className='xui-row'>
-                            <div className='xui-col-6 xui-font-sz-90 xui-line-height-1-half'>
+                            <div className='xui-lg-col-6 xui-col-12 xui-font-sz-90 xui-line-height-1-half'>
                                 <h3 className='xui-lg-font-sz-160 xui-font-sz-110 xui-font-w-500'>Enterprise Package – £11,000/month</h3>
                                 <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-mt-1 xui-line-height-1-half'>Best for: Medium to large businesses needing a fully managed, high-performing team.</p>
                             </div>
@@ -381,7 +381,7 @@ const Packages = () => {
                     </div>
                     <div className='xui-lg-col-9 xui-col-12'>
                         <div className='xui-row'>
-                            <div className='xui-col-6 xui-font-sz-90 xui-line-height-1-half'>
+                            <div className='xui-lg-col-6 xui-col-12 xui-font-sz-90 xui-line-height-1-half'>
                                 <h3 className='xui-lg-font-sz-160 xui-font-sz-110 xui-font-w-500'>Custom Plan – Fully Flexible & Scalable</h3>
                                 <p className='xui-lg-font-sz-120 xui-font-sz-90 xui-mt-1 xui-line-height-1-half'>Best for: Businesses with unique needs requiring tailored team structures - Starting at £1,500 per role/month</p>
                             </div>

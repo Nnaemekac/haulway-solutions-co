@@ -89,7 +89,7 @@ const MainFooter = () => {
         <section className="main-footer xui-lg-py-3 xui-py-1 xui-container">
             <div className='xui-d-grid xui-lg-grid-col-2 xui-grid-col-1 xui-grid-gap-1 xui-flex-ai-flex-end'>
                 <div>
-                    <h1 className='haulway-heading-text xui-line-height-2-half xui-lg-font-sz-300 xui-font-sz-180 xui-font-w-500'>
+                    <h1 className='haulway-heading-text xui-lg-line-height-4-half xui-line-height-2-half xui-lg-font-sz-300 xui-font-sz-180 xui-font-w-500'>
                         <p>PARTNER <span className='text-[#737373]'>WITH GRASCOPE</span> TODAY</p>
                     </h1>
                 </div>
@@ -103,49 +103,53 @@ const MainFooter = () => {
                     </div>
                 </form> */}
             </div>
-            <div className='xui-d-flex xui-mt-4 xui-flex-ai-center xui-flex-jc-space-between'>
-                <div className=''>
-                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>CONTACT US</p>
-                    <p className='xui-lg-font-sz-90 xui-font-sz-65 xui-font-w-500 xui-mt-1'><span className='xui-mr-half'>contact@grascope.com</span> <span className='green-text'>/</span> <span className='xui-mx-half'>+234 818 293 1756 </span> <span className='green-text'>/</span> <span className='xui-ml-half'>+44 7441359374</span></p>
+            <div className='xui-row xui-mt-4 xui-flex-ai-center'>
+                <div className='xui-lg-col-7 xui-col-12'>
+                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-500'>CONTACT US</p>
+                    
+                    <p className='xui-lg-font-sz-95 xui-font-sz-65 xui-font-w-400 xui-mt-1'>
+                        <span className='xui-mr-half xui-text-dc-none xui-text-white'>contact@grascope.com</span> /
+                        <span className='xui-mx-half xui-text-dc-none xui-text-white'>+234 818 293 1756</span> /
+                        <span className='xui-mx-half xui-text-dc-none xui-text-white'>+44 7441359374</span>
+                     </p>
                 </div>
-                <div className='xui-lg-mt-none xui-mt-4'>
-                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>ADDRESS</p>
-                    <p className='xui-lg-font-sz-90 xui-font-sz-65 xui-font-w-500 xui-mt-1 xui-line-height-1-half'>4, Iwowari Avenue, George Sekibo Road, Sasun Roundabout, Off Peter Odili Road, PortHarcourt, Nigeria.</p>
+                <div className='xui-lg-col-5 xui-col-12 xui-pl-none xui-lg-mt-none xui-mt-4'>
+                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-500'>ADDRESS</p>
+                    <p className='xui-lg-font-sz-95 xui-font-sz-65 xui-font-w-400 xui-mt-1 xui-line-height-1-half'>4, Iwowari Avenue, George Sekibo Road, Sasun Roundabout, Off Peter Odili Road, PortHarcourt, Nigeria.</p>
                 </div>
             </div>
-            <div className='xui-d-flex xui-mt-4 xui-flex-ai-center xui-flex-jc-space-between'>
-                <div className=''>
-                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>QUICK LINKS</p>
-                    <p className='xui-lg-font-sz-90 xui-font-sz-65 xui-font-w-500 xui-mt-1'>
-                    <Link to='/' className='xui-mr-half xui-text-dc-none xui-text-white'>Home</Link> 
-                    <span className='green-text'>/</span>
-                     <Link to='about' className='xui-mx-half xui-text-dc-none xui-text-white'>About us</Link>
-                     <span className='green-text'>/</span>
-                     <Link to='it/services' className='xui-mx-half xui-text-dc-none xui-text-white'>IT Services</Link>
-                     <span className='green-text'>/</span>
+            <div className='xui-row xui-mt-4 xui-flex-ai-center'>
+                <div className='xui-lg-col-10 xui-col-12'>
+                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-500'>QUICK LINKS</p>
+                    <p className='xui-lg-font-sz-95 xui-font-sz-65 xui-font-w-400 xui-mt-1'>
+                    <Link to='/' className='xui-mr-half xui-text-dc-none xui-text-white'>Home</Link> /
+                     <Link to='about' className='xui-mx-half xui-text-dc-none xui-text-white'>About us</Link> /
+                     <Link to='it/services' className='xui-mx-half xui-text-dc-none xui-text-white'>IT Services</Link> /
                      <Link to='bpo/solutions' className='xui-mx-half xui-text-dc-none xui-text-white'>BPO Solutions</Link>
                      </p>
                 </div>
 
-                <div className='xui-lg-mt-none xui-mt-4'>
-                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>FOLLOW US</p>
-                    <div className='xui-d-flex xui-flex-ai-center xui-grid-gap-1 xui-mt-1'>
+                <div className='xui-lg-col-2 xui-lg-mt-none xui-mt-4 xui-text-right'>
+                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-500'>FOLLOW US</p>
+                    <div className='xui-d-flex xui-flex-ai-center xui-lg-flex-jc-flex-end xui-flex-jc-flex-start xui-grid-gap-1 xui-mt-1'>
                         <Link to='https://www.instagram.com/grascopeindustries?igsh=YjVtcHg4czRmOHFu'><InstagramIcon /></Link>
                         <Link to='https://www.linkedin.com/company/grascope-industries-ltd/'><LinkedInIcon /></Link>
                     </div>
                 </div>
             </div>
-            <div className='xui-d-flex xui-mt-4 xui-flex-ai-center xui-flex-jc-space-between'>
-                <div className=''>
-                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-600'>RC NUMBERS</p>
-                    <p className='xui-lg-font-sz-90 xui-font-sz-60 xui-font-w-500 xui-mt-1'>
+            <div className='xui-row xui-mt-4 xui-flex-ai-center'>
+                <div className='xui-lg-col-10 xui-col-12'>
+                    <p className='xui-lg-font-sz-100 xui-font-sz-90 xui-font-w-500'>RC NUMBERS</p>
+                    <p className='xui-lg-font-sz-95 xui-font-sz-60 xui-font-w-400 xui-mt-1'>
                         <span className='xui-mr-half xui-text-white'>Grascope Industries UK LTD - 15589820  </span> 
                         <span className='green-text'>/</span>
                         <span to='about' className='xui-mx-half xui-text-white'>Grascope Industries NIG LTD - 1479476  </span>
                      
                      </p>
                 </div>
-                <p className='xui-lg-mt-none xui-mt-2 xui-lg-font-sz-90 xui-font-sz-60 xui-font-w-500 xui-d-flex xui-flex-ai-center xui-grid-gap-half xui-flex-dir-column xui-flex-jc-center '>FROM <br /> <Link className='xui-d-inline-block' to='https://www.grascope.com/' target='_blank'><img className='xui-img-70' src={LogoV2} alt="" /></Link></p>
+                <div className='xui-lg-col-2 xui-col-12 xui-lg-mt-none xui-mt-2 xui-d-flex xui-lg-flex-jc-flex-end xui-flex-jc-flex-start'>
+                    <p className=' xui-lg-font-sz-95 xui-font-sz-60 xui-font-w-400 xui-d-flex xui-flex-ai-center xui-grid-gap-half xui-flex-dir-column xui-flex-jc-center '>FROM <br /> <Link className='xui-d-inline-block' to='https://www.grascope.com/' target='_blank'><img className='xui-img-70' src={LogoV2} alt="" /></Link></p>
+                </div>
             </div>
 
         </section>
