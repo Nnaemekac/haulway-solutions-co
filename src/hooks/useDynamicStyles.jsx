@@ -8,12 +8,13 @@ const useDynamicStyles = () => {
     function applyDynamicStyles() {
       document.querySelectorAll("[class*='[']").forEach((el) => {
         el.classList.forEach((cls) => {
-          const match = cls.match(/(bg|text|left|right|top|bottom|margin|mt|mr|mb|ml|padding|shadow|bdr-color|bdr-radius|bdr-top-width|bdr-top-color|bdr-top-style|bdr-bottom-width|bdr-bottom-color|bdr-bottom-style|bdr-right-width|bdr-right-color|bdr-right-style|bdr-left-width|bdr-left-color|bdr-left-style)-\[(.+)\]/);
+          const match = cls.match(/(bg|w|text|left|right|top|bottom|margin|mt|mr|mb|ml|padding|shadow|bdr-color|bdr-radius|bdr-top-width|bdr-top-color|bdr-top-style|bdr-bottom-width|bdr-bottom-color|bdr-bottom-style|bdr-right-width|bdr-right-color|bdr-right-style|bdr-left-width|bdr-left-color|bdr-left-style)-\[(.+)\]/);
           if (match) {
             const [full, prop, value] = match;
 
             const cssProp = {
               bg: "backgroundColor",
+              w: "width",
               text: "color",
               left: "left",
               right: "right",

@@ -121,14 +121,14 @@ const Header = () => {
   return (
     <>
         <div className='xui-pt-3 xui-text-center'>
-            <span className='xui-d-inline-block xui-py-1 xui-px-1-half xui-bdr-white xui-bdr-s-solid xui-bdr-w-1 xui-bdr-rad-2'>Our BPO Solutions</span>
-            <div className="slider-container">
+            <span className='xui-d-inline-block xui-py-1 xui-px-1-half xui-bdr-white xui-bdr-s-solid xui-bdr-w-1 xui-bdr-rad-2 xui-lg-font-sz-95 xui-font-sz-85'>Our BPO Solutions</span>
+            <div className="bpo-slider-container">
                 {sliderText.map((slide, index) => (
                     <div key={index} className={`slide ${index === currentIndex ? "active" : "inactive" }`}>
-                        <h1 className="xui-lg-font-sz-250 xui-font-sz-160 xui-font-w-normal xui-mt-1">
+                        <h1 className="xui-lg-font-sz-250 xui-font-sz-160 xui-font-w-normal xui-lg-mt-1 xui-mt-none">
                             {slide.heading}
                         </h1>
-                        <p className="xui-lg-font-sz-110 xui-font-sz-100 xui-opacity-8 xui-line-height-1-half xui-mt-1 xui-mx-auto xui-lg-w-fluid-75 xui-w-fluid-100">
+                        <p className="xui-lg-font-sz-95 xui-font-sz-85 xui-opacity-8 xui-line-height-1-half xui-mt-1 xui-mx-auto xui-lg-w-fluid-75 xui-w-fluid-100">
                             {slide.paragraph}
                         </p>
                     </div>

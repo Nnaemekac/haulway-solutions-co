@@ -14,7 +14,7 @@ const HowWeStandOut = () => {
             <div className='xui-mt-3 xui-row'>
                 <div className='xui-lg-col-5 xui-col-12'>
                     <p className='xui-font-sz-95 xui-line-height-1-half xui-lg-w-fluid-80 xui-w-fluid-100'>Unlike remote freelancing, our teams work in person at a secure workspace, ensuring compliance & comprehensive workforce supervision, which translates to consistent, high-quality performance.</p>
-                    <Link to='/' className='padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2'>
+                    <Link to="#" onClick={() => window.Calendly.initPopupWidget({url: "https://calendly.com/nnaemekachimezie5/dummy-event", })} className='padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2'>
                         <p className='xui-font-sz-95'>Book a Call Today</p>
                         <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#141416"} /></span>
                     </Link>
