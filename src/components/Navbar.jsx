@@ -35,8 +35,8 @@ const Navbar = () => {
             </div>
             <div className={`links`} placed="left">
 
-                <div className="main dark-color xui-bg-black xui-bg-white">
-                    <ul>
+                <div className="main dark-color">
+                    <ul className='xui-lg-pl-none xui-pl-7'>
                         <li>
                             <NavLink className={`xui-font-2 xui-font-sz-100 nav-links xui-md-font-sz-120 xui-lg-font-sz-95 ${({ isActive }) => isActive ? 'active-link' : ''}`} to={"/"}>Home</NavLink>
                         </li>

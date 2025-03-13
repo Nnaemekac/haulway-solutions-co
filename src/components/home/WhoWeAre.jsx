@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionComponent from "./components/SectionComponent";
 import { Link } from "react-router-dom";
 import ArrowRight from "../custom-svg-icons/ArrowRight";
@@ -6,8 +6,10 @@ import Harness from "../custom-svg-icons/Harness";
 import LocationStar from "../custom-svg-icons/LocationStar";
 import LogosWorkos from "../custom-svg-icons/LogosWorkos";
 import Eclipse from "../custom-svg-icons/Eclipse";
+import { PopupModal } from "react-calendly";
 
 const WhoWeAre = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="xui-py-3 xui-container">
       <SectionComponent
@@ -21,12 +23,13 @@ const WhoWeAre = () => {
           </p>
 
           {/* Calendly Button */}
-          <Link to="#" onClick={() => window.Calendly.initPopupWidget({url: "https://calendly.com/nnaemekachimezie5/dummy-event", })} className="padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2">
+          <button onClick={(e) => {e.preventDefault(); setIsOpen(true); }} className="padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2">
             <p className="xui-font-sz-95">Schedule a Free Consultation</p>
             <span className="xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35">
               <ArrowRight color={"#141416"} />
             </span>
-          </Link>
+          </button>
+          <PopupModal url="https://calendly.com/grascope" onModalClose={() => setIsOpen(false)} open={isOpen} rootElement={document.getElementById("root")} />
         </div>
 
         <div className="xui-lg-col-7 xui-col-12 xui-lg-mt-none xui-mt-2">
