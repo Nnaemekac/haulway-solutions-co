@@ -3,61 +3,103 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import ArrowRight from '../custom-svg-icons/ArrowRight';
 import Star from '../custom-svg-icons/Star';
+import ErrorAlert from '../alerts/Error';
+import SuccessAlert from '../alerts/Success';
 
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [validationErrMsg, setValidationErrMsg] = useState('');
+  const [successErrMsg, setSuccessErrMsg] = useState('');
   const [processing, setProcessing] = useState(false);
 
   const sendEmail = async (fields) => {
     setProcessing(true);
-    setIsDisabled(true);
+    const BREVO_API_KEY = import.meta.env.VITE_BREVO_API_KEY;
 
-    try {
+    const messagePayload = {
+        email: fields.emailAddress,
+        attributes: {
+            firstName: fields.firstName,
+            lastName: fields.lastName,
+        },
+        emailBlacklisted: false,
+        smsBlacklisted: false,
+        listIds: [2], // Adjust the list ID as needed
+        updateEnabled: false,
+    };
 
-      // Send confirmation email via Brevo
-      await axios.post(
-        'https://api.brevo.com/v3/smtp/email',
-        {
-          sender: {
+    const emailOptions = {
+        sender: {
             name: 'Grascope Team',
-            email: 'support@Grascope.ng',
-          },
-          to: [
+            email: 'grascopemarketing@gmail.com',
+        },
+        to: [
             {
               email: fields.emailAddress,
               name: `${fields.firstName} ${fields.lastName}`,
             },
-          ],
-          subject: 'Contact Inquiry Received - Grascope',
-            htmlContent: `
-            <html>
-                <body>
-                <h1>Contact Inquiry Received</h1>
-                <p>Dear ${fields.firstName},</p>
-                <p>Thank you for reaching out to us. We have received your message and will get back to you as soon as possible.</p>
-                <p>Here is a copy of your message:</p>
-                <blockquote>${fields.contactMessage}</blockquote>
-                <p>Best regards,<br>Grascope Team</p>
-                </body>
-            </html>
-            `,
-        },
-        {
-          headers: {
-            'api-key': import.meta.env.VITE_BREVO_API_KEY,
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+        ],
+        subject: 'Contact Inquiry Received - Grascope',
+        htmlContent: `
+        <html>
+            <body>
+            <h1>Contact Inquiry Received</h1>
+            <p>Dear ${fields.firstName},</p>
+            <p>Thank you for reaching out to us. We have received your message and will get back to you as soon as possible.</p>
+            <p>Here is a copy of your message:</p>
+            <blockquote>${fields.contactMessage}</blockquote>
+            <p>Best regards,<br>Grascope Team</p>
+            </body>
+        </html>
+        `,
+    };
+    let brevoSuccess = false;
 
-      alert('Booking successful!');
+    try {
+        // Attempt to send contact to Brevo
+        const brevoContactRes = await axios.post(
+            "https://api.brevo.com/v3/contacts",
+            messagePayload,
+            {
+                headers: {
+                    "api-key": BREVO_API_KEY,
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+        if (brevoContactRes.status === 201) {
+            brevoSuccess = true;
+
+            // Attempt to send email via Brevo
+            await axios.post(
+                "https://api.brevo.com/v3/smtp/email",
+                emailOptions,
+                {
+                    headers: {
+                        "api-key": BREVO_API_KEY,
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+            setSuccessErrMsg("Your message has been sent successfully");
+            window.xuiAnimeStart('successAlert');
+            setTimeout(() => {
+                window.xuiAnimeEnd('successAlert');
+                reset();
+            }, 3200);
+        }
     } catch (error) {
-      console.error('Error processing booking:', error);
-      alert('An error occurred. Please try again.');
-    } finally {
-      setProcessing(false);
-      setIsDisabled(false);
+        console.error("Brevo error:", error);
+        setValidationErrMsg(error.response?.data?.message || "An error occurred. Please try again.");
+        window.xuiAnimeStart('errorAlert');
+        setTimeout(() => {
+            window.xuiAnimeEnd('errorAlert');
+        }, 3200);
+
+        // **Do not show error alert**, just log the error
+    }
+    finally {
+        setProcessing(false);
     }
   };
 
@@ -110,6 +152,8 @@ const Contact = () => {
         </button>
         </form>
       </div>
+      <ErrorAlert name={`errorAlert`} message={validationErrMsg} />
+      <SuccessAlert name={`successAlert`} message={successErrMsg} noIcon={true} />
     </section>
   );
 };
