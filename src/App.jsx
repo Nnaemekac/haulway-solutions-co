@@ -12,6 +12,8 @@ import MainFooter from "./components/MainFooter";
 import BPOSolutions from "./pages/BPOSolutions";
 import Contact from "./pages/contact/Contact";
 import useDynamicStyles from "./hooks/useDynamicStyles";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = lazy(() => import('./pages/Home'));
 
@@ -31,6 +33,9 @@ function DynamicStylesWrapper() {
 }
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <>
       <section className='bg-[#141416] xui-text-white xui-h-fluid-100 xui-overflow-x-hidden'>

@@ -97,6 +97,9 @@ h3{
 .xui-flex-ai-self-start{
   align-items: self-start;
 }
+.extra-link{
+  display: none !important;
+}
 .active-identity{
   color: #737373;
 }
