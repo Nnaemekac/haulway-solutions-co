@@ -14,7 +14,7 @@ const Home = () => {
       <WhoWeAre />
       <HowWeStandOut />
       <section className='xui-py-3 xui-container'>
-        <img className='xui-w-fluid-100' src={GroupStaff} />
+        <img data-aos="flip-down" data-aos-duration="1000" className='xui-w-fluid-100' src={GroupStaff} />
       </section>
       <WhatWeOffer />
     </div>

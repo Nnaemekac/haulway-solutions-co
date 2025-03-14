@@ -18,12 +18,10 @@ const WhoWeAre = () => {
       />
       <div className="xui-mt-3 xui-row">
         <div className="xui-lg-col-5 xui-col-12">
-          <p className="xui-font-sz-95 xui-line-height-1-half xui-lg-w-fluid-80 xui-w-fluid-100">
-            Grascope is a UK-registered outsourcing firm offering fully managed Nigerian teams with structured staffing, in-person management, UK contract protection, and dedicated account managers.
-          </p>
+          <p data-aos="fade-down" data-aos-duration="1000" className="xui-font-sz-95 xui-line-height-1-half xui-lg-w-fluid-80 xui-w-fluid-100">Grascope is a UK-registered outsourcing firm offering fully managed Nigerian teams with structured staffing, in-person management, UK contract protection, and dedicated account managers.</p>
 
           {/* Calendly Button */}
-          <button onClick={(e) => {e.preventDefault(); setIsOpen(true); }} className="padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2">
+          <button data-aos="fade-down" data-aos-duration="1000" data-aos-delay="300" onClick={(e) => {e.preventDefault(); setIsOpen(true); }} className="padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half xui-mt-2">
             <p className="xui-font-sz-95">Schedule a Free Consultation</p>
             <span className="xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35">
               <ArrowRight color={"#141416"} />
@@ -34,7 +32,7 @@ const WhoWeAre = () => {
 
         <div className="xui-lg-col-7 xui-col-12 xui-lg-mt-none xui-mt-2">
           <div className="xui-d-grid xui-lg-grid-col-2 xui-grid-col-1 xui-grid-gap-1">
-            <div className="xui-pt-1 xui-px-1 xui-pb-2 xui-bdr-rad-1 bg-[#1E1E1E]">
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500" className="xui-pt-1 xui-px-1 xui-pb-2 xui-bdr-rad-1 bg-[#1E1E1E]">
               <div className="xui-d-flex xui-flex-ai-center xui-grid-gap-1">
                 <span className="xui-w-35 xui-h-35 xui-bdr-rad-circle xui-d-flex xui-flex-jc-center xui-flex-ai-center gradient-btn">
                   <Harness />
@@ -45,7 +43,7 @@ const WhoWeAre = () => {
                 We are a UK-registered business providing managed outsourcing teams in Nigeria with structured staffing & UK contract protection.
               </p>
             </div>
-            <div className="xui-pt-1 xui-px-1 xui-pb-2 xui-bdr-rad-1 bg-[#1E1E1E]">
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700" className="xui-pt-1 xui-px-1 xui-pb-2 xui-bdr-rad-1 bg-[#1E1E1E]">
               <div className="xui-d-flex xui-flex-ai-center xui-grid-gap-1">
                 <span className="xui-w-35 xui-h-35 xui-bdr-rad-circle xui-d-flex xui-flex-jc-center xui-flex-ai-center gradient-btn">
                   <LocationStar />
@@ -56,7 +54,7 @@ const WhoWeAre = () => {
                 Offering structured outsourcing teams in Nigeria, ensuring UK-level quality with 60%+ cost savings—no freelancers, just full-time professionals.
               </p>
             </div>
-            <div className="xui-pt-1 xui-px-1 xui-pb-2 xui-bdr-rad-1 bg-[#1E1E1E]">
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900" className="xui-pt-1 xui-px-1 xui-pb-2 xui-bdr-rad-1 bg-[#1E1E1E]">
               <div className="xui-d-flex xui-flex-ai-center xui-grid-gap-1">
                 <span className="xui-w-35 xui-h-35 xui-bdr-rad-circle xui-d-flex xui-flex-jc-center xui-flex-ai-center gradient-btn">
                   <LogosWorkos />
@@ -67,7 +65,7 @@ const WhoWeAre = () => {
                 We provide dedicated account managers for direct reporting, full workforce supervision, & seamless team coordination, ensuring efficiency & accountability.
               </p>
             </div>
-            <div className="xui-pt-1 xui-px-1 xui-pb-2 xui-bdr-rad-1 bg-[#1E1E1E]">
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1100" className="xui-pt-1 xui-px-1 xui-pb-2 xui-bdr-rad-1 bg-[#1E1E1E]">
               <div className="xui-d-flex xui-flex-ai-center xui-grid-gap-1">
                 <span className="xui-w-35 xui-h-35 xui-bdr-rad-circle xui-d-flex xui-flex-jc-center xui-flex-ai-center gradient-btn">
                   <Eclipse />
