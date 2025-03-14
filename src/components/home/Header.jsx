@@ -155,7 +155,7 @@ const Header = () => {
         </div>
       </div>
       {/* Main Swiper */}
-      <Swiper modules={[Autoplay]} spaceBetween={0} slidesPerView={1} loop={true} autoplay={{ delay: 5000, disableOnInteraction: false }} onSwiper={(swiper) => (mainSwiperRef.current = swiper)} onSlideChange={(swiper) => {handleSlideChange(swiper); setActiveIndex(swiper.realIndex); thumbSwiperRef.current?.slideToLoop(swiper.realIndex); }} className="main-swiper">
+      <Swiper modules={[Autoplay]} spaceBetween={0} slidesPerView={1} loop={true} autoplay={{ delay: 8000, disableOnInteraction: false }} onSwiper={(swiper) => (mainSwiperRef.current = swiper)} onSlideChange={(swiper) => {handleSlideChange(swiper); setActiveIndex(swiper.realIndex); thumbSwiperRef.current?.slideToLoop(swiper.realIndex); }} className="main-swiper">
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className={`slide-content xui-container xui-bg-sz-cover xui-bg-pos-bottom ${slide.mainContent.homeHeading}`} style={{ backgroundImage: `url(${slide.image})` }}>
@@ -171,7 +171,7 @@ const Header = () => {
       </Swiper>
 
       {/* Custom Pagination Swiper */}
-      <Swiper modules={[Autoplay]} slidesPerView={1.5} spaceBetween={10} loop={true} autoplay={{ delay: 5000, disableOnInteraction: false }} onSwiper={(swiper) => (thumbSwiperRef.current = swiper)} className="thumb-swiper" >
+      <Swiper modules={[Autoplay]} slidesPerView={1.5} spaceBetween={10} loop={true} autoplay={{ delay: 8000, disableOnInteraction: false }} onSwiper={(swiper) => (thumbSwiperRef.current = swiper)} className="thumb-swiper" >
         {slides.map((slide, index) => (
           <SwiperSlide key={slide.id} onClick={() => mainSwiperRef.current?.slideToLoop(index)}>
             {/* <div className="thumb-item" style={{ backgroundImage: `url(${slide.image})` }}>
