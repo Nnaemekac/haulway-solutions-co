@@ -14,6 +14,7 @@ import Contact from "./pages/contact/Contact";
 import useDynamicStyles from "./hooks/useDynamicStyles";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import NotFound from "./pages/NotFound";
 
 const Home = lazy(() => import('./pages/Home'));
 
@@ -49,7 +50,7 @@ function App() {
               <Route path="/it/services" element={<ITServices />} />
               <Route path="/bpo/solutions" element={<BPOSolutions />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<h1>No Match</h1>} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
             <MainFooter />
         </Suspense>
