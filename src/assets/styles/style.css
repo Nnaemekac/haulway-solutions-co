@@ -106,6 +106,31 @@ h3{
   -moz-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
+.cost-savings-table tr th, 
+.bpo-package-table tr th{
+  background-color: transparent;
+  text-align: left;
+  padding: 1.5rem 1rem 1.5rem 5rem;
+  text-transform: uppercase;
+}
+.bpo-package-table table,
+.bpo-package-table tr td{
+  white-space: normal;
+}
+.cost-savings-table tr td,
+.bpo-package-table tr td{
+  padding: 1.8rem 1rem;
+}
+.cost-savings-table tbody tr,
+.bpo-package-table tbody tr:not(.bpo-package-table tbody tr:last-child){
+  border-bottom: 1px solid #737373;
+}
+.cost-savings-heading{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 20px;
+}
 .active-identity{
   color: #737373;
 }
