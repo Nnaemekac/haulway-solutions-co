@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Header = () => {
     return (
         <div className='xui-py-3 xui-text-center'>

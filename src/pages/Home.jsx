@@ -5,6 +5,7 @@ import WhoWeAre from '../components/home/WhoWeAre';
 import HowWeStandOut from '../components/home/HowWeStandOut';
 import GroupStaff from "../assets/images/home/group-staff.png";
 import WhatWeOffer from '../components/home/WhatWeOffer';
+import Tools from '../components/home/Tools';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <section className='xui-py-3 xui-container'>
         <img data-aos="flip-down" data-aos-duration="1000" className='xui-w-fluid-100' src={GroupStaff} />
       </section>
+      <Tools />
       <WhatWeOffer />
     </div>
   );

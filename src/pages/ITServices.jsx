@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from '../components/it-services/Header';
 import Services from '../components/it-services/Services';
 import HeaderPattern from "../assets/images/header-pattern.png";

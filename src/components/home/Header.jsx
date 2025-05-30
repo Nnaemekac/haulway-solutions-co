@@ -7,7 +7,6 @@ import 'swiper/css/autoplay';
 import HeaderImage1 from '../../assets/images/home/header-image1.jpg';
 import HeaderImage2 from '../../assets/images/home/header-image2.jpg';
 import HeaderImage3 from '../../assets/images/home/header-image3.jpg';
-import Pattern from '../../assets/images/home/pattern.png';
 import { Link } from 'react-router-dom';
 import ArrowRight from '../custom-svg-icons/ArrowRight';
 import { ChevronLeft, ChevronRight } from '@carbon/icons-react';
@@ -20,7 +19,7 @@ const slides = [
       homeHeading: 'home-heading',
       customAnimationClassParagraph: 'header-paragraph',
       customAnimationClassTitle: 'header-heading',
-      title: <>Welcome To <br /> Grascope <img style={{display: 'inline'}} className="xui-lg-img-250 xui-img-100" src={Pattern} alt="" /> Industries</>,
+      title: <><span className='xui-font-sz-55'>Welcome To</span> <br /> <span className='xui-font-w-600 xui-font-sz-150' style={{letterSpacing: window.innerWidth < 768 ? 'none' : '2.5rem',}}>Grascope</span></>,
       buttons: 
       <>
         <div className='xui-d-flex xui-flex-ai-center xui-grid-gap-1 xui-mt-1'>
@@ -164,7 +163,7 @@ const Header = () => {
               <h1 className={`xui-lg-font-sz-400 xui-font-sz-220 ${slide.mainContent.customAnimationClassTitle === 'header-heading' ? 'xui-w-fluid-100' : 'xui-lg-w-fluid-60'} xui-w-fluid-100 xui-font-w-500 ${slide.mainContent.customAnimationClassTitle}`}>{slide.mainContent.title}</h1>
               <p className={`xui-lg-font-sz-95 xui-font-sz-90 xui-mt-1 xui-line-height-1-half xui-lg-w-fluid-50 xui-w-fluid-100 ${slide.mainContent.customAnimationClassParagraph}`}>{slide.mainContent.description}</p>
               <>{slide.mainContent.buttons}</>
-              <p className='xui-lg-font-sz-95 xui-lg-mt-5 xui-mt-7 xui-font-sz-90 xui-line-height-1-half xui-lg-w-fluid-40 xui-w-fluid-100'>{slide.mainContent.subDescription}</p>
+              <p className='xui-lg-font-sz-95 xui-lg-mt-3 xui-mt-7 xui-font-sz-90 xui-line-height-1-half xui-lg-w-fluid-40 xui-w-fluid-100'>{slide.mainContent.subDescription}</p>
             </div>
           </SwiperSlide>
         ))}
