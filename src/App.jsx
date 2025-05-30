@@ -15,6 +15,7 @@ import useDynamicStyles from "./hooks/useDynamicStyles";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import NotFound from "./pages/NotFound";
+import ROI from "./pages/ROI";
 
 const Home = lazy(() => import('./pages/Home'));
 
@@ -46,6 +47,7 @@ function App() {
           <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/roi/calculator" element={<ROI />} />
               <Route path="/about" element={<About />} />
               <Route path="/it/services" element={<ITServices />} />
               <Route path="/bpo/solutions" element={<BPOSolutions />} />
