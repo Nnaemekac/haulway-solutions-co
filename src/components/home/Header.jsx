@@ -19,16 +19,16 @@ const slides = [
       homeHeading: 'home-heading',
       customAnimationClassParagraph: 'header-paragraph',
       customAnimationClassTitle: 'header-heading',
-      title: <><span className='xui-font-sz-55'>Welcome To</span> <br /> <span className='xui-font-w-600 xui-font-sz-150' style={{letterSpacing: window.innerWidth < 768 ? 'none' : '2.5rem',}}>Grascope</span></>,
+      title: <><span className='xui-font-sz-55'>Welcome To</span> <br /> <span className='xui-font-w-600 xui-font-sz-150' style={{letterSpacing: window.innerWidth < 768 ? '.7rem' : '2.5rem',}}>Grascope</span></>,
       buttons: 
       <>
-        <div className='xui-d-flex xui-flex-ai-center xui-grid-gap-1 xui-mt-1'>
-          <Link to='about' className='header-btn1 padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half'>
-              <p className='xui-lg-font-sz-95 xui-font-sz-70'>Get Started</p>
+        <div className='xui-lg-d-flex xui-d-grid xui-grid-col-1 xui-flex-ai-center xui-grid-gap-1 xui-mt-1'>
+          <Link to='about' className='header-btn1 padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-flex-jc-space-between xui-grid-gap-1-half'>
+              <p className='xui-lg-font-sz-95 xui-font-sz-90'>Calculate your savings</p>
               <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#159B48"} /></span>
           </Link>
-          <Link to='about' className='header-btn2 padding-[0.6rem_0.6rem_0.6rem_1.2rem] xui-text-white xui-bdr-white xui-bdr-w-1 xui-bdr-s-solid xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-grid-gap-1-half'>
-              <p className='xui-lg-font-sz-95 xui-font-sz-70'>Learn More</p>
+          <Link to='about' className='header-btn2 padding-[0.6rem_0.6rem_0.6rem_1.2rem] xui-text-white xui-bdr-white xui-bdr-w-1 xui-bdr-s-solid xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-jc-space-between xui-flex-ai-center xui-grid-gap-1-half'>
+              <p className='xui-lg-font-sz-95 xui-font-sz-90'>Learn More</p>
               <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#159B48"} /></span>
           </Link>
         </div>
