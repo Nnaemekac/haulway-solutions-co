@@ -23,7 +23,7 @@ const slides = [
       buttons: 
       <>
         <div className='xui-lg-d-flex xui-d-grid xui-grid-col-1 xui-flex-ai-center xui-grid-gap-1 xui-mt-1'>
-          <Link to='about' className='header-btn1 padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-flex-jc-space-between xui-grid-gap-1-half'>
+          <Link to='roi/calculator' className='header-btn1 padding-[0.6rem_0.6rem_0.6rem_1.2rem] gradient-btn xui-bdr-rad-2 xui-text-dc-none xui-d-inline-flex xui-flex-ai-center xui-flex-jc-space-between xui-grid-gap-1-half'>
               <p className='xui-lg-font-sz-95 xui-font-sz-90'>Calculate your savings</p>
               <span className='xui-d-flex xui-flex-jc-center xui-flex-ai-center xui-bg-white xui-bdr-rad-circle xui-w-35 xui-h-35'><ArrowRight color={"#159B48"} /></span>
           </Link>
