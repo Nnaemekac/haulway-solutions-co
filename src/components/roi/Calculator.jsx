@@ -15,12 +15,15 @@ const Calculator = () => {
 
   // Watch monthly cost to calculate yearly cost
   const monthlyCost = watch("currentCostMonth");
+  // Update the useEffect hook that watches monthlyCost
   useEffect(() => {
-    if (monthlyCost && !isNaN(monthlyCost)) {
+    if (monthlyCost === '' || monthlyCost === null || isNaN(monthlyCost)) {
+      setValue("currentCostYear", 0);
+    } else {
       const yearlyCost = parseFloat(monthlyCost) * 12;
       setValue("currentCostYear", yearlyCost.toFixed(2));
     }
-  }, [monthlyCost]);
+  }, [monthlyCost, setValue]);
 
   // Position options with their respective savings percentages
   const positionOptions = [
@@ -266,7 +269,7 @@ const Calculator = () => {
                 </select>
                 {errors.hiringPosition && (<p className="xui-form-error-msg">{errors.hiringPosition.message}</p>)}
               </div>
-              <div className='xui-d-grid xui-grid-col-2 xui-grid-gap-2 xui-mt-2'>
+              <div className='xui-d-grid xui-lg-grid-col-2 xui-grid-col-1 xui-grid-gap-2 xui-mt-2'>
                 <div className='form-section-form-grp'>
                   <label htmlFor="currentCostMonth"><span className='xui-font-sz-100'>Current Hiring Cost For Role/month <Star /></span></label>
                   <div className='xui-pos-relative xui-mt-1'>
