@@ -16,6 +16,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import NotFound from "./pages/NotFound";
 import ROI from "./pages/ROI";
+import ComingSoon from "./pages/ComingSoon";
 
 const Home = lazy(() => import('./pages/Home'));
 
@@ -51,6 +52,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/it/services" element={<ITServices />} />
               <Route path="/bpo/solutions" element={<BPOSolutions />} />
+              <Route path="/signin" element={<ComingSoon />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
