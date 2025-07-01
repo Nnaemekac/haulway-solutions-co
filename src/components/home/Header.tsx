@@ -19,7 +19,7 @@ const slides = [
       buttons: 
       <>
         <div className='lg:flex grid grid-cols-1 items-center gap-[1rem] mt-[1rem]'>
-          <Link to='roi/calculator' className='header-btn1 rounded-[2rem] relative text-white z-[1] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[2rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-center gap-[1.5rem] py-[0.6rem] pr-[0.6rem] pl-[1.2rem]'>
+          <Link to='roi' className='header-btn1 rounded-[2rem] relative text-white z-[1] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[2rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-center gap-[1.5rem] py-[0.6rem] pr-[0.6rem] pl-[1.2rem]'>
               <p className='lg:text-[95%] text-[90%]'>Calculate your savings</p>
               <span className='flex justify-center items-center bg-white rounded-full w-[35px] h-[35px]'><ArrowRight color={"#159B48"} /></span>
           </Link>
