@@ -13,6 +13,7 @@ import { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ComingSoon from './pages/ComingSoon'
+import Blogs from './pages/Blogs'
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/bpo-solutions" element={<BPOSolutions />} />
           <Route path="/it-services" element={<ITServices />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/signin" element={<ComingSoon />} />
           <Route path="/roi" element={<ROI />} />
           <Route path="/jobs" element={<JobPool />} />

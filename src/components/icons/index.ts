@@ -18,6 +18,8 @@ import LogosGitIcon from "../icons/logos_git-icon.svg?react";
 import GameIconsGrowth from "../icons/game-icons_growth.svg?react";
 import FormkitInstagram from "../icons/formkit_instagram.svg?react";
 import MDILinkedIn from "../icons/mdi_linkedin.svg?react";
+import LetsIconsFilter from "../icons/lets-icons_filter.svg?react";
+import SolarDocumentAddLinear from "../icons/solar_document-add-linear.svg?react";
 
 
 export {
@@ -39,5 +41,7 @@ export {
   LogosTapCartIcon,
   FormkitInstagram,
   MDILinkedIn,
-  GameIconsGrowth
+  GameIconsGrowth,
+  LetsIconsFilter,
+  SolarDocumentAddLinear
 };

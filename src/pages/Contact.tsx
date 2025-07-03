@@ -68,7 +68,7 @@ const Contact = () => {
       {
         icon: Sms,
         title: "Email Us",
-        details: ["info@grascope.com", "support@grascope.com"],
+        details: ["contact@grascope.com"],
       },
       {
         icon: Call,
