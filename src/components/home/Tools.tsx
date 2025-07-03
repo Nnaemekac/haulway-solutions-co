@@ -11,14 +11,14 @@ const Tools = () => {
                     <img src={'/static/home/roi.png'} className='w-full h-[300px] rounded-t-[1rem] rounded-b-none' alt="" />
                     <div className='pt-[1.5rem] px-[1.5rem] pb-[2rem]'>
                         <h3 className='lg:text-[200%] text-[110%] lg:w-[70%] w-full font-medium'>Return on Investment (ROI) Calculator</h3>
-                        <Link to={'/roi/calculator'} className='text-[#FFF] inline-block mt-[4rem] text-[110%]'>Get started</Link>
+                        <Link to={'/roi'} className='text-[#FFF] inline-block mt-[4rem] text-[110%] underline'>Get started</Link>
                     </div>
                 </div>
                 <div data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="500" className='rounded-[1rem] bg-[#1E1E1E]'>
                     <img src={'/static/home/employee-background-checks.png'} className='w-full h-[300px] rounded-t-[1rem] rounded-b-none' alt="" />
                     <div className='pt-[1.5rem] px-[1.5rem] pb-[2rem]'>
                         <h3 className='lg:text-[200%] text-[110%] lg:w-[70%] w-full font-medium'>Employee Background Checks</h3>
-                        <Link to={'/'} className='text-[#FFF] inline-block mt-[4rem] text-[110%]'>Get started</Link>
+                        <Link to={'/'} className='text-[#FFF] inline-block mt-[4rem] text-[110%] underline'>Get started</Link>
                     </div>
                 </div>
             </div>
