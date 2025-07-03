@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import emailjs from '@emailjs/browser';
 import { CheckmarkFilled, Location, WarningFilled } from '@carbon/icons-react';
 import { Call, Clock, Sms } from 'iconsax-react';
 import { BitcoinIconsStarFilled } from '../components/icons';
@@ -53,7 +52,7 @@ const faqs = [
 
 const Contact = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const formTopRef = useRef<HTMLDivElement>(null);
@@ -85,24 +84,40 @@ const Contact = () => {
   const onSubmit = async (data: FormData) => {
     setIsLoading(true);
     setSubmitError(null);
+    setSubmitSuccess(null);
     try {
-      await emailjs.send(
-        'service_f7yrfe6',
-        'template_nnbtqct',
-        data,
-        'FAhKr7GgBu_S6-Ajr'
-      );
-      setSubmitSuccess(true);
+      const response = await fetch("https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          company: data.company || "",
+          service: data.service,
+          message: data.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Something went wrong. Please try again.");
+      }
+
+      setSubmitSuccess(result.message || "Your request has been received.");
       reset();
-      setTimeout(() => setSubmitSuccess(false), 5000);
+      setTimeout(() => setSubmitSuccess(null), 5000);
       setIsLoading(false);
       formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } catch (error) {
-      setSubmitError('Something went wrong. Please try again.');
+    } catch (error: any) {
+      setSubmitError(error.message || "Something went wrong. Please try again.");
       formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsLoading(false);
     }
   };
+
 
   return (
     <main>
@@ -214,7 +229,7 @@ const Contact = () => {
                 <CheckmarkFilled className="shrink-0 inline w-5 h-5 me-3 mt-0.5" />
                 <div>
                   <h3 className="font-bold">Thank you for your submission!</h3>
-                  <p className="text-sm">Your request has been received. We'll review your information and get back to you within 24 hours.</p>
+                  <p className="text-sm">{submitSuccess}</p>
                 </div>
               </div>
             )}

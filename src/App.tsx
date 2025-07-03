@@ -15,6 +15,8 @@ import 'aos/dist/aos.css';
 import ComingSoon from './pages/ComingSoon'
 import Blogs from './pages/Blogs'
 import StackCheck from './pages/StackCheck'
+import Chatbot from './components/Chatbot'
+import LiveChat from './pages/LiveChats'
 
 function App() {
   useEffect(() => {
@@ -25,6 +27,8 @@ function App() {
     <div className="min-h-screen bg-[#141416] text-white overflow-x-hidden">
       <Cursor />
       <ScrollToTop />
+      <Chatbot />
+      {/* <TawkToChat /> */}
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -33,6 +37,7 @@ function App() {
           <Route path="/it-services" element={<ITServices />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/stack-check" element={<StackCheck />} />
+          <Route path="/live-chat" element={<LiveChat />} />
           <Route path="/signin" element={<ComingSoon />} />
           <Route path="/roi" element={<ROI />} />
           <Route path="/jobs" element={<JobPool />} />
