@@ -218,7 +218,7 @@ const StackCheck = () => {
   };
 
   return (
-    <div className="page-transition">
+    <div className="">
       <section className="overflow-hidden lg:px-[3rem] px-[1rem] bg-[url('/static/header-pattern.png')] bg-top bg-no-repeat">
         <div className="relative lg:text-center text-left z-[1] pt-[10rem]">
           <h1 className="lg:text-[350%] text-[250%] font-medium lg:w-[70%] w-full mx-auto capitalize">

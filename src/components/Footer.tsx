@@ -44,7 +44,9 @@ const Footer = () => {
                     <Link to='/' className='mr-[.5rem] no-underline text-white'>Home</Link> /
                      <Link to='about' className='mx-[.5rem] no-underline text-white'>About us</Link> /
                      <Link to='it-services' className='mx-[.5rem] no-underline text-white'>IT Services</Link> /
-                     <Link to='bpo-solutions' className='mx-[.5rem] no-underline text-white'>BPO Solutions</Link>
+                     <Link to='bpo-solutions' className='mx-[.5rem] no-underline text-white'>BPO Solutions</Link> /
+                     <Link to='stack-check' className='mx-[.5rem] no-underline text-white'>Stack Check</Link> /
+                     <Link to='blogs' className='mx-[.5rem] no-underline text-white'>Blogs</Link>
                      </p>
                 </div>
 
