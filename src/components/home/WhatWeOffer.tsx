@@ -1,7 +1,5 @@
-import { ArrowRight } from "@carbon/icons-react";
 import { LogosGoodTickIcon } from "../icons";
 import SectionComponent from "../SectionComponent";
-import { Link } from "react-router-dom";
 
 const cardItems = [
   {
@@ -81,14 +79,6 @@ export default function WhatWeOffer() {
             </div>
           </div>
         ))}
-      </div>
-      <div className="mt-[2rem] flex justify-center">
-        <Link to={'/jobs'} className="rounded-[2rem] relative text-white z-[1] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[2rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between gap-[1.5rem] py-[0.6rem] pr-[0.6rem] pl-[1.2rem] mt-[2rem]">
-          <p className="text-[95%]">Join Our Talent Pool</p>
-          <span className="flex justify-center items-center bg-white rounded-full w-[35px] h-[35px]">
-            <ArrowRight color={"#141416"} />
-          </span>
-        </Link>
       </div>
     </section>
   );
