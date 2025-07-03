@@ -1,334 +1,406 @@
-import React, { useState } from 'react'
-import { Sms, Call, Location, Clock, Send } from 'iconsax-react'
+import { useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
+import { CheckmarkFilled, Location, WarningFilled } from '@carbon/icons-react';
+import { Call, Clock, Sms } from 'iconsax-react';
+import { BitcoinIconsStarFilled } from '../components/icons';
+
+type FormData = {
+  name: string;
+  company?: string;
+  email: string;
+  service: string;
+  message: string;
+};
+
+const calendlyLink = 'https://calendly.com/grascope'; // Replace with your Calendly link
+const itSolutionsLink = '/it-services'; // Update as needed
+const bpoLink = '/bpo-solutions'; // Update as needed
+const googleMapsEmbed =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.234823163895!2d7.057697!3d4.789964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069d1e9b1b1b1b1%3A0x0!2s4%20Iwowari%20Ave%2C%20Port%20Harcourt%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1720180000000'; // Embed for 4, Iwowari Avenue, Port Harcourt
+const googleMapsLink = 'https://www.google.com/maps/place/4+Iwowari+Ave,+Port+Harcourt,+Nigeria/@4.789964,7.057697,17z'; // Full Google Maps link
+
+const faqs = [
+  {
+    q: 'How do you approach new projects?',
+    a: 'We start with a discovery session to understand your goals — whether it’s building a new product, automating systems, or scaling your team.',
+  },
+  {
+    q: 'What kinds of services do you offer?',
+    a: (
+      <span>
+        We provide:
+        <ul className="list-disc ml-5 mt-1">
+          <li className='mt-[2rem]'>Custom IT Solutions: Apps, infrastructure, UI/UX</li>
+          <li className='mt-[2rem]'>BPO Services: Admin support, operations teams</li>
+        </ul>
+      </span>
+    ),
+  },
+  {
+    q: 'What industries do you work with?',
+    a: 'We support businesses in tech, finance, logistics, healthcare, e-commerce, retail, energy, and more.',
+  },
+  {
+    q: 'Do you work with international clients?',
+    a: 'Yes — Nigeria, UK, US, and other regions with timezone-flexible delivery.',
+  },
+  {
+    q: 'What makes Grascope different?',
+    a: 'We combine tech builds + operations under one roof. No juggling vendors. No wasted spend. Just systems and staff that work.',
+  },
+];
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    message: ''
-  })
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Handle form submission here
-  }
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const formTopRef = useRef<HTMLDivElement>(null);
+  const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   const contactInfo = [
-    {
-      icon: Location,
-      title: "Our Location",
-      details: ["Port Harcourt, Nigeria", "Serving globally: UK, USA, and beyond"],
-      color: "bg-green"
-    },
-    {
-      icon: Sms,
-      title: "Email Us",
-      details: ["info@grascope.com", "support@grascope.com"],
-      color: "bg-primary"
-    },
-    {
-      icon: Call,
-      title: "Call Us",
-      details: ["+234 (0) 123 456 7890", "+234 (0) 987 654 3210"],
-      color: "bg-green"
-    },
-    {
-      icon: Clock,
-      title: "Business Hours",
-      details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Weekend: By appointment"],
-      color: "bg-primary"
-    }
-  ]
+      {
+        icon: Location,
+        title: "Our Location",
+        details: ["Port Harcourt, Nigeria", "Serving globally: UK, USA, and beyond"],
+      },
+      {
+        icon: Sms,
+        title: "Email Us",
+        details: ["info@grascope.com", "support@grascope.com"],
+      },
+      {
+        icon: Call,
+        title: "Call Us",
+        details: ["+234 818 293 1756", "+44 7441359374"],
+      },
+      {
+        icon: Clock,
+        title: "Business Hours",
+        details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Weekend: By appointment"],
+      }
+    ]
 
-  const services = [
-    "Innovative Solutions",
-    "Industry Expertise", 
-    "Tailored Services",
-    "Operational Efficiency",
-    "Sustainable Growth",
-    "General Inquiry"
-  ]
-
-  const faqs = [
-    {
-      question: "How do you approach new projects?",
-      answer: "We begin with a comprehensive discovery phase to understand your business challenges, followed by strategy development, implementation, and ongoing optimization."
-    },
-    {
-      question: "What industries do you serve?",
-      answer: "We serve diverse industries including technology, healthcare, finance, manufacturing, education, retail, energy, transportation, and real estate."
-    },
-    {
-      question: "Do you work with international clients?",
-      answer: "Yes, we serve clients globally with established partnerships in Nigeria, UK, USA, and expanding to other regions."
-    },
-    {
-      question: "What makes your solutions unique?",
-      answer: "Our solutions are tailored to each client's specific needs, combining innovative technology with industry expertise and sustainable growth principles."
+  const onSubmit = async (data: FormData) => {
+    setIsLoading(true);
+    setSubmitError(null);
+    try {
+      await emailjs.send(
+        'service_f7yrfe6',
+        'template_nnbtqct',
+        data,
+        'FAhKr7GgBu_S6-Ajr'
+      );
+      setSubmitSuccess(true);
+      reset();
+      setTimeout(() => setSubmitSuccess(false), 5000);
+      setIsLoading(false);
+      formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (error) {
+      setSubmitError('Something went wrong. Please try again.');
+      formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsLoading(false);
     }
-  ]
+  };
 
   return (
-    <div className="page-transition pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-light-blue to-primary-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in-up">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-6">
-              Get In <span className="gradient-text">Touch</span>
+    <main>
+      {/* HERO SECTION */}
+      <section className="lg:pt-[8rem] pt-[7rem] pb-[3rem] lg:px-[3rem] px-[1rem] bg-[url('/static/header-pattern.png')] bg-top bg-no-repeat">
+        <section className='py-[3rem] text-center'>
+          <span className='inline-flex items-center py-[1rem] px-[1.5rem] border border-white rounded-[2rem] lg:text-[95%] text-[85%] text-[#FFF] no-underline'>
+            Contact Us
+          </span>
+          <h1 className='lg:text-[250%] text-[180%] xui-font-normal mt-[1rem]'>Feel free to reach out to us</h1>
+        </section>
+        <div className="flex flex-col lg:flex-row gap-10 items-stretch">
+          {/* LEFT SIDE */}
+          <div className="flex-1 flex flex-col justify-center bg-[#141416] rounded-xl p-8 text-white">
+            <h1 className="text-3xl lg:text-4xl font-medium mb-4">
+              Tech Builds. Managed Teams. One Global Partner.
             </h1>
-            <p className="text-xl text-dark-grey max-w-4xl mx-auto leading-relaxed">
-              Ready to transform your business? Let's discuss how our innovative solutions can help optimize your operations and drive sustainable growth.
+            <p className=" mb-2">
+              Grascope helps you launch custom software and scale operations with fully managed BPO teams — faster, leaner, and without the overhead.
             </p>
+            <ul className="mb-6 mt-4 space-y-2 text-base opacity-90">
+              <li className="flex items-center gap-2">
+                <span className="text-[#159b48] font-medium text-xl">•</span> 50–70% cost savings
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-[#159b48] font-medium text-xl">•</span> No freelancers, no HR stress
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-[#159b48] font-medium text-xl">•</span> Built-for-you IT and back office solutions
+              </li>
+            </ul>
+            <div className="flex flex-col gap-2 mb-2">
+              <a
+                href={calendlyLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-center p-[1rem]"
+              >
+                Book a Free Consultation
+              </a>
+              <div className="text-xs text-gray-300 mt-2">
+                Not ready yet? Learn more:&nbsp;
+                <a href={itSolutionsLink} className="underline hover:text-[#159b48] mr-2">IT Solutions</a>
+                <a href={bpoLink} className="underline hover:text-[#159b48]">BPO Outsourcing</a>
+              </div>
+            </div>
+            {/* WHY CHOOSE GRASCOPE */}
+            <section className="py-12 px-4">
+              <h2 className="text-2xl lg:text-3xl font-medium mb-4 text-center text-[#FFF]">Why Choose Grascope?</h2>
+              <p className="text-center text-lg mb-8">
+                One partner. Two core strengths: Tech that scales, and teams that deliver.
+              </p>
+              <div className="grid md:grid-cols-2 gap-[1rem] mb-8">
+                <div className='bg-[#1E1E1E] p-[1rem]'>
+                  <h3 className="font-medium text-[#FFF] mb-1">Proven Track Record</h3>
+                  <p className="text-[#FFF] mb-4 text-[70%] leading-relaxed">
+                    Over 100 successful projects — from high-performing SaaS products to fully managed BPO setups — across multiple industries and regions.
+                  </p>
+                </div>
+                <div className='bg-[#1E1E1E] p-[1rem]'>
+                  <h3 className="font-medium text-[#FFF] mb-1">Dual Expertise: IT & Operations</h3>
+                  <p className="text-[#FFF] mb-4 text-[70%] leading-relaxed">
+                    Whether you're building a new system or scaling your team, Grascope gives you both. No need to juggle multiple vendors — we handle tech and execution under one roof.
+                  </p>
+                </div>
+                <div className='bg-[#1E1E1E] p-[1rem]'>
+                  <h3 className="font-medium text-[#FFF] mb-1">Global-Ready Delivery</h3>
+                  <p className="text-[#FFF] mb-4 text-[70%] leading-relaxed">
+                    We serve clients in Nigeria, the UK, the US, and beyond — with timezone-aligned support, cloud-based infrastructure, and international hiring standards.
+                  </p>
+                </div>
+                <div className='bg-[#1E1E1E] p-[1rem]'>
+                  <h3 className="font-medium text-[#FFF] mb-1">Cost-Efficient, Fully Managed</h3>
+                  <p className="text-[#FFF] mb-4 text-[70%] leading-relaxed">
+                    Our BPO teams offer up to 70% cost savings vs in-house hiring. Our IT services deliver high-impact builds without bloated dev cycles. You get expert execution without managing the mess.
+                  </p>
+                </div>
+                <div className='bg-[#1E1E1E] p-[1rem]'>
+                  <h3 className="font-medium text-[#FFF] mb-1">Long-Term Support, Not Just Delivery</h3>
+                  <p className="text-[#FFF] mb-4 text-[70%] leading-relaxed">
+                    We don’t disappear after handoff. From product iterations to team performance tracking, we stay in sync with your business as it grows.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row gap-4 justify-center">
+                <a
+                  href={calendlyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between justify-center p-[1rem]"
+                >
+                  Book Free Consultation
+                </a>
+              </div>
+            </section>
+          </div>
+          {/* RIGHT SIDE */}
+          <div ref={formTopRef} className="flex-1 bg-[#141416] rounded-xl p-8 shadow-lg flex flex-col">
+            <h2 className="text-xl font-medium mb-4 text-white">Prefer to send us a quick brief?</h2>
+            {submitError && (
+              <div className="flex items-start p-4 mb-6 text-[#991b1b] rounded-lg bg-[#fef2f2]">
+                <WarningFilled className="shrink-0 inline w-5 h-5 me-3 mt-0.5" />
+                <span className="text-sm font-medium">{submitError}</span>
+              </div>
+            )}
+
+            {submitSuccess && (
+              <div className="flex items-start p-4 mb-6 text-[#065F46] rounded-lg bg-[#ECFDF5]">
+                <CheckmarkFilled className="shrink-0 inline w-5 h-5 me-3 mt-0.5" />
+                <div>
+                  <h3 className="font-bold">Thank you for your submission!</h3>
+                  <p className="text-sm">Your request has been received. We'll review your information and get back to you within 24 hours.</p>
+                </div>
+              </div>
+            )}
+            <form onSubmit={handleSubmit(onSubmit)} id='contact-form' className="flex flex-col gap-4">
+              {/* Name */}
+              <div>
+                <label className="inline-flex text-white mb-2">
+                  Name <BitcoinIconsStarFilled />
+                </label>
+                <input
+                  {...register("name", { required: "Name is required" })}
+                  placeholder="Name"
+                  className={`w-full p-3 text-[#FFF] rounded-lg h-[60px] bg-[#222222] border placeholder:text-[#737373] ${errors.name ? 'border-red-500' : 'border-gray-600'}`}
+                />
+                {errors.name && <span className="text-red-500 text-xs">{errors.name.message}</span>}
+              </div>
+              {/* Company */}
+              <div>
+                <label className="inline-flex text-white mb-2">
+                  Company (optional)
+                </label>
+                <input
+                  {...register("company")}
+                  placeholder="Company"
+                  className="w-full p-3 text-[#FFF] rounded-lg h-[60px] bg-[#222222] border border-gray-600 placeholder:text-[#737373]"
+                />
+              </div>
+              {/* Email */}
+              <div>
+                <label className="inline-flex text-white mb-2">
+                  Email <BitcoinIconsStarFilled />
+                </label>
+                <input
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Enter a valid email address"
+                    }
+                  })}
+                  type="email"
+                  placeholder="Email"
+                  className={`w-full p-3 text-[#FFF] rounded-lg h-[60px] bg-[#222222] border placeholder:text-[#737373] ${errors.email ? 'border-red-500' : 'border-gray-600'}`}
+                />
+                {errors.email && <span className="text-red-500 text-xs">{errors.email.message}</span>}
+              </div>
+              {/* Service */}
+              <div>
+                <label className="inline-flex text-white mb-2">
+                  What service are you interested in? <BitcoinIconsStarFilled />
+                </label>
+                <select
+                  {...register("service", { required: "Please select a service" })}
+                  className={`w-full p-3 text-[#FFF] rounded-lg h-[60px] bg-[#222222] border placeholder:text-[#737373] ${errors.service ? 'border-red-500' : 'border-gray-600'}`}
+                  defaultValue=""
+                >
+                  <option value="" disabled>Select a service</option>
+                  <option value="IT Solutions">IT Solutions</option>
+                  <option value="BPO Staffing">BPO Staffing</option>
+                  <option value="Both">Both</option>
+                  <option value="Not Sure Yet">Not Sure Yet</option>
+                </select>
+                {errors.service && <span className="text-red-500 text-xs">{errors.service.message}</span>}
+              </div>
+              {/* Message */}
+              <div>
+                <label className="inline-flex text-white mb-2">
+                  Message or Project Goals <BitcoinIconsStarFilled />
+                </label>
+                <textarea
+                  {...register("message", { required: "Message is required" })}
+                  placeholder="Message or Project Goals"
+                  rows={4}
+                  className={`w-full p-3 text-[#FFF] rounded-lg bg-[#222222] border placeholder:text-[#737373] ${errors.message ? 'border-red-500' : 'border-gray-600'}`}
+                />
+                {errors.message && <span className="text-red-500 text-xs">{errors.message.message}</span>}
+              </div>
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-center p-[1rem]"
+              >
+                {isLoading ? "Sending..." : "Submit Inquiry"}
+              </button>
+              <span className="text-xs text-gray-400 mt-1">
+                We’ll get back to you within 24 hours.
+              </span>
+            </form>
+            {/* LIVE MAP SECTION */}
+            <section className="py-12 px-4">
+              <h2 className="text-2xl font-medium mb-4 text-[#FFF]">Find Us</h2>
+              <div className="w-full h-[350px] rounded-xl overflow-hidden mb-3 shadow-lg">
+                <iframe
+                  src={googleMapsEmbed}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Grascope HQ Map"
+                ></iframe>
+              </div>
+              <a
+                href={googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-sm"
+              >
+                View on Google Maps
+              </a>
+            </section>
           </div>
         </div>
-      </section>
-
-      {/* Contact Info Cards */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <section className='py-12'>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon
               return (
                 <div
                   key={index}
-                  className="text-center p-8 rounded-3xl bg-grey hover:bg-white hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up"
+                  className="text-center pt-[1rem] px-[1rem] pb-[2rem] rounded-[1rem] relative text-white z-[1] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[1rem] before:opacity-20 before:mix-blend-overlay aos-init aos-animate hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className={`w-16 h-16 ${info.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                  <div className={`w-16 h-16 mb-[1rem] mx-auto rounded-full relative text-white z-[1] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[2rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-center`}>
                     <IconComponent size="32" color="#ffffff" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary mb-4">{info.title}</h3>
+                  <h3 className="text-xl font-medium mb-4">{info.title}</h3>
                   <div className="space-y-2">
                     {info.details.map((detail, detailIndex) => (
-                      <p key={detailIndex} className="text-dark-grey">{detail}</p>
+                      <p key={detailIndex} className="">{detail}</p>
                     ))}
                   </div>
                 </div>
               )
             })}
           </div>
-        </div>
       </section>
-
-      {/* Contact Form & Map */}
-      <section className="py-20 bg-grey">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
-            <div className="animate-slide-in-left">
-              <div className="bg-white rounded-3xl p-8 shadow-xl">
-                <h2 className="text-3xl font-bold text-primary mb-6">
-                  Send Us a <span className="gradient-text">Message</span>
-                </h2>
-                <p className="text-dark-grey mb-8">
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </p>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-primary mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-light-grey focus:border-green focus:outline-none transition-colors duration-200"
-                        placeholder="Enter your full name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-primary mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-light-grey focus:border-green focus:outline-none transition-colors duration-200"
-                        placeholder="Enter your email"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-primary mb-2">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-light-grey focus:border-green focus:outline-none transition-colors duration-200"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-primary mb-2">
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-light-grey focus:border-green focus:outline-none transition-colors duration-200"
-                        placeholder="Your phone number"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-primary mb-2">
-                      Service of Interest
-                    </label>
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-light-grey focus:border-green focus:outline-none transition-colors duration-200"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map((service, index) => (
-                        <option key={index} value={service}>{service}</option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-primary mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 rounded-lg border border-light-grey focus:border-green focus:outline-none transition-colors duration-200 resize-none"
-                      placeholder="Tell us about your project or inquiry..."
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-green text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    Send Message
-                    <Send size="20" />
-                  </button>
-                </form>
-              </div>
-            </div>
-
-            {/* Map & Additional Info */}
-            <div className="animate-slide-in-right">
-              <div className="bg-white rounded-3xl p-8 shadow-xl mb-8">
-                <h3 className="text-2xl font-bold text-primary mb-6">
-                  Why Choose <span className="gradient-text">Grascope?</span>
-                </h3>
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">1</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary mb-2">Proven Track Record</h4>
-                      <p className="text-dark-grey text-sm">100+ successful projects delivered across multiple industries and countries.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">2</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary mb-2">Tailored Solutions</h4>
-                      <p className="text-dark-grey text-sm">Every solution is customized to meet your specific business needs and challenges.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">3</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary mb-2">Global Expertise</h4>
-                      <p className="text-dark-grey text-sm">International experience with local understanding across Nigeria, UK, USA, and beyond.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">4</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary mb-2">24/7 Support</h4>
-                      <p className="text-dark-grey text-sm">Continuous support and optimization to ensure long-term success.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Map Placeholder */}
-              <div className="bg-gradient-to-br from-green/20 to-primary/20 rounded-3xl p-8 h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <Location size="48" color="#159b48" />
-                  <h4 className="text-xl font-bold text-primary mt-4 mb-2">Port Harcourt, Nigeria</h4>
-                  <p className="text-dark-grey">Serving clients globally</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
-              Frequently Asked <span className="gradient-text">Questions</span>
-            </h2>
-            <p className="text-lg text-dark-grey">
-              Common questions about our services and how we work with clients.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-grey rounded-2xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+      {/* FAQ SECTION */}
+      <section className="max-w-5xl mx-auto bg-[#1E1E1E] p-[2rem] rounded-[1rem]">
+        <h2 className="text-[250%] font-medium mb-4 text-[#FFF] text-center">Frequently Asked Questions</h2>
+        <p className="mb-6 text-[#FFF] text-center">
+          Common questions about how we support teams through IT solutions and BPO services.
+        </p>
+        <div className="space-y-4">
+          {faqs.map((faq, idx) => (
+            <div key={idx} className="border-b pb-3">
+              <button
+                className="w-full rounded-[.5rem] text-left font-semibold focus:outline-none flex justify-between items-center bg-[#141416] p-[1rem]"
+                onClick={() => setFaqOpen(faqOpen === idx ? null : idx)}
+                type="button"
               >
-                <h3 className="text-lg font-semibold text-primary mb-3">{faq.question}</h3>
-                <p className="text-dark-grey leading-relaxed">{faq.answer}</p>
+                {faq.q}
+                <span>{faqOpen === idx ? '-' : '+'}</span>
+              </button>
+              <div className={`mt-2 p-[1rem] text-[#FFF] text-sm transition-all duration-200 ${faqOpen === idx ? 'block' : 'hidden'}`}>
+                {faq.a}
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <p className="mb-2 text-[#FFF]">Need help choosing the right path?</p>
+          <div className='mt-[2rem]'>
+            <a
+            href={calendlyLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between justify-center p-[1rem]"
+          >
+            Book a free consultation
+          </a>
+          <span className="mx-2 text-gray-500">or</span>
+          <a
+            href="#contact-form"
+            className="underline text-[#FFF] font-semibold"
+          >
+            send us a message
+          </a>
           </div>
         </div>
       </section>
-    </div>
-  )
-}
+      </section>
+    </main>
+  );
+};
 
-export default Contact
+export default Contact;
