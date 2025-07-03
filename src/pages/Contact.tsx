@@ -129,10 +129,10 @@ const Contact = () => {
           </span>
           <h1 className='lg:text-[250%] text-[180%] xui-font-normal mt-[1rem]'>Feel free to reach out to us</h1>
         </section>
-        <div className="flex flex-col lg:flex-row gap-10 items-stretch">
+        <div className="flex flex-col-reverse lg:flex-row gap-10 items-stretch">
           {/* LEFT SIDE */}
-          <div className="flex-1 flex flex-col justify-center bg-[#141416] rounded-xl p-8 text-white">
-            <h1 className="text-3xl lg:text-4xl font-medium mb-4">
+          <div className="flex-1 flex flex-col justify-center bg-[#141416] rounded-xl lg:p-[1.5rem] p-[1rem] text-white">
+            <h1 className="text-[150%] lg:text-4xl font-medium mb-4">
               Tech Builds. Managed Teams. One Global Partner.
             </h1>
             <p className=" mb-2">
@@ -165,7 +165,7 @@ const Contact = () => {
               </div>
             </div>
             {/* WHY CHOOSE GRASCOPE */}
-            <section className="py-12 px-4">
+            <section className="py-12">
               <h2 className="text-2xl lg:text-3xl font-medium mb-4 text-center text-[#FFF]">Why Choose Grascope?</h2>
               <p className="text-center text-lg mb-8">
                 One partner. Two core strengths: Tech that scales, and teams that deliver.
@@ -207,7 +207,7 @@ const Contact = () => {
                   href={calendlyLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between justify-center p-[1rem]"
+                  className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-center p-[1rem]"
                 >
                   Book Free Consultation
                 </a>
@@ -215,7 +215,7 @@ const Contact = () => {
             </section>
           </div>
           {/* RIGHT SIDE */}
-          <div ref={formTopRef} className="flex-1 bg-[#141416] rounded-xl p-8 shadow-lg flex flex-col">
+          <div ref={formTopRef} className="flex-1 bg-[#141416] rounded-xl lg:p-[1.5rem] p-[1rem] shadow-lg flex flex-col">
             <h2 className="text-xl font-medium mb-4 text-white">Prefer to send us a quick brief?</h2>
             {submitError && (
               <div className="flex items-start p-4 mb-6 text-[#991b1b] rounded-lg bg-[#fef2f2]">
@@ -320,7 +320,7 @@ const Contact = () => {
               </span>
             </form>
             {/* LIVE MAP SECTION */}
-            <section className="py-12 px-4">
+            <section className="py-12">
               <h2 className="text-2xl font-medium mb-4 text-[#FFF]">Find Us</h2>
               <div className="w-full h-[350px] rounded-xl overflow-hidden mb-3 shadow-lg">
                 <iframe
@@ -370,8 +370,8 @@ const Contact = () => {
           </div>
       </section>
       {/* FAQ SECTION */}
-      <section className="max-w-5xl mx-auto bg-[#1E1E1E] p-[2rem] rounded-[1rem]">
-        <h2 className="text-[250%] font-medium mb-4 text-[#FFF] text-center">Frequently Asked Questions</h2>
+      <section className="max-w-5xl mx-auto bg-[#1E1E1E] lg:p-[2rem] p-[1rem] rounded-[1rem]">
+        <h2 className="lg:text-[250%] text-[150%] font-medium mb-4 text-[#FFF] text-center">Frequently Asked Questions</h2>
         <p className="mb-6 text-[#FFF] text-center">
           Common questions about how we support teams through IT solutions and BPO services.
         </p>
@@ -379,7 +379,7 @@ const Contact = () => {
           {faqs.map((faq, idx) => (
             <div key={idx} className="border-b pb-3">
               <button
-                className="w-full rounded-[.5rem] text-left font-semibold focus:outline-none flex justify-between items-center bg-[#141416] p-[1rem]"
+                className="w-full rounded-[.5rem] text-left font-medium focus:outline-none flex justify-between items-center bg-[#141416] p-[1rem]"
                 onClick={() => setFaqOpen(faqOpen === idx ? null : idx)}
                 type="button"
               >
@@ -394,7 +394,7 @@ const Contact = () => {
         </div>
         <div className="mt-8 text-center">
           <p className="mb-2 text-[#FFF]">Need help choosing the right path?</p>
-          <div className='mt-[2rem]'>
+          <div className='mt-[2rem] flex lg:flex-row flex-col items-center justify-center gap-4'>
             <a
             href={calendlyLink}
             target="_blank"
