@@ -20,12 +20,20 @@ import FormkitInstagram from "../icons/formkit_instagram.svg?react";
 import MDILinkedIn from "../icons/mdi_linkedin.svg?react";
 import LetsIconsFilter from "../icons/lets-icons_filter.svg?react";
 import SolarDocumentAddLinear from "../icons/solar_document-add-linear.svg?react";
+import BasilStackOutline from "../icons/basil_stack-outline.svg?react";
+import FluentWindowNewRegular from "../icons/fluent_window-new-20-regular.svg?react";
+import SimpleIconsBlueprint from "../icons/simple-icons_blueprint.svg?react";
+import TwotoneSpeed from "../icons/twotone-speed.svg?react";
 
 
 export {
   LocationStar,
   LogosEclipseIcon,
   LogosHarnessIcon,
+  BasilStackOutline,
+  FluentWindowNewRegular,
+  SimpleIconsBlueprint,
+  TwotoneSpeed,
   LogosWorkosIcon,
   LogosAmplicationIcon,
   LogosMatterMostIcon,

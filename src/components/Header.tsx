@@ -8,14 +8,13 @@ const navLinks = [
   { name: "BPO Solutions", href: "/bpo-solutions" },
   { name: "IT Services",   href: "/it-services" },
   { name: "Blogs",         href: "/blogs" },
+  { name: "Stack Check",   href: "/stack-check" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-
-  /* -------------------------------- effects -------------------------------- */
 
   // shadow after scroll
   useEffect(() => {
@@ -33,8 +32,6 @@ export default function Header() {
     return () => { document.body.style.overflow = 'auto'; };
   }, [isMenuOpen]);
 
-  /* -------------------------------- JSX ----------------------------------- */
-
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 lg:mx-[3rem] lg:mt-4 mt-[0] lg:rounded-[50px] rounded-[0] bg-white/30 backdrop-blur-[40px] transition-all duration-300
@@ -49,15 +46,20 @@ export default function Header() {
 
           {/* ------ Desktop nav links ------ */}
           <nav className={`${isMenuOpen ? 'lg:h-auto h-screen fixed top-[0] inset-0 bg-black/90 backdrop-blur-lg flex flex-col items-start justify-center gap-8 lg:p-[0] p-[2rem]' : 'hidden'} md:flex md:items-center md:gap-10 md:relative md:bg-transparent`}>
-            {navLinks.map(({ name, href }) => (
-              <Link
-                key={name}
-                to={href}
-                className="text-lg md:text-sm font-medium text-white hover:opacity-80"
-              >
-                {name}
-              </Link>
-            ))}
+            {navLinks.map(({ name, href }) => {
+              const isActive = location.pathname === href || (href !== "/" && location.pathname.startsWith(href));
+              return (
+                <Link
+                  key={name}
+                  to={href}
+                  className={`text-lg md:text-sm hover:opacity-80 transition ${
+                    isActive ? "font-bold" : "font-light"
+                  }`}
+                >
+                  {name}
+                </Link>
+              );
+            })}
 
             {/* Mobile CTA buttons */}
             <div className="flex flex-col gap-4 md:hidden mt-8">
