@@ -50,7 +50,7 @@ const Footer = () => {
                      </p>
                 </div>
 
-                <div className='lg:basis-2/12 basis-full lg:mt-[0] mt-[4rem] text-right'>
+                <div className='lg:basis-2/12 basis-full lg:mt-[0] mt-[4rem] lg:text-right text-left'>
                     <p className='lg:text-[100%] text-[90%] font-medium'>FOLLOW US</p>
                     <div className='flex items-center lg:justify-end justify-start gap-[1rem] mt-[1rem]'>
                         <Link to='https://www.instagram.com/grascopeindustries?igsh=YjVtcHg4czRmOHFu'><FormkitInstagram /></Link>
