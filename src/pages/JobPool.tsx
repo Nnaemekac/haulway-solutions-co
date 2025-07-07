@@ -1009,7 +1009,7 @@ const JobPool = () => {
                 type="button"
                 onClick={handleFinalSubmit}
                 disabled={isSubmitting}
-                className="py-3 px-6 bg-[#159B48] text-white rounded-lg hover:bg-[#127F3A] transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between justify-center p-[1rem]"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </button>
