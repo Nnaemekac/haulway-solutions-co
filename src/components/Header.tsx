@@ -93,13 +93,6 @@ export default function Header() {
         {/* CTA Buttons */}
         <div className="flex flex-col gap-4 max-w-[450px] w-full mx-auto mt-12">
           <Link
-            to="/signin"
-            className="rounded-[.7rem] bg-white px-8 py-3 text-lg font-medium text-black transition hover:opacity-90 text-center"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Sign in
-          </Link>
-          <Link
             to="/jobs"
             className="rounded-[.7rem] bg-white px-8 py-3 text-lg font-medium text-black transition hover:opacity-90 text-center"
             onClick={() => setIsMenuOpen(false)}
