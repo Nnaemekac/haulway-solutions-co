@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { ArrowLeft, CheckmarkFilled, ChevronDown, Close, Upload, WarningFilled } from '@carbon/icons-react';
@@ -6,12 +6,16 @@ import { Link } from 'react-router-dom';
 import { BitcoinIconsStarFilled } from '../components/icons';
 import { motion } from 'framer-motion';
 
+// Import Country, State, City from 'country-state-city'
+import { Country, State, City } from 'country-state-city';
+
 type FormData = {
   fullName: string;
   email: string;
   phoneNumber: string;
   city: string;
   country: string;
+  state?: string;
   role: string[];
   portfolioLink: string;
   yearsOfExperience: string;
@@ -59,14 +63,17 @@ const availabilityOptions = [
 const MAX_WORDS = 300;
 
 const JobPool = () => {
-  const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, watch, setValue } = useForm<FormData>();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState({
     role: false,
     experience: false,
-    availability: false
+    availability: false,
+    country: false,
+    state: false,
+    city: false,
   });
   const [currentStep, setCurrentStep] = useState(1);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -74,7 +81,75 @@ const JobPool = () => {
   const cvFile = watch('cv')?.[0];
   const otherRoleSelected = selectedRoles.includes('Other');
 
-  // Calculate word counts
+  const [selectedCountryCode, setSelectedCountryCode] = useState<string | null>(null);
+  const [selectedStateCode, setSelectedStateCode] = useState<string | null>(null);
+
+  const [countrySearchTerm, setCountrySearchTerm] = useState('');
+  const [stateSearchTerm, setStateSearchTerm] = useState('');
+  const [citySearchTerm, setCitySearchTerm] = useState('');
+
+  const watchedCountry = watch('country');
+  const watchedState = watch('state');
+  const watchedCity = watch('city');
+
+  const allCountries = Country.getAllCountries();
+  const filteredCountries = allCountries.filter(country =>
+    country.name.toLowerCase().includes(countrySearchTerm.toLowerCase())
+  );
+
+  const statesOfSelectedCountry = selectedCountryCode ? State.getStatesOfCountry(selectedCountryCode) : [];
+  const filteredStates = statesOfSelectedCountry.filter(state =>
+    state.name.toLowerCase().includes(stateSearchTerm.toLowerCase())
+  );
+
+  const citiesToShow = selectedStateCode
+    ? City.getCitiesOfState(selectedCountryCode!, selectedStateCode)
+    : selectedCountryCode && statesOfSelectedCountry.length === 0
+      ? City.getCitiesOfCountry(selectedCountryCode)
+      : [];
+
+  const filteredCities = citiesToShow!.filter(city =>
+    city.name.toLowerCase().includes(citySearchTerm.toLowerCase())
+  );
+
+  useEffect(() => {
+    if (watchedCountry) {
+      const countryFound = allCountries.find(c => c.name === watchedCountry);
+      if (countryFound && countryFound.isoCode !== selectedCountryCode) {
+        setSelectedCountryCode(countryFound.isoCode);
+        setSelectedStateCode(null);
+        setValue('state', '');
+        setValue('city', '');
+      } else if (!countryFound && selectedCountryCode) {
+        setSelectedCountryCode(null);
+        setSelectedStateCode(null);
+        setValue('state', '');
+        setValue('city', '');
+      }
+    } else if (selectedCountryCode) {
+      setSelectedCountryCode(null);
+      setSelectedStateCode(null);
+      setValue('state', '');
+      setValue('city', '');
+    }
+  }, [watchedCountry, selectedCountryCode, allCountries, setValue]);
+
+  useEffect(() => {
+    if (watchedState && selectedCountryCode) {
+      const stateFound = statesOfSelectedCountry.find(s => s.name === watchedState);
+      if (stateFound && stateFound.isoCode !== selectedStateCode) {
+        setSelectedStateCode(stateFound.isoCode);
+        setValue('city', '');
+      } else if (!stateFound && selectedStateCode) {
+        setSelectedStateCode(null);
+        setValue('city', '');
+      }
+    } else if (selectedStateCode && (!watchedState || !selectedCountryCode)) {
+      setSelectedStateCode(null);
+      setValue('city', '');
+    }
+  }, [watchedState, selectedStateCode, selectedCountryCode, statesOfSelectedCountry, setValue]);
+
   const wordCounts = {
     projectsExciteYou: watch('projectsExciteYou') ? watch('projectsExciteYou').trim().split(/\s+/).filter(Boolean).length : 0,
     problemSolvingApproach: watch('problemSolvingApproach') ? watch('problemSolvingApproach').trim().split(/\s+/).filter(Boolean).length : 0,
@@ -90,11 +165,14 @@ const JobPool = () => {
     }
   };
 
-  const toggleDropdown = (field: 'role' | 'experience' | 'availability') => {
+  const toggleDropdown = (field: 'role' | 'experience' | 'availability' | 'country' | 'state' | 'city') => {
     setDropdownOpen(prev => ({
       ...prev,
       [field]: !prev[field]
     }));
+    if (field === 'country' && dropdownOpen.country) setCountrySearchTerm('');
+    if (field === 'state' && dropdownOpen.state) setStateSearchTerm('');
+    if (field === 'city' && dropdownOpen.city) setCitySearchTerm('');
   };
 
   const handleFileClick = () => {
@@ -106,44 +184,124 @@ const JobPool = () => {
   };
 
   const validateCurrentStep = () => {
-    if (currentStep === 1) {
-      const requiredFields = [
-        'fullName',
-        'email',
-        'phoneNumber',
-        'city',
-        'role',
-        'portfolioLink',
-        'yearsOfExperience',
-        'cv'
-      ];
-      
-      const validateField = (field: keyof FormData, value: FormData[keyof FormData]) => {
-        if (field === 'role') {
-            return Array.isArray(value) && value.length > 0;
-        } else if (field === 'cv') {
-            return value !== undefined && value !== null;
-        } else {
-            return typeof value === 'string' && value.trim() !== '';
+  // Step 1 validation
+  if (currentStep === 1) {
+    const requiredFields = [
+      'fullName',
+      'email',
+      'phoneNumber',
+      'country',
+      'city',
+      'role',
+      'portfolioLink',
+      'yearsOfExperience',
+      'cv'
+    ];
+
+    const errors: string[] = [];
+
+    let isValid = requiredFields.every(field => {
+      const value = watch(field as keyof FormData);
+      if (field === 'role') {
+        if (!Array.isArray(value) || value.length === 0) {
+          errors.push('Please select at least one role.');
+          return false;
         }
-        };
+      } else if (field === 'cv') {
+        if (!value || (value as FileList).length === 0) {
+          errors.push('CV is required.');
+          return false;
+        }
+      } else if (typeof value === 'string' && value.trim() === '') {
+        errors.push(`${field.charAt(0).toUpperCase() + field.slice(1)} is required.`);
+        return false;
+      } else if (field === 'email' && value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value as string)) {
+        errors.push('Invalid email address.');
+        return false;
+      } else if (field === 'country' && !selectedCountryCode) {
+        errors.push('Country is required.');
+        return false;
+      } else if (field === 'city' && !watchedCity) {
+        errors.push('City is required.');
+        return false;
+      }
+      return true;
+    });
 
-        return requiredFields.every(field => {
-        const value = watch(field as keyof FormData);
-        return validateField(field as keyof FormData, value);
-        });
+    if (selectedCountryCode && statesOfSelectedCountry.length > 0 && !selectedStateCode) {
+      errors.push('State/Region is required.');
+      isValid = false;
     }
-    return true;
-  };
 
-  const nextStep = () => {
-    if (!validateCurrentStep()) {
-      setSubmitError('Please complete all required fields before proceeding');
-      return;
+    if (!isValid) setSubmitError(errors.join('\n'));
+    return isValid;
+  }
+
+  // Step 2 validation
+  if (currentStep === 2) {
+    const requiredFields = [
+      'projectsExciteYou',
+      'problemSolvingApproach',
+      'bestTeamType',
+      'proudProjectOrChallenge'
+    ];
+
+    const errors: string[] = [];
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+      const value = watch(field as keyof FormData) as string;
+      const words = value ? value.trim().split(/\s+/).filter(Boolean).length : 0;
+      if (!value || value.trim() === '') {
+        errors.push('All questions in this section are required.');
+        isValid = false;
+      } else if (words > MAX_WORDS) {
+        errors.push(`Max ${MAX_WORDS} words for "${field}". You have ${words}.`);
+        isValid = false;
+      }
+    });
+
+    if (!isValid) setSubmitError(errors.join('\n'));
+    return isValid;
+  }
+
+  // Step 3 validation
+  if (currentStep === 3) {
+    const errors: string[] = [];
+    let isValid = true;
+
+    // Availability is required
+    const availability = watch('availability');
+    if (!availability || availability.trim() === '') {
+      errors.push('Availability is required.');
+      isValid = false;
     }
+
+    // Consent is required
+    const consent = watch('consent');
+    if (!consent) {
+      errors.push('You must consent to proceed.');
+      isValid = false;
+    }
+
+    if (!isValid) setSubmitError(errors.join('\n'));
+    return isValid;
+  }
+
+  return true;
+};
+
+  const nextStep = async () => {
     setSubmitError('');
-    setCurrentStep(prev => prev + 1);
     window.scrollTo(0, 0);
+
+    const isStepValid = validateCurrentStep();
+
+    if (isStepValid) {
+      setCurrentStep(prev => prev + 1);
+    } else {
+      setSubmitError('Please complete all required fields for this step.');
+    }
   };
 
   const prevStep = () => {
@@ -153,60 +311,67 @@ const JobPool = () => {
   };
 
   const onSubmit = async (data: FormData) => {
+    if (currentStep === 3) {
+    setSubmitError('');
+    const isStepValid = validateCurrentStep();
+    if (!isStepValid) {
+      window.scrollTo(0, 0);
+      return;
+    }
+  }
+
   setIsSubmitting(true);
   setSubmitError('');
 
-  try {
+    try {
+      const payload = {
+        fullName: data.fullName,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        city: data.city,
+        country: data.country,
+        role: data.role.map(role =>
+          role === 'Other' && data.otherRole ? data.otherRole : role
+        ),
+        portfolioLink: data.portfolioLink,
+        yearsOfExperience: data.yearsOfExperience,
+        cv: data.cv?.[0]?.name || '',
+        projectsExciteYou: data.projectsExciteYou,
+        problemSolvingApproach: data.problemSolvingApproach,
+        bestTeamType: data.bestTeamType,
+        proudProjectOrChallenge: data.proudProjectOrChallenge,
+        availability: data.availability,
+        openToIdeaLab: data.openToIdeaLab
+      };
 
-    // Prepare the JSON payload
-    const payload = {
-      fullName: data.fullName,
-      email: data.email,
-      phoneNumber: data.phoneNumber,
-      city: data.city,
-      country: data.country,
-      role: data.role.map(role => 
-        role === 'Other' && data.otherRole ? data.otherRole : role
-      ),
-      portfolioLink: data.portfolioLink,
-      yearsOfExperience: data.yearsOfExperience,
-      cv: data.cv?.[0]?.name || '', // Send as base64 string
-      projectsExciteYou: data.projectsExciteYou,
-      problemSolvingApproach: data.problemSolvingApproach,
-      bestTeamType: data.bestTeamType,
-      proudProjectOrChallenge: data.proudProjectOrChallenge,
-      availability: data.availability,
-      openToIdeaLab: data.openToIdeaLab
-    };
-
-    const response = await axios.post(
-      'https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/talent-pool',
-      payload,
-      {
-        headers: {
-          'Content-Type': 'application/json'
+      const response = await axios.post(
+        'https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/talent-pool',
+        payload,
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
         }
-      }
-    );
+      );
 
-    if (response.status === 201) {
-      setSubmitSuccess(true);
+      if (response.status === 201) {
+        setSubmitSuccess(true);
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      if (axios.isAxiosError(error) && error.response?.data?.validationErrors) {
+        const validationErrors = error.response.data.validationErrors;
+        const errorMessages = validationErrors.map((err: any) =>
+          `${err.field}: ${err.errors.join(', ')}`
+        ).join('\n');
+        setSubmitError(errorMessages);
+      } else {
+        setSubmitError('Failed to submit your application. Please try again.');
+      }
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error('Submission error:', error);
-    if (axios.isAxiosError(error) && error.response?.data?.validationErrors) {
-      const validationErrors = error.response.data.validationErrors;
-      const errorMessages = validationErrors.map((err: any) => 
-        `${err.field}: ${err.errors.join(', ')}`
-      ).join('\n');
-      setSubmitError(errorMessages);
-    } else {
-      setSubmitError('Failed to submit your application. Please try again.');
-    }
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   const StepIndicator = () => {
     const steps = [
@@ -270,30 +435,30 @@ const JobPool = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="bg-[#222222] lg:p-[2rem] p-[1rem] rounded-[1rem]">
         {submitError && (
-            <div className="flex items-start p-4 mb-4 text-[#991b1b] rounded-lg bg-[#fef2f2]" role="alert">
-                <WarningFilled className="shrink-0 inline w-5 h-5 me-3 mt-0.5" />
-                <div className="ms-3 text-sm font-medium">
-                <h3 className="font-bold">Validation Errors</h3>
-                {submitError.split('\n').map((error, i) => (
-                    <p key={i} className="mt-1">{error}</p>
-                ))}
-                </div>
+          <div className="flex items-start p-4 mb-4 text-[#991b1b] rounded-lg bg-[#fef2f2]" role="alert">
+            <WarningFilled className="shrink-0 inline w-5 h-5 me-3 mt-0.5" />
+            <div className="ms-3 text-sm font-medium">
+              <h3 className="font-bold">Validation Errors</h3>
+              {submitError.split('\n').map((error, i) => (
+                <p key={i} className="mt-1">{error}</p>
+              ))}
             </div>
+          </div>
         )}
         {submitSuccess && (
-            <div className="flex items-center p-4 mb-4 text-[#065F46] rounded-lg bg-[#ECFDF5]" role="alert">
-                <CheckmarkFilled className="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" />
-                <span className="sr-only">Info</span>
-                <div className="ms-3 text-sm font-medium">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-4">Thank you for submitting your details.</h2>
-                    <p className="text-gray-600 mb-6">
-                        You're now part of the Grascope talent pool. Whether it's a client project or a product coming out of the Idea Lab—we'll reach out if it's the right fit.
-                    </p>
-                    <p className="text-gray-500">
-                        No spam. No mass messages. Just meaningful opportunities.
-                    </p>
-                </div>
+          <div className="flex items-center p-4 mb-4 text-[#065F46] rounded-lg bg-[#ECFDF5]" role="alert">
+            <CheckmarkFilled className="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" />
+            <span className="sr-only">Info</span>
+            <div className="ms-3 text-sm font-medium">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Thank you for submitting your details.</h2>
+              <p className="text-gray-600 mb-6">
+                You're now part of the Grascope talent pool. Whether it's a client project or a product coming out of the Idea Lab—we'll reach out if it's the right fit.
+              </p>
+              <p className="text-gray-500">
+                No spam. No mass messages. Just meaningful opportunities.
+              </p>
             </div>
+          </div>
         )}
 
         <StepIndicator />
@@ -302,7 +467,7 @@ const JobPool = () => {
         {currentStep === 1 && (
           <div className="space-y-6">
             <h2 className="text-xl font-bold text-white mb-4">Basic Information</h2>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="text-sm font-medium inline-flex gap-1 text-white">
@@ -311,10 +476,9 @@ const JobPool = () => {
                 <input
                   type="text"
                   {...register('fullName', { required: 'Full name is required' })}
-                  className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.fullName ? 'border-red-500' : 'border-gray-300'}`}
+                  className="mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300"
                   placeholder="Your full name"
                 />
-                {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>}
               </div>
 
               <div>
@@ -323,55 +487,184 @@ const JobPool = () => {
                 </label>
                 <input
                   type="email"
-                  {...register('email', { 
+                  {...register('email', {
                     required: 'Email is required',
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                       message: 'Invalid email address'
                     }
                   })}
-                  className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                  className="mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300"
                   placeholder="your.email@example.com"
                 />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
               </div>
             </div>
 
             <div>
+              <label className="text-sm font-medium inline-flex gap-1 text-white">
+                Phone Number (WhatsApp preferred) <BitcoinIconsStarFilled />
+              </label>
+              <input
+                type="tel"
+                {...register('phoneNumber', { required: 'Phone number is required' })}
+                className="mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300"
+                placeholder="+1 (123) 456-7890"
+              />
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6"> {/* Changed to 3 columns */}
+              {/* Country Dropdown */}
+              <div>
                 <label className="text-sm font-medium inline-flex gap-1 text-white">
-                  Phone Number (WhatsApp preferred) <BitcoinIconsStarFilled />
+                  Country <BitcoinIconsStarFilled />
                 </label>
-                <input
-                  type="tel"
-                  {...register('phoneNumber', { required: 'Phone number is required' })}
-                  className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.phoneNumber ? 'border-red-500' : 'border-gray-300'}`}
-                  placeholder="+1 (123) 456-7890"
-                />
-                {errors.phoneNumber && <p className="text-red-500 text-sm mt-1">{errors.phoneNumber.message}</p>}
+                <div className="relative">
+                  <div
+                    className="mt-2 w-full h-14 px-4 rounded-lg bg-[#222222] border border-[#FFF] cursor-pointer flex justify-between items-center"
+                    onClick={() => toggleDropdown('country')}
+                  >
+                    <span className="text-white">{watchedCountry || 'Select a country'}</span>
+                    <ChevronDown className={`transition-transform text-white ${dropdownOpen.country ? 'transform rotate-180' : ''}`} />
+                  </div>
+                  {dropdownOpen.country && (
+                    <div className="absolute z-20 mt-1 w-full bg-[#1E1E1E] border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                      <input
+                        type="text"
+                        placeholder="Search country..."
+                        className="w-full px-4 py-2 bg-[#1A1A1A] text-white border-b border-gray-700 sticky top-0"
+                        value={countrySearchTerm}
+                        onChange={(e) => setCountrySearchTerm(e.target.value)}
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                      {filteredCountries.length > 0 ? (
+                        filteredCountries.map(country => (
+                          <div
+                            key={country.isoCode}
+                            className="px-4 py-2 text-white hover:bg-[#222222] cursor-pointer"
+                            onClick={() => {
+                              setValue('country', country.name, { shouldValidate: true });
+                              setSelectedCountryCode(country.isoCode);
+                              setValue('state', '', { shouldValidate: true }); // Clear state
+                              setSelectedStateCode(null); // Clear selectedStateCode
+                              setValue('city', '', { shouldValidate: true }); // Clear city
+                              toggleDropdown('country');
+                              setCountrySearchTerm('');
+                            }}
+                          >
+                            {country.name}
+                          </div>
+                        ))
+                      ) : (
+                        <div className="px-4 py-2 text-gray-400">No countries found.</div>
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
-            <div className="grid md:grid-cols-2 gap-6">
-            <div>
+
+              {/* State/Region Dropdown (New Field) */}
+              <div>
                 <label className="text-sm font-medium inline-flex gap-1 text-white">
-                City <BitcoinIconsStarFilled />
+                  State/Region {statesOfSelectedCountry.length > 0 && <BitcoinIconsStarFilled />} {/* Only show star if states exist */}
                 </label>
-                <input
-                type="text"
-                {...register('city', { required: 'City is required' })}
-                className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.city ? 'border-red-500' : 'border-gray-300'}`}
-                placeholder="City"
-                />
-            </div>
-            <div>
+                <div className="relative">
+                  <div
+                    className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#222222] border border-[#FFF] cursor-pointer flex justify-between items-center
+                    ${!selectedCountryCode ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    onClick={() => selectedCountryCode && statesOfSelectedCountry.length > 0 && toggleDropdown('state')}
+                  >
+                    <span className="text-white">
+                      {selectedCountryCode && statesOfSelectedCountry.length > 0
+                        ? (watchedState || 'Select a state/region')
+                        : 'No states/regions available'}
+                    </span>
+                    <ChevronDown className={`transition-transform text-white ${dropdownOpen.state ? 'transform rotate-180' : ''}`} />
+                  </div>
+                  {dropdownOpen.state && selectedCountryCode && statesOfSelectedCountry.length > 0 && (
+                    <div className="absolute z-20 mt-1 w-full bg-[#1E1E1E] border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                      <input
+                        type="text"
+                        placeholder="Search state/region..."
+                        className="w-full px-4 py-2 bg-[#1A1A1A] text-white border-b border-gray-700 sticky top-0"
+                        value={stateSearchTerm}
+                        onChange={(e) => setStateSearchTerm(e.target.value)}
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                      {filteredStates.length > 0 ? (
+                        filteredStates.map(state => (
+                          <div
+                            key={state.isoCode}
+                            className="px-4 py-2 text-white hover:bg-[#222222] cursor-pointer"
+                            onClick={() => {
+                              setValue('state', state.name, { shouldValidate: true });
+                              setSelectedStateCode(state.isoCode);
+                              setValue('city', '', { shouldValidate: true }); // Clear city on state change
+                              toggleDropdown('state');
+                              setStateSearchTerm('');
+                            }}
+                          >
+                            {state.name}
+                          </div>
+                        ))
+                      ) : (
+                        <div className="px-4 py-2 text-gray-400">No states/regions found.</div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* City Dropdown */}
+              <div>
                 <label className="text-sm font-medium inline-flex gap-1 text-white">
-                Country <BitcoinIconsStarFilled />
+                  City <BitcoinIconsStarFilled />
                 </label>
-                <input
-                type="text"
-                {...register('country', { required: 'Country is required' })}
-                className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.country ? 'border-red-500' : 'border-gray-300'}`}
-                placeholder="Country"
-                />
-            </div>
+                <div className="relative">
+                  <div
+                    className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#222222] border border-[#FFF] cursor-pointer flex justify-between items-center
+                    ${!selectedCountryCode || (statesOfSelectedCountry.length > 0 && !selectedStateCode) ? 'opacity-50 cursor-not-allowed' : ''} border-gray-300'`}
+                    onClick={() => (selectedCountryCode && (statesOfSelectedCountry.length === 0 || selectedStateCode)) && toggleDropdown('city')}
+                  >
+                    <span className="text-white">
+                      {watchedCity || (selectedCountryCode
+                        ? (statesOfSelectedCountry.length > 0 && !selectedStateCode
+                            ? 'Select a state/region first'
+                            : 'Select a city')
+                        : 'Select country first')}
+                    </span>
+                    <ChevronDown className={`transition-transform text-white ${dropdownOpen.city ? 'transform rotate-180' : ''}`} />
+                  </div>
+                  {dropdownOpen.city && selectedCountryCode && (selectedStateCode || statesOfSelectedCountry.length === 0) && (
+                    <div className="absolute z-20 mt-1 w-full bg-[#1E1E1E] border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                      <input
+                        type="text"
+                        placeholder="Search city..."
+                        className="w-full px-4 py-2 bg-[#1A1A1A] text-white border-b border-gray-700 sticky top-0"
+                        value={citySearchTerm}
+                        onChange={(e) => setCitySearchTerm(e.target.value)}
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                      {filteredCities.length > 0 ? (
+                        filteredCities.map(city => (
+                          <div
+                            key={`${city.name}-${city.stateCode || 'no-state'}-${city.countryCode}`}
+                            className="px-4 py-2 text-white hover:bg-[#222222] cursor-pointer"
+                            onClick={() => {
+                              setValue('city', city.name, { shouldValidate: true });
+                              toggleDropdown('city');
+                              setCitySearchTerm('');
+                            }}
+                          >
+                            {city.name}
+                          </div>
+                        ))
+                      ) : (
+                        <div className="px-4 py-2 text-gray-400">No cities found for this selection.</div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
 
             <div>
@@ -379,8 +672,8 @@ const JobPool = () => {
                 Role/Skill Category <BitcoinIconsStarFilled />
               </label>
               <div className="relative">
-                <div 
-                  className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#222222] border border-[#FFF] cursor-pointer flex justify-between items-center ${errors.role ? 'border-red-500' : 'border-gray-300'}`}
+                <div
+                  className="mt-2 w-full h-14 px-4 rounded-lg bg-[#222222] border border-[#FFF] cursor-pointer flex justify-between items-center"
                   onClick={() => toggleDropdown('role')}
                 >
                   <span className="text-white">{selectedRoles.length > 0 ? selectedRoles.join(', ') : 'Select one or multiple'}</span>
@@ -389,8 +682,8 @@ const JobPool = () => {
                 {dropdownOpen.role && (
                   <div className="absolute z-10 mt-1 w-full bg-[#1E1E1E] border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-auto">
                     {roleOptions.map(role => (
-                      <div 
-                        key={role} 
+                      <div
+                        key={role}
                         className={`px-4 py-2 text-white hover:bg-[#222222] cursor-pointer flex items-center ${selectedRoles.includes(role) ? 'bg-[#222222]' : ''}`}
                         onClick={() => toggleRole(role)}
                       >
@@ -403,7 +696,6 @@ const JobPool = () => {
                   </div>
                 )}
               </div>
-              {errors.role && <p className="text-red-500 text-sm mt-1">Please select at least one role</p>}
               {otherRoleSelected && (
                 <div className="mt-2">
                   <input
@@ -424,10 +716,9 @@ const JobPool = () => {
                 <input
                   type="url"
                   {...register('portfolioLink', { required: 'Portfolio link is required' })}
-                  className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.portfolioLink ? 'border-red-500' : 'border-gray-300'}`}
+                  className="mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300"
                   placeholder="https://"
                 />
-                {errors.portfolioLink && <p className="text-red-500 text-sm mt-1">{errors.portfolioLink.message}</p>}
               </div>
 
               <div>
@@ -435,8 +726,8 @@ const JobPool = () => {
                   Years of Experience <BitcoinIconsStarFilled />
                 </label>
                 <div className="relative">
-                  <div 
-                    className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#222222] border border-[#FFF] cursor-pointer flex justify-between items-center ${errors.yearsOfExperience ? 'border-red-500' : 'border-gray-300'}`}
+                  <div
+                    className="mt-2 w-full h-14 px-4 rounded-lg bg-[#222222] border border-[#FFF] cursor-pointer flex justify-between items-center"
                     onClick={() => toggleDropdown('experience')}
                   >
                     <span className="text-white">{watch('yearsOfExperience') || 'Select your experience level'}</span>
@@ -445,11 +736,11 @@ const JobPool = () => {
                   {dropdownOpen.experience && (
                     <div className="absolute z-10 mt-1 w-full bg-[#1E1E1E] border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-auto">
                       {experienceOptions.map(exp => (
-                        <div 
-                          key={exp} 
+                        <div
+                          key={exp}
                           className="px-4 py-2 text-white hover:bg-[#222222] cursor-pointer flex items-center"
                           onClick={() => {
-                            setValue('yearsOfExperience', exp);
+                            setValue('yearsOfExperience', exp, { shouldValidate: true });
                             setDropdownOpen(prev => ({ ...prev, experience: false }));
                           }}
                         >
@@ -459,7 +750,6 @@ const JobPool = () => {
                     </div>
                   )}
                 </div>
-                {errors.yearsOfExperience && <p className="text-red-500 text-sm mt-1">Please select your experience level</p>}
               </div>
             </div>
 
@@ -475,12 +765,12 @@ const JobPool = () => {
                 accept=".pdf,.doc,.docx"
                 onChange={(e) => {
                   if (e.target.files?.[0]) {
-                    setValue('cv', e.target.files);
+                    setValue('cv', e.target.files, { shouldValidate: true });
                   }
                 }}
               />
-              <div 
-                className={`mt-2 border-2 border-dashed rounded-lg p-6 text-center cursor-pointer ${errors.cv ? 'border-red-500' : 'border-gray-300'}`}
+              <div
+                className={`mt-2 border-2 border-dashed rounded-lg p-6 text-center cursor-pointer border-gray-300`}
                 onClick={handleFileClick}
               >
                 {cvFile ? (
@@ -492,40 +782,30 @@ const JobPool = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                           </svg>
                         </div>
-                        <div className="text-left">
-                          <p className="text-sm font-medium text-gray-900 truncate max-w-xs">{cvFile.name}</p>
-                          <p className="text-xs text-gray-500">{(cvFile.size / 1024).toFixed(1)} KB</p>
-                        </div>
+                        <span className="text-gray-800">{cvFile.name}</span>
                       </div>
-                      <button 
-                        type="button" 
-                        className="text-gray-400 hover:text-red-500 ml-2"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          removeFile();
-                        }}
-                      >
-                        <Close className="h-5 w-5" />
+                      <button type="button" onClick={(e) => { e.stopPropagation(); removeFile(); }} className="text-gray-500 hover:text-gray-700">
+                        <Close />
                       </button>
                     </div>
-                    <p className="text-sm text-blue-600 font-medium mt-2">Click to change file</p>
+                    <p className="text-gray-500 text-sm">Click to change file</p>
                   </div>
                 ) : (
                   <>
-                    <Upload className="mx-auto text-3xl text-gray-400 mb-2" />
-                    <p className="text-gray-600">Click to upload or drag and drop</p>
-                    <p className="text-sm text-gray-500">PDF, DOC, DOCX (Max. 5MB)</p>
+                    <Upload className="mx-auto h-12 w-12 text-gray-400" />
+                    <p className="mt-2 text-sm text-gray-600">
+                      <span className="font-semibold">Click to upload</span> or drag and drop
+                    </p>
+                    <p className="mt-1 text-xs text-gray-500">PDF, DOC, DOCX up to 10MB</p>
                   </>
                 )}
               </div>
-              {errors.cv && <p className="text-red-500 text-sm mt-1">{errors.cv.message}</p>}
             </div>
-
-            <div className="flex justify-end pt-4">
+            <div className="flex justify-end mt-8">
               <button
                 type="button"
                 onClick={nextStep}
-                className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between justify-center p-[1rem]"
+                className="py-3 px-6 bg-[#159B48] text-white rounded-lg hover:bg-[#127F3A] transition duration-200"
               >
                 Next Step
               </button>
@@ -533,95 +813,106 @@ const JobPool = () => {
           </div>
         )}
 
-        {/* Step 2: Get to Know You */}
+        {/* Step 2: About You */}
         {currentStep === 2 && (
           <div className="space-y-6">
             <h2 className="text-xl font-bold text-white mb-4">About You</h2>
-            
             <div>
               <label className="text-sm font-medium inline-flex gap-1 text-white">
-                What kinds of projects excite you most and why? <BitcoinIconsStarFilled />
+                What kind of projects excite you most? <BitcoinIconsStarFilled />
               </label>
-              <div className="relative">
-                <textarea
-                  {...register('projectsExciteYou', { required: 'This field is required' })}
-                  className={`mt-2 w-full h-[270px] py-4 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.projectsExciteYou ? 'border-red-500' : 'border-gray-300'}`}
-                  placeholder="Describe the types of projects that get you excited and why..."
-                  maxLength={MAX_WORDS * 6}
-                />
-                <div className={`absolute bottom-2 right-2 text-xs ${wordCounts.projectsExciteYou >= MAX_WORDS ? 'text-red-500' : 'text-gray-400'}`}>
-                  {wordCounts.projectsExciteYou}/{MAX_WORDS} words
-                </div>
-              </div>
-              {errors.projectsExciteYou && <p className="text-red-500 text-sm mt-1">{errors.projectsExciteYou.message}</p>}
+              <textarea
+                {...register('projectsExciteYou', {
+                  required: 'This field is required',
+                  validate: value => {
+                    const words = value.trim().split(/\s+/).filter(Boolean).length;
+                    return words <= MAX_WORDS || `Max ${MAX_WORDS} words. You have ${words}.`;
+                  }
+                })}
+                rows={4}
+                className={`mt-2 w-full px-4 py-3 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300`}
+                placeholder="Tell us about your ideal projects..."
+              ></textarea>
+              <p className="text-right text-xs text-gray-400 mt-1">
+                {wordCounts.projectsExciteYou}/{MAX_WORDS} words
+              </p>
             </div>
 
             <div>
               <label className="text-sm font-medium inline-flex gap-1 text-white">
-                How do you typically approach problem-solving in your work? <BitcoinIconsStarFilled />
+                Describe your approach to problem-solving. <BitcoinIconsStarFilled />
               </label>
-              <div className="relative">
-                <textarea
-                  {...register('problemSolvingApproach', { required: 'This field is required' })}
-                  className={`mt-2 w-full h-[270px] py-4 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.problemSolvingApproach ? 'border-red-500' : 'border-gray-300'}`}
-                  placeholder="Describe your problem-solving process..."
-                  maxLength={MAX_WORDS * 6}
-                />
-                <div className={`absolute bottom-2 right-2 text-xs ${wordCounts.problemSolvingApproach >= MAX_WORDS ? 'text-red-500' : 'text-gray-400'}`}>
-                  {wordCounts.problemSolvingApproach}/{MAX_WORDS} words
-                </div>
-              </div>
-              {errors.problemSolvingApproach && <p className="text-red-500 text-sm mt-1">{errors.problemSolvingApproach.message}</p>}
+              <textarea
+                {...register('problemSolvingApproach', {
+                  required: 'This field is required',
+                  validate: value => {
+                    const words = value.trim().split(/\s+/).filter(Boolean).length;
+                    return words <= MAX_WORDS || `Max ${MAX_WORDS} words. You have ${words}.`;
+                  }
+                })}
+                rows={4}
+                className={`mt-2 w-full px-4 py-3 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300`}
+                placeholder="How do you tackle challenges?"
+              ></textarea>
+              <p className="text-right text-xs text-gray-400 mt-1">
+                {wordCounts.problemSolvingApproach}/{MAX_WORDS} words
+              </p>
             </div>
 
             <div>
               <label className="text-sm font-medium inline-flex gap-1 text-white">
-                What kind of team do you do your best work with? <BitcoinIconsStarFilled />
+                What kind of team environment do you thrive in? <BitcoinIconsStarFilled />
               </label>
-              <div className="relative">
-                <textarea
-                  {...register('bestTeamType', { required: 'This field is required' })}
-                  className={`mt-2 w-full h-[270px] py-4 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.bestTeamType ? 'border-red-500' : 'border-gray-300'}`}
-                  placeholder="Describe your ideal team environment..."
-                  maxLength={MAX_WORDS * 6}
-                />
-                <div className={`absolute bottom-2 right-2 text-xs ${wordCounts.bestTeamType >= MAX_WORDS ? 'text-red-500' : 'text-gray-400'}`}>
-                  {wordCounts.bestTeamType}/{MAX_WORDS} words
-                </div>
-              </div>
-              {errors.bestTeamType && <p className="text-red-500 text-sm mt-1">{errors.bestTeamType.message}</p>}
+              <textarea
+                {...register('bestTeamType', {
+                  required: 'This field is required',
+                  validate: value => {
+                    const words = value.trim().split(/\s+/).filter(Boolean).length;
+                    return words <= MAX_WORDS || `Max ${MAX_WORDS} words. You have ${words}.`;
+                  }
+                })}
+                rows={4}
+                className={`mt-2 w-full px-4 py-3 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300`}
+                placeholder="Describe your ideal team setup."
+              ></textarea>
+              <p className="text-right text-xs text-gray-400 mt-1">
+                {wordCounts.bestTeamType}/{MAX_WORDS} words
+              </p>
             </div>
 
             <div>
               <label className="text-sm font-medium inline-flex gap-1 text-white">
-                Tell us something real: a project you're proud of, or a challenge that shaped how you work. <BitcoinIconsStarFilled />
+                Tell us about a project or challenge you're most proud of and why. <BitcoinIconsStarFilled />
               </label>
-              <div className="relative">
-                <textarea
-                  {...register('proudProjectOrChallenge', { required: 'This field is required' })}
-                  className={`mt-2 w-full h-[270px] py-4 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 ${errors.proudProjectOrChallenge ? 'border-red-500' : 'border-gray-300'}`}
-                  placeholder="Share a meaningful professional experience..."
-                  maxLength={MAX_WORDS * 6}
-                />
-                <div className={`absolute bottom-2 right-2 text-xs ${wordCounts.proudProjectOrChallenge >= MAX_WORDS ? 'text-red-500' : 'text-gray-400'}`}>
-                  {wordCounts.proudProjectOrChallenge}/{MAX_WORDS} words
-                </div>
-              </div>
-              {errors.proudProjectOrChallenge && <p className="text-red-500 text-sm mt-1">{errors.proudProjectOrChallenge.message}</p>}
+              <textarea
+                {...register('proudProjectOrChallenge', {
+                  required: 'This field is required',
+                  validate: value => {
+                    const words = value.trim().split(/\s+/).filter(Boolean).length;
+                    return words <= MAX_WORDS || `Max ${MAX_WORDS} words. You have ${words}.`;
+                  }
+                })}
+                rows={4}
+                className={`mt-2 w-full px-4 py-3 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300`}
+                placeholder="Share a standout achievement."
+              ></textarea>
+              <p className="text-right text-xs text-gray-400 mt-1">
+                {wordCounts.proudProjectOrChallenge}/{MAX_WORDS} words
+              </p>
             </div>
 
-            <div className="flex justify-between pt-4">
+            <div className="flex justify-between mt-8">
               <button
                 type="button"
                 onClick={prevStep}
-                className="text-center bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] backdrop-blur-[53.080570220947266px] shadow-[0px_5.31px_31.85px_-3.98px_rgba(0,0,0,0.2)] text-white font-bold py-3 px-6 rounded-lg "
+                className="py-3 px-6 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition duration-200"
               >
                 Previous
               </button>
               <button
                 type="button"
                 onClick={nextStep}
-                className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between justify-center p-[1rem]"
+                className="py-3 px-6 bg-[#159B48] text-white rounded-lg hover:bg-[#127F3A] transition duration-200"
               >
                 Next Step
               </button>
@@ -629,90 +920,80 @@ const JobPool = () => {
           </div>
         )}
 
-        {/* Step 3: Work Preferences */}
+        {/* Step 3: Preferences */}
         {currentStep === 3 && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-white mb-4">Work Preferences</h2>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="text-sm font-medium inline-flex gap-1 text-white">
-                  Availability <BitcoinIconsStarFilled />
-                </label>
-                <div className="relative">
-                  <div 
-                    className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#222222] border border-[#FFF] cursor-pointer flex justify-between items-center ${errors.availability ? 'border-red-500' : 'border-gray-300'}`}
-                    onClick={() => toggleDropdown('availability')}
-                  >
-                    <span className="text-white">{watch('availability') || 'Select your availability'}</span>
-                    <ChevronDown className={`transition-transform text-white ${dropdownOpen.availability ? 'transform rotate-180' : ''}`} />
+            <h2 className="text-xl font-bold text-white mb-4">Preferences</h2>
+
+            <div>
+              <label className="text-sm font-medium inline-flex gap-1 text-white">
+                Availability <BitcoinIconsStarFilled />
+              </label>
+              <div className="relative">
+                <div
+                  className={`mt-2 w-full h-14 px-4 rounded-lg bg-[#222222] border border-[#FFF] cursor-pointer flex justify-between items-center border-gray-300`}
+                  onClick={() => toggleDropdown('availability')}
+                >
+                  <span className="text-white">{watch('availability') || 'Select your availability'}</span>
+                  <ChevronDown className={`transition-transform text-white ${dropdownOpen.availability ? 'transform rotate-180' : ''}`} />
+                </div>
+                {dropdownOpen.availability && (
+                  <div className="absolute z-10 mt-1 w-full bg-[#1E1E1E] border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-auto">
+                    {availabilityOptions.map(option => (
+                      <div
+                        key={option}
+                        className="px-4 py-2 text-white hover:bg-[#222222] cursor-pointer flex items-center"
+                        onClick={() => {
+                          setValue('availability', option, { shouldValidate: true });
+                          setDropdownOpen(prev => ({ ...prev, availability: false }));
+                        }}
+                      >
+                        {option}
+                      </div>
+                    ))}
                   </div>
-                  {dropdownOpen.availability && (
-                    <div className="absolute z-10 mt-1 w-full bg-[#1E1E1E] border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-auto">
-                      {availabilityOptions.map(option => (
-                        <div 
-                          key={option} 
-                          className="px-4 py-2 text-white hover:bg-[#222222] cursor-pointer flex items-center"
-                          onClick={() => {
-                            setValue('availability', option);
-                            setDropdownOpen(prev => ({ ...prev, availability: false }));
-                          }}
-                        >
-                          {option}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                {errors.availability && <p className="text-red-500 text-sm mt-1">Please select your availability</p>}
-              </div>
-
-              <div className="flex items-center">
-                <label className="inline-flex items-center cursor-pointer">
-                  <input
-                    type="checkbox"
-                    {...register('openToIdeaLab')}
-                    className="sr-only peer"
-                  />
-                  <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                  <span className="ml-3 text-sm font-medium text-white">
-                    Would you be open to joining internal Grascope products built in the Idea Lab?
-                  </span>
-                </label>
+                )}
               </div>
             </div>
 
-            <div className="pt-4 border-t border-gray-200">
-              <div className="flex items-start">
-                <div className="flex items-center h-5">
-                  <input
-                    id="consent"
-                    type="checkbox"
-                    {...register('consent', { required: 'You must give consent to proceed' })}
-                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                  />
-                </div>
-                <label htmlFor="consent" className="ml-2 block text-sm text-white">
-                  I give Grascope permission to securely store my information and share my portfolio and CV with potential clients and internal teams if there's a matching opportunity. I understand this does not guarantee job placement. <BitcoinIconsStarFilled />
-                </label>
-              </div>
-              {errors.consent && <p className="text-red-500 text-sm mt-1">{errors.consent.message}</p>}
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                {...register('openToIdeaLab')}
+                id="openToIdeaLab"
+                className="h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500"
+              />
+              <label htmlFor="openToIdeaLab" className="ml-3 text-sm text-white cursor-pointer">
+                I'm open to being considered for opportunities from Grascope's Idea Lab (internal projects).
+              </label>
             </div>
 
-            <div className="flex justify-between pt-6">
+            <div className="flex items-start">
+              <input
+                type="checkbox"
+                {...register('consent', { required: 'You must consent to proceed' })}
+                id="consent"
+                className="h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500"
+              />
+              <label htmlFor="consent" className="ml-3 text-sm text-white cursor-pointer">
+                I consent to Grascope collecting and storing my submitted information for talent pool consideration. <BitcoinIconsStarFilled />
+              </label>
+            </div>
+
+            <div className="flex justify-between mt-8">
               <button
                 type="button"
                 onClick={prevStep}
-                className="text-center bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] backdrop-blur-[53.080570220947266px] shadow-[0px_5.31px_31.85px_-3.98px_rgba(0,0,0,0.2)] text-white font-bold py-3 px-6 rounded-lg"
+                className="py-3 px-6 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition duration-200"
               >
                 Previous
               </button>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="relative text-white z-[1] rounded-[.5rem] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[.5rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between justify-center p-[1rem]"
+                className="py-3 px-6 bg-[#159B48] text-white rounded-lg hover:bg-[#127F3A] transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Submitting...' : 'Join Our Talent Pool'}
+                {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </button>
             </div>
           </div>
