@@ -17,12 +17,14 @@ import Blogs from './pages/Blogs'
 import StackCheck from './pages/StackCheck'
 import Chatbot from './components/Chatbot'
 import LiveChat from './pages/LiveChats'
+import ViewApplication from './pages/ViewApplication'
+import NotFound from './pages/NotFound'; // Import the new NotFound component
 
 function App() {
   useEffect(() => {
     AOS.init();
   }, [])
-  
+
   return (
     <div className="min-h-screen bg-[#141416] text-white overflow-x-hidden">
       <Cursor />
@@ -42,6 +44,9 @@ function App() {
           <Route path="/roi" element={<ROI />} />
           <Route path="/jobs" element={<JobPool />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/jobs/application/:password" element={<ViewApplication />} />
+          {/* This route will catch any unmatched URLs */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </div>
