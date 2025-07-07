@@ -414,7 +414,7 @@ const JobPool = () => {
                   borderColor: currentStep >= step.number ? '#159B48' : '#374151'
                 }}
                 transition={{ duration: 0.3 }}
-                className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${currentStep >= step.number ? 'bg-[#159B48] border-[#159B48]' : 'bg-gray-700 border-gray-700'}`}
+                className={`w-10 h-10 rounded-full relative flex items-center justify-center hover:scale-105 transition border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-full before:opacity-20 before:mix-blend-overlay ${currentStep >= step.number ? 'bg-[#159B48] border-[#159B48]' : 'bg-gray-700 border-gray-700'}`}
               >
                 {currentStep > step.number ? (
                   <CheckmarkFilled className="text-white" />
@@ -490,7 +490,7 @@ const JobPool = () => {
                     }
                   })}
                   className="mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300"
-                  placeholder="your.email@example.com"
+                  placeholder="Email address"
                 />
               </div>
             </div>
