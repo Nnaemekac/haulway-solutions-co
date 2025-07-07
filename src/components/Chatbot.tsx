@@ -106,7 +106,7 @@ export default function Chatbot() {
       ]);
       setTimeout(() => {
     // Open a new tab with a dedicated Tawk.to chat page
-    window.open("https://tawk.to/chat/6866553c187a32190fa5b608/1iv7rptj4", "_blank");
+    window.open("https://wa.me/2348182931756", "_blank");
   }, 1200);
     } else if (value === "noescalate") {
       setMessages((msgs) => [
@@ -168,7 +168,7 @@ export default function Chatbot() {
             <div className="flex items-center gap-2">
               {notAtStart && (
                 <button
-                  className="text-lg font-bold px-2 py-1 rounded hover:bg-[#e0fffa] border border-[#00FFD1] transition"
+                  className="text-lg font-bold px-2 py-1 rounded hover:bg-[#00FFD1] border border-[#00FFD1] transition"
                   onClick={handleRestart}
                   aria-label="Back to Start"
                   style={{ marginRight: 4 }}
@@ -176,7 +176,7 @@ export default function Chatbot() {
                   <ChevronLeft />
                 </button>
               )}
-              <span className="font-bold text-[#FFF]">Grascope Chatbot</span>
+              <span className="font-bold text-[#FFF]">Askcope</span>
             </div>
             <button
               className="text-[#FFF] text-xl font-bold"
