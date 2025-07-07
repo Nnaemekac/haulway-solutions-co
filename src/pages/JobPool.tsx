@@ -26,7 +26,7 @@ type FormData = {
   proudProjectOrChallenge: string;
   availability: string;
   openToIdeaLab: boolean;
-  consent: boolean;
+  marketingConsent: boolean; // Added new field for marketing consent
   otherRole?: string;
 };
 
@@ -41,6 +41,11 @@ const roleOptions = [
   'Performance Marketer',
   'Copywriter',
   'Motion Designer',
+  'Sales',
+  'Admin support',
+  'Accounting',
+  'Social Media Management',
+  'Content Creator',
   'Other'
 ];
 
@@ -76,6 +81,9 @@ const JobPool = () => {
     city: false,
   });
   const [currentStep, setCurrentStep] = useState(1);
+   // Watch the values for the toggle switches
+  const openToIdeaLabValue = watch('openToIdeaLab');
+  const marketingConsentValue = watch('marketingConsent');
   const fileInputRef = useRef<HTMLInputElement>(null);
   const selectedRoles = watch('role') || [];
   const cvFile = watch('cv')?.[0];
@@ -183,195 +191,209 @@ const JobPool = () => {
     setValue('cv', undefined as unknown as FileList);
   };
 
-  const validateCurrentStep = () => {
+  const validateCurrentStep = (stepToValidate: number = currentStep) => {
+  setSubmitError(''); // Clear previous errors at the start of validation
+  const errors: string[] = [];
+
   // Step 1 validation
   if (currentStep === 1) {
-    const requiredFields = [
-      'fullName',
-      'email',
-      'phoneNumber',
-      'country',
-      'city',
-      'role',
-      'portfolioLink',
-      'yearsOfExperience',
-      'cv'
-    ];
+    const fullName = watch('fullName');
+    const email = watch('email');
+    const phoneNumber = watch('phoneNumber');
+    const country = watch('country');
+    const city = watch('city');
+    const role = watch('role');
+    const portfolioLink = watch('portfolioLink');
+    const yearsOfExperience = watch('yearsOfExperience');
+    const cv = watch('cv');
 
-    const errors: string[] = [];
-
-    let isValid = requiredFields.every(field => {
-      const value = watch(field as keyof FormData);
-      if (field === 'role') {
-        if (!Array.isArray(value) || value.length === 0) {
-          errors.push('Please select at least one role.');
-          return false;
-        }
-      } else if (field === 'cv') {
-        if (!value || (value as FileList).length === 0) {
-          errors.push('CV is required.');
-          return false;
-        }
-      } else if (typeof value === 'string' && value.trim() === '') {
-        errors.push(`${field.charAt(0).toUpperCase() + field.slice(1)} is required.`);
-        return false;
-      } else if (field === 'email' && value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value as string)) {
-        errors.push('Invalid email address.');
-        return false;
-      } else if (field === 'country' && !selectedCountryCode) {
-        errors.push('Country is required.');
-        return false;
-      } else if (field === 'city' && !watchedCity) {
-        errors.push('City is required.');
-        return false;
-      }
-      return true;
-    });
-
-    if (selectedCountryCode && statesOfSelectedCountry.length > 0 && !selectedStateCode) {
+    if (!fullName || fullName.trim() === '') errors.push('Full name is required.');
+    if (!email || email.trim() === '') {
+      errors.push('Email is required.');
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+      errors.push('Invalid email address.');
+    }
+    if (!phoneNumber || phoneNumber.trim() === '') errors.push('Phone number is required.');
+    if (!country || country.trim() === '' || !selectedCountryCode) errors.push('Country is required.');
+    if (selectedCountryCode && statesOfSelectedCountry.length > 0 && (!watchedState || watchedState.trim() === '')) {
       errors.push('State/Region is required.');
-      isValid = false;
+    }
+    if (!city || city.trim() === '' || !watchedCity) errors.push('City is required.');
+    if (!Array.isArray(role) || role.length === 0) errors.push('Please select at least one role.');
+    if (otherRoleSelected && (!watch('otherRole') || watch('otherRole')?.trim() === '')) {
+      errors.push('Please specify your role for "Other".');
     }
 
-    if (!isValid) setSubmitError(errors.join('\n'));
-    return isValid;
+    if (!portfolioLink || portfolioLink.trim() === '') {
+      errors.push('Portfolio link is required.');
+    } else {
+      // This is the **corrected** and **recommended** regex based on our previous discussion
+      const urlRegex = /^(https?:\/\/(?:www\.|m\.)?[a-zA-Z0-9-]{1,63}\.[a-zA-Z0-9-]{1,63}\.(?:com|net|org|io|dev|app|co|art|design|me|xyz|site|blog|info|biz|space|tech)(?:\/[^\s]*)?|https?:\/\/(?:www\.)?behance\.net\/[^\s]+|https?:\/\/(?:www\.)?github\.com\/[^\s]+)$/i;
+      if (!urlRegex.test(portfolioLink)) {
+        errors.push('Portfolio link must be a valid website, Behance, or GitHub URL.');
+      }
+    }
+
+    if (!yearsOfExperience || yearsOfExperience.trim() === '') errors.push('Years of Experience is required.');
+    if (!cv || cv.length === 0) errors.push('CV is required.');
+
+    if (errors.length > 0) {
+      setSubmitError(errors.join('\n')); // Sets the specific error messages
+      return false;
+    }
+    return true;
   }
 
   // Step 2 validation
   if (currentStep === 2) {
-    const requiredFields = [
-      'projectsExciteYou',
-      'problemSolvingApproach',
-      'bestTeamType',
-      'proudProjectOrChallenge'
+    const requiredTextAreas = [
+      { field: 'projectsExciteYou', label: 'Projects that excite you' },
+      { field: 'problemSolvingApproach', label: 'Problem-solving approach' },
+      { field: 'bestTeamType', label: 'Best team type' },
+      { field: 'proudProjectOrChallenge', label: 'Proud project or challenge' }
     ];
 
-    const errors: string[] = [];
-    let isValid = true;
-
-    requiredFields.forEach(field => {
+    requiredTextAreas.forEach(({ field, label }) => {
       const value = watch(field as keyof FormData) as string;
       const words = value ? value.trim().split(/\s+/).filter(Boolean).length : 0;
       if (!value || value.trim() === '') {
-        errors.push('All questions in this section are required.');
-        isValid = false;
+        errors.push(`${label} is required.`);
       } else if (words > MAX_WORDS) {
-        errors.push(`Max ${MAX_WORDS} words for "${field}". You have ${words}.`);
-        isValid = false;
+        errors.push(`Max ${MAX_WORDS} words for "${label}". You have ${words}.`);
       }
     });
 
-    if (!isValid) setSubmitError(errors.join('\n'));
-    return isValid;
+    if (errors.length > 0) {
+      setSubmitError(errors.join('\n')); // Sets the specific error messages
+      return false;
+    }
+    return true;
   }
-
-  // Step 3 validation
-  if (currentStep === 3) {
-    const errors: string[] = [];
-    let isValid = true;
-
-    // Availability is required
+  if (stepToValidate === 3) {
     const availability = watch('availability');
     if (!availability || availability.trim() === '') {
       errors.push('Availability is required.');
-      isValid = false;
     }
 
-    // Consent is required
-    const consent = watch('consent');
-    if (!consent) {
-      errors.push('You must consent to proceed.');
-      isValid = false;
+    if (errors.length > 0) {
+      setSubmitError(errors.join('\n'));
+      return false;
     }
-
-    if (!isValid) setSubmitError(errors.join('\n'));
-    return isValid;
+    return true;
   }
 
-  return true;
+  return true; // Default to true if no specific validation for the current step
+
 };
 
-  const nextStep = async () => {
-    setSubmitError('');
-    window.scrollTo(0, 0);
+
+  const nextStep = () => {
+    setSubmitError(''); // Clear any previous validation errors before checking for the next step
+    setSubmitSuccess(false); // Clear success message if user goes back or advances
 
     const isStepValid = validateCurrentStep();
 
     if (isStepValid) {
       setCurrentStep(prev => prev + 1);
+      // Only scroll to top if validation passes
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     } else {
-      setSubmitError('Please complete all required fields for this step.');
+      // If validation fails, errors are already set by validateCurrentStep.
+      // We explicitly *don't* scroll to the top here, so the user sees the errors.
     }
   };
 
   const prevStep = () => {
-    setSubmitError('');
+    setSubmitError(''); // Clear errors when going back
+    setSubmitSuccess(false); // Clear success message if user goes back
     setCurrentStep(prev => prev - 1);
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
-  const onSubmit = async (data: FormData) => {
-    if (currentStep === 3) {
-    setSubmitError('');
-    const isStepValid = validateCurrentStep();
-    if (!isStepValid) {
-      window.scrollTo(0, 0);
-      return;
-    }
+  const handleFinalSubmit = async () => {
+  // Validate step 3 fields
+  const isStep3Valid = validateCurrentStep(3);
+
+  if (isStep3Valid) {
+    // If step 3 is valid, proceed with the actual form submission
+    handleSubmit(onSubmit)(); // Call the onSubmit function provided by react-hook-form
   }
+};
 
+  const onSubmit = async (data: FormData) => {
   setIsSubmitting(true);
-  setSubmitError('');
+  setSubmitError(''); // Clear any previous submission errors before a new attempt
+  setSubmitSuccess(false); // Ensure success state is reset
 
-    try {
-      const payload = {
-        fullName: data.fullName,
-        email: data.email,
-        phoneNumber: data.phoneNumber,
-        city: data.city,
-        country: data.country,
-        role: data.role.map(role =>
-          role === 'Other' && data.otherRole ? data.otherRole : role
-        ),
-        portfolioLink: data.portfolioLink,
-        yearsOfExperience: data.yearsOfExperience,
-        cv: data.cv?.[0]?.name || '',
-        projectsExciteYou: data.projectsExciteYou,
-        problemSolvingApproach: data.problemSolvingApproach,
-        bestTeamType: data.bestTeamType,
-        proudProjectOrChallenge: data.proudProjectOrChallenge,
-        availability: data.availability,
-        openToIdeaLab: data.openToIdeaLab
-      };
+  try {
+    const payload = {
+      fullName: data.fullName,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      city: data.city,
+      country: data.country,
+      role: data.role.map(role =>
+        role === 'Other' && data.otherRole ? data.otherRole : role
+      ),
+      portfolioLink: data.portfolioLink,
+      yearsOfExperience: data.yearsOfExperience,
+      cv: data.cv?.[0]?.name || '',
+      projectsExciteYou: data.projectsExciteYou,
+      problemSolvingApproach: data.problemSolvingApproach,
+      bestTeamType: data.bestTeamType,
+      proudProjectOrChallenge: data.proudProjectOrChallenge,
+      availability: data.availability,
+      openToIdeaLab: data.openToIdeaLab
+    };
 
-      const response = await axios.post(
-        'https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/talent-pool',
-        payload,
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          }
+    const response = await axios.post(
+      'https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/talent-pool',
+      payload,
+      {
+        headers: {
+          'Content-Type': 'application/json'
         }
-      );
-
-      if (response.status === 201) {
-        setSubmitSuccess(true);
       }
-    } catch (error) {
-      console.error('Submission error:', error);
-      if (axios.isAxiosError(error) && error.response?.data?.validationErrors) {
+    );
+
+    if (response.status === 201) {
+      setSubmitSuccess(true);
+    }
+  } catch (error: unknown) { // Explicitly type error as unknown (though it's default)
+    console.error('Submission error:', error);
+
+    if (axios.isAxiosError(error)) {
+      // Now 'error' is known to be an AxiosError
+      if (error.response?.data?.validationErrors) {
         const validationErrors = error.response.data.validationErrors;
-        const errorMessages = validationErrors.map((err: any) =>
+        const errorMessages = validationErrors.map((err: any) => // err: any is fine here if structure is unknown
           `${err.field}: ${err.errors.join(', ')}`
         ).join('\n');
         setSubmitError(errorMessages);
+      } else if (error.response?.data?.message) { // Check if 'message' exists on data
+        setSubmitError(`Failed to submit your application. ${error.response.data.message}`);
+      } else if (error.message) { // Fallback to generic Axios error message
+        setSubmitError(`Failed to submit your application: ${error.message}`);
       } else {
-        setSubmitError('Failed to submit your application. Please try again.');
+        setSubmitError('Failed to submit your application. An unknown error occurred with the request.');
       }
-    } finally {
-      setIsSubmitting(false);
+    } else if (error instanceof Error) {
+      // If it's a standard JavaScript Error object
+      setSubmitError(`Failed to submit your application: ${error.message}`);
+    } else {
+      // General fallback for anything else that was thrown
+      setSubmitError('Failed to submit your application. An unexpected error occurred.');
     }
-  };
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const StepIndicator = () => {
     const steps = [
@@ -432,35 +454,8 @@ const JobPool = () => {
           Grascope works with global clients and also builds its own products. Through our Idea Lab, we constantly design, test, and launch new digital solutions—so we're always on the lookout for brilliant creatives, developers, and strategists to bring into the fold.
         </p>
       </section>
-
+    
       <form onSubmit={handleSubmit(onSubmit)} className="bg-[#222222] lg:p-[2rem] p-[1rem] rounded-[1rem]">
-        {submitError && (
-          <div className="flex items-start p-4 mb-4 text-[#991b1b] rounded-lg bg-[#fef2f2]" role="alert">
-            <WarningFilled className="shrink-0 inline w-5 h-5 me-3 mt-0.5" />
-            <div className="ms-3 text-sm font-medium">
-              <h3 className="font-bold">Validation Errors</h3>
-              {submitError.split('\n').map((error, i) => (
-                <p key={i} className="mt-1">{error}</p>
-              ))}
-            </div>
-          </div>
-        )}
-        {submitSuccess && (
-          <div className="flex items-center p-4 mb-4 text-[#065F46] rounded-lg bg-[#ECFDF5]" role="alert">
-            <CheckmarkFilled className="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" />
-            <span className="sr-only">Info</span>
-            <div className="ms-3 text-sm font-medium">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Thank you for submitting your details.</h2>
-              <p className="text-gray-600 mb-6">
-                You're now part of the Grascope talent pool. Whether it's a client project or a product coming out of the Idea Lab—we'll reach out if it's the right fit.
-              </p>
-              <p className="text-gray-500">
-                No spam. No mass messages. Just meaningful opportunities.
-              </p>
-            </div>
-          </div>
-        )}
-
         <StepIndicator />
 
         {/* Step 1: Basic Information */}
@@ -715,7 +710,13 @@ const JobPool = () => {
                 </label>
                 <input
                   type="url"
-                  {...register('portfolioLink', { required: 'Portfolio link is required' })}
+                  {...register('portfolioLink', {
+                    required: 'Portfolio link is required',
+                    pattern: {
+                      value: /^(https?:\/\/(?:www\.|m\.)?(?:[a-zA-Z0-9-]+\.)+(?:com|net|org|io|dev|app|co|art|design|me|xyz|site|blog|info|biz|space|tech)(?:\/[^\s]*)?|https?:\/\/(?:www\.)?behance\.net\/[^\s]+|https?:\/\/(?:www\.)?github\.com\/[^\s]+)$/i,
+                      message: 'Portfolio link must be a valid website, Behance, or GitHub URL.'
+                    }
+                  })}
                   className="mt-2 w-full h-14 px-4 rounded-lg bg-[#1E1E1E] text-white focus:ring-2 focus:ring-indigo-500 border-gray-300"
                   placeholder="https://"
                 />
@@ -956,27 +957,43 @@ const JobPool = () => {
               </div>
             </div>
 
+            {/* Toggle Switch for openToIdeaLab */}
             <div className="flex items-center">
-              <input
-                type="checkbox"
-                {...register('openToIdeaLab')}
-                id="openToIdeaLab"
-                className="h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500"
-              />
-              <label htmlFor="openToIdeaLab" className="ml-3 text-sm text-white cursor-pointer">
-                I'm open to being considered for opportunities from Grascope's Idea Lab (internal projects).
+              <label htmlFor="openToIdeaLab" className="inline-flex relative items-center cursor-pointer">
+                {/* Hidden actual checkbox */}
+                <input
+                  type="checkbox"
+                  id="openToIdeaLab"
+                  className="sr-only peer" // Tailwind class to visually hide but keep accessible
+                  {...register('openToIdeaLab')}
+                  checked={openToIdeaLabValue} // Controlled by react-hook-form's watch
+                  onChange={(e) => setValue('openToIdeaLab', e.target.checked, { shouldValidate: true })} // Update value and trigger validation
+                />
+                {/* Visual toggle switch */}
+                <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-400 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#159B48]"></div>
+                <span className="ml-3 text-sm text-white">
+                  I'm open to being considered for opportunities from Grascope's Idea Lab (internal projects).
+                </span>
               </label>
             </div>
 
-            <div className="flex items-start">
-              <input
-                type="checkbox"
-                {...register('consent', { required: 'You must consent to proceed' })}
-                id="consent"
-                className="h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500"
-              />
-              <label htmlFor="consent" className="ml-3 text-sm text-white cursor-pointer">
-                I consent to Grascope collecting and storing my submitted information for talent pool consideration. <BitcoinIconsStarFilled />
+            {/* Toggle Switch for marketingConsent */}
+            <div className="flex items-center">
+              <label htmlFor="marketingConsent" className="inline-flex relative items-center cursor-pointer">
+                {/* Hidden actual checkbox */}
+                <input
+                  type="checkbox"
+                  id="marketingConsent"
+                  className="sr-only peer" // Tailwind class to visually hide but keep accessible
+                  {...register('marketingConsent', { required: 'You must consent to receive marketing emails and job offers.' })}
+                  checked={marketingConsentValue} // Controlled by react-hook-form's watch
+                  onChange={(e) => setValue('marketingConsent', e.target.checked, { shouldValidate: true })} // Update value and trigger validation
+                />
+                {/* Visual toggle switch */}
+                <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-400 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#159B48]"></div>
+                <span className="ml-3 text-sm text-white inline-flex gap-1">
+                  I consent to receive marketing emails and job offers from Grascope. <BitcoinIconsStarFilled />
+                </span>
               </label>
             </div>
 
@@ -989,7 +1006,8 @@ const JobPool = () => {
                 Previous
               </button>
               <button
-                type="submit"
+                type="button"
+                onClick={handleFinalSubmit}
                 disabled={isSubmitting}
                 className="py-3 px-6 bg-[#159B48] text-white rounded-lg hover:bg-[#127F3A] transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
@@ -998,6 +1016,34 @@ const JobPool = () => {
             </div>
           </div>
         )}
+        <div className='mt-[2rem]'>
+          {submitError && (
+          <div className="flex items-start p-4 mb-4 text-[#991b1b] rounded-lg bg-[#fef2f2]" role="alert">
+            <WarningFilled className="shrink-0 inline w-5 h-5 me-3 mt-0.5" />
+            <div className="ms-3 text-sm font-medium">
+              <h3 className="font-bold">Validation Errors</h3>
+              {submitError.split('\n').map((error, i) => (
+                <p key={i} className="mt-1">{error}</p>
+              ))}
+            </div>
+          </div>
+        )}
+        {submitSuccess && (
+          <div className="flex items-center p-4 mb-4 text-[#065F46] rounded-lg bg-[#ECFDF5]" role="alert">
+            <CheckmarkFilled className="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" />
+            <span className="sr-only">Info</span>
+            <div className="ms-3 text-sm font-medium">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Thank you for submitting your details.</h2>
+              <p className="text-gray-600 mb-6">
+                You're now part of the Grascope talent pool. Whether it's a client project or a product coming out of the Idea Lab—we'll reach out if it's the right fit.
+              </p>
+              <p className="text-gray-500">
+                No spam. No mass messages. Just meaningful opportunities.
+              </p>
+            </div>
+          </div>
+        )}
+        </div>
       </form>
     </section>
   );
