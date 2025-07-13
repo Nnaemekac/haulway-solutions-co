@@ -593,7 +593,7 @@ const StackCheck = () => {
           <p className="mt-[1rem] opacity-80 lg:text-[105%] leading-[2rem] lg:w-[90%] text-[#F5FFFF]">
             A founder came to us with a messy internal flow and a 5-day launch deadline. We restructured the stack, rebuilt key flows, and shipped a working MVP in 72 hours.
           </p>
-          <Link to={'/'} className="rounded-[2rem] relative text-white z-[1] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[2rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between gap-[1.5rem] py-[0.6rem] pr-[0.6rem] pl-[1.2rem] mt-[1.5rem]">
+          <Link to={'/blogs'} className="rounded-[2rem] relative text-white z-[1] border-none bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] shadow-[0_4px_24px_-3px_rgba(0,0,0,0.2)] backdrop-blur-[20px] before:absolute before:inset-0 before:z-[-1] before:bg-[#159B48] before:rounded-[2rem] before:opacity-20 before:mix-blend-overlay no-underline inline-flex items-center justify-between gap-[1.5rem] py-[0.6rem] pr-[0.6rem] pl-[1.2rem] mt-[1.5rem]">
             Explore Case Study
             <span className='w-[40px] h-[40px] bg-white rounded-full flex justify-center items-center'><ArrowRight color='#141416' /></span>
           </Link>
