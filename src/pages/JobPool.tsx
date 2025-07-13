@@ -26,8 +26,10 @@ type FormData = {
   proudProjectOrChallenge: string;
   availability: string;
   openToIdeaLab: boolean;
-  marketingConsent: boolean; // Added new field for marketing consent
+  marketingConsent: boolean;
+  videoConsent: boolean;
   otherRole?: string;
+  video?: FileList;
 };
 
 const roleOptions = [
@@ -81,12 +83,19 @@ const JobPool = () => {
     city: false,
   });
   const [currentStep, setCurrentStep] = useState(1);
-   // Watch the values for the toggle switches
+  const [uploadProgress, setUploadProgress] = useState<{cv?: number, video?: number}>({});
+  const [uploadedVideoUrl, setUploadedVideoUrl] = useState<string | null>(null);
+  
   const openToIdeaLabValue = watch('openToIdeaLab');
   const marketingConsentValue = watch('marketingConsent');
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const videoConsentValue = watch('videoConsent');
+  
+  const cvFileInputRef = useRef<HTMLInputElement>(null);
+  const videoFileInputRef = useRef<HTMLInputElement>(null);
+  
   const selectedRoles = watch('role') || [];
   const cvFile = watch('cv')?.[0];
+  const videoFile = watch('video')?.[0];
   const otherRoleSelected = selectedRoles.includes('Other');
 
   const [selectedCountryCode, setSelectedCountryCode] = useState<string | null>(null);
@@ -183,132 +192,169 @@ const JobPool = () => {
     if (field === 'city' && dropdownOpen.city) setCitySearchTerm('');
   };
 
-  const handleFileClick = () => {
-    fileInputRef.current?.click();
+  const handleCvFileClick = () => {
+    cvFileInputRef.current?.click();
   };
 
-  const removeFile = () => {
-    setValue('cv', undefined as unknown as FileList);
+  const handleVideoFileClick = () => {
+    videoFileInputRef.current?.click();
+  };
+
+  const removeFile = (type: 'cv' | 'video') => {
+    setValue(type, undefined as unknown as FileList);
+    if (type === 'video') {
+      setUploadedVideoUrl(null);
+    }
+  };
+
+  const uploadFile = async (file: File, type: 'cv' | 'video') => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const endpoint = type === 'cv' 
+        ? 'https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/upload/cv'
+        : 'https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/upload/video';
+
+      const response = await axios.post(endpoint, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        },
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / (progressEvent.total || 1)
+          );
+          setUploadProgress(prev => ({...prev, [type]: percentCompleted}));
+        }
+      });
+
+      if (response.data.success && type === 'video') {
+        setUploadedVideoUrl(response.data.data.url);
+      }
+
+      return response.data.data.url;
+    } catch (error) {
+      console.error(`Error uploading ${type}:`, error);
+      throw error;
+    } finally {
+      setUploadProgress(prev => ({...prev, [type]: undefined}));
+    }
   };
 
   const validateCurrentStep = (stepToValidate: number = currentStep) => {
-  setSubmitError(''); // Clear previous errors at the start of validation
-  const errors: string[] = [];
+    setSubmitError('');
+    const errors: string[] = [];
 
-  // Step 1 validation
-  if (currentStep === 1) {
-    const fullName = watch('fullName');
-    const email = watch('email');
-    const phoneNumber = watch('phoneNumber');
-    const country = watch('country');
-    const city = watch('city');
-    const role = watch('role');
-    const portfolioLink = watch('portfolioLink');
-    const yearsOfExperience = watch('yearsOfExperience');
-    const cv = watch('cv');
+    if (currentStep === 1) {
+      const fullName = watch('fullName');
+      const email = watch('email');
+      const phoneNumber = watch('phoneNumber');
+      const country = watch('country');
+      const city = watch('city');
+      const role = watch('role');
+      const portfolioLink = watch('portfolioLink');
+      const yearsOfExperience = watch('yearsOfExperience');
+      const cv = watch('cv');
 
-    if (!fullName || fullName.trim() === '') errors.push('Full name is required.');
-    if (!email || email.trim() === '') {
-      errors.push('Email is required.');
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
-      errors.push('Invalid email address.');
-    }
-    if (!phoneNumber || phoneNumber.trim() === '') errors.push('Phone number is required.');
-    if (!country || country.trim() === '' || !selectedCountryCode) errors.push('Country is required.');
-    if (selectedCountryCode && statesOfSelectedCountry.length > 0 && (!watchedState || watchedState.trim() === '')) {
-      errors.push('State/Region is required.');
-    }
-    if (!city || city.trim() === '' || !watchedCity) errors.push('City is required.');
-    if (!Array.isArray(role) || role.length === 0) errors.push('Please select at least one role.');
-    if (otherRoleSelected && (!watch('otherRole') || watch('otherRole')?.trim() === '')) {
-      errors.push('Please specify your role for "Other".');
-    }
-
-    if (!portfolioLink || portfolioLink.trim() === '') {
-      errors.push('Portfolio link is required.');
-    } else {
-      // This is the **corrected** and **recommended** regex based on our previous discussion
-      const urlRegex = /^(https?:\/\/(?:www\.|m\.)?[a-zA-Z0-9-]{1,63}\.[a-zA-Z0-9-]{1,63}\.(?:com|net|org|io|dev|app|co|art|design|me|xyz|site|blog|info|biz|space|tech)(?:\/[^\s]*)?|https?:\/\/(?:www\.)?behance\.net\/[^\s]+|https?:\/\/(?:www\.)?github\.com\/[^\s]+)$/i;
-      if (!urlRegex.test(portfolioLink)) {
-        errors.push('Portfolio link must be a valid website, Behance, or GitHub URL.');
+      if (!fullName || fullName.trim() === '') errors.push('Full name is required.');
+      if (!email || email.trim() === '') {
+        errors.push('Email is required.');
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+        errors.push('Invalid email address.');
       }
-    }
-
-    if (!yearsOfExperience || yearsOfExperience.trim() === '') errors.push('Years of Experience is required.');
-    if (!cv || cv.length === 0) errors.push('CV is required.');
-
-    if (errors.length > 0) {
-      setSubmitError(errors.join('\n')); // Sets the specific error messages
-      return false;
-    }
-    return true;
-  }
-
-  // Step 2 validation
-  if (currentStep === 2) {
-    const requiredTextAreas = [
-      { field: 'projectsExciteYou', label: 'Projects that excite you' },
-      { field: 'problemSolvingApproach', label: 'Problem-solving approach' },
-      { field: 'bestTeamType', label: 'Best team type' },
-      { field: 'proudProjectOrChallenge', label: 'Proud project or challenge' }
-    ];
-
-    requiredTextAreas.forEach(({ field, label }) => {
-      const value = watch(field as keyof FormData) as string;
-      const words = value ? value.trim().split(/\s+/).filter(Boolean).length : 0;
-      if (!value || value.trim() === '') {
-        errors.push(`${label} is required.`);
-      } else if (words > MAX_WORDS) {
-        errors.push(`Max ${MAX_WORDS} words for "${label}". You have ${words}.`);
+      if (!phoneNumber || phoneNumber.trim() === '') errors.push('Phone number is required.');
+      if (!country || country.trim() === '' || !selectedCountryCode) errors.push('Country is required.');
+      if (selectedCountryCode && statesOfSelectedCountry.length > 0 && (!watchedState || watchedState.trim() === '')) {
+        errors.push('State/Region is required.');
       }
-    });
+      if (!city || city.trim() === '' || !watchedCity) errors.push('City is required.');
+      if (!Array.isArray(role) || role.length === 0) errors.push('Please select at least one role.');
+      if (otherRoleSelected && (!watch('otherRole') || watch('otherRole')?.trim() === '')) {
+        errors.push('Please specify your role for "Other".');
+      }
 
-    if (errors.length > 0) {
-      setSubmitError(errors.join('\n')); // Sets the specific error messages
-      return false;
+      if (!portfolioLink || portfolioLink.trim() === '') {
+        errors.push('Portfolio link is required.');
+      } else {
+        const urlRegex = /^(https?:\/\/(?:www\.|m\.)?[a-zA-Z0-9-]{1,63}\.[a-zA-Z0-9-]{1,63}\.(?:com|net|org|io|dev|app|co|art|design|me|xyz|site|blog|info|biz|space|tech)(?:\/[^\s]*)?|https?:\/\/(?:www\.)?behance\.net\/[^\s]+|https?:\/\/(?:www\.)?github\.com\/[^\s]+)$/i;
+        if (!urlRegex.test(portfolioLink)) {
+          errors.push('Portfolio link must be a valid website, Behance, or GitHub URL.');
+        }
+      }
+
+      if (!yearsOfExperience || yearsOfExperience.trim() === '') errors.push('Years of Experience is required.');
+      if (!cv || cv.length === 0) errors.push('CV is required.');
+
+      if (errors.length > 0) {
+        setSubmitError(errors.join('\n'));
+        return false;
+      }
+      return true;
     }
+
+    if (currentStep === 2) {
+      const requiredTextAreas = [
+        { field: 'projectsExciteYou', label: 'Projects that excite you' },
+        { field: 'problemSolvingApproach', label: 'Problem-solving approach' },
+        { field: 'bestTeamType', label: 'Best team type' },
+        { field: 'proudProjectOrChallenge', label: 'Proud project or challenge' }
+      ];
+
+      requiredTextAreas.forEach(({ field, label }) => {
+        const value = watch(field as keyof FormData) as string;
+        const words = value ? value.trim().split(/\s+/).filter(Boolean).length : 0;
+        if (!value || value.trim() === '') {
+          errors.push(`${label} is required.`);
+        } else if (words > MAX_WORDS) {
+          errors.push(`Max ${MAX_WORDS} words for "${label}". You have ${words}.`);
+        }
+      });
+
+      if (errors.length > 0) {
+        setSubmitError(errors.join('\n'));
+        return false;
+      }
+      return true;
+    }
+    
+    if (stepToValidate === 3) {
+      const availability = watch('availability');
+      if (!availability || availability.trim() === '') {
+        errors.push('Availability is required.');
+      }
+      
+      if (!watch('marketingConsent')) {
+        errors.push('You must consent to receive marketing emails and job offers.');
+      }
+
+      if (errors.length > 0) {
+        setSubmitError(errors.join('\n'));
+        return false;
+      }
+      return true;
+    }
+
     return true;
-  }
-  if (stepToValidate === 3) {
-    const availability = watch('availability');
-    if (!availability || availability.trim() === '') {
-      errors.push('Availability is required.');
-    }
-
-    if (errors.length > 0) {
-      setSubmitError(errors.join('\n'));
-      return false;
-    }
-    return true;
-  }
-
-  return true; // Default to true if no specific validation for the current step
-
-};
-
+  };
 
   const nextStep = () => {
-    setSubmitError(''); // Clear any previous validation errors before checking for the next step
-    setSubmitSuccess(false); // Clear success message if user goes back or advances
+    setSubmitError('');
+    setSubmitSuccess(false);
 
     const isStepValid = validateCurrentStep();
 
     if (isStepValid) {
       setCurrentStep(prev => prev + 1);
-      // Only scroll to top if validation passes
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-    } else {
-      // If validation fails, errors are already set by validateCurrentStep.
-      // We explicitly *don't* scroll to the top here, so the user sees the errors.
     }
   };
 
   const prevStep = () => {
-    setSubmitError(''); // Clear errors when going back
-    setSubmitSuccess(false); // Clear success message if user goes back
+    setSubmitError('');
+    setSubmitSuccess(false);
     setCurrentStep(prev => prev - 1);
     window.scrollTo({
       top: 0,
@@ -317,83 +363,90 @@ const JobPool = () => {
   };
 
   const handleFinalSubmit = async () => {
-  // Validate step 3 fields
-  const isStep3Valid = validateCurrentStep(3);
+    const isStep3Valid = validateCurrentStep(3);
 
-  if (isStep3Valid) {
-    // If step 3 is valid, proceed with the actual form submission
-    handleSubmit(onSubmit)(); // Call the onSubmit function provided by react-hook-form
-  }
-};
+    if (isStep3Valid) {
+      handleSubmit(onSubmit)();
+    }
+  };
 
   const onSubmit = async (data: FormData) => {
-  setIsSubmitting(true);
-  setSubmitError(''); // Clear any previous submission errors before a new attempt
-  setSubmitSuccess(false); // Ensure success state is reset
+    setIsSubmitting(true);
+    setSubmitError('');
+    setSubmitSuccess(false);
 
-  try {
-    const payload = {
-      fullName: data.fullName,
-      email: data.email,
-      phoneNumber: data.phoneNumber,
-      city: data.city,
-      country: data.country,
-      role: data.role.map(role =>
-        role === 'Other' && data.otherRole ? data.otherRole : role
-      ),
-      portfolioLink: data.portfolioLink,
-      yearsOfExperience: data.yearsOfExperience,
-      cv: data.cv?.[0]?.name || '',
-      projectsExciteYou: data.projectsExciteYou,
-      problemSolvingApproach: data.problemSolvingApproach,
-      bestTeamType: data.bestTeamType,
-      proudProjectOrChallenge: data.proudProjectOrChallenge,
-      availability: data.availability,
-      openToIdeaLab: data.openToIdeaLab
-    };
-
-    const response = await axios.post(
-      'https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/talent-pool',
-      payload,
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+    try {
+      // Upload CV first
+      const cvUrl = await uploadFile(data.cv[0], 'cv');
+      
+      // Upload video if provided
+      let videoUrl = null;
+      if (data.video?.[0]) {
+        videoUrl = await uploadFile(data.video[0], 'video');
       }
-    );
 
-    if (response.status === 201) {
-      setSubmitSuccess(true);
-    }
-  } catch (error: unknown) { // Explicitly type error as unknown (though it's default)
-    console.error('Submission error:', error);
+      const payload = {
+        fullName: data.fullName,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        city: data.city,
+        country: data.country,
+        role: data.role.map(role =>
+          role === 'Other' && data.otherRole ? data.otherRole : role
+        ),
+        portfolioLink: data.portfolioLink,
+        yearsOfExperience: data.yearsOfExperience,
+        cv: cvUrl,
+        projectsExciteYou: data.projectsExciteYou,
+        problemSolvingApproach: data.problemSolvingApproach,
+        bestTeamType: data.bestTeamType,
+        proudProjectOrChallenge: data.proudProjectOrChallenge,
+        availability: data.availability,
+        openToIdeaLab: data.openToIdeaLab,
+        video: videoUrl || '',
+        marketingConsent: data.marketingConsent,
+        videoConsent: data.videoConsent
+      };
 
-    if (axios.isAxiosError(error)) {
-      // Now 'error' is known to be an AxiosError
-      if (error.response?.data?.validationErrors) {
-        const validationErrors = error.response.data.validationErrors;
-        const errorMessages = validationErrors.map((err: any) => // err: any is fine here if structure is unknown
-          `${err.field}: ${err.errors.join(', ')}`
-        ).join('\n');
-        setSubmitError(errorMessages);
-      } else if (error.response?.data?.message) { // Check if 'message' exists on data
-        setSubmitError(`Failed to submit your application. ${error.response.data.message}`);
-      } else if (error.message) { // Fallback to generic Axios error message
+      const response = await axios.post(
+        'https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/talent-pool',
+        payload,
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+
+      if (response.status === 201) {
+        setSubmitSuccess(true);
+      }
+    } catch (error: unknown) {
+      console.error('Submission error:', error);
+
+      if (axios.isAxiosError(error)) {
+        if (error.response?.data?.validationErrors) {
+          const validationErrors = error.response.data.validationErrors;
+          const errorMessages = validationErrors.map((err: any) =>
+            `${err.field}: ${err.errors.join(', ')}`
+          ).join('\n');
+          setSubmitError(errorMessages);
+        } else if (error.response?.data?.message) {
+          setSubmitError(`Failed to submit your application. ${error.response.data.message}`);
+        } else if (error.message) {
+          setSubmitError(`Failed to submit your application: ${error.message}`);
+        } else {
+          setSubmitError('Failed to submit your application. An unknown error occurred with the request.');
+        }
+      } else if (error instanceof Error) {
         setSubmitError(`Failed to submit your application: ${error.message}`);
       } else {
-        setSubmitError('Failed to submit your application. An unknown error occurred with the request.');
+        setSubmitError('Failed to submit your application. An unexpected error occurred.');
       }
-    } else if (error instanceof Error) {
-      // If it's a standard JavaScript Error object
-      setSubmitError(`Failed to submit your application: ${error.message}`);
-    } else {
-      // General fallback for anything else that was thrown
-      setSubmitError('Failed to submit your application. An unexpected error occurred.');
+    } finally {
+      setIsSubmitting(false);
     }
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   const StepIndicator = () => {
     const steps = [
@@ -507,7 +560,7 @@ const JobPool = () => {
               />
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6"> {/* Changed to 3 columns */}
+            <div className="grid md:grid-cols-3 gap-6">
               {/* Country Dropdown */}
               <div>
                 <label className="text-sm font-medium inline-flex gap-1 text-white">
@@ -539,9 +592,9 @@ const JobPool = () => {
                             onClick={() => {
                               setValue('country', country.name, { shouldValidate: true });
                               setSelectedCountryCode(country.isoCode);
-                              setValue('state', '', { shouldValidate: true }); // Clear state
-                              setSelectedStateCode(null); // Clear selectedStateCode
-                              setValue('city', '', { shouldValidate: true }); // Clear city
+                              setValue('state', '', { shouldValidate: true });
+                              setSelectedStateCode(null);
+                              setValue('city', '', { shouldValidate: true });
                               toggleDropdown('country');
                               setCountrySearchTerm('');
                             }}
@@ -557,10 +610,10 @@ const JobPool = () => {
                 </div>
               </div>
 
-              {/* State/Region Dropdown (New Field) */}
+              {/* State/Region Dropdown */}
               <div>
                 <label className="text-sm font-medium inline-flex gap-1 text-white">
-                  State/Region {statesOfSelectedCountry.length > 0 && <BitcoinIconsStarFilled />} {/* Only show star if states exist */}
+                  State/Region {statesOfSelectedCountry.length > 0 && <BitcoinIconsStarFilled />}
                 </label>
                 <div className="relative">
                   <div
@@ -593,7 +646,7 @@ const JobPool = () => {
                             onClick={() => {
                               setValue('state', state.name, { shouldValidate: true });
                               setSelectedStateCode(state.isoCode);
-                              setValue('city', '', { shouldValidate: true }); // Clear city on state change
+                              setValue('city', '', { shouldValidate: true });
                               toggleDropdown('state');
                               setStateSearchTerm('');
                             }}
@@ -761,7 +814,7 @@ const JobPool = () => {
               <input
                 type="file"
                 {...register('cv', { required: 'CV is required' })}
-                ref={fileInputRef}
+                ref={cvFileInputRef}
                 className="hidden"
                 accept=".pdf,.doc,.docx"
                 onChange={(e) => {
@@ -772,7 +825,7 @@ const JobPool = () => {
               />
               <div
                 className={`mt-2 border-2 border-dashed rounded-lg p-6 text-center cursor-pointer border-gray-300`}
-                onClick={handleFileClick}
+                onClick={handleCvFileClick}
               >
                 {cvFile ? (
                   <div className="flex flex-col items-center space-y-2">
@@ -785,10 +838,18 @@ const JobPool = () => {
                         </div>
                         <span className="text-gray-800">{cvFile.name}</span>
                       </div>
-                      <button type="button" onClick={(e) => { e.stopPropagation(); removeFile(); }} className="text-gray-500 hover:text-gray-700">
+                      <button type="button" onClick={(e) => { e.stopPropagation(); removeFile('cv'); }} className="text-gray-500 hover:text-gray-700">
                         <Close />
                       </button>
                     </div>
+                    {uploadProgress.cv !== undefined && (
+                      <div className="w-full bg-gray-200 rounded-full h-2.5">
+                        <div 
+                          className="bg-blue-600 h-2.5 rounded-full" 
+                          style={{ width: `${uploadProgress.cv}%` }}
+                        ></div>
+                      </div>
+                    )}
                     <p className="text-gray-500 text-sm">Click to change file</p>
                   </div>
                 ) : (
@@ -802,6 +863,84 @@ const JobPool = () => {
                 )}
               </div>
             </div>
+
+            <div>
+              <label className="text-sm font-medium text-white">
+                Optional Video Introduction (Recommended)
+              </label>
+              <p className="text-sm text-gray-400 mb-2">
+                Candidates with videos are 3x more likely to be selected. Keep it under 90 seconds.
+              </p>
+              <input
+                type="file"
+                {...register('video')}
+                ref={videoFileInputRef}
+                className="hidden"
+                accept="video/*"
+                onChange={(e) => {
+                  if (e.target.files?.[0]) {
+                    setValue('video', e.target.files, { shouldValidate: true });
+                  }
+                }}
+              />
+              <div
+                className={`mt-2 border-2 border-dashed rounded-lg p-6 text-center cursor-pointer border-gray-300`}
+                onClick={handleVideoFileClick}
+              >
+                {videoFile ? (
+                  <div className="flex flex-col items-center space-y-2">
+                    <div className="flex items-center justify-between bg-gray-100 p-3 rounded w-full">
+                      <div className="flex items-center space-x-2">
+                        <div className="bg-purple-100 p-2 rounded-full">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <span className="text-gray-800">{videoFile.name}</span>
+                      </div>
+                      <button type="button" onClick={(e) => { e.stopPropagation(); removeFile('video'); }} className="text-gray-500 hover:text-gray-700">
+                        <Close />
+                      </button>
+                    </div>
+                    {uploadProgress.video !== undefined && (
+                      <div className="w-full bg-gray-200 rounded-full h-2.5">
+                        <div 
+                          className="bg-purple-600 h-2.5 rounded-full" 
+                          style={{ width: `${uploadProgress.video}%` }}
+                        ></div>
+                      </div>
+                    )}
+                    {uploadedVideoUrl && (
+                      <div className="mt-2">
+                        <video controls className="max-h-40 mx-auto">
+                          <source src={uploadedVideoUrl} type={videoFile.type} />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    )}
+                    <p className="text-gray-500 text-sm">Click to change file</p>
+                  </div>
+                ) : (
+                  <>
+                    <Upload className="mx-auto h-12 w-12 text-gray-400" />
+                    <p className="mt-2 text-sm text-gray-600">
+                      <span className="font-semibold">Click to upload</span> or drag and drop
+                    </p>
+                    <p className="mt-1 text-xs text-gray-500">MP4, MOV up to 50MB</p>
+                  </>
+                )}
+              </div>
+              <div className="mt-2 text-xs text-gray-400">
+                <p>What to say in your video:</p>
+                <ul className="list-disc list-inside">
+                  <li>Your name and the role(s) you're best suited for</li>
+                  <li>A quick overview of your background or experience</li>
+                  <li>Your top skill or strength</li>
+                  <li>Why you want to work with Grascope</li>
+                </ul>
+              </div>
+            </div>
+
             <div className="flex justify-end mt-8">
               <button
                 type="button"
@@ -960,16 +1099,14 @@ const JobPool = () => {
             {/* Toggle Switch for openToIdeaLab */}
             <div className="flex items-center">
               <label htmlFor="openToIdeaLab" className="inline-flex relative items-center cursor-pointer">
-                {/* Hidden actual checkbox */}
                 <input
                   type="checkbox"
                   id="openToIdeaLab"
-                  className="sr-only peer" // Tailwind class to visually hide but keep accessible
+                  className="sr-only peer"
                   {...register('openToIdeaLab')}
-                  checked={openToIdeaLabValue} // Controlled by react-hook-form's watch
-                  onChange={(e) => setValue('openToIdeaLab', e.target.checked, { shouldValidate: true })} // Update value and trigger validation
+                  checked={openToIdeaLabValue}
+                  onChange={(e) => setValue('openToIdeaLab', e.target.checked, { shouldValidate: true })}
                 />
-                {/* Visual toggle switch */}
                 <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-400 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#159B48]"></div>
                 <span className="ml-3 text-sm text-white">
                   I'm open to being considered for opportunities from Grascope's Idea Lab (internal projects).
@@ -980,22 +1117,40 @@ const JobPool = () => {
             {/* Toggle Switch for marketingConsent */}
             <div className="flex items-center">
               <label htmlFor="marketingConsent" className="inline-flex relative items-center cursor-pointer">
-                {/* Hidden actual checkbox */}
                 <input
                   type="checkbox"
                   id="marketingConsent"
-                  className="sr-only peer" // Tailwind class to visually hide but keep accessible
+                  className="sr-only peer"
                   {...register('marketingConsent', { required: 'You must consent to receive marketing emails and job offers.' })}
-                  checked={marketingConsentValue} // Controlled by react-hook-form's watch
-                  onChange={(e) => setValue('marketingConsent', e.target.checked, { shouldValidate: true })} // Update value and trigger validation
+                  checked={marketingConsentValue}
+                  onChange={(e) => setValue('marketingConsent', e.target.checked, { shouldValidate: true })}
                 />
-                {/* Visual toggle switch */}
                 <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-400 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#159B48]"></div>
                 <span className="ml-3 text-sm text-white inline-flex gap-1">
                   I consent to receive marketing emails and job offers from Grascope. <BitcoinIconsStarFilled />
                 </span>
               </label>
             </div>
+
+            {/* Toggle Switch for videoConsent */}
+            {videoFile && (
+              <div className="flex items-center">
+                <label htmlFor="videoConsent" className="inline-flex relative items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    id="videoConsent"
+                    className="sr-only peer"
+                    {...register('videoConsent')}
+                    checked={videoConsentValue}
+                    onChange={(e) => setValue('videoConsent', e.target.checked, { shouldValidate: true })}
+                  />
+                  <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-400 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#159B48]"></div>
+                  <span className="ml-3 text-sm text-white">
+                    I agree to have my video featured on Grascope's public talent showcase to increase my visibility to clients.
+                  </span>
+                </label>
+              </div>
+            )}
 
             <div className="flex justify-between mt-8">
               <button
