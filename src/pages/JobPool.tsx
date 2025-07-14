@@ -426,7 +426,7 @@ const JobPool = () => {
       const cleanPayload = (obj: Record<string, any>) => {
         return Object.fromEntries(
           Object.entries(obj).filter(([_, v]) => v !== undefined) // Remove strictly undefined
-                             .map(([k, v]) => [k, v === '' ? null : v]) // Convert empty strings to null
+          .map(([k, v]) => [k, v === '' ? null : v]) // Convert empty strings to null
         );
       };
       
