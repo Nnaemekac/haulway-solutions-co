@@ -29,7 +29,7 @@ type FormData = {
   marketingConsent: boolean;
   videoConsent: boolean;
   otherRole?: string;
-  video?: FileList;
+  video?: FileList | null; // Make video optional and nullable
 };
 
 const roleOptions = [
@@ -201,13 +201,21 @@ const JobPool = () => {
   };
 
   const removeFile = (type: 'cv' | 'video') => {
-    setValue(type, undefined as unknown as FileList);
-    if (type === 'video') {
-      setUploadedVideoUrl(null);
-    }
+  if (type === 'video') {
+    setValue('video', null, { shouldValidate: true }); // Set to null instead of undefined
+    setUploadedVideoUrl(null);
+  } else {
+    setValue('cv', undefined as unknown as FileList, { shouldValidate: true });
+  }
   };
 
   const uploadFile = async (file: File, type: 'cv' | 'video') => {
+    // Crucial: Check if the file is actually a valid File object before attempting upload
+    if (!(file instanceof File) || file.size === 0) {
+      console.warn(`Skipping upload for empty or invalid ${type} file.`);
+      return null; // Return null if no valid file
+    }
+
     const formData = new FormData();
     formData.append('file', file);
 
@@ -232,10 +240,10 @@ const JobPool = () => {
         setUploadedVideoUrl(response.data.data.url);
       }
 
-      return response.data.data.url;
+      return response.data.data.url; // This should be a URL string
     } catch (error) {
       console.error(`Error uploading ${type}:`, error);
-      throw error;
+      throw error; // Re-throw to be caught by onSubmit
     } finally {
       setUploadProgress(prev => ({...prev, [type]: undefined}));
     }
@@ -376,12 +384,16 @@ const JobPool = () => {
     setSubmitSuccess(false);
 
     try {
-      // Upload CV first
+      // Upload CV
       const cvUrl = await uploadFile(data.cv[0], 'cv');
+      if (cvUrl === null) {
+        throw new Error("CV upload failed or CV file is empty.");
+      }
       
-      // Upload video if provided
-      let videoUrl = null;
-      if (data.video?.[0]) {
+      // Upload video if a valid file exists
+      let videoUrl: string | null = null;
+      // Check if data.video is not null, and if the FileList has at least one actual File object
+      if (data.video && data.video.length > 0 && data.video[0] instanceof File) {
         videoUrl = await uploadFile(data.video[0], 'video');
       }
 
@@ -391,6 +403,7 @@ const JobPool = () => {
         phoneNumber: data.phoneNumber,
         city: data.city,
         country: data.country,
+        state: data.state || null, // Ensure state is null if empty string
         role: data.role.map(role =>
           role === 'Other' && data.otherRole ? data.otherRole : role
         ),
@@ -403,14 +416,26 @@ const JobPool = () => {
         proudProjectOrChallenge: data.proudProjectOrChallenge,
         availability: data.availability,
         openToIdeaLab: data.openToIdeaLab,
-        video: videoUrl || '',
+        video: videoUrl, // Use the potentially null videoUrl directly
         marketingConsent: data.marketingConsent,
-        videoConsent: data.videoConsent
+        videoConsent: videoUrl ? data.videoConsent : false // Only true if video exists
       };
+
+      // Remove undefined/null properties or ensure they are explicitly null
+      // This helper function cleans up the payload before sending
+      const cleanPayload = (obj: Record<string, any>) => {
+        return Object.fromEntries(
+          Object.entries(obj).filter(([_, v]) => v !== undefined) // Remove strictly undefined
+                             .map(([k, v]) => [k, v === '' ? null : v]) // Convert empty strings to null
+        );
+      };
+      
+      const finalPayload = cleanPayload(payload);
+
 
       const response = await axios.post(
         'https://grascoperoi-84aafe9da70d.herokuapp.com/api/v1/talent-pool',
-        payload,
+        finalPayload, // Send the cleaned payload
         {
           headers: {
             'Content-Type': 'application/json'
@@ -878,11 +903,10 @@ const JobPool = () => {
                 className="hidden"
                 accept="video/*"
                 onChange={(e) => {
-                  if (e.target.files?.[0]) {
-                    setValue('video', e.target.files, { shouldValidate: true });
-                  }
+                  setValue('video', e.target.files?.[0] ? e.target.files : null, { shouldValidate: true });
                 }}
               />
+              
               <div
                 className={`mt-2 border-2 border-dashed rounded-lg p-6 text-center cursor-pointer border-gray-300`}
                 onClick={handleVideoFileClick}
