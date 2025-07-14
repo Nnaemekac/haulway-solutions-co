@@ -59,6 +59,16 @@ const Footer = () => {
                 </div>
             </div>
             <div className='flex flex-wrap mt-[4rem] items-center'>
+                <a
+              href="/Grascope Brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3 px-5 rounded-lg text-center bg-[linear-gradient(111.85deg,rgba(253,253,253,0.3)_5.74%,rgba(253,253,253,0.2)_68.32%)] backdrop-blur-[53.080570220947266px] shadow-[0px_5.31px_31.85px_-3.98px_rgba(0,0,0,0.2)]"
+            >
+              View Our Brochure
+            </a>
+            </div>
+            <div className='flex flex-wrap mt-[4rem] items-center'>
                 <div className='lg:basis-10/12 basis-full'>
                     <p className='lg:text-[100%] text-[90%] font-medium'>RC NUMBERS</p>
                     <p className='lg:text-[95%] text-[60%] font-light mt-[1rem]'>
