@@ -25,6 +25,15 @@ import FluentWindowNewRegular from "../icons/fluent_window-new-20-regular.svg?re
 import SimpleIconsBlueprint from "../icons/simple-icons_blueprint.svg?react";
 import TwotoneSpeed from "../icons/twotone-speed.svg?react";
 
+import ArrowRightCircle from './arrowRightCircle.svg?react'
+import TimerIcon from './timerIcon.svg?react'
+import MoneyBag from './moneyBag.svg?react'
+import ShieldCheck from './shieldCheck.svg?react'
+import Briefcase from './briefcase.svg?react'
+import StackIcon from './stackIcon.svg?react'
+import People from './people.svg?react'
+import LogoLightMultipleText from './logoLightMultipleText.svg?react'
+
 
 export {
   LocationStar,
@@ -51,5 +60,14 @@ export {
   MDILinkedIn,
   GameIconsGrowth,
   LetsIconsFilter,
-  SolarDocumentAddLinear
+  SolarDocumentAddLinear,
+
+  ArrowRightCircle,
+  TimerIcon,
+  Briefcase,
+  StackIcon,
+  People,
+  MoneyBag,
+  ShieldCheck,
+  LogoLightMultipleText
 };

@@ -19,6 +19,7 @@ import Chatbot from './components/Chatbot'
 import LiveChat from './pages/LiveChats'
 import ViewApplication from './pages/ViewApplication'
 import NotFound from './pages/NotFound'; // Import the new NotFound component
+import './App.css'
 
 function App() {
   useEffect(() => {
